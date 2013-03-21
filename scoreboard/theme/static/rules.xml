@@ -5,5 +5,58 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     >
-    <replace theme="/html/head/title" content="/html/head/title" />
+
+    <!-- The default theme, used for standard Plone web pages -->
+    <theme href="demo1.htm" css:if-content="#visual-portal-wrapper" />
+
+    <drop theme="/html/head/meta" />
+    <drop theme="/html/head/title" />
+    <drop theme="/html/head/script" />
+
+    <after theme-children="/html/head">
+        <link rel="stylesheet" href="++theme++scoreboard.theme/css/ec_default.css" />
+        <link rel="stylesheet" href="++theme++scoreboard.theme/css/custom.css" />
+    </after>
+
+    <after content="/html/head/title" theme-children="/html/head" />
+    <after content="/html/head/meta" theme-children="/html/head" />
+    <after content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
+        theme-children="/html/head" />
+
+    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
+
+    <drop css:content="#personaltools-dashboard" />
+    <drop css:content="#personaltools-preferences" />
+    <before css:content="#portal-personaltools .actionMenuContent" css:theme="#header" />
+
+    <drop css:content=".documentByLine" />
+    <replace css:content-children="#breadcrumbs-current" css:theme-children=".breadcrumbs li:last-of-type" />
+    <before css:theme="#main">
+        <div id="action-bar">
+            <ul class="nav nav-tabs">
+            <xsl:for-each css:select="#content-views > li">
+                <xi:include href="navigation-rules.xml"/>
+            </xsl:for-each>
+            <xsl:for-each css:select="#contentActionMenus > li">
+                <li class="dropdown pull-right" data-dropdown="dropdown">
+                    <a class="dropdown-toggle" href="#"><xsl:attribute name="href">
+                            <xsl:value-of select="dl/dt/a/@href"/>
+                        </xsl:attribute>
+                        <xsl:copy-of select="dl/dt/a/span"/>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" style="min-width:150px;">
+                        <xsl:for-each css:select=".actionMenuContent > ul > li">
+                            <xsl:copy-of select="current()"/>
+                        </xsl:for-each>
+                    </ul>
+                </li>
+            </xsl:for-each>
+            </ul>
+         </div>
+    </before>
+
+    <replace css:content-children="#content" css:theme-children="#main" />
+    <!--<drop css:content=".chart-tabs" />-->
+
 </rules>
