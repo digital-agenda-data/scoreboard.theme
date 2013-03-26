@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="scoreboard">
+
+  <include package="plone.app.contentmenu" />
+
+  <browser:page
+    name="visualizations-listing"
+    for="*"
+    title="Visualizations listing"
+    menu="plone_displayviews"
+    permission="zope2.View"
+    template="templates/listing.pt"
+    />
+
+
+  <browser:resourceDirectory
+    name="scoreboard.theme.css"
+    directory="css/"
+    />
+
+  <browser:resourceDirectory
+    name="scoreboard.theme.images"
+    directory="images/"
+    />
+
+</configure>

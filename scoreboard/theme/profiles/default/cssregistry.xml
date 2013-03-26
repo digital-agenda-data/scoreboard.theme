@@ -6,5 +6,8 @@
   expression="python: (not request.get('HTTP_X_THEME_ENABLED', None)) or '@@theming-controlpanel' in request.getURL()"
   id="public.css"
   />
+<stylesheet
+  id="++resource++scoreboard.theme.css/listing.css"
+  />
 
 </object>

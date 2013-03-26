@@ -4,6 +4,7 @@
 
   <includeDependencies package="." />
 
+  <include package=".browser" />
   <include file="profiles.zcml" />
 
   <plone:static directory="static" type="theme" />
