@@ -11,6 +11,7 @@
     title="Visualizations listing"
     menu="plone_displayviews"
     permission="zope2.View"
+    class=".listing.VisualizationsListingView"
     template="templates/listing.pt"
     />
 

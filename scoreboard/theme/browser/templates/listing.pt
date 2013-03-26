@@ -13,7 +13,7 @@
     <h2>Please select one of the available graphs:</h2>
     <p>
     <table>
-      <tr tal:repeat="obj python:[o.getObject() for o in here.portal_catalog({'portal_type': 'ScoreboardVisualization'})]">
+      <tr tal:repeat="obj view/visualizations">
         <td>
           <a tal:attributes="href obj/absolute_url">
             <img tal:attributes="src string:${obj/absolute_url}/thumbnail/image_preview"/>
