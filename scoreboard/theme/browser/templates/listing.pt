@@ -2,9 +2,6 @@
   i18n:domain="plone">
   <div metal:fill-slot="main" id="scoreboard-visualizations-listing">
     <h1>A Visualisation tool for selected indicators of the Digital Agenda Scoreboard</h1>
-    <a href="http://ec.europa.eu/digital-agenda/en/scoreboard">
-      <img src="++resource++scoreboard.theme.images/hp-eda-logo.jpg" class="header-logo" />
-    </a>
     <div style="clear:both" />
     <p class="listing-description">
       European Commission services have selected about a hundred of indicators, divided into thematic groups, which illustrate some key dimensions of the European information society.<br /><br />
