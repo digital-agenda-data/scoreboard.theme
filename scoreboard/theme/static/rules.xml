@@ -57,6 +57,6 @@
     </before>
 
     <replace css:content-children="#content" css:theme-children="#main" />
-    <!--<drop css:content=".chart-tabs" />-->
+    <drop css:content=".download-visualization" />
 
 </rules>
