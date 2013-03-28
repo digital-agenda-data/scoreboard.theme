@@ -4,7 +4,8 @@ from Products.CMFCore.utils import getToolByName
 
 class VisualizationsListingView(BrowserView):
 
-    def visualizations(self):
-        query = {'portal_type': 'ScoreboardVisualization'}
+    def getDataCubes(self):
+        query = {'portal_type': 'DataCube'}
         catalog = getToolByName(self.context, 'portal_catalog');
         return [b.getObject() for b in catalog(**query)]
+

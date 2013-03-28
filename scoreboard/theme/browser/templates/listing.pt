@@ -1,43 +1,57 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main" id="scoreboard-visualizations-listing">
-    <h1>A Visualisation tool for selected indicators of the Digital Agenda Scoreboard</h1>
-    <div style="clear:both" />
-    <p class="listing-description">
-      European Commission services have selected about a hundred of indicators, divided into thematic groups, which illustrate some key dimensions of the European information society.<br /><br />
-      The following pages allow the interactive creation of graphs, visualising the data you are interested in. The complete list of indicators is available at the end of this page.
-    </p>
-    <h2>Please select one of the available graphs:</h2>
-    <p>
-    <table>
-      <tr tal:repeat="obj view/visualizations">
-        <td>
-          <a tal:attributes="href obj/absolute_url">
-            <img tal:attributes="src string:${obj/absolute_url}/thumbnail/image_preview"/>
-          </a>
-        </td>
-        <td>
-          <a tal:attributes="href obj/absolute_url">
-            <h5><span tal:replace="repeat/obj/number"/>. <span tal:replace="obj/Title"/></h5>
-          </a>
-          <p tal:content="obj/Description"></p>
-        </td>
-      </tr>
-    </table>
-    <h2>Further Information</h2>
-    <ul>
-      <li><a href="http://digital-agenda-data.eu/index.php?page=indicators">Consult the list of selected indicators, their definition and sources</a>
-      <li><a href="http://digital-agenda-data.eu/index.php?page=export">Download the original datasets</a>
+  <div metal:fill-slot="main" tal:define="cubes view/getDataCubes">
+
+    <ul id="scoreboard-visualizations-tabs" class="tabs nav nav-pills">
+      <li tal:repeat="cube cubes"><a tal:content="cube/title_or_id" tal:attributes="href string:#${cube/getId}"></a></li>
     </ul>
-    <p class="listing-footer">
-      <a href="http://lod2.eu/"><img src="++resource++scoreboard.theme.images/logo-lod2.png" class="footer-logo" /></a>
-      This visualisation tool was made with the help of the <a href="http://lod2.eu/">Linked Open data, "LOD2" project</a>, co-funded by the
-      European Commission within the FP7 Information and Communication Technologies Work Programme (Grant Agreement No.&nbsp;257943).
-      <br>The project aims at building an integrated technology stack for publishing linked data. The visualisation and open data pages for the
-      digital agenda scoreboard  have been executed as part of the publink activities of the LOD2 project by the LOD2 partners:
-      Tenforce, AKSW research group at the University of Leipzig and OpenLink Software
-    </p>
-    <div style="clear:both" />
+
+    <div id="scoreboard-visualizations-listing" class="panes">
+      <div class="pane" tal:repeat="cube cubes" tal:attributes="id cube/getId">
+        <h1 tal:content="cube/getExtended_title"></h1>
+        <div style="clear:both"></div>
+        <div class="listing-description">
+          <tal:block tal:replace="structure cube/getSummary"></tal:block>
+        </div>
+        <h2>Please select one of the available graphs:</h2>
+
+
+        <tal:block define="visualizations cube/getBRefs">
+          <p tal:condition="not:visualizations">
+            No visualizations.
+          </p>
+          <table>
+            <tr tal:repeat="vis visualizations">
+              <td>
+                <a tal:attributes="href vis/absolute_url">
+                  <img tal:attributes="src string:${vis/absolute_url}/thumbnail/image_preview"/>
+                </a>
+              </td>
+              <td>
+                <a tal:attributes="href vis/absolute_url">
+                  <h5><span tal:replace="repeat/vis/number"/>. <span tal:replace="vis/Title"/></h5>
+                </a>
+                <p tal:content="vis/Description"></p>
+              </td>
+            </tr>
+          </table>
+        </tal:block>
+        <h2>Further Information</h2>
+        <ul>
+          <li><a tal:attributes="href cube/absolute_url">Consult the list of selected indicators, their definition and sources</a>
+          <li><a tal:attributes="href cube/absolute_url">Download the original datasets</a>
+        </ul>
+      </div>
+      <p class="listing-footer">
+        <a href="http://lod2.eu/"><img src="++resource++scoreboard.theme.images/logo-lod2.png" class="footer-logo" /></a>
+        This visualisation tool was made with the help of the <a href="http://lod2.eu/">Linked Open data, "LOD2" project</a>, co-funded by the
+        European Commission within the FP7 Information and Communication Technologies Work Programme (Grant Agreement No.&nbsp;257943).
+        <br>The project aims at building an integrated technology stack for publishing linked data. The visualisation and open data pages for the
+        digital agenda scoreboard  have been executed as part of the publink activities of the LOD2 project by the LOD2 partners:
+        Tenforce, AKSW research group at the University of Leipzig and OpenLink Software
+      </p>
+      <div style="clear:both" />
+    </div>
   </div>
 </html>
 
