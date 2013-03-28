@@ -1,10 +1,13 @@
-
 body {
-	background: #fff;
+	background-color: #fff;
 	font-size: 12px;
     margin: 0 auto;
     padding: 0;
     width: 960px;
+}
+
+.site-Plone {
+	background-color: #fff;
 }
 
 #main {
@@ -158,16 +161,26 @@ body .das_logo {
 	width: 300px;
 }
 
-.filters {
+.filters,
+#the-filters {
 	overflow: hidden;
 	color: #555;
 	font-size: 12px;
+	background: rgb(225, 240, 247);
+	padding: 10px;
 }
 
 .filters select,
 .ui-button-text,
 .select2-search-choice div {
 	font-size: 12px;
+}
+
+#the-filters label {
+	display: inline-block;
+	width: 140px;
+	color: rgb(85, 85, 85);
+	margin-bottom: 10px;
 }
 
 /* override from jQuery */
@@ -365,3 +378,21 @@ background: red;
 }
 
 
+/*  Edit tab */
+#archetypes-fieldname-description,
+#archetypes-fieldname-relatedItems {
+	margin-top: 10px;
+}
+
+#archetypes-fieldname-description #description,
+#archetypes-fieldname-title #title,
+#subject_keywords {
+	width: 98%;
+}
+
+
+/*  sub-tab Creators */
+.formHelp {
+	display: block;
+	margin-left: 15px;
+}
