@@ -12,8 +12,9 @@
     <drop theme="/html/head/meta" />
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
+    <drop css:theme="link[href*='redesign']" />
 
-    <after theme-children="/html/head">
+    <after theme="/html/head/title">
         <link rel="stylesheet" href="++theme++scoreboard.theme/css/ec_default.css" />
         <link rel="stylesheet" href="++theme++scoreboard.theme/css/custom.css" />
     </after>
@@ -22,6 +23,9 @@
     <after content="/html/head/meta" theme-children="/html/head" />
     <after content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
         theme-children="/html/head" />
+    <after theme-children="html/head">
+      <link rel="stylesheet" type="text/css" href="++theme++scoreboard.theme/resources/redesign.css" />
+    </after>
 
     <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
