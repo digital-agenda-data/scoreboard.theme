@@ -191,14 +191,22 @@ body .ui-widget {
 
 .left_column {
 	float: left;
-	width: 62%;
+	width: 54%;
 	display: inline-block;
+}
+
+.left_column select {
+	width: 320px;
 }
 
 .right_column {
 	float: right;
-	width: 37%;
+	width: 45%;
 	display: inline-block;
+}
+
+.right_column .select2-container {
+	width: 400px;
 }
 
 #breakdown,
