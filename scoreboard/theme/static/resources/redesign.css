@@ -190,6 +190,10 @@ body .das_logo {
 	vertical-align: top;
 }
 
+#the-chart .map-chart {
+	height: 500px;
+}
+
 /* override from jQuery */
 body .ui-widget {
 	font-family: inherit;
