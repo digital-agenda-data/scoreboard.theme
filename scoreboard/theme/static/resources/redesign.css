@@ -1,11 +1,10 @@
 body {
 	background-color: #fff;
 	font-size: 12px;
-    margin: 0 auto;
-    padding: 0;
-    width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
 }
-
 .site-Plone {
 	background-color: #fff;
 }
@@ -21,24 +20,31 @@ body {
 
 #scenarios a {
 	text-decoration: none;
+	display: block;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 10px 10px 5px 18px;
 }
 
 .section.share {
 	background-color: rgb(225, 240, 247);
 	float: right;
-	width: 16%;
+	width: 18%;
 }
 
 .section.share ul {
-	padding-left: 0px;
+	padding-left: 10px;
 }
 
 .section.share ul li {
 	list-style-type: none;
 }
 
-.section li.export {
+.section .export a {
 	background: url(download_arrow.png) 85px 1px no-repeat;
+	display: block;
+	width: 104px;
+	margin-bottom: 3px;
 }
 
 .certain_indicators {
@@ -65,7 +71,7 @@ body #amount {
 }
 
 .legend {
-	width: 80%;
+	width: 78%;
 	background-color: rgb(225, 240, 247);
 	padding: 15px;
 	float: left;
@@ -81,7 +87,7 @@ body #amount {
 }
 
 .legend ul {
-	padding-left: 0px;
+	/* padding-left: 0px; */
 	font-size: 12px;
 }
 
@@ -181,6 +187,7 @@ body .das_logo {
 	width: 140px;
 	color: rgb(85, 85, 85);
 	margin-bottom: 10px;
+	vertical-align: top;
 }
 
 /* override from jQuery */
@@ -233,20 +240,22 @@ body .ui-widget {
 }
 
 .scenario_icon {
-	width: 65px;
+	height: 64px;
 	border: 1px solid #ccc;
-	box-shadow: 1px 2px 2px #999;
 	-webkit-box-shadow: 1px 2px 2px #999;
+	box-shadow: 1px 2px 2px #999;
 }
 
 #scenarios div {
 	display: inline-block;
 	width: 120px;
+	height: 130px;
 	margin-right: -6px;
 	background: #F5F19C;
-	padding: 10px 10px 5px 18px;
+	-moz-border-radius: 3px;
 	border-radius: 3px;
 	border: 1px solid #BDBDBD;
+	vertical-align: top;
 }
 
 #scenarios div.selected {
@@ -266,6 +275,7 @@ body .maincontent img {
 	font-size: 11px;
 	color: #464545;
 	float: left;
+	cursor: pointer;
 }
 
 /*  HEADER */
@@ -398,9 +408,12 @@ background: red;
 	width: 98%;
 }
 
-
 /*  sub-tab Creators */
 .formHelp {
 	display: block;
 	margin-left: 15px;
+}
+
+.portaltype-scoreboardvisualization .documentDescription {
+  display: none;
 }
