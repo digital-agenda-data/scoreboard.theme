@@ -2,8 +2,8 @@
 <object name="Plone Site"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="default_view">visualizations-listing</property>
+ <property name="default_view">homepage-listing</property>
  <property name="view_methods">
-  <element value="visualizations-listing"/>
+  <element value="homepage-listing"/>
  </property>
 </object>

@@ -6,15 +6,21 @@
   <include package="plone.app.contentmenu" />
 
   <browser:page
-    name="visualizations-listing"
-    for="*"
-    title="Visualizations listing"
-    menu="plone_displayviews"
+    name="visualizations"
+    for="edw.datacube.interfaces.IDataCube"
     permission="zope2.View"
-    class=".listing.VisualizationsListingView"
-    template="templates/listing.pt"
+    template="templates/visualizations.pt"
     />
 
+  <browser:page
+    name="homepage-listing"
+    for="*"
+    title="Datacubes listing"
+    menu="plone_displayviews"
+    permission="zope2.View"
+    class=".listing.HomepageListingView"
+    template="templates/listing.pt"
+    />
 
   <browser:resourceDirectory
     name="scoreboard.theme.css"

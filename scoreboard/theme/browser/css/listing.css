@@ -1,40 +1,44 @@
-#scoreboard-visualizations-listing .header-logo {
+.scoreboard-listing .header-logo {
     width:15em;
     float:right;
     padding-top:1.775em;
     border-style: none
 }
 
-#scoreboard-visualizations-listing h1 {
+.scoreboard-listing h1 {
     float: left;
 }
 
-#scoreboard-visualizations-listing .listing-description {
+.scoreboard-listing .listing-description {
     padding: 1em;
     background-color: #E1F0F7;
 }
 
-#scoreboard-visualizations-listing table,
-#scoreboard-visualizations-listing table tr,
-#scoreboard-visualizations-listing table td {
+.scoreboard-listing table,
+.scoreboard-listing table tr,
+.scoreboard-listing table td {
     border: none;
 }
 
-#scoreboard-visualizations-listing table td {
+.scoreboard-listing table td {
     vertical-align:top;
     padding-top:1em
 }
 
-#scoreboard-visualizations-listing .listing-footer {
+.scoreboard-listing .listing-footer {
     padding:1em;
     background-color:#E1F0F7;
     vertical-align:top;
 }
 
-#scoreboard-visualizations-listing .listing-footer .footer-logo {
+.scoreboard-listing .listing-footer .footer-logo {
     width:8em;
     float:right;
     margin:0em 4em 0em 4em;
     border:0px
 }
 
+.linklist {
+    list-style-type: none;
+    padding-left: 0px;
+}
