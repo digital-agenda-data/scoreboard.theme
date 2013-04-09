@@ -121,9 +121,9 @@
 
     <script src="./demo1_files/exporting.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="./demo1_files/widget100.css" media="all" />
-    <!--link rel="stylesheet" type="text/css" href="./demo1_files/layout.css" media="all"  />
+    <link rel="stylesheet" type="text/css" href="./demo1_files/layout.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./demo1_files/content.css" media="all"  />
-    <link rel="stylesheet" type="text/css" href="./demo1_files/scoreboard.css" /-->
+    <link rel="stylesheet" type="text/css" href="./demo1_files/scoreboard.css" />
 	<link rel="stylesheet" type="text/css" href="./resources/redesign.css" />
 
     <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="http://lod2.eu/extensions/site/sites/lod2/css/patches/ie6.css" media="all" /><![endif]-->
@@ -142,7 +142,7 @@
 			<li><a href="http://ec.europa.eu/digital-agenda/en">Digital Agenda for Europe</a></li>
 			<li><a href="http://ec.europa.eu/digital-agenda/en/our-goals">Our Goals</a></li>
 			<li><a href="http://ec.europa.eu/digital-agenda/en/scoreboard">Scoreboard</a></li>
-			<li><a href="http://ec.europa.eu/digital-agenda/en/graphs">Explore graphs</a></li>
+			<li><a href="/">Visualizations</a></li>
 			<li>Scenario 1 [DEMO 1]</li>
 		</ul>
       </div>
@@ -350,7 +350,10 @@
 							]
 						};
 
-						$(document).ready(function() {
+						$(document).ready(function() {let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
+
 							chart = new Highcharts.Chart(chartOptions);
 						});
 

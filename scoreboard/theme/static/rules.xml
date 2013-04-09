@@ -13,6 +13,9 @@
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
     <drop css:theme="link[href*='redesign']" />
+    <drop css:theme="link[href*='layout.css']" />
+    <drop css:theme="link[href*='content.css']" />
+    <drop css:theme="link[href*='scoreboard.css']" />
 
     <after theme="/html/head/title">
         <link rel="stylesheet" href="++theme++scoreboard.theme/css/ec_default.css" />
@@ -31,7 +34,6 @@
 
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />
-    <before css:content="#portal-personaltools .actionMenuContent" css:theme="#header" />
 
     <drop css:content=".documentByLine" />
     <replace css:content-children="#breadcrumbs-current" css:theme-children=".breadcrumbs li:last-of-type" />
@@ -62,5 +64,10 @@
 
     <replace css:content-children="#content" css:theme-children="#main" />
     <drop css:content=".download-visualization" />
+
+
+    <before css:content="#personaltools-plone_setup" css:theme=".layout-footer .content .menu.clearfix li:first-child" />
+    <before css:content="#personaltools-logout" css:theme=".layout-footer .content .menu.clearfix li:first-child" />
+    <replace css:content="#personaltools-login" css:theme=".layout-footer .content .menu.clearfix li:first-child a" />
 
 </rules>
