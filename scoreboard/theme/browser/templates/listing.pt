@@ -16,8 +16,12 @@
         <p tal:condition="not:cubes">
           No Data Cubes.
         </p>
-        <table>
-          <tr tal:repeat="cube cubes">
+        <table class="scoreboard-datacubes-listing">
+          <tal:row repeat="cube cubes">
+          <tr class="scoreboard-datacubes-listing-item" tal:attributes="
+            id cube/getId;
+            data-name cube/getId;
+            data-parent python:cube.getParentNode().absolute_url()">
             <td tal:define="has_thumbnail python:'thumbnail' in cube.objectIds()">
               <a tal:attributes="href string:${cube/absolute_url}/visualizations">
                 <img tal:condition="has_thumbnail" tal:attributes="src string:${cube/absolute_url}/thumbnail/image_preview"/>
@@ -41,6 +45,7 @@
               </ul>
             </td>
           </tr>
+          </tal:row>
         </table>
       </tal:block>
     </div>

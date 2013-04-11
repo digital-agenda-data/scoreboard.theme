@@ -8,8 +8,9 @@
   <browser:page
     name="visualizations"
     for="edw.datacube.interfaces.IDataCube"
-    permission="zope2.View"
+    class=".listing.VisualizationsListingView"
     template="templates/visualizations.pt"
+    permission="zope2.View"
     />
 
   <browser:page

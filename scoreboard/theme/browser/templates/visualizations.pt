@@ -9,13 +9,16 @@
       </div>
       <h2>Please select one of the available graphs:</h2>
 
-
-      <tal:block define="visualizations cube/getBRefs">
+      <tal:block define="visualizations view/visualizations">
         <p tal:condition="not:visualizations">
           No visualizations.
         </p>
-        <table>
-          <tr tal:repeat="vis visualizations">
+        <table class="scoreboard-visualizations-listing">
+          <tal:row repeat="vis visualizations">
+          <tr class="scoreboard-visualizations-listing-item" tal:attributes="
+            id vis/getId;
+            data-name vis/getId;
+            data-parent python:vis.getParentNode().absolute_url();">
             <td>
               <a tal:attributes="href vis/absolute_url">
                 <img tal:attributes="src string:${vis/absolute_url}/thumbnail/image_preview"/>
@@ -28,6 +31,7 @@
               <p tal:content="vis/Description"></p>
             </td>
           </tr>
+          </tal:row>
         </table>
       </tal:block>
       <h2>Further Information</h2>
