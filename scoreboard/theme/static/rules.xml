@@ -18,7 +18,6 @@
     <drop css:theme="link[href*='scoreboard.css']" />
 
     <after theme="/html/head/title">
-        <link rel="stylesheet" href="++theme++scoreboard.theme/css/ec_default.css" />
         <link rel="stylesheet" href="++theme++scoreboard.theme/css/custom.css" />
     </after>
 
@@ -37,7 +36,7 @@
 
     <drop css:content=".documentByLine" />
     <replace css:content-children="#breadcrumbs-current" css:theme-children=".breadcrumbs li:last-of-type" />
-    <before css:theme="#main">
+    <before css:theme="#main" css:if-content="#edit-bar">
         <div id="action-bar">
             <ul class="nav nav-tabs">
             <xsl:for-each css:select="#content-views > li">
