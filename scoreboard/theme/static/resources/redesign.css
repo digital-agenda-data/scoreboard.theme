@@ -1,128 +1,25 @@
-body {
-	background-color: #fff;
-	font-size: 12px;
-	margin: 0 auto;
+/*  LAYOUT */
+body,
+.template-indicators {
+	background: #fff;
+	margin: 0;
 	padding: 0;
-	width: 960px;
-}
-.site-Plone {
-	background-color: #fff;
-}
-
-#main {
-	margin-left: 5px;
-}
-
-#scenarios {
-	margin:1em 1em 2em 0em;
-	float: left;
-}
-
-#scenarios a {
-	text-decoration: none;
-	display: block;
-	cursor: pointer;
-	overflow: hidden;
-	padding: 10px 10px 5px 18px;
-}
-
-.section.share {
-	background-color: rgb(225, 240, 247);
-	float: right;
-	width: 18%;
-}
-
-.section.share ul {
-	padding-left: 10px;
-}
-
-.section.share ul li {
-	list-style-type: none;
-}
-
-.section .export a {
-	background: url(download_arrow.png) 85px 1px no-repeat;
-	display: block;
-	width: 104px;
-	margin-bottom: 3px;
-}
-
-.certain_indicators {
-	color: rgb(10, 158, 10);
-	margin-left: 3px;
-}
-
-.adnotation {
-	font-size: 11px;
-	color: rgb(10, 158, 10);
-	float: right;
-	margin-top: -20px;
-}
-
-body #amount {
 	color: #000;
 }
 
-#slider-range {
-	display: inline-block;
-	width: 300px;
-	margin-left: 20px;
-	vertical-align: middle;
-}
-
-.legend {
-	width: 78%;
-	background-color: rgb(225, 240, 247);
-	padding: 15px;
-	float: left;
-}
-
-.legend h2 {
-	color: #777;
-	margin-top: 2px;
-}
-
-.legend p {
+.page_margins {
+	margin: 0 auto;
+	width: 1120px;
+	font-family: 'Droid Sans', Arial, sans-serif;
 	font-size: 12px;
 }
 
-.legend ul {
-	/* padding-left: 0px; */
-	font-size: 12px;
+#main {
+	margin-left: 0px;
 }
 
-.share_list li {
-	display: inline-block;
-	width: 20px;
-	margin: 5px;
-}
 
-.share_list a {
-	width: 26px;
-	height: 26px;
-	display: inline-block;
-}
-
-.facebook {
-	background: url(facebook_logo_25x25.png) no-repeat;
-}
-
-.twitter {
-	background: url(twitter_logo_25x25.png) no-repeat;
-}
-
-.more_share {
-	background: url(orange_Button_for_share.png) no-repeat;
-}
-
-body .ui-button-text-only .ui-button-text {
-	padding: 0.2em 1em;
-}
-
-.ui-buttonset {
-	font-size: 12px;
-}
-
+/*  HEADER */
 .breadcrumbs {
 	background: #074A8B;
 	margin: 0;
@@ -132,7 +29,7 @@ body .ui-button-text-only .ui-button-text {
 .breadcrumbs label,
 .breadcrumbs li  {
 	display: inline-block;
-	font-size: 10px;
+	font-size: 11px;
 	color: #fff;
 }
 
@@ -156,11 +53,56 @@ body .ui-button-text-only .ui-button-text {
 	text-decoration: underline;
 }
 
-body .das_logo {
-	width: 15em;
+.logo {
+	height: 119px;
+	border: 0px;
+	padding-left: 22px;
+	padding-top: 0px;
+}
+
+#banner-title-text {
+	position: absolute;
+	top: 65px;
+	margin: 0;
+	margin-left: 215px;
+	border: 0;
+	font-size: 18px;
+	line-height: 1.2;
+	color: rgb(0, 101, 162);
+	text-transform: uppercase;
+}
+
+#banner-title-text2 {
+	background: rgb(0, 101, 162);
+	margin: 0;
+	color: #fff;
+	margin-top: -30px;
+	padding: 10px 0px 10px 215px;
+}
+
+
+/*  section FILTERS*/
+.certain_indicators {
+	color: rgb(10, 158, 10);
+	margin-left: 3px;
+}
+
+.adnotation {
+	font-size: 11px;
+	color: rgb(10, 158, 10);
 	float: right;
-	border-style: none;
-	margin-right: 28px;
+	margin-top: -20px;
+}
+
+body #amount {
+	color: #000;
+}
+
+#slider-range {
+	display: inline-block;
+	width: 300px;
+	margin-left: 20px;
+	vertical-align: middle;
 }
 
 .select2-container {
@@ -190,16 +132,6 @@ body .das_logo {
 	vertical-align: top;
 }
 
-#the-chart .map-chart {
-	height: 500px;
-}
-
-/* override from jQuery */
-body .ui-widget {
-	font-family: inherit;
-	font-size: 12px;
-}
-
 .left_column {
 	float: left;
 	width: 54%;
@@ -226,7 +158,6 @@ body .ui-widget {
 #measure_unitY {
 	display: inline-block;
 	width: 400px;
-	/*vertical-align: top;*/
 }
 
 .section-content {
@@ -243,6 +174,100 @@ body .ui-widget {
 	margin-top: 6px;
 }
 
+#the-chart .map-chart {
+	height: 500px;
+}
+
+
+/*  section ANNOTATIONS*/
+.legend {
+	width: 78%;
+	background-color: rgb(225, 240, 247);
+	padding: 15px;
+	float: left;
+	margin-top: 5px;
+}
+
+.legend h2 {
+	color: #777;
+	margin-top: 2px;
+}
+
+.legend p {
+	font-size: 12px;
+}
+
+.legend ul {
+	font-size: 12px;
+}
+
+
+/*   section SHARE */
+.section.share {
+	background-color: rgb(225, 240, 247);
+	float: right;
+	width: 18%;
+	margin-top: 5px;
+}
+
+.section.share ul {
+	padding-left: 10px;
+}
+
+.section.share ul li {
+	list-style-type: none;
+}
+
+.section .export a {
+	background: url(download_arrow.png) 70px 1px no-repeat;
+	display: block;
+	width: 104px;
+	margin-bottom: 3px;
+}
+
+.share_list li {
+	display: inline-block;
+	width: 20px;
+	margin: 5px;
+}
+
+.share_list a {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.facebook {
+		background: url(widget012_top.gif) no-repeat;
+		background-position: 0 -288px;
+}
+
+.twitter {
+	background: url(widget012_top.gif) no-repeat;
+	background-position: 0 -896px;
+}
+
+.more_share {
+	background: url(widget012_top.gif) no-repeat;
+	background-position: 0 -576px;
+}
+
+body .ui-button-text-only .ui-button-text {
+	padding: 0.2em 1em;
+}
+
+.ui-buttonset {
+	font-size: 12px;
+}
+
+/* override from jQuery */
+body .ui-widget {
+	font-family: inherit;
+	font-size: 12px;
+}
+
+
+/*  NAVIGATION between scenarios */
 .scenario_icon {
 	height: 64px;
 	border: 1px solid #ccc;
@@ -250,9 +275,14 @@ body .ui-widget {
 	box-shadow: 1px 2px 2px #999;
 }
 
-#scenarios div {
+#the-navigation {
+	clear: both;
+	padding-top: 10px;
+}
+
+#the-navigation div {
 	display: inline-block;
-	width: 120px;
+	width: 150px;
 	height: 130px;
 	margin-right: -6px;
 	background: #F5F19C;
@@ -262,12 +292,38 @@ body .ui-widget {
 	vertical-align: top;
 }
 
-#scenarios div.selected {
+#the-navigation div.selected,
+#the-navigation div:hover {
 	background: #fff;
 }
 
-#scenarios h4 {
+#the-navigation h4 {
 	margin-bottom: 5px;
+}
+
+#the-navigation label {
+	font-size: 11px;
+	color: #464545;
+	float: left;
+	cursor: pointer;
+	padding-top: 5px;
+}
+
+#the-navigation a {
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 10px 10px 5px 18px;
+}
+
+#countries-add-all,
+#contries-clear {
+	margin-top: 5px;
+}
+
+#relatedItemBox dt {
+	padding-left: 12px;
 }
 
 /* override main_content.css */
@@ -275,45 +331,6 @@ body .maincontent img {
 	max-width: 100%;
 }
 
-#scenarios label {
-	font-size: 11px;
-	color: #464545;
-	float: left;
-	cursor: pointer;
-}
-
-/*  HEADER */
-body .page {
-	padding-top: 0px;
-}
-
-.logo {
-	width: 140px;
-	height: 96px;
-	border: 0px;
-	padding-left: 22px;
-	padding-top: 22px;
-}
-
-#banner-title-text {
-	position: absolute;
-	top: 70px;
-	left: 200px;
-	margin: 0;
-	border: 0;
-	font-size: 18px;
-	line-height: 1.2;
-	color: rgb(0, 101, 162);
-	text-transform: uppercase;
-}
-
-#banner-title-text2 {
-	background: rgb(0, 101, 162);
-	margin: 0;
-	color: #fff;
-	margin-top: -30px;
-	padding: 3px 0px 3px 200px;
-}
 
 /* FOOTER */
 .layout-footer {
@@ -331,7 +348,7 @@ body .page {
 .layout-footer-wrapper {
 	float: left;
 	margin-bottom: 0;
-	padding: 0px; /*padding: 15px 20px;*/
+	padding: 0px;
 	width: 100%;
 }
 
@@ -394,10 +411,10 @@ body .page {
 	text-align: left;
 }
 
-/* CHART TOOLTIPS */
+/* CHART TOOLTIPS
 .ui-tooltip-* {
 background: red;
-}
+}*/
 
 
 /*  Edit tab */
@@ -420,4 +437,77 @@ background: red;
 
 .portaltype-scoreboardvisualization .documentDescription {
   display: none;
+}
+
+
+/*  INDICATORS table*/
+.list_indicators td:nth-of-type(2n) {
+	background: #D6F5AF;
+}
+
+.list_indicators td:nth-of-type(2n+1) {
+	background: #D1F4F7;
+}
+
+.list_indicators th {
+	padding: 10px 0px;
+	background: #eee;
+}
+
+#ICT-Skills,
+#Take-up-of-internet-services,
+#Mobile,
+#Broadband,
+#eBusiness,
+#eCommerce,
+#eGovernment,
+#Internet-usage {
+	display: block;
+	padding: 5px 10px;
+	border: 0px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#indicators-toc a {
+	background: url(icon-linkarrow.png) no-repeat 96% 46%;
+	padding: 5px 20px 5px 0px;
+	display: inline-block;
+}
+
+.list_indicators th,
+.list_indicators tr,
+.list_indicators td {
+	border: 2px solid #FFF;
+}
+
+/*LOGIN */
+#login_form label {
+	display: inline-block;
+	width: 100px;
+}
+
+body #login_form input[type=text]:hover,
+body #login_form input[type=text]:active,
+body #login_form input[type=password]:hover,
+body #login_form input[type=password]:active {
+	border: 1px; /*override from ec_default.css */
+	outline: 1px solid #ddd;
+}
+
+#login-forgotten-password,
+#mail_password {
+	margin-top: 20px;
+}
+
+
+/*  FIXES */
+.scenario3 .normal-chart {
+	width: 1000px;
+	height: 1000px;
+}
+
+body h1 {
+  padding-top: 0px;
+  text-transform: none;
 }
