@@ -52,12 +52,12 @@
     border: 1px dotted #ccc;
 }
 
-.scoreboard-datacubes-listing-item:hover:after,
-.scoreboard-visualizations-listing-item:hover:after {
+.scoreboard-datacubes-listing-item:hover td:last-child:after,
+.scoreboard-visualizations-listing-item:hover td:last-child:after {
+    text-decoration: none;
     content: "Click and drag to reorder";
     color: #CCC;
     display: block;
-    min-width: 200px;
-    text-align: right;
+    text-align: center;
     padding: 0.5em;
 }
