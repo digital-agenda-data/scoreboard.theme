@@ -12,6 +12,7 @@
     <drop theme="/html/head/meta" />
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
+    <drop css:theme="link[href*='widget100.css']" />
     <drop css:theme="link[href*='redesign']" />
     <drop css:theme="link[href*='layout.css']" />
     <drop css:theme="link[href*='content.css']" />
