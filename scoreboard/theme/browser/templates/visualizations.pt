@@ -16,9 +16,9 @@
         <table class="scoreboard-visualizations-listing">
           <tal:row repeat="vis visualizations">
           <tr class="scoreboard-visualizations-listing-item" tal:attributes="
-            id vis/getId;
-            data-name vis/getId;
-            data-parent python:vis.getParentNode().absolute_url();">
+            id vis/UID;
+            data-name vis/UID;
+            data-parent python:cube.absolute_url();">
             <td>
               <a tal:attributes="href vis/absolute_url">
                 <img tal:attributes="src string:${vis/absolute_url}/thumbnail/image_preview"/>

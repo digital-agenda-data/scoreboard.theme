@@ -42,3 +42,22 @@
     list-style-type: none;
     padding-left: 0px;
 }
+
+.scoreboard-datacubes-listing-item,
+.scoreboard-visualizations-listing-item {
+}
+
+.scoreboard-datacubes-listing-item:hover,
+.scoreboard-visualizations-listing-item:hover {
+    border: 1px dotted #ccc;
+}
+
+.scoreboard-datacubes-listing-item:hover:after,
+.scoreboard-visualizations-listing-item:hover:after {
+    content: "Click and drag to reorder";
+    color: #CCC;
+    display: block;
+    min-width: 200px;
+    text-align: right;
+    padding: 0.5em;
+}

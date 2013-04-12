@@ -1,8 +1,12 @@
 """ Listing Views
 """
+from zope.annotation.interfaces import IAnnotations
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
+from persistent.list import PersistentList
+from plone.uuid.interfaces import IUUID
 
+ORDER = 'scoreboard.visualization.order'
 
 class HomepageListingView(BrowserView):
     """ Listing for homepage
@@ -34,4 +38,32 @@ class VisualizationsListingView(BrowserView):
         in parent
         """
         relations = self.context.getBRefs()
-        return relations
+        anno = IAnnotations(self.context)
+        order = anno.get(ORDER, ())
+        mapping = dict((IUUID(relation, ''), relation)
+                       for relation in relations)
+
+        # Return ordered relations
+        for uid in order:
+            relation = mapping.get(uid, None)
+            if not relation:
+                continue
+            yield relation
+
+        # Return remaining relations
+        for uid, relation in mapping.items():
+            if uid in order:
+                continue
+            yield relation
+
+    def sort(self, **kwargs):
+        """ Sort items
+        """
+        kwargs.update(self.request.form)
+        order = kwargs.get('order', [])
+        if not order:
+            return 'Nothing to do'
+
+        anno = IAnnotations(self.context)
+        anno[ORDER] = PersistentList(order)
+        return 'Done'

@@ -14,6 +14,14 @@
     />
 
   <browser:page
+    name="visualizations.sort"
+    for="edw.datacube.interfaces.IDataCube"
+    class=".listing.VisualizationsListingView"
+    attribute="sort"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
     name="homepage-listing"
     for="*"
     title="Datacubes listing"
