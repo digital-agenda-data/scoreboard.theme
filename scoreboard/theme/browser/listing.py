@@ -28,6 +28,13 @@ class ListingView(BrowserView):
             "can easily do that by calling: /edit > Save" % (portal_type, iface)
         )
 
+    def getItemState(self, obj):
+        """ Item state
+        """
+        wft = getToolByName(self.context, 'portal_workflow')
+        return wft.getInfoFor(obj, 'review_state', '')
+
+
 
 class HomepageListingView(ListingView):
     """ Listing for homepage
@@ -42,12 +49,6 @@ class HomepageListingView(ListingView):
 
         catalog = getToolByName(self.context, 'portal_catalog');
         return [b.getObject() for b in catalog(**query)]
-
-    def getItemState(self, obj):
-        """ Item state
-        """
-        wft = getToolByName(self.context, 'portal_workflow')
-        return wft.getInfoFor(obj, 'review_state', '')
 
     def addDataCube(self):
         portal_type = 'DataCube'
