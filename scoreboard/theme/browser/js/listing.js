@@ -4,9 +4,56 @@ if(window.Scoreboard === undefined){
   };
 }
 
+Scoreboard.Confirm = {
+  initialize: function(){
+    var self = this;
+    self.event = null;
+    self.kwargs = {};
+
+    self.area = jQuery('<div>').addClass('scoreboard-confirm').attr('title', 'Confirm');
+    jQuery('body').after(self.area);
+    self.area.dialog({
+      bgiframe: true,
+      autoOpen: false,
+      modal: true,
+      dialogClass: 'scoreboard-confirm-overlay',
+      open: function(evt, ui){
+        jQuery(this).parent().addClass('bootstrap');
+        var buttons = jQuery(this).parent().find('button');
+        buttons.attr('class', 'btn');
+        jQuery(buttons[0]).addClass('btn-danger');
+        jQuery(buttons[1]).addClass('btn-inverse');
+      },
+      buttons:  {
+        Yes: function(){
+          if(self.event !== null){
+            jQuery(document).trigger(self.event, self.kwargs);
+          }
+          jQuery(this).dialog('close');
+        },
+        No: function(){
+          jQuery(this).dialog('close');
+        }
+      }
+    });
+  },
+
+  confirm: function(msg, event, kwargs){
+    var self = this;
+    self.area.html(msg);
+    self.event = event;
+    self.kwargs = kwargs;
+    self.area.dialog('open');
+  }
+};
+
 Scoreboard.Events = {
   cubesSorted: 'scoreboard-datacubes-sorted',
-  visualizationsSored: 'scoreboard-visualizations-sorted'
+  cubeDelete: 'scoreboard-datacube-delete',
+  cubeDeleted: 'scoreboard-datacube-deleted',
+  visualizationsSorted: 'scoreboard-visualizations-sorted',
+  visualizationDelete: 'scoreboard-visualization-delete',
+  visualizationDeleted: 'scoreboard-visualization-deleted'
 };
 
 // Datacubes Listing
@@ -36,8 +83,9 @@ Scoreboard.DatacubesListing.prototype = {
     self.settings.sortAction = parent + self.settings.sortAction;
 
     items.each(function(idx, item){
-      jQuery(item).data('order', idx);
-      jQuery(item).addClass('scoreboard-listing-item-enhanced');
+      item = jQuery(item);
+      item.data('order', idx);
+      return self.initializeItem(item);
     });
 
     self.context.sortable({
@@ -52,6 +100,61 @@ Scoreboard.DatacubesListing.prototype = {
         self.sort(ui.item, parent);
       }
     });
+
+    // Events
+    jQuery(document).unbind('.DatacubesListing');
+    jQuery(document).bind(Scoreboard.Events.cubeDelete + '.DatacubesListing', function(evt, data){
+      return self.deleteItem(data);
+    });
+
+  },
+
+  initializeItem: function(item){
+    var self = this;
+    item.addClass('scoreboard-listing-item-enhanced');
+
+    // Publish
+    jQuery("a[href*='content_status_modify']", item).click(function(evt){
+      evt.preventDefault();
+      var href = jQuery(this).attr('href');
+      jQuery.ajax({
+        type: 'GET',
+        url: href,
+        traditional: true,
+        complete: function(data){
+          document.location.reload();
+        }
+      });
+    });
+
+    // Delete
+    jQuery("a[href*='delete_confirmation']", item).click(function(evt){
+      evt.preventDefault();
+      msg = 'Are you sure you want to delete "' + (item.data('title') || 'this item') + '"?';
+      Scoreboard.Confirm.confirm(msg, Scoreboard.Events.cubeDelete, {
+        item: item,
+        action: jQuery(this).attr('href')
+      });
+    });
+  },
+
+  deleteItem: function(options){
+    var self = this;
+    var authenticator = jQuery(options.item.data('authenticator'));
+    var query = {'form.submitted': 1};
+    query[authenticator.attr('name')] = authenticator.val();
+    jQuery.ajax({
+        type: 'POST',
+        url: options.action,
+        data: query,
+        traditional: true,
+        complete: function(){
+          jQuery(document).trigger(Scoreboard.Events.cubeDeleted);
+        }
+    });
+    options.item.hide('highlight', {}, 1000, function(){
+      options.item.remove();
+    });
   },
 
   sort: function(context, parent){
@@ -64,7 +167,7 @@ Scoreboard.DatacubesListing.prototype = {
       item_id: context.data('name')
     };
 
-    $.ajax({
+    jQuery.ajax({
         type: 'POST',
         url: self.settings.sortAction,
         data: query,
@@ -103,8 +206,9 @@ Scoreboard.VisualizationsListing.prototype = {
     self.settings.sortAction = parent + self.settings.sortAction;
 
     items.each(function(idx, item){
-      jQuery(item).data('order', idx);
-      jQuery(item).addClass('scoreboard-listing-item-enhanced');
+      item = jQuery(item);
+      item.data('order', idx);
+      return self.initializeItem(item);
     });
 
     self.context.sortable({
@@ -119,6 +223,61 @@ Scoreboard.VisualizationsListing.prototype = {
         self.sort(ui.item, parent);
       }
     });
+
+    // Events
+    jQuery(document).unbind('.VisualizationsListing');
+    jQuery(document).bind(Scoreboard.Events.visualizationDelete + '.VisualizationsListing', function(evt, data){
+      return self.deleteItem(data);
+    });
+
+  },
+
+  initializeItem: function(item){
+    var self = this;
+    item.addClass('scoreboard-listing-item-enhanced');
+
+    // Publish
+    jQuery("a[href*='content_status_modify']", item).click(function(evt){
+      evt.preventDefault();
+      var href = jQuery(this).attr('href');
+      jQuery.ajax({
+        type: 'GET',
+        url: href,
+        traditional: true,
+        complete: function(data){
+          document.location.reload();
+        }
+      });
+    });
+
+    // Delete
+    jQuery("a[href*='delete_confirmation']", item).click(function(evt){
+      evt.preventDefault();
+      msg = 'Are you sure you want to delete "' + (item.data('title') || 'this item') + '"?';
+      Scoreboard.Confirm.confirm(msg, Scoreboard.Events.visualizationDelete, {
+        item: item,
+        action: jQuery(this).attr('href')
+      });
+    });
+  },
+
+  deleteItem: function(options){
+    var self = this;
+    var authenticator = jQuery(options.item.data('authenticator'));
+    var query = {'form.submitted': 1};
+    query[authenticator.attr('name')] = authenticator.val();
+    jQuery.ajax({
+        type: 'POST',
+        url: options.action,
+        data: query,
+        traditional: true,
+        complete: function(){
+          jQuery(document).trigger(Scoreboard.Events.visualizationDeleted);
+        }
+    });
+    options.item.hide('highlight', {}, 1000, function(){
+      options.item.remove();
+    });
   },
 
   sort: function(context, parent){
@@ -130,13 +289,13 @@ Scoreboard.VisualizationsListing.prototype = {
       order: self.context.sortable('toArray')
     };
 
-    $.ajax({
+    jQuery.ajax({
         type: 'POST',
         url: self.settings.sortAction,
         data: query,
         traditional: true,
         complete: function(){
-          jQuery(document).trigger(Scoreboard.Events.visualizationsSored);
+          jQuery(document).trigger(Scoreboard.Events.visualizationsSorted);
         }
     });
   }
@@ -182,4 +341,5 @@ jQuery(document).ready(function(){
     });
   }
 
+  Scoreboard.Confirm.initialize();
 });
