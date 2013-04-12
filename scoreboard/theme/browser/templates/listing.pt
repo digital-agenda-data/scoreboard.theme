@@ -1,8 +1,10 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main" tal:define="cube nocall:here;
-                                          normalizeString nocall:context/plone_utils/normalizeString;
-                                          isAnon context/@@plone_portal_state/anonymous;">
+  <div metal:fill-slot="main"
+    tal:define="cube nocall:here;
+                normalizeString nocall:context/plone_utils/normalizeString;
+                isAnon context/@@plone_portal_state/anonymous;
+                canModify python:checkPermission('Modify portal content', cube);">
     <div id="homepage-listing" class="scoreboard-listing bootstrap">
       <h1>Digital Agenda Scoreboard</h1>
       <div style="clear:both"></div>
@@ -16,7 +18,7 @@
         <p tal:condition="not:cubes">
           No Data Cubes.
         </p>
-        <div tal:condition="not:isAnon" class="pull-right">
+        <div tal:condition="canModify" class="pull-right">
           <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube"><i class="icon-plus-sign icon-white"></i> Add Data Cube dataset</a>
         </div>
         <div style="clear: both;"></div>
@@ -50,7 +52,7 @@
                 <li><a tal:attributes="href string:${cube/absolute_url}">
                   Download the original datasets</a></li>
               </ul>
-              <div class="dataset-manage" tal:condition="not:isAnon">
+              <div class="dataset-manage" tal:condition="canModify">
                 <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit"><i class="icon-edit icon-white"></i> Edit</a>
                 <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
                 <a class="btn btn-mini btn-primary" tal:condition="python: state != 'published'"
