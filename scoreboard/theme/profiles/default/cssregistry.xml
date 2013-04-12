@@ -9,4 +9,7 @@
 <stylesheet
   id="++resource++scoreboard.theme.css/listing.css"
   />
+<stylesheet
+  id="++resource++scoreboard.theme.css/bootstrap.css"
+  />
 </object>
