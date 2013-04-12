@@ -15,10 +15,18 @@ ORDER = 'scoreboard.visualization.order'
 
 class ListingView(BrowserView):
 
-    def queryCatalog(self, interface):
+    def queryCatalog(self, interface, portal_type=None):
         catalog = getToolByName(self.context, 'portal_catalog')
-        for brain in catalog(object_provides=interface.__identifier__):
+        iface = interface.__identifier__
+        for brain in catalog(object_provides=iface):
             return brain.getObject()
+
+        raise LookupError(
+            u"First you need to define the default container for adding '%s' "
+            "objects by adding '%s' marker interface within "
+            "ZMI > manage_interfaces. Don't forget to apply reindexObject. You "
+            "can easily do that by calling: /edit > Save" % (portal_type, iface)
+        )
 
 
 class HomepageListingView(ListingView):
@@ -42,8 +50,9 @@ class HomepageListingView(ListingView):
         return wft.getInfoFor(obj, 'review_state', '')
 
     def addDataCube(self):
-        container = self.queryCatalog(IDatasetsContainer)
-        url = container.createObject(type_name='DataCube')
+        portal_type = 'DataCube'
+        container = self.queryCatalog(IDatasetsContainer, portal_type)
+        url = container.createObject(type_name=portal_type)
         self.request.response.redirect(url)
 
 
@@ -87,8 +96,9 @@ class VisualizationsListingView(ListingView):
         return 'Done'
 
     def addVisualization(self):
-        container = self.queryCatalog(IVisualizationsContainer)
-        url = container.createObject(type_name='ScoreboardVisualization')
+        portal_type = 'ScoreboardVisualization'
+        container = self.queryCatalog(IVisualizationsContainer, portal_type)
+        url = container.createObject(type_name=portal_type)
         redirect_url = '%(url)s?relatedItems=%(uid)s' % {
                 'url': url,
                 'uid': self.context.UID()
