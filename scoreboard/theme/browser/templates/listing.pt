@@ -28,6 +28,8 @@
           <tr class="scoreboard-datacubes-listing-item" tal:attributes="
             id cube/getId;
             data-name cube/getId;
+            data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
+            data-authenticator cube/@@authenticator/authenticator;
             data-parent python:cube.getParentNode().absolute_url()"
             tal:define="state python:view.getItemState(cube)">
             <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">

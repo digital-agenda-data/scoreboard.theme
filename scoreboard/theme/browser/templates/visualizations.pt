@@ -27,6 +27,8 @@
           <tr class="scoreboard-visualizations-listing-item" tal:attributes="
             id vis/UID;
             data-name vis/UID;
+            data-title python:vis.title_or_id();
+            data-authenticator vis/@@authenticator/authenticator;
             data-parent python:cube.absolute_url();">
             <td tal:define="has_thumbnail python:hasattr(vis, 'thumbnail')">
               <a tal:attributes="href vis/absolute_url">

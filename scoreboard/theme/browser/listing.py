@@ -56,7 +56,6 @@ class HomepageListingView(ListingView):
         url = container.createObject(type_name=portal_type)
         self.request.response.redirect(url)
 
-
 class VisualizationsListingView(ListingView):
     """ Visualizations listing
     """
