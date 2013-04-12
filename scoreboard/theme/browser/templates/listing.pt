@@ -17,7 +17,7 @@
           No Data Cubes.
         </p>
         <div tal:condition="not:isAnon" class="pull-right">
-          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/createObject?type_name=DataCube"><i class="icon-plus-sign icon-white"></i> Add Data Cube dataset</a>
+          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube"><i class="icon-plus-sign icon-white"></i> Add Data Cube dataset</a>
         </div>
         <div style="clear: both;"></div>
         <br />

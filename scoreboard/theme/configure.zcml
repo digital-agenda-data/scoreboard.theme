@@ -9,4 +9,7 @@
 
   <plone:static directory="static" type="theme" />
 
+  <interface interface=".interfaces.IDatasetsContainer" />
+  <interface interface=".interfaces.IVisualizationsContainer" />
+
 </configure>

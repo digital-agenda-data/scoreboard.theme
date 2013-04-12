@@ -6,9 +6,22 @@ from Products.CMFCore.utils import getToolByName
 from persistent.list import PersistentList
 from plone.uuid.interfaces import IUUID
 
+from scoreboard.theme.interfaces import IDatasetsContainer
+from scoreboard.theme.interfaces import IVisualizationsContainer
+
+
 ORDER = 'scoreboard.visualization.order'
 
-class HomepageListingView(BrowserView):
+
+class ListingView(BrowserView):
+
+    def queryCatalog(self, interface):
+        catalog = getToolByName(self.context, 'portal_catalog')
+        for brain in catalog(object_provides=interface.__identifier__):
+            return brain.getObject()
+
+
+class HomepageListingView(ListingView):
     """ Listing for homepage
     """
     def getDataCubes(self):
@@ -28,8 +41,13 @@ class HomepageListingView(BrowserView):
         wft = getToolByName(self.context, 'portal_workflow')
         return wft.getInfoFor(obj, 'review_state', '')
 
+    def addDataCube(self):
+        container = self.queryCatalog(IDatasetsContainer)
+        url = container.createObject(type_name='DataCube')
+        self.request.response.redirect(url)
 
-class VisualizationsListingView(BrowserView):
+
+class VisualizationsListingView(ListingView):
     """ Visualizations listing
     """
     def visualizations(self):
@@ -67,3 +85,12 @@ class VisualizationsListingView(BrowserView):
         anno = IAnnotations(self.context)
         anno[ORDER] = PersistentList(order)
         return 'Done'
+
+    def addVisualization(self):
+        container = self.queryCatalog(IVisualizationsContainer)
+        url = container.createObject(type_name='ScoreboardVisualization')
+        redirect_url = '%(url)s?relatedItems=%(uid)s' % {
+                'url': url,
+                'uid': self.context.UID()
+        }
+        self.request.response.redirect(redirect_url)

@@ -14,6 +14,22 @@
     />
 
   <browser:page
+    name="addVisualization"
+    for="*"
+    class=".listing.VisualizationsListingView"
+    attribute="addVisualization"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
+    name="addDataCube"
+    for="*"
+    class=".listing.HomepageListingView"
+    attribute="addDataCube"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
     name="visualizations.sort"
     for="edw.datacube.interfaces.IDataCube"
     class=".listing.VisualizationsListingView"
