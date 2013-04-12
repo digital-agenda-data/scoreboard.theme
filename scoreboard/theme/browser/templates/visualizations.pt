@@ -16,7 +16,7 @@
         <p tal:condition="not:visualizations">
           No visualizations.
         </p>
-        <div tal:condition="canModify" class="pull-right">
+        <div tal:condition="canModify" class="pull-left">
           <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
             <i class="icon-plus-sign icon-white"></i> Add new</a>
         </div>
