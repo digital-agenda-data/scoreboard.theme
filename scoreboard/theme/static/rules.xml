@@ -36,7 +36,7 @@
 
     <drop css:content=".documentByLine" />
     <replace css:content-children="#breadcrumbs-current" css:theme-children=".breadcrumbs li:last-of-type" />
-    <before css:theme="#main" css:if-content="#edit-bar">
+    <!--before css:theme="#main" css:if-content="#edit-bar">
         <div id="action-bar">
             <ul class="nav nav-tabs">
             <xsl:for-each css:select="#content-views > li">
@@ -59,7 +59,7 @@
             </xsl:for-each>
             </ul>
          </div>
-    </before>
+    </before-->
 
     <replace css:content-children="#content" css:theme-children="#main" />
     <drop css:content=".download-visualization" />

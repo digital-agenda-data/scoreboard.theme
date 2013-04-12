@@ -18,7 +18,7 @@
         </p>
         <div tal:condition="canModify" class="pull-right">
           <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
-            <i class="icon-plus-sign icon-white"></i> Add Scoreboard visualization</a>
+            <i class="icon-plus-sign icon-white"></i> Add new</a>
         </div>
         <div style="clear: both;"></div>
         <br />

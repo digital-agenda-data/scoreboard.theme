@@ -19,7 +19,7 @@
           No Data Cubes.
         </p>
         <div tal:condition="canModify" class="pull-right">
-          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube"><i class="icon-plus-sign icon-white"></i> Add Data Cube dataset</a>
+          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube"><i class="icon-plus-sign icon-white"></i> Add new</a>
         </div>
         <div style="clear: both;"></div>
         <br />
@@ -45,7 +45,8 @@
               <ul class="linklist">
                 <li tal:condition="not:isAnon">
                   <span>Status:</span>
-                  <span tal:content="state" tal:attributes="class python:'state-%s' % normalizeString(state)">STATE</span>
+                  <span tal:content="state" class="label label-success" tal:condition="python: state == 'published'">STATE</span>
+                  <span tal:content="state" class="label label-inverse" tal:condition="python: state == 'private'">STATE</span>
                 </li>
                 <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
                   Consult the list of indicators, their definition and sources</a></li>
@@ -55,10 +56,10 @@
               <div class="dataset-manage" tal:condition="canModify">
                 <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit"><i class="icon-edit icon-white"></i> Edit</a>
                 <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
-                <a class="btn btn-mini btn-primary" tal:condition="python: state != 'published'"
+                <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
                   tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
-                <a class="btn btn-mini" tal:condition="python: state != 'private'"
-                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=retract"><i class="icon-remove"></i> Unpublish</a>
+                <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
+                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=retract"><i class="icon-remove icon-white"></i> Unpublish</a>
               </div>
             </td>
           </tr>
