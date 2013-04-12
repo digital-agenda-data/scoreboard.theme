@@ -34,7 +34,6 @@ Scoreboard.DatacubesListing.prototype = {
     var parent = items.data('parent') ? items.data('parent') + '/' : '';
     self.settings.sortAction = parent + self.settings.sortAction;
 
-    items.attr('title', 'Click and drag to reorder');
     items.each(function(idx, item){
       jQuery(item).data('order', idx);
     });
@@ -100,7 +99,6 @@ Scoreboard.VisualizationsListing.prototype = {
     var parent = items.data('parent') ? items.data('parent') + '/' : '';
     self.settings.sortAction = parent + self.settings.sortAction;
 
-    items.attr('title', 'Click and drag to reorder');
     items.each(function(idx, item){
       jQuery(item).data('order', idx);
     });
