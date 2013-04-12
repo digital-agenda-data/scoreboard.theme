@@ -30,12 +30,14 @@ Scoreboard.DatacubesListing.prototype = {
   initialize: function(){
     var self = this;
 
+    self.context.addClass('scoreboard-listing-enhanced');
     var items = jQuery(self.settings.sortItems, self.context);
     var parent = items.data('parent') ? items.data('parent') + '/' : '';
     self.settings.sortAction = parent + self.settings.sortAction;
 
     items.each(function(idx, item){
       jQuery(item).data('order', idx);
+      jQuery(item).addClass('scoreboard-listing-item-enhanced');
     });
 
     self.context.sortable({
@@ -95,12 +97,14 @@ Scoreboard.VisualizationsListing.prototype = {
   initialize: function(){
     var self = this;
 
+    self.context.addClass('scoreboard-listing-enhanced');
     var items = jQuery(self.settings.sortItems, self.context);
     var parent = items.data('parent') ? items.data('parent') + '/' : '';
     self.settings.sortAction = parent + self.settings.sortAction;
 
     items.each(function(idx, item){
       jQuery(item).data('order', idx);
+      jQuery(item).addClass('scoreboard-listing-item-enhanced');
     });
 
     self.context.sortable({

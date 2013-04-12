@@ -43,20 +43,24 @@
     padding-left: 0px;
 }
 
-.scoreboard-datacubes-listing-item,
-.scoreboard-visualizations-listing-item {
+.scoreboard-listing-enhanced {
 }
 
-.scoreboard-datacubes-listing-item:hover,
-.scoreboard-visualizations-listing-item:hover {
-    border: 1px dotted #ccc;
+.scoreboard-listing-item-enhanced td:last-child:after {
+    content: ".";
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 0.5em;
 }
 
-.scoreboard-datacubes-listing-item:hover td:last-child:after,
-.scoreboard-visualizations-listing-item:hover td:last-child:after {
-    text-decoration: none;
+.scoreboard-listing-item-enhanced:hover {
+    background-color: whitesmoke;
+}
+
+.scoreboard-listing-item-enhanced:hover td:last-child:after {
     content: "Click and drag to reorder";
-    color: #CCC;
+    color: #ccc;
     display: block;
     text-align: center;
     padding: 0.5em;
