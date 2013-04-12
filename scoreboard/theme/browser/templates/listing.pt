@@ -3,7 +3,7 @@
   <div metal:fill-slot="main" tal:define="cube nocall:here;
                                           normalizeString nocall:context/plone_utils/normalizeString;
                                           isAnon context/@@plone_portal_state/anonymous;">
-    <div id="homepage-listing" class="scoreboard-listing">
+    <div id="homepage-listing" class="scoreboard-listing bootstrap">
       <h1>Digital Agenda Scoreboard</h1>
       <div style="clear:both"></div>
       <div class="listing-description">
@@ -16,15 +16,22 @@
         <p tal:condition="not:cubes">
           No Data Cubes.
         </p>
+        <div tal:condition="not:isAnon" class="pull-right">
+          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/createObject?type_name=DataCube"><i class="icon-plus-sign icon-white"></i> Add Data Cube dataset</a>
+        </div>
+        <div style="clear: both;"></div>
+        <br />
         <table class="scoreboard-datacubes-listing">
           <tal:row repeat="cube cubes">
           <tr class="scoreboard-datacubes-listing-item" tal:attributes="
             id cube/getId;
             data-name cube/getId;
-            data-parent python:cube.getParentNode().absolute_url()">
-            <td tal:define="has_thumbnail python:'thumbnail' in cube.objectIds()">
+            data-parent python:cube.getParentNode().absolute_url()"
+            tal:define="state python:view.getItemState(cube)">
+            <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
               <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                <img tal:condition="has_thumbnail" tal:attributes="src string:${cube/absolute_url}/thumbnail/image_preview"/>
+                <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
+                     tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
                 <img tal:condition="not:has_thumbnail" src="++resource++scoreboard.theme.images/connect_thumbnail.png" />
               </a>
             </td>
@@ -34,7 +41,7 @@
               </a>
               <p tal:content="structure cube/getSummary"></p>
               <ul class="linklist">
-                <li tal:define="state python:view.getItemState(cube)" tal:condition="not:isAnon">
+                <li tal:condition="not:isAnon">
                   <span>Status:</span>
                   <span tal:content="state" tal:attributes="class python:'state-%s' % normalizeString(state)">STATE</span>
                 </li>
@@ -43,6 +50,14 @@
                 <li><a tal:attributes="href string:${cube/absolute_url}">
                   Download the original datasets</a></li>
               </ul>
+              <div class="dataset-manage" tal:condition="not:isAnon">
+                <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit"><i class="icon-edit icon-white"></i> Edit</a>
+                <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                <a class="btn btn-mini btn-primary" tal:condition="python: state != 'published'"
+                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                <a class="btn btn-mini" tal:condition="python: state != 'private'"
+                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=retract"><i class="icon-remove"></i> Unpublish</a>
+              </div>
             </td>
           </tr>
           </tal:row>
