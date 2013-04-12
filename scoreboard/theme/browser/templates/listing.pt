@@ -39,7 +39,7 @@
             </td>
             <td>
               <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                <h5><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h5>
+                <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
               </a>
               <p tal:content="structure cube/getSummary"></p>
               <ul class="linklist">

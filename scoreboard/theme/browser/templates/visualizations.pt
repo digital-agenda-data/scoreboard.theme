@@ -37,7 +37,7 @@
             </td>
             <td>
               <a tal:attributes="href vis/absolute_url">
-                <h5><span tal:replace="repeat/vis/number"/>. <span tal:replace="vis/Title"/></h5>
+                <h3><span tal:replace="repeat/vis/number"/>. <span tal:replace="vis/Title"/></h3>
               </a>
               <p tal:content="vis/Description"></p>
               <div class="dataset-manage" tal:condition="canModify">
