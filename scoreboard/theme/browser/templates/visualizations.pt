@@ -55,14 +55,6 @@
         <li><a tal:attributes="href string:${cube/absolute_url}/indicators">Consult the list of selected indicators, their definition and sources</a>
         <li><a tal:attributes="href cube/absolute_url">Download the original datasets</a>
       </ul>
-      <p class="listing-footer">
-        <a href="http://lod2.eu/"><img src="++resource++scoreboard.theme.images/logo-lod2.png" class="footer-logo" /></a>
-        This visualisation tool was made with the help of the <a href="http://lod2.eu/">Linked Open data, "LOD2" project</a>, co-funded by the
-        European Commission within the FP7 Information and Communication Technologies Work Programme (Grant Agreement No.&nbsp;257943).
-        <br>The project aims at building an integrated technology stack for publishing linked data. The visualisation and open data pages for the
-        digital agenda scoreboard  have been executed as part of the publink activities of the LOD2 project by the LOD2 partners:
-        Tenforce, AKSW research group at the University of Leipzig and OpenLink Software
-      </p>
       <div style="clear:both" />
     </div>
   </div>
