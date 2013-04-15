@@ -36,7 +36,7 @@
               <a tal:attributes="href string:${cube/absolute_url}/visualizations">
                 <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
                      tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
-                <img tal:condition="not:has_thumbnail" src="++resource++scoreboard.theme.images/connect_thumbnail.png" />
+                <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
               </a>
             </td>
             <td>

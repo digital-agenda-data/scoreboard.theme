@@ -1,10 +1,14 @@
 """ Listing Views
 """
+from zope.component import queryUtility
 from zope.annotation.interfaces import IAnnotations
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from persistent.list import PersistentList
 from plone.uuid.interfaces import IUUID
+
+from plone.registry.interfaces import IRegistry
+from edw.datacube.interfaces import IDataCubeSettings
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
@@ -14,6 +18,16 @@ ORDER = 'scoreboard.visualization.order'
 
 
 class ListingView(BrowserView):
+    _cubeSettings = None
+
+    @property
+    def cubeSettings(self):
+        """ Settings
+        """
+        if self._cubeSettings is None:
+            self._cubeSettings = queryUtility(
+                IRegistry).forInterface(IDataCubeSettings, False)
+        return self._cubeSettings
 
     def queryCatalog(self, interface, portal_type=None):
         catalog = getToolByName(self.context, 'portal_catalog')
