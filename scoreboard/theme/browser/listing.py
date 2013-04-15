@@ -1,6 +1,7 @@
 """ Listing Views
 """
 from zope.component import queryUtility
+from zope.security import checkPermission
 from zope.annotation.interfaces import IAnnotations
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
@@ -78,7 +79,8 @@ class VisualizationsListingView(ListingView):
         Return all visualization for this context sorted by position
         in parent
         """
-        relations = self.context.getBRefs()
+        relations = (relation for relation in self.context.getBRefs()
+                if checkPermission('zope2.View', relation))
         anno = IAnnotations(self.context)
         order = anno.get(ORDER, ())
         mapping = dict((IUUID(relation, ''), relation)
