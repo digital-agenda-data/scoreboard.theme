@@ -47,6 +47,20 @@
     template="templates/listing.pt"
     />
 
+  <browser:page
+    name="folder_listing"
+    for="scoreboard.theme.interfaces.IDatasetsContainer"
+    class=".redirect.DatasetContainerRedirectView"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="folder_listing"
+    for="scoreboard.theme.interfaces.IVisualizationsContainer"
+    class=".redirect.VisualizationsContainerRedirectView"
+    permission="zope2.View"
+    />
+
   <browser:resourceDirectory
     name="scoreboard.theme.css"
     directory="css/"
