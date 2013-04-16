@@ -1,5 +1,6 @@
 """ Listing Views
 """
+from urllib import urlencode
 from zope.component import queryUtility
 from zope.security import checkPermission
 from zope.annotation.interfaces import IAnnotations
@@ -65,11 +66,18 @@ class HomepageListingView(ListingView):
         catalog = getToolByName(self.context, 'portal_catalog');
         return [b.getObject() for b in catalog(**query)]
 
-    def addDataCube(self):
+    def addDataCube(self, **kwargs):
         portal_type = 'DataCube'
         container = self.queryCatalog(IDatasetsContainer, portal_type)
         url = container.createObject(type_name=portal_type)
-        self.request.response.redirect(url)
+        params = {}
+        params.update(self.request.form)
+        params.update(kwargs)
+        redirect_url = '%(url)s?%(params)s' % {
+                'url': url,
+                'params': urlencode(params)
+        }
+        self.request.response.redirect(redirect_url)
 
 class VisualizationsListingView(ListingView):
     """ Visualizations listing
@@ -111,12 +119,15 @@ class VisualizationsListingView(ListingView):
         anno[ORDER] = PersistentList(order)
         return 'Done'
 
-    def addVisualization(self):
+    def addVisualization(self, **kwargs):
         portal_type = 'ScoreboardVisualization'
         container = self.queryCatalog(IVisualizationsContainer, portal_type)
         url = container.createObject(type_name=portal_type)
-        redirect_url = '%(url)s?relatedItems=%(uid)s' % {
+        params = {'relatedItems': self.context.UID()}
+        params.update(self.request.form)
+        params.update(kwargs)
+        redirect_url = '%(url)s?%(params)s' % {
                 'url': url,
-                'uid': self.context.UID()
+                'params': urlencode(params)
         }
         self.request.response.redirect(redirect_url)
