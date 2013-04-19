@@ -1,6 +1,6 @@
 """ Redirect Views
 """
-from zope.app.component.hooks import getSite
+from zope.component.hooks import getSite
 from Products.Five.browser import BrowserView
 
 

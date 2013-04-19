@@ -1,6 +1,20 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
   <javascript
+    cacheable="false" cookable="false"
+    id="++resource++scoreboard.theme.js/underscore-min.js"
+    />
+  <javascript
+    cacheable="false" cookable="false"
+    id="++resource++scoreboard.theme.js/backbone-min.js"
+    />
+  <javascript
+    id="++resource++scoreboard.theme.js/handlebars.js"
+    />
+  <javascript
+    id="++resource++scoreboard.theme.js/views.js"
+    />
+  <javascript
     authenticated="True" expression=""
     id="++resource++scoreboard.theme.js/listing.js" />
 </object>

@@ -1,0 +1,14 @@
+{{#if has_selected_scenario}}
+  <h4>To swap scenarios, click one of the icons:</h4>
+{{else}}
+  <h4>Scenarios for this dataset:</h4>
+{{/if}}
+
+{{#each scenarios}}
+<div {{#if selected }} class="selected" {{/if}} id="{{ id }}">
+  <a href="{{ url }}" title="{{ title }}">
+    <img src="{{ image }}" class="scenario_icon" alt="">
+    <label>{{ title }}</label>
+  </a>
+</div>
+{{/each}}
