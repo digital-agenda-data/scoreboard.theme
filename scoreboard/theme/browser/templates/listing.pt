@@ -1,10 +1,9 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
   <div metal:fill-slot="main"
-    tal:define="cube nocall:here;
-                normalizeString nocall:context/plone_utils/normalizeString;
-                isAnon context/@@plone_portal_state/anonymous;
-                canModify python:checkPermission('Modify portal content', cube);">
+    tal:define="normalizeString nocall:context/plone_utils/normalizeString;
+                canAdd python:checkPermission('edw.datacube: Add DataCube', here);
+                isAnon context/@@plone_portal_state/anonymous;">
     <div id="homepage-listing" class="scoreboard-listing bootstrap">
       <h1>Digital Agenda Scoreboard</h1>
       <div style="clear:both"></div>
@@ -18,7 +17,7 @@
         <p tal:condition="not:cubes">
           No Data Cubes.
         </p>
-        <div tal:condition="canModify" class="pull-left">
+        <div tal:condition="canAdd" class="pull-left">
           <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
         </div>
         <div style="clear: both;"></div>
@@ -31,7 +30,9 @@
             data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
             data-authenticator cube/@@authenticator/authenticator;
             data-parent python:cube.getParentNode().absolute_url()"
-            tal:define="state python:view.getItemState(cube)">
+            tal:define="state python:view.getItemState(cube);
+                        canModify python:checkPermission('Modify portal content', cube);
+                        canReview python:checkPermission('Review portal content', cube);">
             <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
               <a tal:attributes="href string:${cube/absolute_url}/visualizations">
                 <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
@@ -55,13 +56,17 @@
                 <li><a tal:attributes="href string:${cube/absolute_url}">
                   Download the original datasets</a></li>
               </ul>
-              <div class="dataset-manage" tal:condition="canModify">
-                <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
-                <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
-                <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
-                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
-                <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
-                  tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=retract"><i class="icon-remove icon-white"></i> Unpublish</a>
+              <div class="dataset-manage" tal:condition="canModify | canReview">
+                <tal:block condition="canModify">
+                  <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
+                  <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                </tal:block>
+                <tal:block condition="canReview">
+                  <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
+                    tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                  <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
+                    tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
+                </tal:block>
               </div>
             </td>
           </tr>
