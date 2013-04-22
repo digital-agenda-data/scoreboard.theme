@@ -41,8 +41,38 @@ Scoreboard.Views = {
       }
     });
 
-    // more views go here
-    // self.MyView = ...
+    self.DatasetNavigationView = Backbone.View.extend({
+      template: self.getTemplate('datacube-navigation'),
+      initialize: function(options){
+        this.cube_url = options.cube_url;
+        this.selected_url = options.selected_url;
+        this.cubes = [];
+        this.has_selected = false;
+        this.update();
+      },
+      update: function(){
+        var view = this;
+        jQuery.ajax({
+          'url': view.cube_url + '/@@datacubes',
+          'success': function(data){
+            view.cubes = jQuery.map(data, function(cube){
+              if(cube.url == view.selected_url){
+                cube.selected = true;
+                view.has_selected = true;
+              }
+              return cube;
+            });
+            view.render();
+          }
+        });
+      },
+      render: function(){
+        this.$el.html(this.template({
+          cubes: this.cubes,
+          has_selected: this.has_selected
+        }));
+      }
+    });
   },
   loadTemplates: function(){
     var self = this;

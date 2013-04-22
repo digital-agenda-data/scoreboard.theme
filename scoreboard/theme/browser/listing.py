@@ -11,6 +11,7 @@ from plone.uuid.interfaces import IUUID
 
 from plone.registry.interfaces import IRegistry
 from edw.datacube.interfaces import IDataCubeSettings
+from edw.datacube.browser.query import jsonify
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
@@ -50,6 +51,31 @@ class ListingView(BrowserView):
         wft = getToolByName(self.context, 'portal_workflow')
         return wft.getInfoFor(obj, 'review_state', '')
 
+    def dataCubesListing(self):
+        catalog = getToolByName(self.context, 'portal_catalog')
+        query = {
+            'portal_type': 'DataCube',
+        }
+        data = []
+        for brain in catalog(**query):
+            cube = brain.getObject()
+            url = cube.absolute_url()
+            thumbnail_field = cube.getField('thumbnail')
+            thumbnail = thumbnail_field.getAccessor(cube)()
+            if thumbnail:
+                image_url = '%s/thumbnail' % url
+            else:
+                image_url = self.cubeSettings.datacube_thumbnail
+            data.append({
+                'id': cube.getId(),
+                'portal_type': cube.portal_type,
+                'url': url,
+                'image': image_url,
+                'title': cube.getExtended_title(),
+                'identifier': cube.title_or_id(),
+                'description': cube.getSummary(),
+            })
+        return jsonify(self.request, data, cache=False)
 
 
 class HomepageListingView(ListingView):
