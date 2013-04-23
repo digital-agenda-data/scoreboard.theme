@@ -44,6 +44,7 @@ Scoreboard.Views = {
     self.DatasetNavigationView = Backbone.View.extend({
       template: self.getTemplate('datacube-navigation'),
       initialize: function(options){
+        this.options = options;
         this.cube_url = options.cube_url;
         this.selected_url = options.selected_url;
         this.cubes = [];
@@ -60,6 +61,7 @@ Scoreboard.Views = {
                 cube.selected = true;
                 view.has_selected = true;
               }
+              cube.options = view.options;
               return cube;
             });
             view.render();
