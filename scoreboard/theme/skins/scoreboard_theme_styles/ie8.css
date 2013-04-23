@@ -1,0 +1,16 @@
+img {
+  border: 0px;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  filter: none;
+}

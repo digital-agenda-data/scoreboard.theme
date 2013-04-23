@@ -1,0 +1,10 @@
+<object name="portal_skins">
+  <object name="scoreboard_theme_templates" meta_type="Filesystem Directory View" directory="scoreboard.theme:skins/scoreboard_theme_templates"/>
+  <object name="scoreboard_theme_images" meta_type="Filesystem Directory View" directory="scoreboard.theme:skins/scoreboard_theme_images"/>
+  <object name="scoreboard_theme_styles" meta_type="Filesystem Directory View" directory="scoreboard.theme:skins/scoreboard_theme_styles"/>
+  <skin-path name="*">
+    <layer name="scoreboard_theme_templates" insert-after="custom"/>
+    <layer name="scoreboard_theme_images" insert-after="custom"/>
+    <layer name="scoreboard_theme_styles" insert-after="custom"/>
+  </skin-path>
+</object>
