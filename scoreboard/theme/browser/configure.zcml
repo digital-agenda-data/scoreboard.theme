@@ -12,6 +12,15 @@
       name="Scoreboard Theme"
       />
 
+  <browser:viewlet
+    name="plone.path_bar"
+    template="templates/path_bar.pt"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class="plone.app.layout.viewlets.common.PathBarViewlet"
+    layer="..interfaces.IThemeSpecific"
+    permission="zope2.View"
+    />
+
   <browser:page
     name="visualizations"
     for="edw.datacube.interfaces.IDataCube"

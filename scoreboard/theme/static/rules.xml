@@ -33,7 +33,7 @@
     <drop css:content="#personaltools-preferences" />
 
     <drop css:content=".documentByLine" />
-    <replace css:content-children="#breadcrumbs-current" css:theme-children=".breadcrumbs li:last-of-type" />
+    <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
     <!--before css:theme="#main" css:if-content="#edit-bar">
         <div id="action-bar">
             <ul class="nav nav-tabs">
