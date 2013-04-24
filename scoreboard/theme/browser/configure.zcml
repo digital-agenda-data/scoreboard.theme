@@ -5,6 +5,13 @@
 
   <include package="plone.app.contentmenu" />
 
+  <!-- 'scoreboard.theme' Zope 3 browser layer -->
+  <interface
+      interface="..interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Scoreboard Theme"
+      />
+
   <browser:page
     name="visualizations"
     for="edw.datacube.interfaces.IDataCube"
@@ -60,6 +67,7 @@
     menu="plone_displayviews"
     permission="zope2.View"
     class=".listing.HomepageListingView"
+    layer="..interfaces.IThemeSpecific"
     template="templates/listing.pt"
     />
 
