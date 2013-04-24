@@ -12,4 +12,16 @@
 <stylesheet
   id="++resource++scoreboard.theme.css/bootstrap.css"
   />
+<stylesheet
+  id="ie8.css"
+  conditionalcomment="IE 8"
+  />
+<stylesheet
+  id="ie9.css"
+  conditionalcomment="IE 9"
+  />
+<stylesheet
+  id="redesignCustom.css"
+  />
 </object>
+
