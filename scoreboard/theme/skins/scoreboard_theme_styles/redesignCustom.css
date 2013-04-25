@@ -292,6 +292,13 @@ body #the-filters select,
 	margin-bottom: 10px;
 }
 
+.section .print a {
+	background: url(print.png) 70px 1px no-repeat;
+	display: block;
+	width: 104px;
+	margin-bottom: 3px;
+}
+
 .section .export a {
 	background: url(download_arrow.png) 70px 1px no-repeat;
 	display: block;
@@ -484,7 +491,7 @@ body .maincontent img {
 	text-align: left;
 }
 
-/* CHART TOOLTIPS 
+/* CHART TOOLTIPS
 .ui-tooltip-* {
 background: red;
 }*/
@@ -532,7 +539,7 @@ tr {
 }
 
 .list_indicators .even {
-	background: #D7E9F8; 
+	background: #D7E9F8;
 }
 
 .list_indicators td {
@@ -765,7 +772,7 @@ body .bootstrap .badge-inverse {
 .editor-charttype .lines {
 	background: #FFF url("line.png") no-repeat 25px 55px;
 }
- 
+
 .editor-charttype .columns {
 	background: #FFF url("column.png") no-repeat 25px 50px;
 }
@@ -859,16 +866,16 @@ body .daviz-warning-helper {
 	.page_margins {
 		width: 990px;
 	}
-	
+
 	.right_column {
 		width: 470px;
 	}
-	
-	.editor-advanced textarea, 
+
+	.editor-advanced textarea,
 	.editor-annotations textarea {
 		width: 670px;
 	}
-	
+
 	#the-navigation div {
 		width: 141px;
 	}
