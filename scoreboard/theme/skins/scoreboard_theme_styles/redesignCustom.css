@@ -297,6 +297,7 @@ body #the-filters select,
 	display: block;
 	width: 104px;
 	margin-bottom: 3px;
+	padding-bottom: 2px;
 }
 
 .section .export a {
