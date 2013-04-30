@@ -881,3 +881,14 @@ body .daviz-warning-helper {
 		width: 141px;
 	}
 }
+
+.checkbox-label-box {
+    padding: 0;
+}
+
+.checkbox-label-box label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
