@@ -752,6 +752,10 @@ body .bootstrap .badge-inverse {
 	display: none;
 }
 
+.daviz-settings .action-buttons {
+  float: right;
+}
+
 .editor-current-step table {
 	margin-bottom: 10px;
 	background: #FFF;
