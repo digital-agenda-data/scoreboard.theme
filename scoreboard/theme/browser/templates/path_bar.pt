@@ -15,7 +15,7 @@
           <span tal:replace="title">crumb</span>
         </li>
         <li tal:condition="python:is_last and is_vis and related_items">
-          <a tal:attributes="href python:related_items[0].absolute_url()"
+          <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
             tal:content="python:related_items[0].title_or_id()">Cube title</a>
         </li>
       </tal:item>
