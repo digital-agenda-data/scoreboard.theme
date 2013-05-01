@@ -744,6 +744,14 @@ body .bootstrap .badge-inverse {
 	margin-left: 270px;
 }
 
+.daviz-settings .warningMessage {
+	display: none;
+}
+
+.daviz-settings ul.formTabs {
+	display: none;
+}
+
 .editor-current-step table {
 	margin-bottom: 10px;
 	background: #FFF;
