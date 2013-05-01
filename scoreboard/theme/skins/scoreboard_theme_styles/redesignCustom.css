@@ -916,3 +916,11 @@ body .bootstrap .btn {
 body .ui-widget-content {
 	border: 0px;
 }
+
+.indicatorsSpinner {
+  background: url(spinner-big.gif) no-repeat scroll 0 0 transparent;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-top: 8px;
+  font-weight: bold;
+}

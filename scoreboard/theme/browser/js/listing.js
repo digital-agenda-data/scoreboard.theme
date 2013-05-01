@@ -341,5 +341,11 @@ jQuery(document).ready(function(){
     });
   }
 
+  // Change 'related content' label
+  items = jQuery('#relatedItemBox dt');
+  if(items.length){
+    items.html('Dataset:');
+  }
+
   Scoreboard.Confirm.initialize();
 });
