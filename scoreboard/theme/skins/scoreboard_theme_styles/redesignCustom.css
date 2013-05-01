@@ -293,11 +293,11 @@ body #the-filters select,
 }
 
 .section .print a {
-	background: url(print.png) 70px 1px no-repeat;
+	background: url(print.png) 35px 1px no-repeat;
 	display: block;
 	width: 104px;
 	margin-bottom: 3px;
-	padding-bottom: 2px;
+	padding-bottom: 2px;
 }
 
 .section .export a {
@@ -778,6 +778,10 @@ body .bootstrap .badge-inverse {
 	background: #FFF url("column.png") no-repeat 25px 50px;
 }
 
+.editor-charttype .evolution_columns {
+	background: #FFF url("evolution_column.png") no-repeat 25px 50px;
+}
+
 .editor-charttype .scatter {
 	background: #FFF url("scatter.png") no-repeat 23px 65px;
 }
@@ -882,13 +886,21 @@ body .daviz-warning-helper {
 	}
 }
 
-.checkbox-label-box {
-    padding: 0;
+
+/*  confirmation dialog*/
+body .scoreboard-confirm-overlay {
+	box-shadow: 0px 0px 10px #000;
 }
 
-.checkbox-label-box label {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
+body .ui-widget {
+	font-family: 'Droid Sans', Arial, sans-serif;
+	font-size: 12px;
+}
+
+body .bootstrap .btn {
+	padding: 0px 6px; /* or we could add bth-mini  class on those buttons*/
+}
+
+body .ui-widget-content {
+	border: 0px;
 }
