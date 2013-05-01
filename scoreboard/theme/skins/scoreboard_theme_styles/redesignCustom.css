@@ -794,6 +794,10 @@ body .bootstrap .badge-inverse {
 	background: #FFF url("evolution_column.png") no-repeat 25px 50px;
 }
 
+.editor-charttype .country_profile {
+	background: #FFF url("country_profile.png") no-repeat 25px 50px;
+}
+
 .editor-charttype .scatter {
 	background: #FFF url("scatter.png") no-repeat 23px 65px;
 }
