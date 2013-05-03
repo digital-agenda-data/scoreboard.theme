@@ -928,3 +928,29 @@ body .ui-widget-content {
   padding-top: 8px;
   font-weight: bold;
 }
+
+dl.portalMessage {
+  border: 1px solid #996;
+  background-color: #ffffe3;
+  font-size: 80%;
+  margin: 1em 0;
+}
+
+.portalMessage dt {
+  background-color: #996;
+  font-weight: bold;
+  float: left;
+  margin: 0 0.5em 0 0;
+  padding: 0.5em 0.75em;
+  color: White;
+  line-height: 1.25em;
+}
+
+.portalMessage dd {
+  color: black;
+  border-bottom: 1px solid #888;
+  padding: 0.5em 0.5em;
+  margin: 0;
+  line-height: 1.25em;
+  font-weight: bold;
+}
