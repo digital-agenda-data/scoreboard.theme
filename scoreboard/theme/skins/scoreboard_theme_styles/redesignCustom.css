@@ -31,6 +31,8 @@ a {
 	text-decoration: none;
 }
 
+a img {border:none}
+
 a:hover {
 	text-decoration: underline;
 }
@@ -953,4 +955,8 @@ dl.portalMessage {
   margin: 0;
   line-height: 1.25em;
   font-weight: bold;
+}
+
+input#__ac_name , input#__ac_password {
+  width: 150px
 }
