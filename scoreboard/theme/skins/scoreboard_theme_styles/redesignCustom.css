@@ -770,7 +770,11 @@ body .bootstrap .badge-inverse {
 	padding: 10px;
 }
 
-.editor-charttype label {
+.editor-charttype .chart-type-container {
+	overflow: hidden;
+}
+
+.editor-charttype label.chart-type {
 	display: inline-block;
 	width: 180px;
 	height: 170px;
