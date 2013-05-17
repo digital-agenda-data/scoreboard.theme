@@ -16,6 +16,7 @@ Scoreboard.Views = {
         this.scenarios = [];
         this.has_selected_scenario = false;
         this.update();
+        this.hashcfg = '';
       },
       update: function(){
         var view = this;
@@ -33,9 +34,17 @@ Scoreboard.Views = {
           }
         });
       },
+      update_hashcfg: function(hashcfg) {
+        this.hashcfg = hashcfg;
+        this.render();
+      },
       render: function(){
         this.$el.html(this.template({
-          scenarios: this.scenarios,
+          scenarios: _(this.scenarios).map(function(scenario) {
+            return _({
+              hashcfg: this.hashcfg
+            }).extend(scenario);
+          }, this),
           has_selected_scenario: this.has_selected_scenario
         }));
       }

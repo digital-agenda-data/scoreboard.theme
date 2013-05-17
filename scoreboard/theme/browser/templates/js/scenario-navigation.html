@@ -6,7 +6,7 @@
 
 {{#each scenarios}}
 <div {{#if selected }} class="selected" {{/if}} id="{{ id }}">
-  <a href="{{ url }}" title="{{ title }}">
+  <a href="{{ url }}#{{ hashcfg }}" title="{{ title }}">
     <img src="{{ image }}" class="scenario_icon" alt="">
     <label>{{ title }}</label>
   </a>
