@@ -808,6 +808,10 @@ body .bootstrap .badge-inverse {
 	background: #FFF url("scatter.png") no-repeat 23px 65px;
 }
 
+.editor-charttype .bubbles {
+	background: #FFF url("bubbles.png") no-repeat 23px 65px;
+}
+
 .editor-charttype .map {
 	background: #FFF url("map.png") no-repeat 25px 50px;
 }
