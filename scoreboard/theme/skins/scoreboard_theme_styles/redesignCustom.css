@@ -352,7 +352,7 @@ body .ui-widget {
 
 /*  NAVIGATION WIDGET */
 .navigation_icon, .scenario_icon {
-	height: 64px;
+	height: 85px;
 	border: 1px solid #ccc;
 	-webkit-box-shadow: 1px 2px 2px #999;
 	box-shadow: 1px 2px 2px #999;
@@ -364,12 +364,13 @@ body .ui-widget {
 	clear: both;
 	padding-top: 10px;
 	margin-bottom: 10px;
+    margin-right: 210px;
 }
 
 .navigation-widget div {
 	display: inline-block;
-	width: 150px;
-	height: 130px;
+	width: 175px;
+	height: 150px;
 	margin-right: -6px;
 	background: #fff;
 	-moz-border-radius: 3px;
@@ -402,7 +403,7 @@ body .ui-widget {
 	display: block;
 	cursor: pointer;
 	overflow: hidden;
-	padding: 10px 10px 5px 18px;
+	padding: 10px 10px 5px 15px;
 }
 
 #relatedItemBox dt {
