@@ -53,7 +53,7 @@
                 </li>
                 <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
                   Consult the list of indicators, their definition and sources</a></li>
-                <li><a tal:attributes="href string:${cube/absolute_url}">
+                <li><a tal:attributes="href string:${cube/absolute_url}#download">
                   Download the original datasets</a></li>
               </ul>
               <div class="dataset-manage" tal:condition="canModify | canReview">

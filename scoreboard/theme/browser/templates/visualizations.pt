@@ -76,7 +76,7 @@
       <h2>Further Information</h2>
       <ul>
         <li><a tal:attributes="href string:${cube/absolute_url}/indicators">Consult the list of selected indicators, their definition and sources</a></li>
-        <li><a tal:attributes="href string:${cube/absolute_url}">Download the original datasets</a></li>
+        <li><a tal:attributes="href string:${cube/absolute_url}#download">Download the original datasets</a></li>
       </ul>
       <div style="clear:both" />
     </div>
