@@ -180,13 +180,38 @@ body #amount {
 	overflow: hidden;
 	color: #555;
 	background: rgb(225, 240, 247);
-	padding: 10px;
+	padding: 3px;
 }
 
 body #the-filters select,
 .ui-button-text,
 .select2-search-choice div {
 	font-size: 12px;
+}
+
+#the-filters p.default-hidden {
+    visibility:hidden;
+    margin: 0;
+    height: 0px;
+}
+
+#scenario-box.bubble-chart div.upper-left p.default-hidden, #scenario-box.bubble-chart div.upper-right p.default-hidden {
+    visibility:visible;
+    height: 1em;
+}
+
+#scenario-box.scatter-chart div.upper-left p.default-hidden, #scenario-box.scatter-chart div.upper-right p.default-hidden {
+    visibility:visible;
+    height: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+#scenario-box.bubble-chart div.upper-left p.default-hidden, #scenario-box.bubble-chart div.upper-right p.default-hidden, #scenario-box.bubble-chart div.bottom-right p.default-hidden {
+    visibility:visible;
+    height: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
 }
 
 #the-filters label {
@@ -197,27 +222,31 @@ body #the-filters select,
 	vertical-align: top;
 }
 
-#the-filters .right_column label {
+#scenario-box.scatter-chart #the-filters .upper-right label, #scenario-box.bubble-chart #the-filters .upper-right label , #scenario-box.bubble-chart #the-filters .bottom-right label{
+	display: inline-block;
+}
+
+#the-filters .right_column label, #the-filters .upper-right label, #the-filters .bottom-right label {
 	display: block;
 }
 
-.left_column {
+.left_column, .upper-left, .bottom-left {
 	float: left;
 	width: 490px;
 	display: inline-block;
 }
 
-.left_column select {
+.left_column select, .upper-left select, .bottom-left select, .upper-right select , .bottom-right select  {
 	width: 320px;
 }
 
-.right_column {
+.right_column, .upper-right, .bottom-right{
 	float: right;
 	width: 600px;
 	display: inline-block;
 }
 
-.right_column .select2-container {
+.right_column .select2-container, .upper-right .select2-container, .bottom-right .select2-container {
 	width: 100%;
 }
 
@@ -968,4 +997,8 @@ dl.portalMessage {
 
 input#__ac_name , input#__ac_password {
   width: 150px
+}
+
+.daviz-views {
+  padding-top: 0;
 }
