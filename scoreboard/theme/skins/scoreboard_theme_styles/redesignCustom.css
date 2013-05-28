@@ -195,22 +195,11 @@ body #the-filters select,
     height: 0px;
 }
 
-#scenario-box.bubbles-chart div.upper-left p.default-hidden, #scenario-box.bubbles-chart div.upper-right p.default-hidden {
-    visibility:visible;
-    height: 1em;
-}
-
-#scenario-box.scatter-chart div.upper-left p.default-hidden, #scenario-box.scatter-chart div.upper-right p.default-hidden {
+#scenario-box #the-filters p:not(.default-hidden){
     visibility:visible;
     height: 1em;
     margin-bottom: 0.5em;
-    font-weight: bold;
-}
-
-#scenario-box.bubbles-chart div.upper-left p.default-hidden, #scenario-box.bubbles-chart div.upper-right p.default-hidden, #scenario-box.bubbles-chart div.bottom-right p.default-hidden {
-    visibility:visible;
-    height: 1em;
-    margin-bottom: 0.5em;
+    margin-top: 0.5em;
     font-weight: bold;
 }
 
