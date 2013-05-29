@@ -991,3 +991,10 @@ input#__ac_name , input#__ac_password {
 .daviz-views {
   padding-top: 0;
 }
+
+#map-title{
+    text-align: center;
+    font-size: 1.2em;
+    color: #000000;
+    font-weight: bold;
+}
