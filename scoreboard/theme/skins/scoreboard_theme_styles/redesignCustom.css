@@ -998,3 +998,15 @@ input#__ac_name , input#__ac_password {
     color: #000000;
     font-weight: bold;
 }
+
+/*  add a loading animated GIF for all charts and filters */
+#the-chart,
+.loading-small {
+	background: url(green_loader.gif) no-repeat;
+	background-position: bottom center;
+	min-height: 20px;
+}
+
+#the-chart.loading-small {
+	margin: 15px 0px;
+}
