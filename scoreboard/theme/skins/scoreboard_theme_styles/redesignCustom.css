@@ -230,7 +230,7 @@ body #the-filters select,
 }
 
 .upper-right, .bottom-right{
-	float: right;
+	float: right !important;
 	width: 630px;
 	display: inline-block;
 }
