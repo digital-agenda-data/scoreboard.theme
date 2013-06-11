@@ -215,36 +215,33 @@ body #the-filters select,
 	display: inline-block;
 }
 
-#the-filters .right_column label, #the-filters .upper-right label, #the-filters .bottom-right label {
+#the-filters .upper-right label, #the-filters .bottom-right label {
 	display: block;
 }
 
-.left_column, .upper-left, .bottom-left {
+.upper-left, .bottom-left {
 	float: left;
-	width: 490px;
+	width: 470px;
 	display: inline-block;
 }
 
-.left_column select, .upper-left select, .bottom-left select, .upper-right select , .bottom-right select  {
+.upper-left select, .bottom-left select, .upper-right select , .bottom-right select  {
 	width: 320px;
 }
 
-.right_column, .upper-right, .bottom-right{
+.upper-right, .bottom-right{
 	float: right;
-	width: 600px;
+	width: 630px;
 	display: inline-block;
 }
 
-.right_column .select2-container, .upper-right .select2-container, .bottom-right .select2-container {
+.upper-right .select2-container, .bottom-right .select2-container {
 	width: 100%;
 }
 
-#breakdown,
-#measure_unit,
-#measure_unitX,
-#measure_unitY {
-	display: inline-block;
-	width: 400px;
+#the-filters .chart-controls {
+	display: block;
+	float: left;
 }
 
 .section-content {
@@ -917,8 +914,8 @@ body .daviz-warning-helper {
 		width: 990px;
 	}
 
-	.right_column {
-		width: 470px;
+	.upper-right, .bottom-right {
+		width: 500px;
 	}
 
 	.editor-advanced textarea,
@@ -1000,13 +997,17 @@ input#__ac_name , input#__ac_password {
 }
 
 /*  add a loading animated GIF for all charts and filters */
-#the-chart,
 .loading-small {
-	background: url(green_loader.gif) no-repeat;
-	background-position: bottom center;
-	min-height: 20px;
+	background: url(loading-bar.gif) no-repeat;
+	background-position: 100px 1px;
+}
+
+#the-filters .loading-small {
+	min-height: 19px;
+ 	width: 400px;
 }
 
 #the-chart.loading-small {
 	margin: 15px 0px;
+ 	min-height: 50px;
 }
