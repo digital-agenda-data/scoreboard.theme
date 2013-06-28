@@ -1,4 +1,4 @@
-/*  LAYOUT */
+﻿/*  LAYOUT */
 body,
 .template-indicators {
 	background: #fff;
@@ -696,7 +696,7 @@ body .bootstrap .badge-inverse {
 
 .editor-steps {
 	border-right: 0px;
-	width: 250px;
+	width: 220px; /*250px;*/
 	float: left;
 }
 
@@ -759,7 +759,7 @@ body .bootstrap .badge-inverse {
 .editor-box h4,
 .editor-current-step,
 .daviz-view-form {
-	margin-left: 270px;
+	margin-left: 240px; /*270px; */
 }
 
 .daviz-settings .warningMessage {
@@ -774,16 +774,46 @@ body .bootstrap .badge-inverse {
   float: right;
 }
 
-.editor-current-step table {
-	margin-bottom: 10px;
-	background: #FFF;
-}
-
+/*  Facets menu item */
 .editor-current-step {
 	overflow: hidden;
 	background: #eee;
 	margin-bottom: 10px;
 	padding: 10px;
+	width: auto;
+	min-width: 715px;
+}
+
+.editor-current-step .facets {
+	margin-bottom: 10px;
+	background: #FFF;
+	width: 100%; 
+}
+
+.editor-current-step .facets .facet-sort {
+	width: 10px;
+	border: 1px solid #BEBEBE;
+	background: #DDD;
+	padding: 3px 0px 3px 3px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.editor-current-step .facets .facet-sort:hover {
+	text-decoration: none;
+	background: #eee;
+}
+
+body .editor-current-step .facets .select2-container {
+	margin-top: 4px;
+}
+
+.editor-current-step .facets label {
+	display: inline-block;
+	width: 90px;
+	font-size: 11px;
+	height: 19px;
+	padding-top: 4px;
 }
 
 .editor-charttype .chart-type-container {
@@ -860,6 +890,15 @@ body .bootstrap .badge-inverse {
 	margin-top: -1px;
 }
 
+.editor-axes fieldset {
+	margin-bottom: 10px;
+}
+
+.editor-axes legend,
+.editor-axes fieldset div {
+	margin-bottom: 5px;
+}
+
 .editor-axes fieldset input {
 	margin-top: -1px;
 }
@@ -879,9 +918,16 @@ body .bootstrap .badge-inverse {
 	margin-bottom: 10px;
 }
 
-.editor-format label,
+.editor-format textarea {
+	width: 97%;
+}
+
+.editor-format label {
+	width: 75px;
+}
+
 .editor-series label {
-	width: 100px;
+	width: 125px;
 }
 
 .editor-series li label {
@@ -908,13 +954,18 @@ body .daviz-warning-helper {
 	padding-bottom: 3px;
 }
 
+body .select2-container-multi .select2-choices .select2-search-field input {
+	height: auto; /*  instead of 12px, as select2.css:405 said*/
+}
+
 /*  for  1024x768px resolutions */
 @media screen and (max-width: 1024px) {
 	.page_margins {
 		width: 990px;
 	}
 
-	.upper-right, .bottom-right {
+	.upper-right, 
+	.bottom-right {
 		width: 490px;
 	}
 
