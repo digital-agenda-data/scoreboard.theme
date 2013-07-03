@@ -888,10 +888,18 @@ body .bootstrap .badge-inverse {
     padding: 0 0 0 0;
 }
 
+.editor-facet-field.checkbox {
+    padding: 0 0 0 0;
+}
+
 .editor-facet-field.checkbox label, .editor-facet-field.checkbox input {
     display: inline-block;
     vertical-align: middle;
     margin: 0 0 0.5em 0;
+}
+
+.editor-facet-field.checkbox input[type="checkbox"] {
+    width: 20px;
 }
 
 .editor-current-step .facets .facet-sort {
