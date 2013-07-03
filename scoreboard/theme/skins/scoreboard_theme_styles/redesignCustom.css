@@ -19,9 +19,18 @@ body #the-filters select,
 body .select2-container-multi .select2-choices .select2-search-field input,
 body .select2-drop.select2-drop-multi.select2-drop-active {
 	font-family: 'Droid Sans', Arial, sans-serif !important;
+}
+
+body .select2-drop.select2-drop-multi.select2-drop-active {
 	font-size: 12px !important;
 }
 
+body .select2-container-multi .select2-choices .select2-search-field input {
+	font-size: 12px !important;
+    padding: 0px;
+    margin: 0px 0;
+    color: #555;
+}
 #main {
 	margin-left: 0px;
 }
@@ -728,8 +737,11 @@ body .bootstrap .badge-inverse {
 
 .editor-steps li a:visited,
 .editor-steps li a:hover {
-	color: #0073A8;
+	color: #074A8B;
 	text-decoration: none;
+}
+.editor-steps li a{
+	color: #074A8B;
 }
 
 .editor-steps li a:hover {
@@ -752,7 +764,7 @@ body .bootstrap .badge-inverse {
 }
 
 .editor-steps li.current a {
-	background-color: #08C;
+	background-color: #074A8B;
 	color: #fff;
 }
 
@@ -777,21 +789,113 @@ body .bootstrap .badge-inverse {
 /*  Facets menu item */
 .editor-current-step {
 	overflow: hidden;
-	background: #eee;
+	background: #fff;
 	margin-bottom: 10px;
 	padding: 10px;
 	width: auto;
 	min-width: 715px;
 }
 
-.editor-current-step .facets {
+.editor-current-step  input[type="text"], .editor-current-step  select, .editor-current-step  label {
+    font-size: 12px;
+	font-family: 'Droid Sans', Arial, sans-serif;
+    color: #000;
+}
+
+.editor-structure-field label {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    color: rgb(85, 85, 85);
+    margin: 0 0 2px 0;
+    line-height: 16px;
+    vertical-align: middle;
+    padding-left: 14px;
+}
+.editor-structure-field select {
+    width: 350px;
+    height: 25px;
+    font-size: 12px;
+    color: #000;
+    margin: 0 0 2px 0;
+    padding: 0 0 0 0;
+    vertical-align: middle;
+}
+.editor-structure-field label.checkbox {
+    width: 200px;
+    margin-left: 10px;
+}
+.editor-structure-field label.checkbox input[type="checkbox"] {
+    height: 16px;
+    margin-top:0px;
+}
+.editor-current-step .facets, .editor-current-step  .editor-structure, .editor-structure-multiple-series, .editor-structure-categories-by {
 	margin-bottom: 10px;
 	background: #FFF;
-	width: 100%; 
+	width: 730px; 
+}
+
+.editor-current-step .facets .editor-facets {
+	margin-bottom: 10px;
+    padding-bottom: 10px;
+	border: 1px solid #DDD;
+    background: rgb(225, 240, 247);
+}
+.editor-facet-name {
+	font-size: 14px;
+    font-weight: bold;
+}
+
+.editor-structure-title {
+	font-size: 12px;
+	border: 1px solid #DDD;
+    background: rgb(225, 240, 247);
+}
+
+.editor-facet-field label {
+    display: block;
+    font-size: 12px;
+    color: rgb(85, 85, 85);
+    margin: 0 0 0 0;
+    line-height: 16px;
+    vertical-align: bottom;
+}
+.editor-facet-field input, .editor-facet-field textarea, .editor-facet-field div.select2-container {
+    margin: 0 0 1em 0;
+	font-family: 'Droid Sans', Arial, sans-serif !important;
+    width: 700px;
+}
+.editor-facet-field div.select2-container input {
+    color: #555 !important;
+}
+
+.editor-facet-field input, .editor-facet-field textarea{
+    color: #000 !important;
+    font-size: 12px !important;
+    padding: 1px 6px 1px 6px !important;
+}
+
+.editor-facet-field div.select2-container .select2-choices .select2-search-field input {
+       height: auto;
+}
+
+.editor-facet-field select {
+    width: 350px;
+    height: 25px;
+    font-size: 12px;
+    color: #000;
+    margin: 0 0 1em 0;
+    padding: 0 0 0 0;
+}
+
+.editor-facet-field.checkbox label, .editor-facet-field.checkbox input {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0.5em 0;
 }
 
 .editor-current-step .facets .facet-sort {
-	width: 10px;
+	width: 13px;
 	border: 1px solid #BEBEBE;
 	background: #DDD;
 	padding: 3px 0px 3px 3px;
@@ -801,19 +905,7 @@ body .bootstrap .badge-inverse {
 
 .editor-current-step .facets .facet-sort:hover {
 	text-decoration: none;
-	background: #eee;
-}
-
-body .editor-current-step .facets .select2-container {
-	margin-top: 4px;
-}
-
-.editor-current-step .facets label {
-	display: inline-block;
-	width: 90px;
-	font-size: 11px;
-	height: 19px;
-	padding-top: 4px;
+	background: #fff;
 }
 
 .editor-charttype .chart-type-container {
@@ -952,10 +1044,6 @@ body .daviz-warning-helper {
 
 #toolbar {
 	padding-bottom: 3px;
-}
-
-body .select2-container-multi .select2-choices .select2-search-field input {
-	height: auto; /*  instead of 12px, as select2.css:405 said*/
 }
 
 /*  for  1024x768px resolutions */
