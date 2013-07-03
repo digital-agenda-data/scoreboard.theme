@@ -899,6 +899,7 @@ body .bootstrap .badge-inverse {
 }
 
 .editor-facet-field.checkbox input[type="checkbox"] {
+    margin: 0 0 0 0;
     width: 20px;
 }
 
