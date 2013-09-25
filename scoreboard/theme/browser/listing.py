@@ -20,6 +20,18 @@ from scoreboard.theme.interfaces import IVisualizationsContainer
 ORDER = 'scoreboard.visualization.order'
 
 
+class DocListingView(BrowserView):
+
+    def get_docs(self):
+        catalog = getToolByName(self.context, 'portal_catalog')
+        path = {
+            'query': self.context.absolute_url_path(),
+        }
+        return [b.getObject() for b in catalog(path=path, portal_type='File')]
+        #.title
+        #.creation_date
+        #.absolute_url_path()
+
 class ListingView(BrowserView):
     _cubeSettings = None
 
