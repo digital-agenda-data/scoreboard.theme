@@ -6,6 +6,10 @@
         -->
         <style>
             h1 {text-align:center;}
+            .bluebox {
+                background-color: #E1F0F7;
+                padding: 1em;
+            }
             .docsTable {
                 margin: 20px 0;
                 width:100%;
@@ -21,6 +25,11 @@
                 
         </style>
         <h1> Documentation </h1>
+        <p class="bluebox">
+            This page presents some reports and notes about the technical characteristics of the project developing the present visualisation tool and semantic repository.
+            <br>
+            The project is supported by contract SMART 2012/0103 executed by Eau de Web in partnership with Triple Dev.
+        </p>
         <tal:block define="docs view/get_docs">
             <table class="docsTable">
                 <thead style="font-size:1.2em;">
