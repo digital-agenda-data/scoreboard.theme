@@ -25,7 +25,7 @@ class DocListingView(BrowserView):
     def get_docs(self):
         catalog = getToolByName(self.context, 'portal_catalog')
         path = {
-            'query': self.context.absolute_url_path(),
+            'query': '/'.join(self.context.getPhysicalPath())
         }
         return [b.getObject() for b in catalog(path=path, portal_type='File')]
         #.title
