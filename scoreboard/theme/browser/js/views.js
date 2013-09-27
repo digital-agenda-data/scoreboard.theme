@@ -109,4 +109,10 @@ Scoreboard.Views = {
 
 jQuery(document).ready(function(){
   Scoreboard.Views.init();
+
+  // Change 'related content' label
+  items = jQuery('#relatedItemBox dt');
+  if(items.length){
+    items.html('Entire dataset metadata and download services:');
+  }
 });
