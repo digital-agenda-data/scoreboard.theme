@@ -224,10 +224,6 @@ body #the-filters select,
 	display: inline-block;
 }
 
-#the-filters .upper-right label, #the-filters .bottom-right label {
-	display: block;
-}
-
 .upper-left, .bottom-left {
 	float: left;
 	width: 470px;
