@@ -267,6 +267,32 @@ body #the-filters select,
 	height: 500px;
 }
 
+/* match map download button with highcharts download button style */
+#the-chart .mapExportPngButton
+{
+position: absolute;
+top: 45px;
+right: 0;
+z-index: 10;
+font-size: 12px;
+font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+padding: 4px 2px;
+background: transparent;
+border: 1px solid transparent;
+box-shadow: 0 0 0 #FFF;
+}
+#the-chart .mapExportPngButton:hover
+{
+border: 1px solid #68A;
+background: #adcdff;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8fbff), to(#adcdff));
+background: -webkit-linear-gradient(top, #f8fbff, #adcdff);
+background: -moz-linear-gradient(top, #f8fbff, #adcdff);
+background: -ms-linear-gradient(top, #f8fbff, #adcdff);
+background: -o-linear-gradient(top, #f8fbff, #adcdff);
+}
+/* end match map download button with highcharts download button style */
+
 
 /*  section ANNOTATIONS*/
 .legend {
