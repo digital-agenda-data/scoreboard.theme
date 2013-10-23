@@ -265,6 +265,7 @@ body #the-filters select,
 
 #the-chart .map-chart {
 	height: 500px;
+    position: relative;
 }
 
 /* match map download button with highcharts download button style */
