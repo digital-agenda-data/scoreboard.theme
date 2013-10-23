@@ -263,9 +263,10 @@ body #the-filters select,
 	margin-top: 6px;
 }
 
+#the-chart {position: relative;}
+
 #the-chart .map-chart {
 	height: 500px;
-    position: relative;
 }
 
 /* match map download button with highcharts download button style */
