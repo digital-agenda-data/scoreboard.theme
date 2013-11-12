@@ -343,17 +343,19 @@ background: -o-linear-gradient(top, #f8fbff, #adcdff);
 }
 
 .section .print a {
-	background: url(print.png) 35px 1px no-repeat;
+	background: url(print.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
 	margin-bottom: 3px;
+    padding-left: 30px;
 	padding-bottom: 2px;
 }
 
 .section .export a {
-	background: url(download_arrow.png) 70px 1px no-repeat;
+	background: url(download_arrow.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
+    padding-left: 30px;
 	margin-bottom: 3px;
 }
 
