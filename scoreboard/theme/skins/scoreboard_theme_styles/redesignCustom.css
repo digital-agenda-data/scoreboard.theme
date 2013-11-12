@@ -1185,3 +1185,16 @@ input#__ac_name , input#__ac_password {
 	margin: 15px 0px;
  	min-height: 50px;
 }
+
+div.qtip-default.qtip-pos-tl .qtip-titlebar .qtip-title, div.qtip-default.qtip-pos-tl .qtip-content{
+    font-family: 'Segoe UI',Verdana, Arial, sans-serif;
+	font-size: 12px;
+}
+div.qtip-default.qtip-pos-tl {
+    background-color: #FFFFFF;
+    border-color: rgb(0, 101, 162) !important;
+}
+
+div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-content{
+    background-color: #FFFFFF;
+}
