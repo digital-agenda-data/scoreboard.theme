@@ -310,7 +310,7 @@ background: -o-linear-gradient(top, #f8fbff, #adcdff);
 	margin-top: 2px;
 }
 
-.legend p {
+.legend, .legend p {
 	font-size: 12px;
 }
 
@@ -346,6 +346,7 @@ background: -o-linear-gradient(top, #f8fbff, #adcdff);
 	background: url(print.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
+    font-size: 12px;
 	margin-bottom: 3px;
     padding-left: 30px;
 	padding-bottom: 2px;
@@ -355,6 +356,7 @@ background: -o-linear-gradient(top, #f8fbff, #adcdff);
 	background: url(download_arrow.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
+    font-size: 12px;
     padding-left: 30px;
 	margin-bottom: 3px;
 }
