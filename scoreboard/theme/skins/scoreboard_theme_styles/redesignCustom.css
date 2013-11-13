@@ -10,23 +10,23 @@ body,
 .page_margins {
 	margin: 0 auto;
 	width: 1120px;
-	font-family: 'Droid Sans', Arial, sans-serif;
-	font-size: 12px;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+	font-size: 11px;
 }
 
 body .select2-container,
 body #the-filters select,
 body .select2-container-multi .select2-choices .select2-search-field input,
 body .select2-drop.select2-drop-multi.select2-drop-active {
-	font-family: 'Droid Sans', Arial, sans-serif !important;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
 }
 
 body .select2-drop.select2-drop-multi.select2-drop-active {
-	font-size: 12px !important;
+	font-size: 11px !important;
 }
 
 body .select2-container-multi .select2-choices .select2-search-field input {
-	font-size: 12px !important;
+	font-size: 11px !important;
     padding: 0px;
     margin: 0px 0;
     color: #555;
@@ -58,7 +58,7 @@ button,
 	display: inline-block;
 	margin-bottom: 0;
 	padding: 0 6px;
-	font-size: 10.5px;
+	font-size: 11px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -138,11 +138,11 @@ button:hover {
 
 #banner-title-text {
 	position: absolute;
-	top: 65px;
+	top: 55px;
 	margin: 0;
 	margin-left: 215px;
 	border: 0;
-	font-size: 18px;
+	font-size: 22px;
 	line-height: 1.2;
 	color: rgb(0, 101, 162);
 	text-transform: uppercase;
@@ -195,7 +195,7 @@ body #amount {
 body #the-filters select,
 .ui-button-text,
 .select2-search-choice div {
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #the-filters p.default-hidden {
@@ -222,10 +222,6 @@ body #the-filters select,
 
 #scenario-box.scatter-chart #the-filters .upper-right label, #scenario-box.bubbles-chart #the-filters .upper-right label , #scenario-box.bubbles-chart #the-filters .bottom-right label{
 	display: inline-block;
-}
-
-#the-filters .upper-right label, #the-filters .bottom-right label {
-	display: block;
 }
 
 .upper-left, .bottom-left {
@@ -267,9 +263,37 @@ body #the-filters select,
 	margin-top: 6px;
 }
 
+#the-chart {position: relative;}
+
 #the-chart .map-chart {
 	height: 500px;
 }
+
+/* match map download button with highcharts download button style */
+#the-chart .mapExportPngButton
+{
+position: absolute;
+top: 45px;
+right: 0;
+z-index: 10;
+font-size: 11px;
+font-family: "Lucida Grande", "Lucida Sans Unicode", 'Segoe UI', Verdana, Arial, Helvetica, sans-serif;
+padding: 4px 2px;
+background: transparent;
+border: 1px solid transparent;
+box-shadow: 0 0 0 #FFF;
+}
+#the-chart .mapExportPngButton:hover
+{
+border: 1px solid #68A;
+background: #adcdff;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8fbff), to(#adcdff));
+background: -webkit-linear-gradient(top, #f8fbff, #adcdff);
+background: -moz-linear-gradient(top, #f8fbff, #adcdff);
+background: -ms-linear-gradient(top, #f8fbff, #adcdff);
+background: -o-linear-gradient(top, #f8fbff, #adcdff);
+}
+/* end match map download button with highcharts download button style */
 
 
 /*  section ANNOTATIONS*/
@@ -319,17 +343,19 @@ body #the-filters select,
 }
 
 .section .print a {
-	background: url(print.png) 35px 1px no-repeat;
+	background: url(print.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
 	margin-bottom: 3px;
+    padding-left: 30px;
 	padding-bottom: 2px;
 }
 
 .section .export a {
-	background: url(download_arrow.png) 70px 1px no-repeat;
+	background: url(download_arrow.png) 1px 1px no-repeat;
 	display: block;
 	width: 104px;
+    padding-left: 30px;
 	margin-bottom: 3px;
 }
 
@@ -797,8 +823,8 @@ body .bootstrap .badge-inverse {
 }
 
 .editor-current-step  input[type="text"], .editor-current-step  select, .editor-current-step  label {
-    font-size: 12px;
-	font-family: 'Droid Sans', Arial, sans-serif;
+    font-size: 11px;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
     color: #000;
 }
 
@@ -862,7 +888,7 @@ body .bootstrap .badge-inverse {
 }
 .editor-facet-field input, .editor-facet-field textarea, .editor-facet-field div.select2-container {
     margin: 0 0 1em 0;
-	font-family: 'Droid Sans', Arial, sans-serif !important;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
     width: 700px;
 }
 .editor-facet-field div.select2-container input {
@@ -1083,8 +1109,8 @@ body .scoreboard-confirm-overlay {
 }
 
 body .ui-widget {
-	font-family: 'Droid Sans', Arial, sans-serif;
-	font-size: 12px;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+	font-size: 11px;
 }
 
 body .bootstrap .btn {
@@ -1158,4 +1184,17 @@ input#__ac_name , input#__ac_password {
 #the-chart.loading-small {
 	margin: 15px 0px;
  	min-height: 50px;
+}
+
+div.qtip-default.qtip-pos-tl .qtip-titlebar .qtip-title, div.qtip-default.qtip-pos-tl .qtip-content{
+    font-family: 'Segoe UI',Verdana, Arial, sans-serif;
+	font-size: 12px;
+}
+div.qtip-default.qtip-pos-tl {
+    background-color: #FFFFFF;
+    border-color: rgb(0, 101, 162) !important;
+}
+
+div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-content{
+    background-color: #FFFFFF;
 }
