@@ -27,7 +27,8 @@ class DocListingView(BrowserView):
         path = {
             'query': '/'.join(self.context.getPhysicalPath())
         }
-        return [b.getObject() for b in catalog(path=path, portal_type='File')]
+        portal_types = ['File', 'Link']
+        return [b.getObject() for b in catalog(path=path, portal_type=portal_types)]
         #.title
         #.creation_date
         #.absolute_url_path()
