@@ -15,6 +15,7 @@ from edw.datacube.browser.query import jsonify
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
+import operator
 
 
 ORDER = 'scoreboard.visualization.order'
@@ -28,7 +29,9 @@ class DocListingView(BrowserView):
             'query': '/'.join(self.context.getPhysicalPath())
         }
         portal_types = ['File', 'Link']
-        return [b.getObject() for b in catalog(path=path, portal_type=portal_types)]
+        results = [b.getObject() for b in catalog(path=path, portal_type=portal_types)]
+        results.sort(key = lambda x: x.modified(), reverse=True)
+        return results;
         #.title
         #.creation_date
         #.absolute_url_path()
