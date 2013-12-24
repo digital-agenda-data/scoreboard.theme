@@ -361,6 +361,15 @@ background: -o-linear-gradient(top, #f8fbff, #adcdff);
 	margin-bottom: 3px;
 }
 
+.section .embed a {
+	background: url(embed.png) 1px 1px no-repeat;
+	display: block;
+	width: 104px;
+    font-size: 12px;
+    padding-left: 30px;
+	margin-bottom: 3px;
+}
+
 .share_list li {
 	display: inline-block;
 	width: 20px;
