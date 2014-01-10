@@ -556,6 +556,14 @@ body .maincontent img {
 	text-align: left;
 }
 
+.highcharts-tooltip span {
+    height:auto;
+    max-width:450px;
+    min-width:300px;
+    overflow:auto;
+    white-space:normal !important;
+}
+
 /* CHART TOOLTIPS
 .ui-tooltip-* {
 background: red;
