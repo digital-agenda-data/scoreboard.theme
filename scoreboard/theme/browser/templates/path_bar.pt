@@ -7,7 +7,7 @@
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
         is_vis python:here.meta_type == 'ScoreboardVisualization';
-        related_items python:getattr(here, 'getRelatedItems', lambda x: None)();
+        related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
         title crumb/Title">
         <li tal:condition="python:is_last and not is_vis"
