@@ -12,6 +12,7 @@ from plone.uuid.interfaces import IUUID
 from plone.registry.interfaces import IRegistry
 from edw.datacube.interfaces import IDataCubeSettings
 from edw.datacube.browser.query import jsonify
+from edw.datacube.interfaces import defaults
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
@@ -97,6 +98,24 @@ class ListingView(BrowserView):
 class HomepageListingView(ListingView):
     """ Listing for homepage
     """
+    _cubeSettings = None
+
+    @property
+    def cubeSettings(self):
+        """ Settings
+        """
+        if self._cubeSettings is None:
+            self._cubeSettings = queryUtility(
+                    IRegistry).forInterface(IDataCubeSettings, False)
+        return self._cubeSettings
+
+    @property
+    def defaultCRUrl(self):
+        from_registry = self.cubeSettings.default_cr_url
+        if not from_registry:
+            return defaults.DEFAULT_CR_URL
+        return from_registry
+
     def getDataCubes(self):
         """ All Data Cubes sorted by their position in parent
         """
