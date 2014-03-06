@@ -1217,3 +1217,21 @@ div.qtip-default.qtip-pos-tl {
 div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-content{
     background-color: #FFFFFF;
 }
+
+#add-comment {
+	text-align: center;
+}
+
+#add-comment label {
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+#add-comment input[type=text], textarea {
+    width: 100%;
+}
+
+#add-comment input[type=submit] {
+	margin: 5px;
+}
