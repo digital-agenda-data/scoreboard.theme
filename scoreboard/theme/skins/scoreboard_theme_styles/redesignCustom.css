@@ -1235,3 +1235,7 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 #add-comment input[type=submit] {
 	margin: 5px;
 }
+
+#add-comment a {
+	font-weight: bold;
+}
