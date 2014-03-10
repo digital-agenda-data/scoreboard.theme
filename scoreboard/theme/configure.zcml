@@ -1,18 +1,24 @@
 <configure
   xmlns="http://namespaces.zope.org/zope"
   xmlns:cmf="http://namespaces.zope.org/cmf"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:browser="http://namespaces.zope.org/browser"
   xmlns:plone="http://namespaces.plone.org/plone">
 
   <includeDependencies package="." />
 
   <include package=".browser" />
   <include file="profiles.zcml" />
+  <include package="z3c.jbot" file="meta.zcml" />
 
   <cmf:registerDirectory
      name="skins"
      directory="skins"
      recursive="True"
      />
+
+  <browser:jbot
+      directory="skins/jbot_templates" />
 
   <plone:static directory="static" type="theme" />
 

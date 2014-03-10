@@ -1239,3 +1239,7 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 #add-comment a {
 	font-weight: bold;
 }
+
+#add-comment .error {
+	color: red;
+}

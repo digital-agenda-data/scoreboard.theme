@@ -73,7 +73,7 @@
                     tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
                   <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
                     tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
-                  <a class="btn btn-mini btn-primary"
+                  <a class="btn btn-mini btn-primary" tal:condition="python: state == 'published'"
                     tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
                 </tal:block>
               </div>
