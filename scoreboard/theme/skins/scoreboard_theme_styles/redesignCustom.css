@@ -1240,6 +1240,7 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 	font-weight: bold;
 }
 
-#add-comment .error {
+#add-comment .error,
+.boardConversation .error {
 	color: red;
 }
