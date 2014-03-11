@@ -1220,19 +1220,20 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 
 #add-comment {
 	text-align: center;
+	padding: 1em;
 }
 
 #add-comment label {
-	width: 100%;
-	display: block;
-	text-align: left;
+	float: left;
+	font-weight: bold;
 }
 
 #add-comment input[type=text], textarea {
-    width: 100%;
+    width: 98%;
+    margin-bottom: 1em;
 }
 
-#add-comment input[type=submit] {
+#add-comment input[type=submit], button {
 	margin: 5px;
 }
 
@@ -1241,6 +1242,6 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 }
 
 #add-comment .error,
-.boardConversation .error {
+.section-board .error {
 	color: red;
 }
