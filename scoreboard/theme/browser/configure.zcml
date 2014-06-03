@@ -46,6 +46,14 @@
     />
 
   <browser:page
+    name="datacubesForSelect"
+    for="*"
+    class=".listing.ListingView"
+    attribute="dataCubesListingForSelect"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="addVisualization"
     for="*"
     class=".listing.VisualizationsListingView"

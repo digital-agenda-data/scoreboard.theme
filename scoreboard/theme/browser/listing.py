@@ -68,12 +68,12 @@ class ListingView(BrowserView):
         wft = getToolByName(self.context, 'portal_workflow')
         return wft.getInfoFor(obj, 'review_state', '')
 
-    def dataCubesListing(self):
+
+    def fetchDatacubes(self, optionsList=False):
         catalog = getToolByName(self.context, 'portal_catalog')
         query = {
             'portal_type': 'DataCube',
         }
-        data = []
         for brain in catalog(**query):
             cube = brain.getObject()
             url = cube.absolute_url()
@@ -83,16 +83,36 @@ class ListingView(BrowserView):
                 image_url = '%s/thumbnail' % url
             else:
                 image_url = self.cubeSettings.datacube_thumbnail
-            data.append({
-                'id': cube.getId(),
-                'portal_type': cube.portal_type,
-                'url': url,
-                'image': image_url,
-                'title': cube.getExtended_title(),
-                'identifier': cube.title_or_id(),
-                'description': cube.getSummary(),
-            })
-        return jsonify(self.request, data, cache=False)
+            if optionsList:
+                yield {
+                    'inner_order': image_url,
+                    'label': cube.title_or_id(),
+                    'notation': url,
+                    'uri': url,
+                    'group_notation': None,
+                    'short_label': None,
+                }
+            else:
+                yield {
+                    'id': cube.getId(),
+                    'portal_type': cube.portal_type,
+                    'url': url,
+                    'image': image_url,
+                    'title': cube.getExtended_title(),
+                    'identifier': cube.title_or_id(),
+                    'description': cube.getSummary(),
+                }
+
+
+    def dataCubesListing(self):
+        return jsonify(self.request, [x for x in self.fetchDatacubes()], cache=False)
+
+
+    def dataCubesListingForSelect(self):
+        data = {
+            "options": [x for x in self.fetchDatacubes(optionsList=True)]
+        }
+        return jsonify(self.request, data,  cache=False)
 
 
 class HomepageListingView(ListingView):
