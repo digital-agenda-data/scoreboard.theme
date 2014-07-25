@@ -85,12 +85,14 @@ class ListingView(BrowserView):
                 image_url = self.cubeSettings.datacube_thumbnail
             if optionsList:
                 yield {
-                    'inner_order': image_url,
+                    'inner_order': None,
                     'label': cube.title_or_id(),
-                    'notation': url,
+                    'notation': cube.getDataset(),
                     'uri': url,
                     'group_notation': None,
                     'short_label': None,
+                    'dataset': cube.getDataset(),
+                    'endpoint': cube.getEndpoint()
                 }
             else:
                 yield {
