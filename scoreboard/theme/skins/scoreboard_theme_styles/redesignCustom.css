@@ -1245,3 +1245,43 @@ div.qtip-default.qtip-pos-tl .qtip-titlebar, div.qtip-default.qtip-pos-tl .qtip-
 .section-board .error {
 	color: red;
 }
+
+#the-filters .slider-step {
+	position: absolute;
+	width: 20px;
+	margin-left: -10px;
+	text-align: center;
+	margin-top: 15px;
+	font-size: 6px;
+}
+
+#the-filters .right-label {
+	float: right;
+	width: 12%;
+}
+
+.composite-sliders {
+	margin:	10px 0 0 0;
+}
+.composite-slider-widget {
+	height: 30px;
+}
+
+.composite-slider {
+	width: 60%;
+	float: left;
+}
+
+.slider-label {
+	float: left;
+	width: 20%;
+}
+
+.normalized-value {
+	float: right;
+	width: 10%;
+}
+
+.hidden-select {
+	display: none;
+}
