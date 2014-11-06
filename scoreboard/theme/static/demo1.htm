@@ -1,412 +1,392 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Demo 1</title>
 
     <script type="text/javascript" src="./demo1_files/ga.js"></script>
-	<script src="./demo1_files/jquery.min.js" type="text/javascript"></script>
+    <script src="./demo1_files/jquery.min.js" type="text/javascript"></script>
     <script src="./demo1_files/highcharts.js" type="text/javascript"></script>
 
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
     <script type="text/javascript">
-    $(function() {
-        $( "#slider-range" ).slider({
-            range: true,
-            min: 2003,
-            max: 2012,
-            values: [ 2011, 2011 ],
-            slide: function( event, ui ) {
-                $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-            }
-        });
-        /*$( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + $( "#slider-range" ).slider( "values", 1 ) );*/
-		$( "#amount" ).val("2011");
-    });
+      $(function() {
+          $( "#slider-range" ).slider({
+              range: true,
+              min: 2003,
+              max: 2012,
+              values: [ 2011, 2011 ],
+              slide: function( event, ui ) {
+                  $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+              }
+          });
+          /*$( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + $( "#slider-range" ).slider( "values", 1 ) );*/
+      $( "#amount" ).val("2011");
+      });
     </script>
 
-	<script type="text/javascript">
-    $(function() {
-        $( "#breakdown" ).buttonset();
-		$( "#measure_unit" ).buttonset();
-    });
+    <script type="text/javascript">
+      $(function() {
+          $( "#breakdown" ).buttonset();
+      $( "#measure_unit" ).buttonset();
+      });
     </script>
 
-	<!-- ################################## select2 list -->
-	<link href="./resources/select2.css" rel="stylesheet" type="text/css" />
+    <link href="./resources/select2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="./resources/select2.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() { $("#e9").select2(); });
+      $(document).ready(function() { $("#e9").select2(); });
     </script>
-	<!-- ################################## -->
 
     <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-23678295-1']);
-    _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23678295-1']);
+      _gaq.push(['_trackPageview']);
 
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-    function toggle(obj) {
-	    var el = document.getElementById(obj);
-	    if ( el.style.display != 'none' ) {
-		    el.style.display = 'none';
-	    }
-	    else {
-		    el.style.display = '';
-	    }
-    }
-	countrycolortable = {
-        'CZ':'#1C3FFD',
-        'CY':'#FF5400',
-        'BG':'#21FF00',
-        'EL':'#6A07B0',
-        'PL':'#FF1D23',
-        'RO':'#1B76FF',
-        'BE':'#FD8245',
-        'IT':'#19BC01',
-        'LT':'#9A24ED',
-        'HU':'#D40D12',
-        'FR':'#15A9FA',
-        'EU27':'#94090D',
-        'SK':'#7DC30F',
-        'LV':'#D59AFE',
-        'EE':'#0EEAFF',
-        'DE':'#FFC600',
-        'SI':'#648E23',
-        'UK':'#D000C4',
-        'IE':'#ADF0F6',
-        'PT':'#FFFC00',
-        'SE':'#436B06',
-        'NL':'#FF40F4',
-        'MT':'#35478C',
-        'FI':'#7FB2F0',
-        'ES':'#044C29',
-        'DK':'#45BF55',
-        'LU':'#D50356',
-        'NO':'#F70A9B',
-        'AT':'#AABC66',
-        'TR':'#9900AB',
-        'IS':'#662293',
-        'HR':'#33EED2'};
+      function toggle(obj) {
+        var el = document.getElementById(obj);
+        if ( el.style.display != 'none' ) {
+          el.style.display = 'none';
+        }
+        else {
+          el.style.display = '';
+        }
+      }
+    countrycolortable = {
+          'CZ':'#1C3FFD',
+          'CY':'#FF5400',
+          'BG':'#21FF00',
+          'EL':'#6A07B0',
+          'PL':'#FF1D23',
+          'RO':'#1B76FF',
+          'BE':'#FD8245',
+          'IT':'#19BC01',
+          'LT':'#9A24ED',
+          'HU':'#D40D12',
+          'FR':'#15A9FA',
+          'EU27':'#94090D',
+          'SK':'#7DC30F',
+          'LV':'#D59AFE',
+          'EE':'#0EEAFF',
+          'DE':'#FFC600',
+          'SI':'#648E23',
+          'UK':'#D000C4',
+          'IE':'#ADF0F6',
+          'PT':'#FFFC00',
+          'SE':'#436B06',
+          'NL':'#FF40F4',
+          'MT':'#35478C',
+          'FI':'#7FB2F0',
+          'ES':'#044C29',
+          'DK':'#45BF55',
+          'LU':'#D50356',
+          'NO':'#F70A9B',
+          'AT':'#AABC66',
+          'TR':'#9900AB',
+          'IS':'#662293',
+          'HR':'#33EED2'};
 
-    function countrycolor(n) {
-        if (countrycolortable[n] == null) {
-	        return '#1C3FFD'
-        } else {
-	        return countrycolortable[n];
-        };
-    };
+      function countrycolor(n) {
+          if (countrycolortable[n] == null) {
+            return '#1C3FFD'
+          } else {
+            return countrycolortable[n];
+          };
+      };
 
-    function myclone1(o) {
-	    return eval('(' + JSON.stringify(o) + ')');
-    };
-    function myclone(o) {
-	    return eval(uneval(o));
-    };
+      function myclone1(o) {
+        return eval('(' + JSON.stringify(o) + ')');
+      };
+      function myclone(o) {
+        return eval(uneval(o));
+      };
 
     </script>
 
     <script src="./demo1_files/exporting.js" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="./demo1_files/widget100.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./demo1_files/widget100.css" media="all" />
     <link rel="stylesheet" type="text/css" href="./demo1_files/layout.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./demo1_files/content.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./demo1_files/scoreboard.css" />
-	<link rel="stylesheet" type="text/css" href="./resources/redesign.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/redesign.css" />
+  </head>
 
-	</head>
+  <body>
+    <div class="page_margins">
+      <div class="page">
 
-<body>
-  <div class="page_margins">
-    <div class="page">
-
-      <div id="header">
-		<img class="logo" src="./resources/logo_en.gif" alt="European Commision logo" />
-		<p id="banner-title-text">Digital Agenda for Europe</p>
-		<p id="banner-title-text2">A Europe 2020 Initiative</p>
-		<ul class="breadcrumbs">
-			<li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
-			<li><a href="http://ec.europa.eu/digital-agenda/en">Digital Agenda for Europe</a></li>
-			<li><a href="http://ec.europa.eu/digital-agenda/en/scoreboard">Scoreboard</a></li>
-			<li><a href="/">Visualizations</a></li>
-			<li>Scenario 1 [DEMO 1]</li>
-		</ul>
-      </div>
-
-   <div id="main">
-   <div class="maincontent">
-        <div>
-           <h2 style="float:left">
-                1. Analyse one indicator and compare countries</h2>
-            <!--a href="http://ec.europa.eu/digital-agenda/en/scoreboard">
-                <img src="./demo1_files/hp-eda-logo.jpg" class="das_logo" alt="" />
-            </a-->
-            <div style="clear:both"></div>
-
-     <div class="section">
-        <div class="section-content"  id="chart">
-
-          <form action="">
-
-            <div class="filters">
-
-				<div class="upper-left">
-
-					<label class="aligntoleft">Indicator category</label>
-					<select onchange="">
-							<option value="any">any</option>
-							<option value="T">Telecom sector</option>
-							<option value="B">Broadband</option>
-							<option value="M">Mobile</option>
-							<option value="I">Internet usage</option>
-							<option value="Ta1">Take up of internet services (% of population)</option>
-							<option value="Ta2">Take up of internet services (% of internet users)</option>
-							<option value="eg">eGovernment</option>
-							<option value="ec">eCommerce</option>
-							<option value="eb">eBusiness</option>
-							<option value="ict" selected="selected">ICT Skills</option>
-							<option value="rd">Research and Development</option>
-					</select><br />
-
-					<label class="aligntoleft">Indicator</label>
-					<select onchange="">
-						 <option value="i_cprg IND_TOTAL %_ind">Have written a computer program (% pop)</option>
-                        <option  value="i_cweb IND_TOTAL %_ind">Have created a Web page (% pop)</option>
-                        <option  value="i_csk_ge_me IND_TOTAL %_ind" selected="selected">Individuals with medium or high computer skills</option>
-                        <option  value="i_isk_ge_me IND_TOTAL %_ind">Individuals with medium or high internet skills</option>
-                        <option   value="i_skedu y25_54 %_ind">CT skills obtained through formal educational institution (age 25-54)</option>
-                        <option   value="i_skedu y16_24 %_ind">ICT skills obtained through formal educational institution (age 16-24)</option>
-                        <option   value="i_cisk_sfjobx sal_self_fam %_ind">ICT skills perceived as insufficient for the labour market</option>
-					</select><br />
-
-					<label class="aligntoleft">Year</label>
-					<select>
-						<option value="2011">2011</option>
-					</select><br />
-
-					<label class="aligntoleft">Breakdown</label>
-					<div id="breakdown">
-						<input type="radio" id="radio0" name="breakdown" /><label for="radio0" onclick="window.open('demo2.htm')">by Total</label>
-						<input type="radio" id="radio1" name="breakdown" /><label for="radio1">by Age 6 Classes</label>
-						<input type="radio" id="radio2" name="breakdown" checked="checked" /><label for="radio2">by Age 4 Classes</label>
-					</div><br />
-
-					<label class="aligntoleft">Unit of Measure</label>
-					<div id="measure_unit">
-						<input type="radio" id="radio4" name="measure" checked="checked" /><label for="radio4">% of individuals</label>
-						<input type="radio" id="radio5" name="measure" /><label for="radio5">other unit</label>
-						<input type="radio" id="radio6" name="measure" /><label for="radio6">other unit</label>
-					</div><br />
-				</div>
-
-				<div class="upper-right">
-
-					<label>Country / countries</label>
-					<div class="select2-container select2-container-multi populate" id="s2id_e9" style="width: 300px; display:none;">
-							<ul class="select2-choices">
-								<li class="select2-search-field">
-									<input type="text" class="select2-input" tabindex="0" style="width: 10px;" />
-								</li>
-							</ul>
-						</div>
-						<select multiple="multiple" name="e9" id="e9" style="width: 300px; display: none;" class="populate">
-								<!--option value="all" selected="selected">all EU countries</option-->
-								<option value="EU27" selected="selected">EU27</option>
-								 <option value="AT" selected="selected">Austria</option>
-								<option value="BE" selected="selected">Belgium</option>
-								<option value="BG" selected="selected">Bulgaria</option>
-								<option value="HR" selected="selected">Croatia</option>
-								<option value="CY" selected="selected">Cyprus</option>
-								<option value="CZ" selected="selected">Czech Republic</option>
-								<option value="DK" selected="selected">Denmark</option>
-								<option value="EE" selected="selected">Estonia</option>
-								<option value="FI" selected="selected">Finland</option>
-								<option value="FR" selected="selected">France</option>
-								<option value="DE" selected="selected">Germany</option>
-								<option value="EL" selected="selected">Greece</option>
-								<option value="HU" selected="selected">Hungary</option>
-								<option value="IS" selected="selected">Iceland</option>
-								<option value="IE" selected="selected">Ireland</option>
-								<option value="IT" selected="selected">Italy</option>
-								<option value="LV" selected="selected">Latvia</option>
-								<option value="LT" selected="selected">Lithuania</option>
-								<option value="LU" selected="selected">Luxembourg</option>
-								<option value="MT" selected="selected">Malta</option>
-								<option value="NL" selected="selected">Netherlands</option>
-								<option value="NO" selected="selected">Norway</option>
-								<option value="PL" selected="selected">Poland</option>
-								<option value="PT" selected="selected">Portugal</option>
-								<option value="RO" selected="selected">Romania</option>
-							   <option value="SK" selected="selected">Slovak Republic</option>
-								<option value="SI" selected="selected">Slovenia</option>
-								<option value="ES" selected="selected">Spain</option>
-								<option value="SE" selected="selected">Sweden</option>
-								<option value="TR" selected="selected">Turkey</option>
-								<option value="UK" selected="selected">United Kingdom</option>
-						</select><br />
-						<input type="button" value="Add all" title="Add all countries" class="seldel" />
-						<input type="button" value="Remove all" title="Remove all selected countries" class="seldel" />
-
-				</div>
-
-			</div> <!-- end div.filters -->
-
-		</form>
-
+        <div id="header">
+          <img class="logo" src="./resources/logo_en.gif" alt="European Commision logo" />
+          <p id="banner-title-text">Digital Agenda for Europe</p>
+          <p id="banner-title-text2">A Europe 2020 Initiative</p>
+          <ul class="breadcrumbs">
+            <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
+            <li><a href="http://ec.europa.eu/digital-agenda/en">Digital Agenda for Europe</a></li>
+            <li><a href="http://ec.europa.eu/digital-agenda/en/scoreboard">Scoreboard</a></li>
+            <li><a href="/">Visualizations</a></li>
+            <li>Scenario 1 [DEMO 1]</li>
+          </ul>
         </div>
 
-        <div id="colX">
-          <div id="col1_content" class="clearfix">
-            <!-- add your content here -->
-             <div id="swstack" class="section">
-                    <script type="text/javascript">
-						var chart;
-						var printchart;
-						var printOptions;
-						var chartOptions = {
-							chart: {
-								renderTo: 'container',
-								defaultSeriesType: 'column',
-								marginBottom: 150
-							},
-							colors: ['#7FB2F0', '#AA4643', '#89A54E','#80699B','#3D96AE','#DB843D', '#92A8CD', '#A47D7C', '#B5CA92'],
-							credits: {
-								href: 'http://ec.europa.eu/digital-agenda/en/graphs/',
-								text: 'European Commission, Digital Agenda Scoreboard',
-								position: {
-									align: 'right',
-									x: -10,
-									verticalAlign: 'bottom',
-									y: -2
-								}
-							},
-							title: {
-								text: '% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes',
-								style: {
-									color: '#000000',
-									fontWeight: 'bold',
-									fontSize:'1.2em'
-								}
-							},
-							subtitle: {
-								text: 'Year 2011',
-								align: 'left'
+        <div id="main">
+          <div class="maincontent">
+            <div>
+              <h2 style="float:left">1. Analyse one indicator and compare countries</h2>
+              <div style="clear:both"></div>
 
-							},
-							xAxis: {
-								categories: ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'European Union (27 countries)', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'United Kingdom'],
-								labels: {
-									rotation: -45,
-									align: 'right',
-									style: {
-										color: '#000000'
-									}
-								}
-							},
-							yAxis: {
-								min: 0,
-								title: {
-										text: '% of individuals',
-										style: {
-											color: '#000000',
-											fontWeight: 'bold'
-										}
-								}
-							},
-							legend: {
-								enabled:true,
-								layout: 'vertical',
-								floating: true,
-								shadow: true
-							},
-							tooltip: {
-								formatter: function() {
-										return '<b>'+
-												this.x +'</b><br />'+ Math.round(this.y*10)/10 + ' %_ind';
-								}
-							},
-							plotOptions: {
-								column: {
-								}
-							},
-							series: [
-							{name: 'Aged 16-24', data: [95.1, 80.69, 58.83, 82.76, 79.95, 92.97, 88.98, {y:80.74, color:"#4572A7"}, 91.87, 80.97, 81.19, 79.33, 87.68, 93.86, 69.34, 78.15, 92.4, 91.59, 94.52, 82.55, 81.47, 90.84, 81.92, 90.09, 54.93, 84.45, 93.72, 80.87, 81.98, 85.88]},
-							{name: 'Aged 25-54', data: [75.14, 64.35, 32.54, 47.83, 52.99, 80.07, 62.06, {y:59.38, color:"#AB0500"}, 83.31, 64.44, 67.81, 47.79, 63.66, 84.1, 56.97, 52.88, 58.35, 52.62, 80.57, 53.79, 74.9, 78.35, 42.69, 55.24, 24.66, 60.65, 61.66, 59.59, 77.87, 65.47]},
-							{name: 'Aged 65-74', data: [21.56, 17.99, 1.77, null, 14.22, 38.26, 8.62, {y:16.05, color:"#70A500"}, 26.97, 20.67, 22.03, null, 12.99, 23.94, 15.14, 9.82, 6.22, 5.36, 31.39, null, 25.79, 20.81, 4.53, 9.53, 1.06, 8.18, null, 9, 33.57, 24.14]},
-							]
-						};
+              <div class="section">
+                <div class="section-content"  id="chart">
+                  <form action="">
+                    <div class="filters">
+                      <div class="upper-left">
+                        <label class="aligntoleft">Indicator category</label>
+                        <select onchange="">
+                          <option value="any">any</option>
+                          <option value="T">Telecom sector</option>
+                          <option value="B">Broadband</option>
+                          <option value="M">Mobile</option>
+                          <option value="I">Internet usage</option>
+                          <option value="Ta1">Take up of internet services (% of population)</option>
+                          <option value="Ta2">Take up of internet services (% of internet users)</option>
+                          <option value="eg">eGovernment</option>
+                          <option value="ec">eCommerce</option>
+                          <option value="eb">eBusiness</option>
+                          <option value="ict" selected="selected">ICT Skills</option>
+                          <option value="rd">Research and Development</option>
+                        </select><br />
 
-						$(document).ready(function() {let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
+                        <label class="aligntoleft">Indicator</label>
+                        <select onchange="">
+                          <option value="i_cprg IND_TOTAL %_ind">Have written a computer program (% pop)</option>
+                          <option value="i_cweb IND_TOTAL %_ind">Have created a Web page (% pop)</option>
+                          <option value="i_csk_ge_me IND_TOTAL %_ind" selected="selected">Individuals with medium or high computer skills</option>
+                          <option value="i_isk_ge_me IND_TOTAL %_ind">Individuals with medium or high internet skills</option>
+                          <option value="i_skedu y25_54 %_ind">CT skills obtained through formal educational institution (age 25-54)</option>
+                          <option value="i_skedu y16_24 %_ind">ICT skills obtained through formal educational institution (age 16-24)</option>
+                          <option value="i_cisk_sfjobx sal_self_fam %_ind">ICT skills perceived as insufficient for the labour market</option>
+                        </select><br />
 
-							chart = new Highcharts.Chart(chartOptions);
-						});
+                        <label class="aligntoleft">Year</label>
+                        <select>
+                          <option value="2011">2011</option>
+                        </select><br />
 
-                    </script>
+                        <label class="aligntoleft">Breakdown</label>
+                        <div id="breakdown">
+                          <input type="radio" id="radio0" name="breakdown" /><label for="radio0" onclick="window.open('demo2.htm')">by Total</label>
+                          <input type="radio" id="radio1" name="breakdown" /><label for="radio1">by Age 6 Classes</label>
+                          <input type="radio" id="radio2" name="breakdown" checked="checked" /><label for="radio2">by Age 4 Classes</label>
+                        </div><br />
 
-				<div id="container" style="width: 100%; height: 650px">
-					<div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 1036px; height: 650px; text-align: left; line-height: normal; z-index: 0; font-family: &#39;Lucida Grande&#39;, &#39;Lucida Sans Unicode&#39;, Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
+                        <label class="aligntoleft">Unit of Measure</label>
+                        <div id="measure_unit">
+                          <input type="radio" id="radio4" name="measure" checked="checked" /><label for="radio4">% of individuals</label>
+                          <input type="radio" id="radio5" name="measure" /><label for="radio5">other unit</label>
+                          <input type="radio" id="radio6" name="measure" /><label for="radio6">other unit</label>
+                        </div><br />
+                      </div>
 
-					</div> <!-- end div#highcharts-0 -->
-				</div>      <!-- end div#container -->
-			</div><!-- end div#swstack-->
+                      <div class="upper-right">
+                        <label>Country / countries</label>
+                        <div class="select2-container select2-container-multi populate" id="s2id_e9" style="width: 300px; display:none;">
+                          <ul class="select2-choices">
+                            <li class="select2-search-field">
+                              <input type="text" class="select2-input" tabindex="0" style="width: 10px;" />
+                            </li>
+                          </ul>
+                        </div>
+                        <select multiple="multiple" name="e9" id="e9" style="width: 300px; display: none;" class="populate">
+                          <!--option value="all" selected="selected">all EU countries</option-->
+                          <option value="EU27" selected="selected">EU27</option>
+                          <option value="AT" selected="selected">Austria</option>
+                          <option value="BE" selected="selected">Belgium</option>
+                          <option value="BG" selected="selected">Bulgaria</option>
+                          <option value="HR" selected="selected">Croatia</option>
+                          <option value="CY" selected="selected">Cyprus</option>
+                          <option value="CZ" selected="selected">Czech Republic</option>
+                          <option value="DK" selected="selected">Denmark</option>
+                          <option value="EE" selected="selected">Estonia</option>
+                          <option value="FI" selected="selected">Finland</option>
+                          <option value="FR" selected="selected">France</option>
+                          <option value="DE" selected="selected">Germany</option>
+                          <option value="EL" selected="selected">Greece</option>
+                          <option value="HU" selected="selected">Hungary</option>
+                          <option value="IS" selected="selected">Iceland</option>
+                          <option value="IE" selected="selected">Ireland</option>
+                          <option value="IT" selected="selected">Italy</option>
+                          <option value="LV" selected="selected">Latvia</option>
+                          <option value="LT" selected="selected">Lithuania</option>
+                          <option value="LU" selected="selected">Luxembourg</option>
+                          <option value="MT" selected="selected">Malta</option>
+                          <option value="NL" selected="selected">Netherlands</option>
+                          <option value="NO" selected="selected">Norway</option>
+                          <option value="PL" selected="selected">Poland</option>
+                          <option value="PT" selected="selected">Portugal</option>
+                          <option value="RO" selected="selected">Romania</option>
+                          <option value="SK" selected="selected">Slovak Republic</option>
+                          <option value="SI" selected="selected">Slovenia</option>
+                          <option value="ES" selected="selected">Spain</option>
+                          <option value="SE" selected="selected">Sweden</option>
+                          <option value="TR" selected="selected">Turkey</option>
+                          <option value="UK" selected="selected">United Kingdom</option>
+                        </select><br />
+                        <input type="button" value="Add all" title="Add all countries" class="seldel" />
+                        <input type="button" value="Remove all" title="Remove all selected countries" class="seldel" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
 
-									<div style="clear:both"></div>
+                <div id="colX">
+                  <div id="col1_content" class="clearfix">
+                    <div id="swstack" class="section">
+                      <script type="text/javascript">
+                        var chart;
+                        var printchart;
+                        var printOptions;
+                        var chartOptions = {
+                          chart: {
+                            renderTo: 'container',
+                            defaultSeriesType: 'column',
+                            marginBottom: 150
+                          },
+                          colors: ['#7FB2F0', '#AA4643', '#89A54E','#80699B','#3D96AE','#DB843D', '#92A8CD', '#A47D7C', '#B5CA92'],
+                          credits: {
+                            href: 'http://ec.europa.eu/digital-agenda/en/graphs/',
+                            text: 'European Commission, Digital Agenda Scoreboard',
+                            position: {
+                              align: 'right',
+                              x: -10,
+                              verticalAlign: 'bottom',
+                              y: -2
+                            }
+                          },
+                          title: {
+                            text: '% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes',
+                            style: {
+                              color: '#000000',
+                              fontWeight: 'bold',
+                              fontSize:'1.2em'
+                            }
+                          },
+                          subtitle: {
+                            text: 'Year 2011',
+                            align: 'left'
 
-									 <div class="legend" id="indicators">
-											<h2>Annotations:</h2>
-											<p>This bar-chart allows you to select one indicator, one year, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years.
-											Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>
-											<p><b>% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes</b></p>
-											<ul>
-												<li><b>Definitions and scope: </b>Lorem ipsum</li>
-												<li><b>Source: </b>Eurostat - Community survey on ICT usage in Households and by Individuals [<a href="#">More Information</a>]</li>
-											</ul>
-											 <p><a href="#">Consult the list of available indicators, their definition and sources.</a></p>
-									</div><!-- end div.legend -->
+                          },
+                          xAxis: {
+                            categories: ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'European Union (27 countries)', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'United Kingdom'],
+                            labels: {
+                              rotation: -45,
+                              align: 'right',
+                              style: {
+                                color: '#000000'
+                              }
+                            }
+                          },
+                          yAxis: {
+                            min: 0,
+                            title: {
+                                text: '% of individuals',
+                                style: {
+                                  color: '#000000',
+                                  fontWeight: 'bold'
+                                }
+                            }
+                          },
+                          legend: {
+                            enabled:true,
+                            layout: 'vertical',
+                            floating: true,
+                            shadow: true
+                          },
+                          tooltip: {
+                            formatter: function() {
+                                return '<b>'+
+                                    this.x +'</b><br />'+ Math.round(this.y*10)/10 + ' %_ind';
+                            }
+                          },
+                          plotOptions: {
+                            column: {
+                            }
+                          },
+                          series: [
+                          {name: 'Aged 16-24', data: [95.1, 80.69, 58.83, 82.76, 79.95, 92.97, 88.98, {y:80.74, color:"#4572A7"}, 91.87, 80.97, 81.19, 79.33, 87.68, 93.86, 69.34, 78.15, 92.4, 91.59, 94.52, 82.55, 81.47, 90.84, 81.92, 90.09, 54.93, 84.45, 93.72, 80.87, 81.98, 85.88]},
+                          {name: 'Aged 25-54', data: [75.14, 64.35, 32.54, 47.83, 52.99, 80.07, 62.06, {y:59.38, color:"#AB0500"}, 83.31, 64.44, 67.81, 47.79, 63.66, 84.1, 56.97, 52.88, 58.35, 52.62, 80.57, 53.79, 74.9, 78.35, 42.69, 55.24, 24.66, 60.65, 61.66, 59.59, 77.87, 65.47]},
+                          {name: 'Aged 65-74', data: [21.56, 17.99, 1.77, null, 14.22, 38.26, 8.62, {y:16.05, color:"#70A500"}, 26.97, 20.67, 22.03, null, 12.99, 23.94, 15.14, 9.82, 6.22, 5.36, 31.39, null, 25.79, 20.81, 4.53, 9.53, 1.06, 8.18, null, 9, 33.57, 24.14]},
+                          ]
+                        };
 
-									<div class="section share">
-											<ul>
-												<li class="export"><a href="#">Export CSV</a></li>
-												<li class="export"><a href="#">Export RDF</a></li>
-												<li><span>Share:</span></li>
-												<li>
-													<ul class="share_list">
-														<li><a class="facebook" title="Facebook" href="#"></a></li>
-														<li><a class="twitter" title="Twitter" href="#"></a></li>
-														<li><a class="more_share" title="moreShare" href="#"></a></li>
-													</ul>
-												</li>
-											 </ul>
-										</div> <!-- end div.share-->
+                        $(document).ready(function() {let g:netrw_dirhistmax  =10
+                        let g:netrw_dirhist_cnt =1
+                        let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
 
-								  </div> <!-- end div#col1_content -->
-								</div><!-- end div#colX -->
+                        chart = new Highcharts.Chart(chartOptions);
+                        });
+                      </script>
+
+                      <div id="container" style="width: 100%; height: 650px">
+                        <div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 1036px; height: 650px; text-align: left; line-height: normal; z-index: 0; font-family: &#39;Lucida Grande&#39;, &#39;Lucida Sans Unicode&#39;, Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
+                        </div><!-- end div#highcharts-0 -->
+                      </div><!-- end div#container -->
+                    </div><!-- end div#swstack-->
+                    <div style="clear:both"></div>
+
+                    <div class="legend" id="indicators">
+                      <h2>Annotations:</h2>
+                      <p>This bar-chart allows you to select one indicator, one year, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years.
+                      Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>
+                      <p><b>% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes</b></p>
+                      <ul>
+                        <li><b>Definitions and scope: </b>Lorem ipsum</li>
+                        <li><b>Source: </b>Eurostat - Community survey on ICT usage in Households and by Individuals [<a href="#">More Information</a>]</li>
+                      </ul>
+                       <p><a href="#">Consult the list of available indicators, their definition and sources.</a></p>
+                    </div><!-- end div.legend -->
+
+                    <div class="section share">
+                      <ul>
+                        <li class="export"><a href="#">Export CSV</a></li>
+                        <li class="export"><a href="#">Export RDF</a></li>
+                        <li><span>Share:</span></li>
+                        <li>
+                          <ul class="share_list">
+                            <li><a class="facebook" title="Facebook" href="#"></a></li>
+                            <li><a class="twitter" title="Twitter" href="#"></a></li>
+                            <li><a class="more_share" title="moreShare" href="#"></a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div><!-- end div.share-->
+
+                  </div><!-- end div#col1_content -->
+                </div><!-- end div#colX -->
 						  </div><!-- end div.section -->
 
 						  <div id="scenarios">
-							<h4>To swap scenarios, click one of the icons:</h4>
+                <h4>To swap scenarios, click one of the icons:</h4>
 								<div class="selected">
-									<a href="#" title="Bar Chart Scenario">
+                  <a href="#" title="Bar Chart Scenario">
 										<img src="./demo1_files/barchart_icon.png" class="scenario_icon" alt="" />
 										<label>1. Bar chart</label>
 									</a>
 								</div>
 
 								<div>
-									<a href="#" title="Timeline Chart Scenario">
-										<img src="./demo1_files/timeline_chart_icon.png" class="scenario_icon" alt="" />
+                  <a href="#" title="Timeline Chart Scenario">
+                    <img src="./demo1_files/timeline_chart_icon.png" class="scenario_icon" alt="" />
 										<label>2. Timeline chart</label>
 									</a>
 								</div>
@@ -433,12 +413,11 @@ let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
 								</div>
 							</div>
 
-							<div style="clear:both"></div>
+              <div style="clear:both"></div>
 							<div id="printcontainer" style="width: 1000px; height: 600px; display:none"></div>
 						</div>
-					</div> <!-- end div.maincontent -->
-
-				</div> <!-- end div#main -->
+					</div><!-- end div.maincontent -->
+				</div><!-- end div#main -->
 
 				<div class="layout-footer">
 					<div class="layout-footer-wrapper">
@@ -448,7 +427,7 @@ let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
 
 								<div class="content">
 									<ul class="menu clearfix">
-										<li class="first leaf"><a href="/digital-agenda/en/ecas" title="" class="">Login</a></li>
+                    <li class="first leaf"><a href="/digital-agenda/en/ecas" title="" class="">Login</a></li>
 										<li class="leaf"><a href="https://ec.europa.eu/digital-agenda/en/newsroom" title="" class="">Newsroom</a></li>
 										<li class="last leaf"><a href="https://ec.europa.eu/digital-agenda/en/blog_home" title="" class="">Blog</a></li>
 									</ul>
@@ -469,7 +448,7 @@ let g:netrw_dirhist_1='/warp10/dev/scoreboard.buildout/src/scoreboard.theme'
 					<p id="copyright"> &copy; Copyright 2013 European Commission</p>
 				</div>
 
-			</div>
+			</div><!-- end div.page-->
 		</div>
 	</body>
 </html>
