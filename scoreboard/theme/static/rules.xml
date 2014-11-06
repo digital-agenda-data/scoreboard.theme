@@ -7,7 +7,7 @@
     >
 
     <!-- The default theme, used for standard Plone web pages -->
-    <theme href="demo1.htm" css:if-content="#visual-portal-wrapper" />
+    <theme href="offlineDemo.htm" css:if-content="#visual-portal-wrapper" />
 
     <drop theme="/html/head/meta" />
     <drop theme="/html/head/title" />
@@ -18,15 +18,12 @@
     <drop css:theme="link[href*='content.css']" />
     <drop css:theme="link[href*='scoreboard.css']" />
 
-    <after theme="/html/head/title">
-        <link rel="stylesheet" href="++theme++scoreboard.theme/css/custom.css" />
-    </after>
 
-    <after content="/html/head/title" theme-children="/html/head" />
-    <after content="/html/head/meta" theme-children="/html/head" />
-    <after content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()" theme-children="/html/head" />
+    <before theme-children="/html/head" content="/html/head/title" />
+    <before theme-children="/html/head" content="/html/head/meta" />
+    <before theme-children="/html/head" content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()" />
 
-    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
+   <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />

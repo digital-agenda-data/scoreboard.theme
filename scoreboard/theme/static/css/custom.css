@@ -865,3 +865,13 @@ table .span24 {
 .visualClear {
   clear: both;
 }
+
+
+
+/* GENERAL */
+body {
+  margin: 0 auto;
+	width: 1120px;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+	font-size: 11px;
+}

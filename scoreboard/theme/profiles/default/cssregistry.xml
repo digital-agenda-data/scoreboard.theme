@@ -20,8 +20,5 @@
   id="ie9.css"
   conditionalcomment="IE 9"
   />
-<stylesheet
-  id="redesignCustom.css"
-  />
 </object>
 
