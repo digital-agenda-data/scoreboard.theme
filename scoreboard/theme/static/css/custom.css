@@ -60,7 +60,61 @@ body {
 }
 
 
+/* FOOTER */
+#footer {
+  border-top: 4px solid #CDCDCD;
+  background: #E5E5E5;
+  margin-top: 5px;
+}
 
+.footer-wrapper {
+  overflow: hidden;
+  margin: 10px 20px;
+}
+
+#copyright {
+  border-top: 4px solid #CDCDCD;
+  color: #808080;
+  margin: 0 20px;
+  padding: 5px;
+}
+
+.footer-wrapper h4 {
+  color: #333;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+#footer .block-menu {
+  float: left;
+}
+
+#haveyoursaybox {
+  float: right;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+}
+
+#haveyoursaybox:hover {
+  border: 1px solid #CDCDCD;
+}
+
+#footer ul li {
+  list-style: none;
+  float: left;
+  margin-right: 12px;
+}
+
+#footer ul li a {
+  text-decoration: none;
+  color: #808080;
+}
+
+#footer ul li a:hover {
+  color: #555;
+}
 
 
 
