@@ -14,3 +14,18 @@ input[type="button"]:hover,
 button:hover {
   filter: none;
 }
+
+.nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.nav li.dropdown.open a:hover .caret {
+  filter: alpha(opacity=100);
+}
+
+.caret {
+  filter: alpha(opacity=30);
+}
+
+.dropdown:hover .caret,
+.open .caret {
+  filter: alpha(opacity=100);
+}
