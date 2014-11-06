@@ -3,12 +3,6 @@ body {
     margin-bottom:0em;
 }
 
-
-.page_margins {
-    padding-bottom:2em;
-    margin-bottom:0em;
-}
-
 h1 {
     font-size:1.8em;
     line-height:1;
@@ -67,14 +61,13 @@ h2 {
     height:1.25em;
 }
 
-@media print
-{
+/*@media print {
 .Page { page-break-after: always; }
 @page {
 size: landscape
 margin: 10%;
 }
-}
+}*/
 
 
 {
