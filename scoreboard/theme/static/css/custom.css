@@ -1,11 +1,70 @@
+/* GENERAL */
 body {
-  margin: auto ! important;
+  margin: 0 auto;
+	width: 1120px;
+	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+	font-size: 11px;
 }
 
-h1 {
-  padding: 0;
+
+/* HEADER */
+.logo {
+  height: 119px;
+  border: 0px;
+  padding-left: 22px;
+  padding-top: 3px;
+  }
+
+.portal-title {
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 1.2;
+  color: #0065A2;
+  text-transform: uppercase;
+  margin-left: 215px;
+  position: absolute;
+  top: 55px;
 }
 
+.portal-subtitle {
+  background: #0065A2;
+  margin: 0;
+  color: #FFF;
+  margin-top: -32px;
+  padding: 10px 0px 10px 215px;
+}
+
+.breadcrumbs {
+  background: #074A8B;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.breadcrumbs li {
+  list-style-type: none;
+  background: url("../images/breadcrumb.gif") rgba(0, 0, 0, 0) left center no-repeat;
+  padding: 0px 5px 0px 15px;
+  display: inline-block;
+  font-size: 11px;
+  color: #FFF;
+}
+
+.breadcrumbs li.first {
+  background-image: none;
+  padding-left: 0;
+}
+
+.breadcrumbs li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/*  */
 .nav {
   margin-bottom: 18px;
   margin-left: 0;
@@ -864,14 +923,4 @@ table .span24 {
 
 .visualClear {
   clear: both;
-}
-
-
-
-/* GENERAL */
-body {
-  margin: 0 auto;
-	width: 1120px;
-	font-family: 'Segoe UI', Verdana, Arial, sans-serif;
-	font-size: 11px;
 }
