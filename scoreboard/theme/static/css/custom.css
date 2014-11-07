@@ -357,6 +357,22 @@ body .addthis_default_style .at300b {
 }
 
 
+/* LOADING effects */
+.loading-small {
+  background: url(../images/loading-bar.gif) no-repeat;
+  background-position: 100px 1px;
+}
+
+#the-filters .loading-small {
+  min-height: 19px;
+  width: 400px;
+}
+
+#the-chart.loading-small {
+  margin: 15px 0px;
+  min-height: 50px;
+}
+
 
 
 
