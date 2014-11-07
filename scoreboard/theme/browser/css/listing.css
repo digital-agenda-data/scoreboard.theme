@@ -46,12 +46,17 @@
   border:0px;
 }
 
+.scoreboard-listing img {
+  min-width: 221px;
+}
+
+#homepage-listing img {
+  border: 1px solid #DDD;
+}
+
 .linklist {
   list-style-type: none;
   padding-left: 0px;
-}
-
-.scoreboard-listing-enhanced {
 }
 
 .scoreboard-listing-item-enhanced td:last-child:after {
@@ -86,9 +91,4 @@
   border: none;
   border-bottom: 1px solid #ccc;
   font-size: 16px;
-}
-
-#homepage-listing img {
-  min-width: 221px;
-  border: 1px solid #DDD;
 }

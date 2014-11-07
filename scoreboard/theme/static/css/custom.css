@@ -8,6 +8,8 @@ body {
 
 ul {
   margin: 1em 0;
+  list-style-type: disc;
+  padding-left: 40px;
 }
 
 a {
