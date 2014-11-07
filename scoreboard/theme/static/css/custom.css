@@ -194,7 +194,7 @@ h3 {
 /* VISUALISATION filters */
 #the-filters {
   color: #555;
-  background: #E1F0F7;
+  background: #B0D6EC;
   padding: 10px;
 }
 
@@ -306,9 +306,55 @@ body .addthis_default_style .at300b {
 
 .navigation-widget {
   clear: both;
+  width: 100%;
   padding-top: 10px;
   margin-bottom: 10px;
   margin-right: 210px;
+}
+
+.navigation-widget h4 {
+  margin-bottom: 5px;
+}
+
+.navigation-widget div {
+  display: inline-block;
+  width: 175px;
+  min-height: 160px;
+  margin-bottom: 2px;
+  background: #F7F7F7;
+  border: 1px solid #DDD;
+  vertical-align: top;
+  text-align: center;
+}
+
+.navigation-widget div.selected,
+.navigation-widget div:hover {
+  background: #B0D6EC;
+}
+
+.navigation-widget a {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px 10px 5px 15px;
+}
+
+.navigation_icon, .scenario_icon {
+  height: 85px;
+  border: 1px solid #CCC;
+  -webkit-box-shadow: 1px 2px 2px #999;
+  box-shadow: 1px 2px 2px #999;
+  display: block;
+  margin-left: 12px;
+}
+
+.navigation-widget label {
+  color: #464545;
+  cursor: pointer;
+  padding-top: 5px;
+  margin-top: 5px;
+  display: inline-block;
 }
 
 
