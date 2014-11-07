@@ -187,6 +187,54 @@ h3 {
 }
 
 
+/* VISUALISATIONS */
+#the-filters {
+  color: #555;
+  background: #E1F0F7;
+  padding: 10px;
+}
+
+.upper-left,
+.bottom-left {
+  float: left;
+  width: 470px;
+  display: inline-block;
+}
+
+.upper-right,
+.bottom-right {
+  float: right !important;
+  width: 630px;
+  display: inline-block;
+}
+
+.upper-left select,
+.bottom-left select,
+.upper-right select,
+.bottom-right select {
+  width: 320px;
+}
+
+#the-filters label {
+  display: inline-block;
+  width: 140px;
+  color: #555;
+  margin-bottom: 2px;
+  vertical-align: top;
+}
+
+body .select2-container,
+body #the-filters select,
+body .select2-container-multi .select2-choices .select2-search-field input,
+body .select2-drop.select2-drop-multi.select2-drop-active {
+  font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
+}
+
+#ref-area-add-all,
+#ref-area-clear {
+  margin-top: 10px;
+}
+
 
 
 /*  */
