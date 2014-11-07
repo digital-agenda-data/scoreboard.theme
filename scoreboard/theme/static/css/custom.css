@@ -6,6 +6,35 @@ body {
 	font-size: 11px;
 }
 
+ul {
+  margin: 1em 0;
+}
+
+a {
+  color: #0073A8;
+  text-decoration: none;
+}
+
+a:hover,
+.breadcrumbs li a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.83em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 0.51em 0;
+}
+
 
 /* HEADER */
 .logo {
@@ -16,12 +45,11 @@ body {
   }
 
 .portal-title {
-  font-size: 22px;
   font-weight: normal;
   line-height: 1.2;
   color: #0065A2;
   text-transform: uppercase;
-  margin-left: 215px;
+  margin: 0 0 0 215px;
   position: absolute;
   top: 55px;
 }
@@ -120,7 +148,7 @@ body {
 /* LOGIN */
 #login_form,
 #mail_password {
-  background: #E7EDF5;
+  background: #E1F0F7;
   margin-top: 20px;
   margin-left: 10px;
   padding: 10px;
@@ -148,6 +176,12 @@ body {
 #login-forgotten-password {
   margin-bottom: 20px;
   margin-left: 10px;
+}
+
+
+/* CONTENT */
+#main {
+  margin: 20px 0;
 }
 
 

@@ -7,10 +7,13 @@
 
 .scoreboard-listing h1 {
   float: left;
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .scoreboard-listing .listing-description {
-  padding: 1em;
+  padding: 1.4em;
   background-color: #E1F0F7;
 }
 
@@ -20,9 +23,14 @@
   border: none;
 }
 
+.scoreboard-listing table tr {
+  margin-bottom: 10px;
+}
+
 .scoreboard-listing table td {
-  vertical-align:top;
+  vertical-align: top;
   padding-top:1em;
+  padding-left: 1.5em;
 }
 
 .scoreboard-listing .listing-footer {
@@ -78,4 +86,9 @@
   border: none;
   border-bottom: 1px solid #ccc;
   font-size: 16px;
+}
+
+#homepage-listing img {
+  min-width: 221px;
+  border: 1px solid #DDD;
 }
