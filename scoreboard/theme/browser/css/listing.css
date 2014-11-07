@@ -1,69 +1,69 @@
 .scoreboard-listing .header-logo {
-    width:15em;
-    float:right;
-    padding-top:1.775em;
-    border-style: none
+  width:15em;
+  float:right;
+  padding-top:1.775em;
+  border-style: none;
 }
 
 .scoreboard-listing h1 {
-    float: left;
+  float: left;
 }
 
 .scoreboard-listing .listing-description {
-    padding: 1em;
-    background-color: #E1F0F7;
+  padding: 1em;
+  background-color: #E1F0F7;
 }
 
 .scoreboard-listing table,
 .scoreboard-listing table tr,
 .scoreboard-listing table td {
-    border: none;
+  border: none;
 }
 
 .scoreboard-listing table td {
-    vertical-align:top;
-    padding-top:1em
+  vertical-align:top;
+  padding-top:1em;
 }
 
 .scoreboard-listing .listing-footer {
-    padding:1em;
-    background-color:#E1F0F7;
-    vertical-align:top;
+  padding:1em;
+  background-color:#E1F0F7;
+  vertical-align:top;
 }
 
 .scoreboard-listing .listing-footer .footer-logo {
-    width:8em;
-    float:right;
-    margin:0em 4em 0em 4em;
-    border:0px
+  width:8em;
+  float:right;
+  margin:0em 4em 0em 4em;
+  border:0px;
 }
 
 .linklist {
-    list-style-type: none;
-    padding-left: 0px;
+  list-style-type: none;
+  padding-left: 0px;
 }
 
 .scoreboard-listing-enhanced {
 }
 
 .scoreboard-listing-item-enhanced td:last-child:after {
-    content: ".";
-    color: white;
-    display: block;
-    text-align: center;
-    padding: 0.5em;
+  content: ".";
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .scoreboard-listing-item-enhanced:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .scoreboard-listing-item-enhanced:hover td:last-child:after {
-    content: "Click and drag to reorder";
-    color: #ccc;
-    display: block;
-    text-align: center;
-    padding: 0.5em;
+  content: "Click and drag to reorder";
+  color: #ccc;
+  display: block;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .scoreboard-confirm-overlay {
