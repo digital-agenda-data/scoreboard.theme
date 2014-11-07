@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 1em 0;
+}
+
 a:hover,
 .breadcrumbs li a:hover {
   text-decoration: underline;
@@ -187,7 +191,7 @@ h3 {
 }
 
 
-/* VISUALISATIONS */
+/* VISUALISATION filters */
 #the-filters {
   color: #555;
   background: #E1F0F7;
@@ -234,6 +238,42 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 #ref-area-clear {
   margin-top: 10px;
 }
+
+
+/* VISUALISATIONS legend */
+.legend {
+  width: 78%;
+  background-color: #E1F0F7;
+  padding: 15px 10px 10px 10px;
+  float: left;
+  margin-top: 5px;
+}
+
+.legend h2 {
+  color: #777;
+  margin-top: 2px;
+}
+
+.section.share {
+  background-color: #E1F0F7;
+  float: right;
+  width: 18%;
+  margin-top: 5px;
+}
+
+.section.share ul li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.navigation-widget {
+  clear: both;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 210px;
+}
+
+
 
 
 
