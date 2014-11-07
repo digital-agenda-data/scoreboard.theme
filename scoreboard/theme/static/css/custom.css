@@ -374,6 +374,20 @@ body .addthis_default_style .at300b {
 }
 
 
+/* KEY indicators */
+#dataset-metadata dd {
+  margin-left: 40px;
+}
+
+table, td, th, tr {
+  border: 1px solid #cfcfcf;
+  padding: 4px 8px;
+}
+
+table .label {
+  display: table-cell;
+}
+
 
 
 /*  */
