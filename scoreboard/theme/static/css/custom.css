@@ -389,6 +389,45 @@ table .label {
 }
 
 
+/* DATASETS */
+.list_indicators,
+.list_indicators thead tr {
+  border: 0;
+}
+
+.list_indicators td {
+  border: 2px solid #FFF;
+}
+
+.list_indicators thead th {
+  border: 0;
+  border-bottom: 2px solid #555;
+  padding: 10px 0px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.list_indicators .groupName {
+  border: 0px;
+  text-align: center;
+}
+
+.list_indicators .groupName td {
+  padding: 10px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.list_indicators .even {
+  background: #D7E9F8;
+}
+
+.list_indicators .odd {
+  background: #EEE;
+}
+
+
+
 
 /*  */
 .nav {
