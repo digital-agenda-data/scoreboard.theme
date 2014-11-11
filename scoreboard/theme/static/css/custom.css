@@ -54,11 +54,10 @@ table tr:nth-of-type(2n) {
   background: #EEE;
 }
 
-
 thead th {
   border: 0;
   border-bottom: 2px solid #999;
-  padding: 10px 8px;
+  padding: 6px 8px;
   font-size: 14px;
   font-weight: normal;
   text-align: left;
@@ -417,7 +416,13 @@ table .label {
 #dataset-dimensions,
 #dataset-attributes,
 #dataset-measures {
-  min-width: 650px;
+  min-width: 665px;
+}
+
+#dataset-dimensions td,
+#dataset-attributes td,
+#dataset-measures td {
+  min-width: 110px;
 }
 
 
@@ -449,6 +454,8 @@ table .label {
   margin-top: 25px;
   margin-bottom: 0px;
 }
+
+
 
 
 /*  */
