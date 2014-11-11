@@ -41,6 +41,29 @@ h3 {
   margin: 0.51em 0;
 }
 
+table, td, th, tr {
+  padding: 4px 8px;
+  border: 0;
+}
+
+table {
+  border-bottom: 1px solid #D5D5D5;
+}
+
+table tr:nth-of-type(2n) {
+  background: #EEE;
+}
+
+
+thead th {
+  border: 0;
+  border-bottom: 2px solid #999;
+  padding: 10px 8px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+
 
 /* HEADER */
 .logo {
@@ -387,32 +410,20 @@ body .addthis_default_style .at300b {
   content: ":";
 }
 
-table, td, th, tr {
-  border: 1px solid #cfcfcf;
-  padding: 4px 8px;
-}
-
 table .label {
   display: table-cell;
 }
 
+#dataset-dimensions,
+#dataset-attributes,
+#dataset-measures {
+  min-width: 650px;
+}
+
 
 /* DATASETS */
-.list_indicators,
-.list_indicators thead tr {
-  border: 0;
-}
-
 .list_indicators td {
   border: 2px solid #FFF;
-}
-
-.list_indicators thead th {
-  border: 0;
-  border-bottom: 2px solid #555;
-  padding: 10px 0px;
-  font-size: 14px;
-  font-weight: normal;
 }
 
 .list_indicators .groupName {
@@ -434,7 +445,10 @@ table .label {
   background: #EEE;
 }
 
-
+.section-datasets h2 {
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
 
 
 /*  */
