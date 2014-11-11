@@ -379,6 +379,14 @@ body .addthis_default_style .at300b {
   margin-left: 40px;
 }
 
+#dataset-metadata dt {
+  text-transform: capitalize;
+}
+
+#dataset-metadata dt:after {
+  content: ":";
+}
+
 table, td, th, tr {
   border: 1px solid #cfcfcf;
   padding: 4px 8px;
