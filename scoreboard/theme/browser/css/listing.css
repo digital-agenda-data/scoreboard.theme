@@ -48,10 +48,12 @@
 
 .scoreboard-listing img {
   min-width: 221px;
+  border: 5px solid #DDD;
+  border-radius: 30px;
 }
 
-#homepage-listing img {
-  border: 1px solid #DDD;
+.scoreboard-listing img:hover {
+  border-color: #999;
 }
 
 .linklist {
