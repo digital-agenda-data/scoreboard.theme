@@ -397,6 +397,11 @@ body .addthis_default_style .at300b {
 
 
 /* KEY indicators */
+#dataset-metadata {
+  padding: 1.4em;
+  background-color: #E1F0F7;
+}
+
 #dataset-metadata dd {
   margin-left: 40px;
 }
@@ -453,6 +458,14 @@ table .label {
 .section-datasets h2 {
   margin-top: 25px;
   margin-bottom: 0px;
+}
+
+.section-datasets h2:first-of-type {
+  margin-top: 0.67em;
+}
+
+#dataset-navigation h2 {
+  margin: 0.67em 0;
 }
 
 
