@@ -437,7 +437,7 @@ table .label {
 #dataset-dimensions,
 #dataset-attributes,
 #dataset-measures {
-  min-width: 665px;
+  min-width: 740px;
 }
 
 #dataset-dimensions td,
@@ -448,27 +448,9 @@ table .label {
 
 
 /* DATASETS and documentation */
-.list_indicators td {
-  border: 2px solid #FFF;
-}
-
-.list_indicators .groupName {
-  border: 0px;
-  text-align: center;
-}
-
-.list_indicators .groupName td {
-  padding: 10px 0px 5px 0px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
 .list_indicators .even {
   background: #D7E9F8;
-}
-
-.list_indicators .odd {
-  background: #EEE;
+  background: rgba(215, 233, 248, 0.5);
 }
 
 .template-datacube-view-html h2 {
@@ -482,8 +464,21 @@ table .label {
 }
 
 .template-datacube-view-html table tr:nth-of-type(2n),
-body .docsTable tr:nth-of-type(2n) {
+body .docsTable tr:nth-of-type(2n),
+.list_indicators tr:nth-of-type(2n) {
   background: #EEE;
+}
+
+body .list_indicators .groupName {
+  border: 0px;
+  text-align: center;
+  background: #FFF;
+}
+
+.list_indicators .groupName td {
+  padding: 15px 0px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #dataset-navigation h2 {
@@ -493,12 +488,12 @@ body .docsTable tr:nth-of-type(2n) {
 
 body .docsTable .odd {
   background: transparent;
-  width:25%;
+  width: 25%;
 }
 
 body .docsTable .even {
   background: transparent;
-  width:50%;
+  width: 50%;
 }
 
 body .docsTable td {
