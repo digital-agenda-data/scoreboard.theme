@@ -5,7 +5,7 @@
             <span tal:replace="view/get_docs"></span>
         -->
         <h1> Documentation </h1>
-        <p class="bluebox" tal:content="structure here/Description"></p>
+        <p tal:content="structure here/Description"></p>
         <tal:block define="docs view/get_docs">
             <table class="docsTable">
                 <thead>
