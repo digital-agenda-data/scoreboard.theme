@@ -211,12 +211,12 @@ body .docsTable th {
   margin: 20px 0;
 }
 
-.bluebox {
+/*.bluebox {
   border-radius: 8px;
   border: 2px solid #E1F0F7;
   background-color: #E1F0F7;
   padding: 1em;
-}
+}*/
 
 
 /* VISUALISATION filters */
@@ -224,6 +224,7 @@ body .docsTable th {
   color: #555;
   background: #B0D6EC;
   padding: 10px;
+  border-radius: 30px;
 }
 
 .upper-left,
