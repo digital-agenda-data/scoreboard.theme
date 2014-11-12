@@ -4,31 +4,11 @@
         <!-- what is returned by get_docs()
             <span tal:replace="view/get_docs"></span>
         -->
-        <style>
-            h1 {text-align:center;}
-            .bluebox {
-                background-color: #E1F0F7;
-                padding: 1em;
-            }
-            .docsTable {
-                margin: 20px 0;
-                width:100%;
-                text-align:center;
-                font-size:1em;
-            }
-            .docsTable thead {font-size:1.3em;background:#ddd;}
-            .docsTable td, .docsTable th {
-                border: 2px solid #FFFFFF;
-            } 
-            .docsTable .even {background:#D7E9F8;width:50%;}
-            .docsTable .odd {background:#F0F8E5;width:25%;}
-                
-        </style>
         <h1> Documentation </h1>
         <p class="bluebox" tal:content="structure here/Description"></p>
         <tal:block define="docs view/get_docs">
             <table class="docsTable">
-                <thead style="font-size:1.2em;">
+                <thead>
                     <th>
                         Title
                     </th>

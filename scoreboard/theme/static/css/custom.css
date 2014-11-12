@@ -213,6 +213,8 @@ body .docsTable th {
 .bluebox {
   border-radius: 8px;
   border: 2px solid #E1F0F7;
+  background-color: #E1F0F7;
+  padding: 1em;
 }
 
 
@@ -479,9 +481,14 @@ body .docsTable tr:nth-of-type(2n) {
   color: #000;
 }
 
-body .docsTable .odd,
+body .docsTable .odd {
+  background: transparent;
+  width:25%;
+}
+
 body .docsTable .even {
   background: transparent;
+  width:50%;
 }
 
 body .docsTable td {
@@ -491,6 +498,13 @@ body .docsTable td {
 .template-documentation h1 {
   text-align: left;
 }
+
+.docsTable {
+  margin: 20px 0;
+}
+
+
+
 
 
 
