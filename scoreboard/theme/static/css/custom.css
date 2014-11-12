@@ -222,7 +222,7 @@ body .docsTable th {
 /* VISUALISATION filters */
 #the-filters {
   color: #555;
-  background: #B0D6EC;
+  background: #E1F0F7;
   padding: 10px;
   border-radius: 30px;
 }
@@ -357,8 +357,8 @@ body .addthis_default_style .at300b {
 
 .navigation-widget div.selected,
 .navigation-widget div:hover {
-  background: #B0D6EC;
-  border-color: #B0D6EC;
+  background: #E1F0F7;
+  border-color: #E1F0F7;
 }
 
 .navigation-widget a {
