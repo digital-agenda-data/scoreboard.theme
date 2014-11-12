@@ -50,6 +50,7 @@
 .scoreboard-listing img {
   min-width: 221px;
   border: 5px solid #DDD;
+  border: 3px solid #EEE;
   border-radius: 30px;
 }
 
