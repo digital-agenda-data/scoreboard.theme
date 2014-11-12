@@ -44,19 +44,21 @@ h3 {
 table, td, th, tr {
   padding: 4px 8px;
   border: 0;
+  text-align: left;
 }
 
 table {
   border-bottom: 1px solid #D5D5D5;
 }
 
-thead th {
+thead th,
+body .docsTable th {
+  background: white;
   border: 0;
   border-bottom: 2px solid #999;
   padding: 6px 8px;
   font-size: 14px;
   font-weight: normal;
-  text-align: left;
 }
 
 
@@ -428,7 +430,7 @@ table .label {
 }
 
 
-/* DATASETS */
+/* DATASETS and documentation */
 .list_indicators td {
   border: 2px solid #FFF;
 }
@@ -462,13 +464,27 @@ table .label {
   margin-top: 0.67em;
 }
 
-.template-datacube-view-html table tr:nth-of-type(2n) {
+.template-datacube-view-html table tr:nth-of-type(2n),
+body .docsTable tr:nth-of-type(2n) {
   background: #EEE;
 }
 
 #dataset-navigation h2 {
   margin: 0.67em 0;
   color: #000;
+}
+
+body .docsTable .odd,
+body .docsTable .even {
+  background: transparent;
+}
+
+body .docsTable td {
+  border: 0;
+}
+
+.template-documentation h1 {
+  text-align: left;
 }
 
 
