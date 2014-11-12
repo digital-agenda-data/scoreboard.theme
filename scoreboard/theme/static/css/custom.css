@@ -355,10 +355,16 @@ body .addthis_default_style .at300b {
   text-align: center;
 }
 
-.navigation-widget div.selected,
-.navigation-widget div:hover {
+#the-navigation .selected,
+#the-navigation div:hover {
   background: #E1F0F7;
   border-color: #E1F0F7;
+}
+
+#dataset-navigation .selected,
+#dataset-navigation div:hover {
+  background: #C4E2F0;
+  border-color: #C4E2F0;
 }
 
 .navigation-widget a {
