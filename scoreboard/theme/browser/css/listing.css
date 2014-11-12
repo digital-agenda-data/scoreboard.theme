@@ -48,8 +48,8 @@
 }
 
 .linklist {
-  list-style-type: none;
-  padding-left: 0px;
+  list-style-type: square;
+  color: #777;
 }
 
 .scoreboard-listing .scoreboard-visualizations-listing tr,
