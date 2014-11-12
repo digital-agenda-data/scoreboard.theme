@@ -210,6 +210,11 @@ body .docsTable th {
   margin: 20px 0;
 }
 
+.bluebox {
+  border-radius: 8px;
+  border: 2px solid #E1F0F7;
+}
+
 
 /* VISUALISATION filters */
 #the-filters {
