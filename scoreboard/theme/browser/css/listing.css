@@ -52,13 +52,21 @@
   padding-left: 0px;
 }
 
-.scoreboard-listing .scoreboard-visualizations-listing tr {
-  background-color: #E1F0F7;
+.scoreboard-listing .scoreboard-visualizations-listing tr,
+.scoreboard-datacubes-listing tr {
   border-radius: 30px;
   display: block;
   padding-left: 0;
   padding-bottom: 12px;
   width: 75%;
+}
+
+.scoreboard-datacubes-listing tr {
+  background-color: #C4E2F0;
+}
+
+.scoreboard-listing .scoreboard-visualizations-listing tr {
+  background-color: #E1F0F7;
 }
 
 .scoreboard-listing-item-enhanced td:last-child:after {
