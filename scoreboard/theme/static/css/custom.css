@@ -416,6 +416,8 @@ body .addthis_default_style .at300b {
 #dataset-metadata {
   padding: 1.4em;
   background-color: #E1F0F7;
+  border-radius: 25px;
+  width: 704px;
 }
 
 #dataset-metadata dd {
