@@ -23,7 +23,7 @@
                     <tal:row repeat="doc docs">
                         <tr>
                             <td class="odd">
-                                <a tal:attributes="href string:${doc/absolute_url_path}">
+                                <a tal:attributes="href string:${doc/absolute_url_path}; class python:view.get_class(doc)">
                                     <span tal:replace="doc/Title"></span>
                                 </a>
                             </td>

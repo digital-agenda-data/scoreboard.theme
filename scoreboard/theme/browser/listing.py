@@ -37,6 +37,15 @@ class DocListingView(BrowserView):
         #.creation_date
         #.absolute_url_path()
 
+    def get_class(self, obj):
+      content_icon = obj.getBestIcon()
+      portal_type = obj.portal_type
+
+      content_type_class =  'icon-{0}'.format(content_icon.split('.')[0])
+      portal_type_class = 'type-{0}'.format(portal_type.lower())
+
+      return '{0} {1}'.format(content_type_class, portal_type_class)
+
 class ListingView(BrowserView):
     _cubeSettings = None
 
