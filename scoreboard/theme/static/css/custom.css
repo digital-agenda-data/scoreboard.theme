@@ -510,8 +510,30 @@ body .docsTable td {
   margin: 20px 0;
 }
 
+.docsTable .icon-pdf,
+.docsTable .icon-doc,
+.docsTable .icon-xls {
+  background-position: 0px 0px;
+  padding-left: 23px;
+}
 
+.docsTable .icon-pdf {
+  background: url(../images/pdf.png) no-repeat;
+}
 
+.docsTable .icon-doc {
+  background: url(../images/doc.png) no-repeat;
+}
+
+.docsTable .icon-xls {
+  background: url(../images/xls.png) no-repeat;
+}
+
+.docsTable .icon-txt {
+  background: url(../images/link_icon.gif) no-repeat;
+  background-position: 0px 4px;
+  padding-left: 23px;
+}
 
 
 
