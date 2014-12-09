@@ -83,7 +83,7 @@
 
 .scoreboard-listing-item-enhanced:hover td:last-child:after {
   content: "Click and drag to reorder";
-  color: #ccc;
+  color: #555;
   display: block;
   text-align: center;
   padding: 0.5em;
