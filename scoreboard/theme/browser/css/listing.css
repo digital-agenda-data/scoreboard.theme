@@ -5,8 +5,7 @@
   border-style: none;
 }
 
-.scoreboard-listing h1 {
-  float: left;
+.documentFirstHeading {
   font-size: 22px;
   margin-bottom: 15px;
   margin-top: 0;

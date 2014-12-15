@@ -5,12 +5,14 @@
                 canAdd python:checkPermission('scoreboard.visualization: Add ScoreboardVisualization', cube);
                 isAnon context/@@plone_portal_state/anonymous;">
     <div id="scoreboard-visualizations-listing" class="scoreboard-listing bootstrap">
-      <h1 tal:content="cube/getExtended_title"></h1>
+      <h1 class="documentFirstHeading" tal:content="cube/getExtended_title"></h1>
       <div style="clear:both"></div>
       <div class="dataset-manage bootstrap">
-        <a class="btn btn-mini" tal:attributes="href string:${here/absolute_url}"><i class="icon-file"></i> Dataset</a>
-        <a class="btn btn-mini" tal:attributes="href string:${here/absolute_url}/indicators"><i class="icon-tags"></i> Indicators</a>
-        <a class="btn btn-mini" href="/"><i class="icon-align-justify"></i> Datasets</a>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#"><i class="icon-tasks"></i> Charts</a></li>
+          <li><a tal:attributes="href string:${here/absolute_url}"><i class="icon-file"></i> Dataset</a></li>
+          <li><a tal:attributes="href string:${here/absolute_url}/indicators"><i class="icon-tags"></i> Indicators</a></li>
+        </ul>
       </div>
       <br />
       <div style="clear:both"></div>
