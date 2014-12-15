@@ -12,13 +12,8 @@
 }
 
 .scoreboard-listing table,
-.scoreboard-listing table tr,
 .scoreboard-listing table td {
   border: none;
-}
-
-.scoreboard-listing table tr {
-  margin-bottom: 10px;
 }
 
 .scoreboard-listing table td {
@@ -53,7 +48,6 @@
 
 .scoreboard-listing .scoreboard-visualizations-listing tr,
 .scoreboard-datacubes-listing tr {
-  border-radius: 30px;
   display: block;
   padding-left: 0;
   padding-bottom: 12px;
@@ -61,11 +55,24 @@
 }
 
 .scoreboard-datacubes-listing tr {
-  background-color: #DDD;
+  background: #DDD;
+  border: 1px solid #DDD;
+  border-bottom-color: #FFF;
+}
+
+.scoreboard-listing table tr:hover {
+  background: #FFF;
+  border-color: #DDD;
 }
 
 .scoreboard-listing .scoreboard-visualizations-listing tr {
-  background-color: #EEE;
+  background: #EEE;
+  border: 1px solid #EEE;
+  border-bottom-color: #FFF;
+}
+
+.scoreboard-listing .scoreboard-visualizations-listing tr:hover {
+  border-color: #DDD;
 }
 
 .scoreboard-listing-item-enhanced td:last-child:after {

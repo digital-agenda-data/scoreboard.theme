@@ -211,20 +211,12 @@ body .docsTable th {
   margin: 20px 0;
 }
 
-/*.bluebox {
-  border-radius: 8px;
-  border: 2px solid #E1F0F7;
-  background-color: #E1F0F7;
-  padding: 1em;
-}*/
-
 
 /* VISUALISATION filters */
 #the-filters {
   color: #555;
   background: #E1F0F7;
   padding: 10px;
-  border-radius: 30px;
 }
 
 .upper-left,
@@ -345,20 +337,19 @@ body .addthis_default_style .at300b {
 }
 
 .navigation-widget div {
+  background: #E1F0F7;
   display: inline-block;
   width: 175px;
   min-height: 160px;
-  margin-bottom: 2px;
-  border: 3px solid #EEE;
-  border-radius: 25px;
+  margin-bottom: 3px;
+  border: 3px solid #E1F0F7;
   vertical-align: top;
   text-align: center;
 }
 
 #the-navigation .selected,
 #the-navigation div:hover {
-  background: #E1F0F7;
-  border-color: #E1F0F7;
+  background: #FFF;
 }
 
 #dataset-navigation .selected,
