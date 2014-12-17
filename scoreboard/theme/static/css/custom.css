@@ -1,7 +1,7 @@
 /* GENERAL */
 body {
   margin: 0 auto;
-	width: 1120px;
+	/*width: 1120px;*/
 	font-family: 'Segoe UI', Arial, sans-serif;
 	font-size: 13px;
   color: #333;
@@ -117,14 +117,14 @@ body .docsTable th {
 
 /* FOOTER */
 #footer {
-  border-top: 4px solid #CDCDCD;
-  background: #E5E5E5;
   margin-top: 5px;
+  background: #E5E5E5;
 }
 
 .footer-wrapper {
+  border-top: 4px solid #CDCDCD;
   overflow: hidden;
-  margin: 10px 20px;
+  padding: 10px;
 }
 
 #copyright {
@@ -211,9 +211,6 @@ body .docsTable th {
 
 
 /* CONTENT */
-#main {
-  margin: 20px 0;
-}
 
 
 /* VISUALISATION filters */
