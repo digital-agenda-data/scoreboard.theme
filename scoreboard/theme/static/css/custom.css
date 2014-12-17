@@ -156,6 +156,10 @@ body .docsTable th {
   border: 1px solid #CDCDCD;
 }
 
+#footer ul {
+  padding-left: 0;
+}
+
 #footer ul li {
   list-style: none;
   float: left;
@@ -168,7 +172,7 @@ body .docsTable th {
 }
 
 #footer ul li a:hover {
-  color: #555;
+  text-decoration: underline;
 }
 
 
