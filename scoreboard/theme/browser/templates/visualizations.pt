@@ -4,10 +4,12 @@
     tal:define="cube nocall:here;
                 canAdd python:checkPermission('scoreboard.visualization: Add ScoreboardVisualization', cube);
                 isAnon context/@@plone_portal_state/anonymous;">
-    <div id="scoreboard-visualizations-listing" class="scoreboard-listing bootstrap">
-      <h1 class="documentFirstHeading" tal:content="cube/getExtended_title"></h1>
-      <div style="clear:both"></div>
-      <div class="dataset-manage bootstrap">
+    <div id="scoreboard-visualizations-listing" class="scoreboard-listing bootstrap row">
+      <div class="col-md-12">
+        <h1 class="documentFirstHeading" tal:content="cube/getExtended_title"></h1>
+      </div>
+
+      <div class="dataset-manage bootstrap col-md-12">
         <ul class="nav nav-tabs">
           <li><a tal:attributes="href string:${portal_url}/."><i class="icon-home"></i> Home</a></li>
           <li class="active"><a href="#"><i class="icon-tasks"></i> Charts</a></li>
@@ -17,72 +19,78 @@
       </div>
       <br />
       <div style="clear:both"></div>
-      <div class="listing-description">
-        <tal:block tal:replace="structure cube/getSummary"></tal:block>
-      </div>
-      <h2>Please select one of the available charts:</h2>
-
-      <tal:block define="visualizations view/visualizations">
-        <p tal:condition="not:visualizations">
-          No visualizations.
-        </p>
-        <div tal:condition="canAdd" class="pull-left">
-          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
-            <i class="icon-plus-sign icon-white"></i> Add new</a>
+      <div class="col-md-12">
+        <div class="listing-description">
+          <tal:block tal:replace="structure cube/getSummary"></tal:block>
         </div>
-        <div style="clear: both;"></div>
-        <br />
-        <table class="scoreboard-visualizations-listing">
-          <tal:row repeat="vis visualizations">
-          <tr class="scoreboard-visualizations-listing-item" tal:attributes="
-            id vis/UID;
-            data-name vis/UID;
-            data-title python:vis.title_or_id();
-            data-authenticator vis/@@authenticator/authenticator;
-            data-parent python:cube.absolute_url();"
-            tal:define="has_thumbnail python:hasattr(vis, 'thumbnail');
-                        canModify python:checkPermission('Modify portal content', vis);
-                        canConfigure python:checkPermission('eea.app.visualization: Configure Visualization', vis);
-                        canReview python:checkPermission('Review portal content', vis);">
-            <td>
-              <a tal:attributes="href vis/absolute_url">
-                <img tal:condition="has_thumbnail" tal:define="scale vis/@@images"
-                     tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
-                <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.visualization_thumbnail" />
-              </a>
-            </td>
-            <td tal:define="state python:view.getItemState(vis)">
-              <a tal:attributes="href vis/absolute_url">
-                <h3><span tal:replace="repeat/vis/number"/>. <span tal:replace="vis/Title"/></h3>
-              </a>
-              <p tal:content="vis/Description"></p>
-              <div class="dataset-manage" tal:condition="canModify | canConfigure | canReview">
-                <tal:block condition="canModify">
-                  <a class="btn btn-mini btn-warning" tal:attributes="href string:${vis/absolute_url}/edit?final_url=${here/absolute_url}/visualizations"><i class="icon-edit icon-white"></i> Edit</a>
-                  <a class="btn btn-mini btn-danger" tal:attributes="href string:${vis/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
-                </tal:block>
-                <tal:block condition="canConfigure">
-                  <a class="btn btn-mini btn-primary" tal:attributes="href string:${vis/absolute_url}/daviz-edit.html"><i class="icon-tasks icon-white"></i> Configure</a>
-                </tal:block>
-                <tal:block condition="canReview">
-                  <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
-                    tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
-                  <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
-                    tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
-                </tal:block>
-              </div>
-            </td>
-          </tr>
-          </tal:row>
-        </table>
-      </tal:block>
-      <h2>Further Information</h2>
-      <ul>
-        <li><a tal:attributes="href string:${cube/absolute_url}/indicators">Consult the list of selected indicators, their definition and sources</a></li>
-        <li><a tal:attributes="href string:${cube/absolute_url}#download">Entire dataset metadata and download services</a></li>
-      </ul>
-      <div style="clear:both" />
+        <h2>Please select one of the available charts:</h2>
+      </div>
+
+      <div class="col-md-12">
+        <tal:block define="visualizations view/visualizations">
+          <p tal:condition="not:visualizations">
+            No visualizations.
+          </p>
+          <div tal:condition="canAdd" class="pull-left">
+            <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
+              <i class="icon-plus-sign icon-white"></i> Add new</a>
+          </div>
+          <div style="clear: both;"></div>
+          <br />
+          <table class="scoreboard-visualizations-listing">
+            <tal:row repeat="vis visualizations">
+            <tr class="scoreboard-visualizations-listing-item" tal:attributes="
+              id vis/UID;
+              data-name vis/UID;
+              data-title python:vis.title_or_id();
+              data-authenticator vis/@@authenticator/authenticator;
+              data-parent python:cube.absolute_url();"
+              tal:define="has_thumbnail python:hasattr(vis, 'thumbnail');
+                          canModify python:checkPermission('Modify portal content', vis);
+                          canConfigure python:checkPermission('eea.app.visualization: Configure Visualization', vis);
+                          canReview python:checkPermission('Review portal content', vis);">
+              <td>
+                <a tal:attributes="href vis/absolute_url">
+                  <img tal:condition="has_thumbnail" tal:define="scale vis/@@images"
+                       tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
+                  <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.visualization_thumbnail" />
+                </a>
+              </td>
+              <td tal:define="state python:view.getItemState(vis)">
+                <a tal:attributes="href vis/absolute_url">
+                  <h3><span tal:replace="repeat/vis/number"/>. <span tal:replace="vis/Title"/></h3>
+                </a>
+                <p tal:content="vis/Description"></p>
+                <div class="dataset-manage" tal:condition="canModify | canConfigure | canReview">
+                  <tal:block condition="canModify">
+                    <a class="btn btn-mini btn-warning" tal:attributes="href string:${vis/absolute_url}/edit?final_url=${here/absolute_url}/visualizations"><i class="icon-edit icon-white"></i> Edit</a>
+                    <a class="btn btn-mini btn-danger" tal:attributes="href string:${vis/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                  </tal:block>
+                  <tal:block condition="canConfigure">
+                    <a class="btn btn-mini btn-primary" tal:attributes="href string:${vis/absolute_url}/daviz-edit.html"><i class="icon-tasks icon-white"></i> Configure</a>
+                  </tal:block>
+                  <tal:block condition="canReview">
+                    <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
+                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                    <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
+                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
+                  </tal:block>
+                </div>
+              </td>
+            </tr>
+            </tal:row>
+          </table>
+        </tal:block>
+      </div>
+
+      <div class="col-md-12">
+        <h2>Further Information</h2>
+        <ul>
+          <li><a tal:attributes="href string:${cube/absolute_url}/indicators">Consult the list of selected indicators, their definition and sources</a></li>
+          <li><a tal:attributes="href string:${cube/absolute_url}#download">Entire dataset metadata and download services</a></li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </html>
-
