@@ -4,84 +4,85 @@
     tal:define="normalizeString nocall:context/plone_utils/normalizeString;
                 canAdd python:checkPermission('edw.datacube: Add DataCube', here);
                 isAnon context/@@plone_portal_state/anonymous;">
-    <div id="homepage-listing" class="scoreboard-listing bootstrap">
-      <h1>Digital Agenda Data</h1>
-      <div style="clear:both"></div>
-      <div class="listing-description">
-
-        <p>The present visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The charts you create can be exported as images, printed or shared through hyperlinks. You can download the data behind a chart or the entire dataset, including the metadata providing labels, definitions, methodological notes, references and sources. Use the "download" and "export" buttons present on each chart, or refer to the page "Entire dataset metadata and download services".</p>
-
-        <p>
-            Each dataset is stored in a semantic data repository to facilitate their reuse and the linking to other data published on the web. For browsing or querying of the semantic repository please follow the <a tal:attributes="href view/defaultCRUrl">link</a>. You will find functionalities for human and machine reading of data and metadata. The 
-            <a href="./documentation">documentation page</a> presents some reports and notes about the technical characteristics of the project developing the present visualisation tool and semantic repository.
-        </p>
-
+    <div id="homepage-listing" class="scoreboard-listing bootstrap row">
+      <div class="col-md-12">
+        <h1>Digital Agenda Data</h1>
       </div>
-      <h2>Please select one of the available datasets:</h2>
 
-
-      <tal:block define="cubes view/getDataCubes">
-        <p tal:condition="not:cubes">
-          No Data Cubes.
-        </p>
-        <div tal:condition="canAdd" class="pull-left">
-          <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
+      <div class="col-md-12">
+        <div class="listing-description">
+          <p>The present visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The charts you create can be exported as images, printed or shared through hyperlinks. You can download the data behind a chart or the entire dataset, including the metadata providing labels, definitions, methodological notes, references and sources. Use the "download" and "export" buttons present on each chart, or refer to the page "Entire dataset metadata and download services".</p>
+          <p>
+              Each dataset is stored in a semantic data repository to facilitate their reuse and the linking to other data published on the web. For browsing or querying of the semantic repository please follow the <a tal:attributes="href view/defaultCRUrl">link</a>. You will find functionalities for human and machine reading of data and metadata. The
+              <a href="./documentation">documentation page</a> presents some reports and notes about the technical characteristics of the project developing the present visualisation tool and semantic repository.
+          </p>
         </div>
-        <div style="clear: both;"></div>
-        <br />
-        <table class="scoreboard-datacubes-listing">
-          <tal:row repeat="cube cubes">
-          <tr class="scoreboard-datacubes-listing-item" tal:attributes="
-            id cube/getId;
-            data-name cube/getId;
-            data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
-            data-authenticator cube/@@authenticator/authenticator;
-            data-parent python:cube.getParentNode().absolute_url()"
-            tal:define="state python:view.getItemState(cube);
-                        canModify python:checkPermission('Modify portal content', cube);
-                        canReview python:checkPermission('Review portal content', cube);">
-            <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
-              <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
-                     tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
-                <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
-              </a>
-            </td>
-            <td>
-              <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
-              </a>
-              <p tal:content="structure cube/getSummary"></p>
-              <ul class="linklist">
-                <li tal:condition="not:isAnon">
-                  <span>Status:</span>
-                  <span tal:content="state" class="label label-success" tal:condition="python: state == 'published'">STATE</span>
-                  <span tal:content="state" class="label label-inverse" tal:condition="python: state == 'private'">STATE</span>
-                </li>
-                <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
-                  Consult the list of indicators, their definition and sources</a></li>
-                <li><a tal:attributes="href string:${cube/absolute_url}#download">
-                  Entire dataset metadata and download services</a></li>
-              </ul>
-              <div class="dataset-manage" tal:condition="canModify | canReview">
-                <tal:block condition="canModify">
-                  <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
-                  <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
-                </tal:block>
-                <tal:block condition="canReview">
-                  <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
-                    tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
-                  <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
-                    tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
-                  <a class="btn btn-mini btn-primary" tal:condition="python: state == 'published'"
-                    tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
-                </tal:block>
-              </div>
-            </td>
-          </tr>
-          </tal:row>
-        </table>
-      </tal:block>
+        <h2>Please select one of the available datasets:</h2>
+      </div>
+
+      <div class="col-md-12">
+        <tal:block define="cubes view/getDataCubes">
+          <p tal:condition="not:cubes">
+            No Data Cubes.
+          </p>
+          <div tal:condition="canAdd" class="pull-left">
+            <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
+          </div>
+
+          <table class="scoreboard-datacubes-listing">
+            <tal:row repeat="cube cubes">
+            <tr class="scoreboard-datacubes-listing-item" tal:attributes="
+              id cube/getId;
+              data-name cube/getId;
+              data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
+              data-authenticator cube/@@authenticator/authenticator;
+              data-parent python:cube.getParentNode().absolute_url()"
+              tal:define="state python:view.getItemState(cube);
+                          canModify python:checkPermission('Modify portal content', cube);
+                          canReview python:checkPermission('Review portal content', cube);">
+              <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
+                <a tal:attributes="href string:${cube/absolute_url}/visualizations">
+                  <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
+                       tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
+                  <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
+                </a>
+              </td>
+              <td>
+                <a tal:attributes="href string:${cube/absolute_url}/visualizations">
+                  <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
+                </a>
+                <p tal:content="structure cube/getSummary"></p>
+                <ul class="linklist">
+                  <li tal:condition="not:isAnon">
+                    <span>Status:</span>
+                    <span tal:content="state" class="label label-success" tal:condition="python: state == 'published'">STATE</span>
+                    <span tal:content="state" class="label label-inverse" tal:condition="python: state == 'private'">STATE</span>
+                  </li>
+                  <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
+                    Consult the list of indicators, their definition and sources</a></li>
+                  <li><a tal:attributes="href string:${cube/absolute_url}#download">
+                    Entire dataset metadata and download services</a></li>
+                </ul>
+                <div class="dataset-manage" tal:condition="canModify | canReview">
+                  <tal:block condition="canModify">
+                    <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
+                    <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                  </tal:block>
+                  <tal:block condition="canReview">
+                    <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
+                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                    <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
+                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
+                    <a class="btn btn-mini btn-primary" tal:condition="python: state == 'published'"
+                      tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
+                  </tal:block>
+                </div>
+              </td>
+            </tr>
+            </tal:row>
+          </table>
+        </tal:block>
+      </div>
     </div>
   </div>
 </html>

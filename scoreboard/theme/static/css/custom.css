@@ -1411,3 +1411,10 @@ table .span24 {
     top: 20px;
   }
 }
+
+@media (max-width: 800px) {
+  .scoreboard-listing .scoreboard-visualizations-listing tr,
+  .scoreboard-datacubes-listing tr {
+    width: 100%;
+  }
+}
