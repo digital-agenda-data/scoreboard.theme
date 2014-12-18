@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="cache-control" content="no-cache" />
@@ -116,28 +116,40 @@
     </script>
 
     <script src="./js/exporting.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="./css/widget100.css" media="all" />
     <link rel="stylesheet" type="text/css" href="./css/layout.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./css/content.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./css/public.css" media="all"  />
-    <link rel="stylesheet" type="text/css" href="./css/ec_default.css" media="all"  />
     <link rel="stylesheet" type="text/css" href="./css/custom.css" media="all"  />
   </head>
 
   <body>
 
     <div id="header" class="container">
-      <img class="logo" src="./images/logo_en.gif" alt="European Commision logo" />
-      <h1 class="portal-title">Digital Agenda for Europe</h1>
-      <p class="portal-subtitle">A Europe 2020 Initiative</p>
-      <ul class="breadcrumbs">
-        <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
-        <li><a href="http://ec.europa.eu/digital-agenda/en">Digital Agenda for Europe</a></li>
-        <li><a href="http://ec.europa.eu/digital-agenda/en/scoreboard">Scoreboard</a></li>
-        <li><a href="/">Visualizations</a></li>
-        <li>Scenario 1 [demo 1]</li>
-      </ul>
+      <div class="row">
+        <div class="col-md-12">
+          <img class="logo" src="./images/logo_en.gif" alt="European Commision logo" />
+          <h1 class="portal-title">Digital Agenda for Europe</h1>
+          <p class="portal-subtitle hidden-xs">A Europe 2020 Initiative</p>
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <nav class="navbar-collapse collapse" role="navigation">
+            <ul class="breadcrumbs nav">
+              <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
+              <li><a href="http://ec.europa.eu/digital-agenda/en">Digital Agenda for Europe</a></li>
+              <li><a href="http://ec.europa.eu/digital-agenda/en/scoreboard">Scoreboard</a></li>
+              <li><a href="/">Visualizations</a></li>
+              <li>Scenario 1 [demo 1]</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
 
     <div id="main" class="container">
