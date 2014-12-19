@@ -422,7 +422,7 @@ body .addthis_default_style .at300b {
 }
 
 
-/* KEY indicators */
+/* Dataset page */
 #dataset-metadata {
   padding: 1.4em;
   background-color: #E1F0F7;
@@ -456,6 +456,13 @@ table .label {
 #dataset-attributes td,
 #dataset-measures td {
   min-width: 110px;
+}
+
+.template-datacube-view-html .label {
+  padding: 4px 8px;
+  color: #333;
+  text-align: left;
+  line-height: 1.4;
 }
 
 
