@@ -26,7 +26,7 @@
             No Data Cubes.
           </p>
           <div tal:condition="canAdd" class="pull-left add-button-area">
-            <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
+            <a class="btn btn-xs btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
           </div>
 
           <table class="scoreboard-datacubes-listing">
@@ -56,7 +56,7 @@
                   <li tal:condition="not:isAnon">
                     <span>Status:</span>
                     <span tal:content="state" class="label label-success" tal:condition="python: state == 'published'">STATE</span>
-                    <span tal:content="state" class="label label-inverse" tal:condition="python: state == 'private'">STATE</span>
+                    <span tal:content="state" class="label" tal:condition="python: state == 'private'">STATE</span>
                   </li>
                   <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
                     Consult the list of indicators, their definition and sources</a></li>
@@ -65,15 +65,15 @@
                 </ul>
                 <div class="dataset-manage" tal:condition="canModify | canReview">
                   <tal:block condition="canModify">
-                    <a class="btn btn-mini btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
-                    <a class="btn btn-mini btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                    <a class="btn btn-xs btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
+                    <a class="btn btn-xs btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
                   </tal:block>
                   <tal:block condition="canReview">
-                    <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
+                    <a class="btn btn-xs btn-success" tal:condition="python: state != 'published'"
                       tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
-                    <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
+                    <a class="btn btn-xs btn-inverse" tal:condition="python: state != 'private'"
                       tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
-                    <a class="btn btn-mini btn-primary" tal:condition="python: state == 'published'"
+                    <a class="btn btn-xs btn-primary" tal:condition="python: state == 'published'"
                       tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
                   </tal:block>
                 </div>

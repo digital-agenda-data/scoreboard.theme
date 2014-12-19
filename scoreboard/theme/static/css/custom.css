@@ -62,6 +62,17 @@ body .docsTable th {
   font-weight: normal;
 }
 
+.btn-inverse {
+  color: #FFF;
+  background-color: #363636;
+  border-color: #222;
+}
+
+.btn-inverse:hover {
+  color: #FFF;
+  background-color: #222;
+}
+
 
 /* HEADER */
 .logo {
