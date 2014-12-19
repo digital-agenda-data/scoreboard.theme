@@ -75,6 +75,7 @@
                       tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
                     <a class="btn btn-xs btn-primary" tal:condition="python: state == 'published'"
                       tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
+                    <a href="#" title="Click and drag to reorder"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></a>
                   </tal:block>
                 </div>
               </td>

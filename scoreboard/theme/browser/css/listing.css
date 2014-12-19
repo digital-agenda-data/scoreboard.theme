@@ -74,22 +74,9 @@
   border-color: #DDD;
 }
 
-.scoreboard-listing-item-enhanced td:last-child:after {
-  content: ".";
-  color: white;
-  display: block;
-  text-align: center;
-  padding: 0.5em;
-}
-
-.scoreboard-listing-item-enhanced:hover {
-  background-color: whitesmoke;
-}
-
-.scoreboard-listing-item-enhanced:hover td:last-child:after {
-  content: "Click and drag to reorder";
+.scoreboard-listing-item-enhanced .glyphicon-move {
   color: #555;
-  display: block;
+  display: inline-block;
   text-align: center;
   padding: 0.5em;
 }
