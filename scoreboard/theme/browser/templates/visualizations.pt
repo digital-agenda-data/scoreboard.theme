@@ -33,7 +33,7 @@
           </p>
           <div tal:condition="canAdd" class="pull-left">
             <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
-              <i class="icon-plus-sign icon-white"></i> Add new</a>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</a>
           </div>
           <div style="clear: both;"></div>
           <br />
@@ -63,17 +63,17 @@
                 <p tal:content="vis/Description"></p>
                 <div class="dataset-manage" tal:condition="canModify | canConfigure | canReview">
                   <tal:block condition="canModify">
-                    <a class="btn btn-mini btn-warning" tal:attributes="href string:${vis/absolute_url}/edit?final_url=${here/absolute_url}/visualizations"><i class="icon-edit icon-white"></i> Edit</a>
-                    <a class="btn btn-mini btn-danger" tal:attributes="href string:${vis/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                    <a class="btn btn-mini btn-warning" tal:attributes="href string:${vis/absolute_url}/edit?final_url=${here/absolute_url}/visualizations"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>
+                    <a class="btn btn-mini btn-danger" tal:attributes="href string:${vis/absolute_url}/delete_confirmation"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
                   </tal:block>
                   <tal:block condition="canConfigure">
-                    <a class="btn btn-mini btn-primary" tal:attributes="href string:${vis/absolute_url}/daviz-edit.html"><i class="icon-tasks icon-white"></i> Configure</a>
+                    <a class="btn btn-mini btn-primary" tal:attributes="href string:${vis/absolute_url}/daviz-edit.html"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Configure</a>
                   </tal:block>
                   <tal:block condition="canReview">
                     <a class="btn btn-mini btn-success" tal:condition="python: state != 'published'"
-                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=publish"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Publish</a>
                     <a class="btn btn-mini btn-inverse" tal:condition="python: state != 'private'"
-                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
+                      tal:attributes="href string:${vis/absolute_url}/content_status_modify?workflow_action=reject"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Unpublish</a>
                   </tal:block>
                 </div>
               </td>
