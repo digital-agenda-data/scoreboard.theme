@@ -26,7 +26,7 @@
             No Data Cubes.
           </p>
           <div tal:condition="canAdd" class="pull-left add-button-area">
-            <a class="btn btn-xs btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
+            <a class="btn btn-xs btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</a>
           </div>
 
           <table class="scoreboard-datacubes-listing">
@@ -65,16 +65,16 @@
                 </ul>
                 <div class="dataset-manage" tal:condition="canModify | canReview">
                   <tal:block condition="canModify">
-                    <a class="btn btn-xs btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><i class="icon-edit icon-white"></i> Edit</a>
-                    <a class="btn btn-xs btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><i class="icon-trash icon-white"></i> Delete</a>
+                    <a class="btn btn-xs btn-warning" tal:attributes="href string:${cube/absolute_url}/edit?final_url=${here/absolute_url}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>
+                    <a class="btn btn-xs btn-danger" tal:attributes="href string:${cube/absolute_url}/delete_confirmation"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
                   </tal:block>
                   <tal:block condition="canReview">
                     <a class="btn btn-xs btn-success" tal:condition="python: state != 'published'"
-                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><i class="icon-ok icon-white"></i> Publish</a>
+                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=publish"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Publish</a>
                     <a class="btn btn-xs btn-inverse" tal:condition="python: state != 'private'"
-                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><i class="icon-remove icon-white"></i> Unpublish</a>
+                      tal:attributes="href string:${cube/absolute_url}/content_status_modify?workflow_action=reject"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Unpublish</a>
                     <a class="btn btn-xs btn-primary" tal:condition="python: state == 'published'"
-                      tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><i class="icon-tasks icon-white"></i> Moderate</a>
+                      tal:attributes="href python:cube.absolute_url().replace('datasets', 'board') + '/moderate'"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Moderate</a>
                     <a href="#" title="Click and drag to reorder"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></a>
                   </tal:block>
                 </div>
