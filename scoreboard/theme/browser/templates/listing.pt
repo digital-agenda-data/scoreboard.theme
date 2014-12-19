@@ -56,7 +56,7 @@
                   <li tal:condition="not:isAnon">
                     <span>Status:</span>
                     <span tal:content="state" class="label label-success" tal:condition="python: state == 'published'">STATE</span>
-                    <span tal:content="state" class="label" tal:condition="python: state == 'private'">STATE</span>
+                    <span tal:content="state" class="label label-default" tal:condition="python: state == 'private'">STATE</span>
                   </li>
                   <li><a tal:attributes="href string:${cube/absolute_url}/indicators">
                     Consult the list of indicators, their definition and sources</a></li>
