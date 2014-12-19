@@ -25,7 +25,7 @@
           <p tal:condition="not:cubes">
             No Data Cubes.
           </p>
-          <div tal:condition="canAdd" class="pull-left">
+          <div tal:condition="canAdd" class="pull-left add-button-area">
             <a class="btn btn-mini btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><i class="icon-plus-sign icon-white"></i> Add new</a>
           </div>
 

@@ -111,3 +111,9 @@
 .nav.nav-tabs {
   padding-left: 0;
 }
+
+.add-button-area {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
