@@ -412,7 +412,6 @@ body .addthis_default_style .at300b {
   padding: 1.4em;
   background-color: #E1F0F7;
   border-radius: 25px;
-  width: 704px;
 }
 
 #dataset-metadata dd {
@@ -434,13 +433,7 @@ table .label {
 #dataset-dimensions,
 #dataset-attributes,
 #dataset-measures {
-  min-width: 740px;
-}
-
-#dataset-dimensions td,
-#dataset-attributes td,
-#dataset-measures td {
-  min-width: 110px;
+  width: 100%;
 }
 
 .template-datacube-view-html .label {
@@ -1104,7 +1097,6 @@ div.field span.required:after {
 }
 
 table {
-  max-width: 100%;
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
