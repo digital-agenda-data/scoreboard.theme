@@ -1404,4 +1404,11 @@ table .span24 {
   .scoreboard-listing table td {
     padding-left: 8px;
   }
+
+  .list_indicators,
+  .list_indicators th,
+  .list_indicators tr,
+  .list_indicators td {
+    padding: 4px;
+  }
 }
