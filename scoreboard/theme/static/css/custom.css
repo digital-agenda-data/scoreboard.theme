@@ -151,6 +151,8 @@ body .docsTable th {
 
 #footer .row {
   background: #E5E5E5;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .footer-wrapper {
@@ -160,14 +162,6 @@ body .docsTable th {
 #copyright {
   background: #E5E5E5;
   color: #808080;
-}
-
-.footer-wrapper h4 {
-  color: #333;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: normal;
-  margin-bottom: 1em;
 }
 
 #footer ul {
@@ -182,10 +176,6 @@ body .docsTable th {
 
 #footer ul li a {
   color: #808080;
-}
-
-#footer ul li a:hover {
-  text-decoration: underline;
 }
 
 
