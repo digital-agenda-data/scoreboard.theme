@@ -61,4 +61,9 @@
     <before css:content="#personaltools-plone_setup" css:theme="#footer .content .menu.clearfix li:first-child" />
     <before css:content="#personaltools-logout" css:theme="#footer .content .menu.clearfix li:first-child" />
     <replace css:content="#personaltools-login" css:theme="#footer .content .menu.clearfix li:first-child a" />
+
+    <replace css:theme="#documentation-link">
+      <a href="{$portal_url}/documentation">Documentation</a>
+    </replace>
+
 </rules>
