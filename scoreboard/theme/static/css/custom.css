@@ -147,20 +147,19 @@ body .docsTable th {
 /* FOOTER */
 #footer {
   margin-top: 5px;
+}
+
+#footer .row {
   background: #E5E5E5;
 }
 
 .footer-wrapper {
   border-top: 4px solid #CDCDCD;
-  overflow: hidden;
-  padding: 10px;
 }
 
 #copyright {
-  border-top: 4px solid #CDCDCD;
+  background: #E5E5E5;
   color: #808080;
-  margin: 0 20px;
-  padding: 5px;
 }
 
 .footer-wrapper h4 {
@@ -169,20 +168,6 @@ body .docsTable th {
   line-height: 16px;
   font-weight: normal;
   margin-bottom: 1em;
-}
-
-#footer .block-menu {
-  float: left;
-}
-
-#haveyoursaybox {
-  float: right;
-  border: 1px solid #E5E5E5;
-  border-radius: 5px;
-}
-
-#haveyoursaybox:hover {
-  border: 1px solid #CDCDCD;
 }
 
 #footer ul {
@@ -196,7 +181,6 @@ body .docsTable th {
 }
 
 #footer ul li a {
-  text-decoration: none;
   color: #808080;
 }
 
