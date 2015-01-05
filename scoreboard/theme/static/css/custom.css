@@ -1404,9 +1404,8 @@ table .span24 {
   }
 }
 
-@media (max-width: 800px) {
-  .scoreboard-listing .scoreboard-visualizations-listing tr,
-  .scoreboard-datacubes-listing tr {
-    width: 100%;
+@media (max-width: 600px) {
+  .scoreboard-listing table td {
+    padding-left: 8px;
   }
 }
