@@ -333,20 +333,21 @@ body .addthis_default_style .at300b {
   width: 100%;
   padding-top: 10px;
   margin-bottom: 10px;
-  margin-right: 210px;
+}
+
+.navigation-widget .container {
+  max-width: 1140px;
 }
 
 .navigation-widget h4 {
   margin-bottom: 5px;
 }
 
-.navigation-widget div {
+.navigation-widget div div div {
   background: #E1F0F7;
   display: inline-block;
-  width: 175px;
   min-height: 160px;
-  margin-bottom: 3px;
-  border: 3px solid #E1F0F7;
+  border: 1px solid #FFF;
   vertical-align: top;
   text-align: center;
 }
@@ -357,9 +358,8 @@ body .addthis_default_style .at300b {
 }
 
 #dataset-navigation .selected,
-#dataset-navigation div:hover {
+#dataset-navigation div div div:hover {
   background: #C4E2F0;
-  border-color: #C4E2F0;
 }
 
 .navigation-widget a {
@@ -1387,16 +1387,15 @@ table .span24 {
 
 
 /* mobile */
-@media (max-width: 480px) {
-  .logo {
-    padding-left: 0;
-    width: 140px;
+@media (max-width: 1200px) {
+  .navigation-widget .container {
+    max-width: 940px;
   }
+}
 
-  .portal-title {
-    margin-left: 160px;
-    width: 210px;
-    top: 20px;
+@media (max-width: 800px) {
+  .navigation-widget .container {
+    max-width: 720px;
   }
 }
 
@@ -1410,5 +1409,18 @@ table .span24 {
   .list_indicators tr,
   .list_indicators td {
     padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    padding-left: 0;
+    width: 140px;
+  }
+
+  .portal-title {
+    margin-left: 160px;
+    width: 210px;
+    top: 20px;
   }
 }

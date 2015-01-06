@@ -3,11 +3,15 @@
 {{else}}
   <h4>Datasets:</h4>
 {{/if}}
-{{#each cubes}}
-<div {{#if selected }} class="selected" {{/if}} id="{{ id }}">
-  <a href="{{ url }}{{ options.url_extension }}" title="{{ title }}">
-    <img src="{{ image }}" class="navigation_icon" alt="">
-    <label>{{ title }}</label>
-  </a>
+<div class="container">
+  <div class="row">
+    {{#each cubes}}
+    <div class="{{#if selected }}selected {{/if}}col-md-2 col-sm-4 col-xs-6" id="{{ id }}">
+      <a href="{{ url }}{{ options.url_extension }}" title="{{ title }}">
+        <img src="{{ image }}" class="navigation_icon" alt="">
+        <label>{{ title }}</label>
+      </a>
+    </div>
+    {{/each}}
+  </div>
 </div>
-{{/each}}
