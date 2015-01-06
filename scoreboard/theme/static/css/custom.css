@@ -143,6 +143,20 @@ body .docsTable th {
   text-decoration: none;
 }
 
+.navbar-collapse.in .breadcrumbs {
+  margin-top: 3px;
+  padding-top: 5px;
+  padding-left: 0;
+}
+
+.navbar-collapse.in .breadcrumbs li {
+  display: block;
+  background-image: none;
+  padding: 10px 10px 10px 20px;
+  min-height: 30px;
+  border-bottom: 1px solid #555;
+}
+
 
 /* FOOTER */
 #footer {
