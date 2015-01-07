@@ -1403,19 +1403,6 @@ table .span24 {
   .navigation-widget .container {
     max-width: 720px;
   }
-}
-
-@media (max-width: 600px) {
-  .scoreboard-listing table td {
-    padding-left: 8px;
-  }
-
-  .list_indicators,
-  .list_indicators th,
-  .list_indicators tr,
-  .list_indicators td {
-    padding: 4px;
-  }
 
   .navbar-collapse.in .breadcrumbs {
     margin-top: 3px;
@@ -1441,17 +1428,44 @@ table .span24 {
   .navbar-collapse.in .breadcrumbs li a {
     color: #0073A8;
   }
-}
 
-@media (max-width: 480px) {
   .logo {
     padding-left: 0;
     width: 140px;
   }
 
   .portal-title {
+    margin-left: 150px;
+    width: 320px;
+    top: 45px;
+  }
+
+  .navbar-toggle {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .scoreboard-listing table td {
+    padding-left: 8px;
+  }
+
+  .list_indicators,
+  .list_indicators th,
+  .list_indicators tr,
+  .list_indicators td {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-title {
     margin-left: 160px;
     width: 210px;
     top: 20px;
+  }
+
+  .navbar-toggle {
+    margin-top: 25px;
   }
 }
