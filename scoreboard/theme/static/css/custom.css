@@ -1,7 +1,6 @@
 /* GENERAL */
 body {
   margin: 0 auto;
-	/*width: 1120px;*/
 	font-family: 'Segoe UI', Arial, sans-serif;
 	font-size: 13px;
   color: #333;
@@ -75,6 +74,10 @@ body .docsTable th {
 
 
 /* HEADER */
+#header {
+  margin-top: 5px;
+}
+
 .logo {
   width: 194px;
   border: 0px;
@@ -1435,13 +1438,13 @@ table .span24 {
   }
 
   .portal-title {
-    margin-left: 150px;
-    width: 320px;
-    top: 45px;
+    margin-left: 160px;
+    width: 210px;
+    top: 30px;
   }
 
   .navbar-toggle {
-    margin-top: 36px;
+    margin-top: 30px;
   }
 }
 
