@@ -104,7 +104,7 @@ body .docsTable th {
 }
 
 .navbar-toggle {
-  background: #074A8B;
+  background: #999;
   border: 0;
   margin-right: 0;
   margin-top: 25px;
@@ -1418,9 +1418,10 @@ table .span24 {
   }
 
   .navbar-collapse.in .breadcrumbs {
-  margin-top: 3px;
-  padding-top: 5px;
-  padding-left: 0;
+    margin-top: 3px;
+    padding-left: 0;
+    background: #FFF;
+    border-top: 1px solid #999;
   }
 
   .navbar-collapse.in .breadcrumbs li {
@@ -1428,7 +1429,17 @@ table .span24 {
     background-image: none;
     padding: 10px 10px 10px 20px;
     min-height: 30px;
-    border-bottom: 1px solid #3D6489;
+    color: #333;
+    border-bottom: 1px solid #999; /*#3D6489;*/
+  }
+
+  .navbar-collapse.in .breadcrumbs li:last-of-type,
+  .navbar-collapse.in .breadcrumbs li:hover {
+    background: #DDD;
+  }
+
+  .navbar-collapse.in .breadcrumbs li a {
+    color: #0073A8;
   }
 }
 
