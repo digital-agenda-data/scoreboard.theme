@@ -143,18 +143,10 @@ body .docsTable th {
   text-decoration: none;
 }
 
-.navbar-collapse.in .breadcrumbs {
-  margin-top: 3px;
-  padding-top: 5px;
-  padding-left: 0;
-}
-
-.navbar-collapse.in .breadcrumbs li {
-  display: block;
-  background-image: none;
-  padding: 10px 10px 10px 20px;
-  min-height: 30px;
-  border-bottom: 1px solid #555;
+@media (min-width: 768px) {
+  .navbar-collapse.collapse {
+    margin-top: 120px;
+  }
 }
 
 
@@ -1423,6 +1415,20 @@ table .span24 {
   .list_indicators tr,
   .list_indicators td {
     padding: 4px;
+  }
+
+  .navbar-collapse.in .breadcrumbs {
+  margin-top: 3px;
+  padding-top: 5px;
+  padding-left: 0;
+  }
+
+  .navbar-collapse.in .breadcrumbs li {
+    display: block;
+    background-image: none;
+    padding: 10px 10px 10px 20px;
+    min-height: 30px;
+    border-bottom: 1px solid #3D6489;
   }
 }
 
