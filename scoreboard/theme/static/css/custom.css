@@ -78,6 +78,10 @@ body .docsTable th {
   margin-top: 5px;
 }
 
+.navbar-header {
+  width: 100%;
+}
+
 .logo {
   width: 194px;
   border: 0px;
@@ -1396,9 +1400,23 @@ table .span24 {
   }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 1024px) {
   .navbar-collapse {
     margin-top: 120px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .navbar-toggle {
+    display: inline-block;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-collapse.in {
+    display: block !important;
   }
 }
 
@@ -1439,8 +1457,12 @@ table .span24 {
 
   .portal-title {
     margin-left: 160px;
-    width: 210px;
-    top: 30px;
+    width: 400px;
+    top: 45px;
+  }
+
+  .portal-subtitle {
+    display: none;
   }
 
   .navbar-toggle {
@@ -1458,6 +1480,12 @@ table .span24 {
   .list_indicators tr,
   .list_indicators td {
     padding: 4px;
+  }
+
+  .portal-title {
+    margin-left: 160px;
+    width: 210px;
+    top: 30px;
   }
 }
 
