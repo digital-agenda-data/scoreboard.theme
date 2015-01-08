@@ -267,7 +267,7 @@ body .docsTable th {
   color: #FFF;
 }
 
-.editor-steps .icon-chevron-right {
+.editor-steps .glyphicon-chevron-right {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -279,7 +279,13 @@ body .docsTable th {
   float: right;
   margin-top: 2px;
   margin-right: -6px;
-  opacity: .25;
+  color: #999;
+}
+
+.editor-box h4 {
+  font-size: 18px;
+  line-height: 20px;
+  padding-top: 10px;
 }
 
 .editor-box h4,
@@ -297,8 +303,12 @@ body .docsTable th {
   min-width: 715px;
 }
 
+.editor-current-step label {
+  font-weight: normal;
+}
+
 .editor-charttype .chart-type-container {
-overflow: hidden;
+  overflow: hidden;
 }
 
 .editor-charttype label.chart-type {
