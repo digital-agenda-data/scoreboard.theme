@@ -395,6 +395,12 @@ body .docsTable th {
   display: block;
 }
 
+.editor-axes legend {
+width: 100%;
+font-size: 21px;
+line-height: 40px;
+}
+
 
 /* VISUALISATION filters */
 #the-filters {
