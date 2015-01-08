@@ -1425,14 +1425,15 @@ table .span24 {
     max-width: 720px;
   }
 
-  .navbar-collapse.in .breadcrumbs {
+  .breadcrumbs {
+    background: #FFF;
     margin-top: 3px;
     padding-left: 0;
-    background: #FFF;
     border-top: 1px solid #999;
   }
 
-  .navbar-collapse.in .breadcrumbs li {
+  .breadcrumbs li,
+  .breadcrumbs li.first {
     display: block;
     background-image: none;
     padding: 10px 10px 10px 20px;
@@ -1441,12 +1442,12 @@ table .span24 {
     border-bottom: 1px solid #999; /*#3D6489;*/
   }
 
-  .navbar-collapse.in .breadcrumbs li:last-of-type,
-  .navbar-collapse.in .breadcrumbs li:hover {
+  .breadcrumbs li:last-of-type,
+  .breadcrumbs li:hover {
     background: #DDD;
   }
 
-  .navbar-collapse.in .breadcrumbs li a {
+  .breadcrumbs li a {
     color: #0073A8;
   }
 
