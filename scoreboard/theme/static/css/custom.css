@@ -221,7 +221,9 @@ body .docsTable th {
 
 
 /* CONTENT */
-
+.template-daviz-edit-html .portalMessage {
+  display: none;
+}
 
 /* VISUALISATION filters */
 #the-filters {
