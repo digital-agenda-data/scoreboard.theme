@@ -13,6 +13,9 @@
   id="++resource++scoreboard.theme.css/bootstrap.css"
   />
 <stylesheet
+  id="++resource++scoreboard.theme.css/cookies.css"
+  />
+<stylesheet
   id="ie8.css"
   conditionalcomment="IE 8"
   />

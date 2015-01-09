@@ -17,4 +17,6 @@
   <javascript
     authenticated="True" expression=""
     id="++resource++scoreboard.theme.js/listing.js" />
+  <javascript
+    id="++resource++scoreboard.theme.js/cookies.js" />
 </object>
