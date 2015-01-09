@@ -462,23 +462,20 @@ body .docsTable th {
   padding: 10px;
 }
 
-.upper-left,
 .bottom-left {
   float: left;
   width: 470px;
   display: inline-block;
 }
 
-.upper-right,
 .bottom-right {
   float: right !important;
   width: 630px;
   display: inline-block;
 }
 
-.upper-left select,
+.col-md-6 select,
 .bottom-left select,
-.upper-right select,
 .bottom-right select {
   width: 320px;
 }
@@ -501,6 +498,10 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 #ref-area-add-all,
 #ref-area-clear {
   margin-top: 10px;
+}
+
+.chart-filter .select2-container {
+  width: 80%;
 }
 
 
