@@ -362,7 +362,6 @@ body .docsTable th {
   font-size: 12px;
   color: #000;
   margin: 0 0 2px 0;
-  padding: 0 0 0 0;
   vertical-align: middle;
 }
 
@@ -420,6 +419,39 @@ body .docsTable th {
 
 .editor-axes input[type="text"] {
   height: 25px;
+}
+
+.editor-current-step input[type="text"],
+.editor-current-step select,
+.editor-current-step textarea {
+  font-size: 12px;
+}
+
+.editor-series ul,
+.editor-annotations ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.editor-format h5 {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.editor-format label,
+.editor-annotations label {
+  min-width: 50px;
+  margin-top: 10px;
+}
+
+.editor-annotations textarea {
+  min-height: 100px;
+}
+
+.editor-advanced textarea {
+  min-height: 300px;
+  margin-bottom: 20px;
 }
 
 
