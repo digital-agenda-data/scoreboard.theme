@@ -536,8 +536,13 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin-top: 0;
 }
 
+.share a {
+  width: 96%;
+}
+
 .addthis_toolbox a {
   margin-bottom: 3px;
+  width: 36px;
 }
 
 
