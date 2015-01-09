@@ -536,8 +536,8 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin-top: 0;
 }
 
-body .addthis_default_style .at300b {
-  padding: 0 6px;
+.addthis_toolbox a {
+  margin-bottom: 3px;
 }
 
 
