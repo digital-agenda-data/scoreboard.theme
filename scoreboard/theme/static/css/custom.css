@@ -366,11 +366,6 @@ body .docsTable th {
   vertical-align: middle;
 }
 
-.editor-current-step .facets .editor-facets {
-  margin-bottom: 20px;
-  padding: 3px 3px 10px 0px;
-}
-
 .editor-current-step .checkbox,
 .editor-current-step .checkbox label {
   padding-left: 0;
@@ -379,11 +374,6 @@ body .docsTable th {
 .editor-facet-field textarea,
 .editor-facet-field div.select2-container {
   width: 600px;
-}
-
-.editor-facet-name {
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .editor-current-step .checkbox input[type="checkbox"] {
@@ -401,10 +391,26 @@ body .docsTable th {
   border-radius: 4px;
 }
 
-.editor-axes legend {
+.editor-axes legend,
+.editor-facet-name {
   width: auto;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
   padding: 5px 10px;
+}
+
+/* make editor-facets look like fieldsets */
+.editor-current-step .editor-facets {
+  padding: 0 1em 1em;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  margin-bottom: 36px;
+}
+
+.editor-facet-name {
+  margin-top: -16px;
+  background: #FFF;
+  display: inline-block;
 }
 
 .well-small {
