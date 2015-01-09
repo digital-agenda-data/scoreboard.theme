@@ -558,6 +558,15 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin-bottom: 3px;
 }
 
+.share .comment a {
+  background: url(../images/comments.png) 1px 1px no-repeat;
+  padding-left: 30px;
+}
+
+.share .comment {
+  margin-top: 0;
+}
+
 body .addthis_default_style .at300b {
   padding: 0 6px;
 }
