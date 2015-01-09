@@ -517,10 +517,6 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   border: 1px solid #DDD;
 }
 
-.legend h2 {
-  margin-top: 2px;
-}
-
 .section.share {
   background-color: #EEE;
   border: 1px solid #DDD;
@@ -534,33 +530,6 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 .section.share ul li {
   list-style-type: none;
   margin-bottom: 10px;
-}
-
-.share .print a {
-  background: url(../images/print.png) 1px 1px no-repeat;
-  display: block;
-  margin-bottom: 3px;
-  padding-left: 30px;
-  padding-bottom: 2px;
-}
-
-.share .export a {
-  background: url(../images/download_arrow.png) 1px 1px no-repeat;
-  display: block;
-  padding-left: 30px;
-  margin-bottom: 3px;
-}
-
-.share .embed a {
-  background: url(../images/embed.png) 1px 1px no-repeat;
-  display: block;
-  padding-left: 30px;
-  margin-bottom: 3px;
-}
-
-.share .comment a {
-  background: url(../images/comments.png) 1px 1px no-repeat;
-  padding-left: 30px;
 }
 
 .share .comment {
