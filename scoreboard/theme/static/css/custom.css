@@ -591,13 +591,8 @@ body .addthis_default_style .at300b {
   text-align: center;
 }
 
-#the-navigation .selected,
-#the-navigation div:hover {
-  background: #FFF;
-}
-
-#dataset-navigation .selected,
-#dataset-navigation div div div:hover {
+.navigation-widget .selected,
+.navigation-widget div div div:hover {
   background: #C4E2F0;
 }
 
