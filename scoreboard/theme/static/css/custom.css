@@ -346,7 +346,6 @@ body .docsTable th {
 }
 
 .editor-current-step label {
-  /*display: inline-block;*/
   min-width: 130px;
   font-size: 12px;
   color: #555;
@@ -395,10 +394,25 @@ body .docsTable th {
   display: block;
 }
 
+#daviz-views-edit fieldset {
+  margin-bottom: 20px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
 .editor-axes legend {
-width: 100%;
-font-size: 21px;
-line-height: 40px;
+  width: auto;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.well-small {
+  padding: 9px;
+  margin-top: 10px;
+}
+
+.editor-axes input[type="text"] {
+  height: 25px;
 }
 
 
