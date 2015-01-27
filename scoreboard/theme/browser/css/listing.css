@@ -107,3 +107,10 @@
 .scoreboard-listing .label {
   display: inline;
 }
+
+
+@media (max-width: 480px) {
+  .linklist {
+    padding-left: 20px;
+  }
+}
