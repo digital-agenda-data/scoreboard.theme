@@ -1676,6 +1676,11 @@ table .span24 {
   .navbar-toggle {
     margin-top: 30px;
   }
+
+  .scoreboard-datacubes-listing td {
+    display: block;
+    clear: both;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1706,10 +1711,5 @@ table .span24 {
 
   .navbar-toggle {
     margin-top: 25px;
-  }
-
-  .scoreboard-datacubes-listing td {
-    display: block;
-    clear: both;
   }
 }
