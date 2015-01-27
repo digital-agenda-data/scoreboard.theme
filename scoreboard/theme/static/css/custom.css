@@ -1677,7 +1677,8 @@ table .span24 {
     margin-top: 30px;
   }
 
-  .scoreboard-datacubes-listing td {
+  .scoreboard-datacubes-listing td,
+  .scoreboard-visualizations-listing td {
     display: block;
     clear: both;
   }
