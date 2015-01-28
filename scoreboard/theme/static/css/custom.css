@@ -749,6 +749,21 @@ body .docsTable td {
 }
 
 
+/* Administration pages */
+form[name="edit_form"] >.field {
+  background: #F7F7F7;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+}
+
+#extended_title,
+form[name="edit_form"] #description {
+  width: 98%;
+}
+
+
+
 
 
 /*  */
