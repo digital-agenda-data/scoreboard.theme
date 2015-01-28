@@ -762,6 +762,22 @@ form[name="edit_form"] #description {
   width: 98%;
 }
 
+button[title="close"] {
+  padding: 0;
+}
+
+button[title="close"] .ui-button-text {
+  display: none;
+}
+
+.ui-dialog .ui-dialog-title {
+  width: 86%;
+}
+
+.ui-widget-content {
+  border: 0;
+}
+
 
 
 
