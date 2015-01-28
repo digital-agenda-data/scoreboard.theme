@@ -778,6 +778,16 @@ button[title="close"] .ui-button-text {
   border: 0;
 }
 
+.ui-dialog-buttonset .btn-inverse {
+  color: #FFF;
+  background-color: #D9534F;
+  border-color: #D43F3A;
+}
+
+.ui-dialog-buttonset .btn-inverse:hover {
+  background: #C9302C;
+  border-color: #AC2925;
+}
 
 
 
