@@ -459,6 +459,13 @@ body .docsTable th {
   color: #555;
   background: #E1F0F7;
   padding: 10px;
+  max-width: 1140px;
+}
+
+.upper-filters,
+.bottom-filters,
+.footer-filters {
+  max-width: 1140px;
 }
 
 .bottom-left {
@@ -507,6 +514,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 /* Visualization legend and share */
 .legend-share {
   margin-top: 5px;
+  max-width: 1140px;
 }
 
 .legend {
@@ -561,10 +569,10 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin-bottom: 5px;
 }
 
-.navigation-widget div div div {
+.navigation-widget div div {
   background: #E1F0F7;
   display: inline-block;
-  min-height: 164px;
+  min-height: 180px;
   border: 1px solid #FFF;
   vertical-align: top;
   text-align: center;
