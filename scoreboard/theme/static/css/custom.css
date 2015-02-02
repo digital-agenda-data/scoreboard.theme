@@ -552,6 +552,45 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   width: 36px;
 }
 
+.btn-print {
+  color: #FFF;
+  background-color: #449D44;
+  border-color: #398439;
+  text-shadow: none;
+}
+
+.btn-print:hover {
+  color: #FFF;
+  background-color: #2A862A;
+  border-color: #0A710A;
+}
+
+.btn-export {
+  color: #FFF;
+  background-color: #0065A2;
+  border-color: #02578B;
+  text-shadow: none;
+}
+
+.btn-export:hover {
+  color: #FFF;
+  background-color: #065A8C;
+  border-color: #064267;
+}
+
+.btn-comments {
+  color: #333;
+  background-color: #BEE0F0;
+  border-color: #99C1D2;
+  text-shadow: none;
+}
+
+.btn-comments:hover {
+  color: #333;
+  background-color: #94C5DB;
+  border-color: #7CA8BB;
+}
+
 
 /* Visualization scenario navigation */
 .navigation-widget {
