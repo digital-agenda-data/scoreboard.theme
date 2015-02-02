@@ -41,14 +41,14 @@
                 tal:define="state python:view.getItemState(cube);
                             canModify python:checkPermission('Modify portal content', cube);
                             canReview python:checkPermission('Review portal content', cube);">
-                <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
+                <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')" class="thumbnail-area">
                   <a tal:attributes="href string:${cube/absolute_url}/visualizations">
                     <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
                          tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
                     <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
                   </a>
                 </td>
-                <td>
+                <td class="dataset-description-area">
                   <a tal:attributes="href string:${cube/absolute_url}/visualizations">
                     <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
                   </a>

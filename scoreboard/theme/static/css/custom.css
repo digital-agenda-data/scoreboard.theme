@@ -1721,7 +1721,8 @@ table .span24 {
     top: 45px;
   }
 
-  .portal-subtitle {
+  .portal-subtitle,
+  .thumbnail-area {
     display: none;
   }
 
@@ -1729,7 +1730,7 @@ table .span24 {
     margin-top: 30px;
   }
 
-  .scoreboard-datacubes-listing td,
+  .dataset-description-area,
   .scoreboard-visualizations-listing td {
     display: block;
     clear: both;
