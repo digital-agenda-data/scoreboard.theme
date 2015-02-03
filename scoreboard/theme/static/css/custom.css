@@ -221,7 +221,8 @@ body .docsTable th {
 
 /* Configure Visualization page */
 .template-daviz-edit-html .portalMessage,
-.daviz-settings ul.formTabs {
+.daviz-settings ul.formTabs,
+.editor-box h4 {
   display: none;
 }
 
@@ -281,13 +282,6 @@ body .docsTable th {
   color: #999;
 }
 
-.editor-box h4 {
-  /*font-size: 18px;
-  line-height: 20px;
-  padding-top: 10px;*/
-  display: none;
-}
-
 .editor-box h4,
 .editor-current-step,
 .daviz-view-form {
@@ -342,7 +336,7 @@ body .docsTable th {
 }
 
 .daviz-settings .action-buttons {
-  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .editor-current-step label {
@@ -387,7 +381,8 @@ body .docsTable th {
   margin-left: 0;
 }
 
-.editor-facet-field label {
+.editor-facet-field label,
+.editor-annotations label {
   display: block;
 }
 
@@ -451,10 +446,6 @@ body .docsTable th {
   width: 100%;
 }
 
-.editor-annotations label {
-  display: block;
-}
-
 .definitions-title {
   width: 100%;
 }
@@ -462,6 +453,27 @@ body .docsTable th {
 .editor-advanced textarea {
   min-height: 300px;
   margin-bottom: 20px;
+}
+
+.daviz-view-form button {
+/* Bootstrap button style for a non-editable button */
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #333;
+  background-color: #FFF;
+  border:1px solid  #CCC;
+}
+
+.daviz-view-form button:hover {
+  color: #333;
+  background-color: #E6E6E6;
+  border-color: #ADADAD;
+}
+
+.btn-view-viz {
+  margin-left: 10px;
 }
 
 
@@ -589,14 +601,16 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   border-color: #064267;
 }
 
-.btn-comments {
+.btn-comments,
+.btn-view-viz {
   color: #333;
   background-color: #BEE0F0;
   border-color: #99C1D2;
   text-shadow: none;
 }
 
-.btn-comments:hover {
+.btn-comments:hover,
+.btn-view-viz:hover {
   color: #333;
   background-color: #94C5DB;
   border-color: #7CA8BB;
