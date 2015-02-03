@@ -346,12 +346,20 @@ body .docsTable th {
 }
 
 .editor-current-step label {
-  min-width: 130px;
   font-size: 12px;
   color: #555;
-  margin: 0 0 2px 0;
+  margin: 5px 0 2px 0;
   line-height: 16px;
   vertical-align: middle;
+}
+
+.editor-structure-multiple-series label,
+.editor-structure-categories-by label {
+  min-width: 169px;
+}
+
+.daviz-views-edit ul {
+  margin-left: 5px;
 }
 
 .editor-current-step select,
@@ -438,14 +446,17 @@ body .docsTable th {
   padding: 5px 0;
 }
 
-.editor-format label,
-.editor-annotations label {
-  min-width: 50px;
-  margin-top: 10px;
-}
-
 .editor-annotations textarea {
   min-height: 100px;
+  width: 100%;
+}
+
+.editor-annotations label {
+  display: block;
+}
+
+.definitions-title {
+  width: 100%;
 }
 
 .editor-advanced textarea {
