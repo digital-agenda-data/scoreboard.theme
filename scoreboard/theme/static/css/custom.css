@@ -476,6 +476,10 @@ body .docsTable th {
   margin-left: 10px;
 }
 
+.template-daviz-edit-html .collapse {
+  position: initial; /* override from daviz-edit.css */
+}
+
 
 /* VISUALISATION filters */
 #the-filters {
