@@ -4,6 +4,12 @@ body {
 	font-family: 'Segoe UI', Arial, sans-serif;
 	font-size: 13px;
   color: #333;
+  background: #EBF6FC;
+  background: -moz-linear-gradient(top, #ebf6fc 0%, #b3e0f7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EBF6FC), color-stop(100%,#B3E0F7));
+  background: -webkit-linear-gradient(top, #EBF6FC 0%,#B3E0F7 100%);
+  background: -o-linear-gradient(top, #ebf6fc 0%,#b3e0f7 100%);
+  background: linear-gradient(to bottom, #EBF6FC 0%,#B3E0F7 100%);
 }
 
 ul {
@@ -71,14 +77,15 @@ body .docsTable th {
   background-color: #222;
 }
 
+.layout {
+  background: url("../images/bg_dashes.png");
+}
+
 
 /* HEADER */
 #header {
   margin-top: 5px;
-}
-
-.navbar-header {
-  width: 100%;
+  background: #FFF;
 }
 
 .logo {
@@ -101,12 +108,24 @@ body .docsTable th {
 }
 
 .portal-subtitle {
-  background: #0065A2;
-  margin: 0;
   color: #FFF;
-  font-size: 11px;
+  font-size: 15px;
+  margin: -30px auto 0;
+  padding: 4px 0px 10px 220px;
+}
+
+.navbar-header {
+  float: none;
+}
+
+.subtitle-backgr {
+  background-color: #0065A2;
+  min-height: 45px;
   margin-top: -30px;
-  padding: 10px 0px 10px 215px;
+}
+
+.path {
+  background: #074A8B;
 }
 
 .navbar-toggle {
@@ -125,7 +144,6 @@ body .docsTable th {
 }
 
 .breadcrumbs {
-  background: #074A8B;
   margin: 0;
   padding-left: 22px;
 }
@@ -153,16 +171,13 @@ body .docsTable th {
 /* FOOTER */
 #footer {
   margin-top: 5px;
+  background: #E5E5E5;
+  border-top: 4px solid #CDCDCD;
 }
 
 #footer .row {
-  background: #E5E5E5;
   margin-right: 0;
   margin-left: 0;
-}
-
-.footer-wrapper {
-  border-top: 4px solid #CDCDCD;
 }
 
 #copyright {
@@ -1586,7 +1601,7 @@ table {
 
 @media (min-width: 1024px) {
   .navbar-collapse {
-    margin-top: 120px;
+    margin-top: -5px;
   }
 }
 
