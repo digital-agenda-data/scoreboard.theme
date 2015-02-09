@@ -236,7 +236,7 @@ body #the-filters select,
 
 .upper-right, .bottom-right{
 	float: right !important;
-	width: 630px;
+	width: 620px;
 	display: inline-block;
 }
 
@@ -431,7 +431,7 @@ body .ui-widget {
 .navigation-widget div {
 	display: inline-block;
 	width: 175px;
-	height: 150px;
+	height: 180px;
 	margin-right: -6px;
 	background: #fff;
 	-moz-border-radius: 3px;
