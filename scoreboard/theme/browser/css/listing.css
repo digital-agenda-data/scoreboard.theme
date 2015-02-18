@@ -37,7 +37,6 @@
 .scoreboard-listing img {
   min-width: 221px;
   border: 1px solid #DDD;
-  border-radius: 30px;
 }
 
 .linklist {
@@ -70,10 +69,15 @@
 }
 
 .scoreboard-listing .scoreboard-visualizations-listing tr {
-  border: solid 1px #BAD6F0;
   border-radius: 5px;
-  background: #FFF;
   margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #FFF6EA;
+  border: solid 1px #ECDAC2;
+}
+
+.scoreboard-listing .scoreboard-visualizations-listing tr:hover {
+  background: #DDD;
 }
 
 .scoreboard-listing-item-enhanced .glyphicon-move {
@@ -83,8 +87,8 @@
   padding: 0.5em;
 }
 
-.blue-area {
-  background: #E6F5FD;
+.white-area {
+  background: #FFF;
   border: 3px solid #FFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -92,8 +96,11 @@
 .rounded-top {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  padding-top: 15px;
   border-bottom: 0;
+}
+
+.use-top-padding {
+  padding-top: 15px;
 }
 
 .no-top-bottom {

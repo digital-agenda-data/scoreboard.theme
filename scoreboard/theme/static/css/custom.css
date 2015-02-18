@@ -651,13 +651,17 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin-bottom: 5px;
 }
 
-.navigation-widget div div {
-  background: #E1F0F7;
+.dataset-box {
+  background: #FFF;
+  border-radius: 5px;
+  border: solid 3px #FFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   display: inline-block;
   min-height: 180px;
-  border: 1px solid #FFF;
   vertical-align: top;
   text-align: center;
+  margin-right: 4px;
+  margin-bottom: 4px;
 }
 
 .navigation-widget .selected,
