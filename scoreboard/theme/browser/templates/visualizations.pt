@@ -19,14 +19,14 @@
       </div>
       <br />
 
-      <div class="col-md-12">
+      <div class="col-md-12 blue-area rounded-top">
         <div class="listing-description">
           <tal:block tal:replace="structure cube/getSummary"></tal:block>
         </div>
         <h2>Please select one of the available charts:</h2>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-12 blue-area no-top-bottom">
         <tal:block define="visualizations view/visualizations">
           <p tal:condition="not:visualizations">
             No visualizations.
@@ -85,7 +85,7 @@
         </tal:block>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-12 blue-area rounded-bottom">
         <h2>Further Information</h2>
         <ul>
           <li><a tal:attributes="href string:${cube/absolute_url}/indicators">Consult the list of selected indicators, their definition and sources</a></li>

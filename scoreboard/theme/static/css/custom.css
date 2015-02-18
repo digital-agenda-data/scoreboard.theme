@@ -6,7 +6,6 @@ body {
   color: #333;
   background: #EBF6FC;
   background: -moz-linear-gradient(top, #ebf6fc 0%, #b3e0f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EBF6FC), color-stop(100%,#B3E0F7));
   background: -webkit-linear-gradient(top, #EBF6FC 0%,#B3E0F7 100%);
   background: -o-linear-gradient(top, #ebf6fc 0%,#b3e0f7 100%);
   background: linear-gradient(to bottom, #EBF6FC 0%,#B3E0F7 100%);
@@ -888,7 +887,6 @@ button[title="close"] .ui-button-text {
 
 /*  */
 .nav {
-  margin-bottom: 18px;
   margin-left: 0;
   list-style: none;
 }
