@@ -103,6 +103,10 @@
   padding-top: 15px;
 }
 
+.use-bottom-padding {
+  padding-bottom: 15px;
+}
+
 .no-top-bottom {
   border-top: 0;
   border-bottom: 0;
