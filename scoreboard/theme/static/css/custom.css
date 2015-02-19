@@ -718,7 +718,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 #dataset-metadata {
   padding: 1.4em;
   background-color: #E1F0F7;
-  border-radius: 25px;
+  border-radius: 5px;
 }
 
 #dataset-metadata dd {
@@ -901,7 +901,7 @@ button[title="close"] .ui-button-text {
 
 .nav > li > a:hover {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #FFF;
 }
 
 .nav > .pull-right {
