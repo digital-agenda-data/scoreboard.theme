@@ -7,7 +7,7 @@
         <h1> Documentation </h1>
         <p tal:content="structure here/Description"></p>
         <tal:block define="docs view/get_docs">
-            <table class="docsTable">
+            <table class="docsTable white-area">
                 <thead>
                     <th>
                         Title
