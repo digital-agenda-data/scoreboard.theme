@@ -9,6 +9,7 @@ body {
   background: -webkit-linear-gradient(top, #EBF6FC 0%,#B3E0F7 100%);
   background: -o-linear-gradient(top, #ebf6fc 0%,#b3e0f7 100%);
   background: linear-gradient(to bottom, #EBF6FC 0%,#B3E0F7 100%);
+  background-repeat: repeat-x;
 }
 
 ul {
@@ -202,7 +203,9 @@ body .docsTable th {
 /* LOGIN */
 #login_form,
 #mail_password {
-  background: #E1F0F7;
+  background: #FFF;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   margin-left: 10px;
   padding: 10px;
@@ -230,6 +233,7 @@ body .docsTable th {
 #login-forgotten-password {
   margin-bottom: 20px;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 
