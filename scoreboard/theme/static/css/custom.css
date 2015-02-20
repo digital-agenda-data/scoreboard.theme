@@ -903,6 +903,13 @@ button[title="close"] .ui-button-text {
   border-color: #AC2925;
 }
 
+.enableUnloadProtection span.label,
+label[for="form.stripped_combinations.0.tags"],
+label[for="form.stripped_combinations.0.attributes"],
+div.label {
+  color: #333;
+}
+
 
 /* forum */
 .boardConversation,
