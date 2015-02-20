@@ -151,6 +151,10 @@
   display: inline;
 }
 
+table.listing {
+  background: #FFF;
+}
+
 
 @media (max-width: 800px) {
   .linklist {
