@@ -32,7 +32,7 @@
             No visualizations.
           </p>
           <div tal:condition="canAdd" class="pull-left">
-            <a class="btn btn-xs btn-primary" tal:attributes="href string:${here/absolute_url}/addVisualization">
+            <a class="btn btn-xs btn-primary need-top-margin" tal:attributes="href string:${here/absolute_url}/addVisualization">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</a>
           </div>
           <div style="clear: both;"></div>
