@@ -1768,4 +1768,17 @@ table {
   .subtitle-backgr {
     margin-top: 5px;
   }
+
+  .nav-tabs > li {
+    width: 100%;
+    border-top: 1px solid #DDD;
+  }
+
+  .nav-tabs > li > a {
+    border-radius: 0;
+  }
+
+  body .nav-tabs > .active > a {
+    border: 0;
+  }
 }
