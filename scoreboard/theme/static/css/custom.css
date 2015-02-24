@@ -142,18 +142,19 @@ body .docsTable th {
 }
 
 .navbar-toggle {
-  background: #074A8B;
-  border: 0;
+  background: #FFF;
+  border: 1px solid #0065A2;
   margin-right: 0;
   margin-top: 25px;
 }
 
 .navbar-collapse {
   padding: 0;
+  border-top: 0;
 }
 
 .navbar-toggle .icon-bar {
-  background: #FFF;
+  background: #0065A2;
 }
 
 .breadcrumbs {
@@ -1640,43 +1641,45 @@ table {
   }
 }
 
-@media (min-width: 600px) and (max-width: 800px) {
-  .navbar-toggle {
-    display: inline-block;
-  }
-
-  .navbar-collapse.collapse {
-    display: none !important;
-  }
-
-  .navbar-collapse.in {
-    display: block !important;
-  }
-}
-
 @media (max-width: 800px) {
   .navigation-widget .container {
     max-width: 720px;
   }
 
+  .path {
+    background: #FFF;
+  }
+
+  .breadcrumbs li a {
+    color: #0073A8;
+  }
+
   .breadcrumbs {
     padding-left: 0;
-    border-top: 1px solid #999;
   }
 
   .breadcrumbs li,
   .breadcrumbs li.first {
     display: block;
     background-image: none;
-    padding: 10px 10px 10px 20px;
+    padding: 10px 10px 10px 28px;
     min-height: 30px;
-    color: #333;
-    border-bottom: 1px solid #999; /*#3D6489;*/
+    border-bottom: 1px solid #ACC4D1;
   }
 
-  .breadcrumbs li:last-of-type,
-  .breadcrumbs li:hover {
-    background: #DDD;
+  .breadcrumbs li a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumbs li:last-of-type {
+    background: #D0E0F0;
+    color: #252525;
+  }
+
+  .navbar-collapse .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .logo {
@@ -1685,13 +1688,14 @@ table {
   }
 
   .portal-title {
-    margin-left: 100px;
-    width: 400px;
+    margin-left: 95px;
+    width: 315px;
     top: 5px;
+    padding: 0.83em 0 0;
   }
 
   .portal-subtitle {
-    padding-left: 115px;
+    padding-left: 110px;
   }
 
   .thumbnail-area {
@@ -1714,6 +1718,20 @@ table {
   }
 }
 
+@media (min-width: 600px) and (max-width: 800px) {
+  .navbar-toggle {
+    display: inline-block;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-collapse.in {
+    display: block !important;
+  }
+}
+
 @media (max-width: 600px) {
   .scoreboard-listing table td {
     padding-left: 8px;
@@ -1725,16 +1743,29 @@ table {
   .list_indicators td {
     padding: 4px;
   }
+
+  .breadcrumbs li,
+  .breadcrumbs li.first {
+    padding-left: 15px;
+  }
 }
 
 @media (max-width: 480px) {
+  .logo {
+    width: 56px;
+  }
+
   .portal-title {
-    font-size: 18px;
-    width: 270px;
-    margin-left: 94px;
+    font-size: 16px;
+    width: 180px;
+    margin-left: 65px;
   }
 
   .portal-subtitle {
-    padding-left: 110px;
+    padding-left: 80px;
+  }
+
+  .subtitle-backgr {
+    margin-top: 5px;
   }
 }
