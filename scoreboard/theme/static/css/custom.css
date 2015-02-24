@@ -33,17 +33,17 @@ a:hover,
 
 h1 {
   font-size: 2em;
-  margin: 0.83em 0;
+  padding: 0.83em 0;
 }
 
 h2 {
   font-size: 1.5em;
-  margin: 0.67em 0;
+  padding: 0.67em 0;
 }
 
 h3 {
   font-size: 1.17em;
-  margin: 0.51em 0;
+  padding: 0.51em 0;
 }
 
 table, td, th, tr {

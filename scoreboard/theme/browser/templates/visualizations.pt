@@ -17,7 +17,6 @@
           <li><a tal:attributes="href string:${here/absolute_url}/indicators"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Indicators</a></li>
         </ul>
       </div>
-      <br />
 
       <div class="col-md-12 white-area rounded-top use-top-padding">
         <div class="listing-description">
@@ -37,10 +36,10 @@
           </div>
           <div style="clear: both;"></div>
           <br />
-          <table class="scoreboard-visualizations-listing container">
-            <tbody class="row">
+          <table class="scoreboard-visualizations-listing">
+            <tbody class="">
               <tal:row repeat="vis visualizations">
-              <tr class="scoreboard-visualizations-listing-item col-md-8 col-sm-12 col-xs-12" tal:attributes="
+              <tr class="scoreboard-visualizations-listing-item" tal:attributes="
                 id vis/UID;
                 data-name vis/UID;
                 data-title python:vis.title_or_id();
