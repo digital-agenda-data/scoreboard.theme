@@ -110,7 +110,7 @@ body .docsTable th {
 
 .portal-title {
   position: absolute;
-  top: 55px;
+  top: 45px;
   margin: 0;
   margin-left: 215px;
   border: 0;
@@ -123,8 +123,8 @@ body .docsTable th {
 .portal-subtitle {
   color: #FFF;
   font-size: 15px;
-  margin: -30px auto 0;
-  padding: 4px 0px 10px 220px;
+  margin: 0 auto;
+  padding: 6px 0px 0px 230px;
 }
 
 .navbar-header {
@@ -142,7 +142,7 @@ body .docsTable th {
 }
 
 .navbar-toggle {
-  background: #999;
+  background: #074A8B;
   border: 0;
   margin-right: 0;
   margin-top: 25px;
@@ -1660,8 +1660,6 @@ table {
   }
 
   .breadcrumbs {
-    background: #FFF;
-    margin-top: 3px;
     padding-left: 0;
     border-top: 1px solid #999;
   }
@@ -1681,28 +1679,32 @@ table {
     background: #DDD;
   }
 
-  .breadcrumbs li a {
-    color: #0073A8;
-  }
-
   .logo {
     padding-left: 0;
-    width: 140px;
+    width: 86px;
   }
 
   .portal-title {
-    margin-left: 160px;
+    margin-left: 100px;
     width: 400px;
-    top: 45px;
+    top: 5px;
   }
 
-  .portal-subtitle,
+  .portal-subtitle {
+    padding-left: 115px;
+  }
+
   .thumbnail-area {
     display: none;
   }
 
+  .subtitle-backgr {
+    min-height: 28px;
+    margin-top: -16px;
+  }
+
   .navbar-toggle {
-    margin-top: 30px;
+    margin-top: 5px;
   }
 
   .dataset-description-area,
@@ -1723,22 +1725,16 @@ table {
   .list_indicators td {
     padding: 4px;
   }
-
-  .portal-title {
-    margin-left: 160px;
-    width: 210px;
-    top: 30px;
-  }
 }
 
 @media (max-width: 480px) {
   .portal-title {
-    margin-left: 160px;
-    width: 210px;
-    top: 20px;
+    font-size: 18px;
+    width: 270px;
+    margin-left: 94px;
   }
 
-  .navbar-toggle {
-    margin-top: 25px;
+  .portal-subtitle {
+    padding-left: 110px;
   }
 }
