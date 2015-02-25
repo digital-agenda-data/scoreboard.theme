@@ -686,7 +686,8 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   vertical-align: top;
   text-align: center;
   margin-right: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 7px;
+  float: none;
 }
 
 .navigation-widget .selected,
@@ -699,7 +700,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   display: block;
   cursor: pointer;
   overflow: hidden;
-  padding: 10px 10px 5px 15px;
+  padding: 10px 0px 5px 0px;
 }
 
 .navigation_icon,
