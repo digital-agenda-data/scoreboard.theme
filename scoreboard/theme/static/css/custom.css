@@ -85,8 +85,7 @@ body .docsTable th {
 #mail_password,
 #the-filters,
 #the-chart,
-.legend,
-.section.share,
+.legend-share,
 .dataset-box,
 .boardConversation,
 .template-conversation_browserview fieldset {
@@ -587,14 +586,17 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 .legend-share {
   margin-top: 5px;
   max-width: 1140px;
+  background-color: #F4F7FB;
+  border: 3px solid #FFF;
+}
+
+.section.share  {
+  border-left: 1px dotted #BBB;
 }
 
 .legend,
 .section.share {
-  background-color: #F4F7FB;
-  margin-right: 10px;
   padding: 20px;
-  border: solid 3px #FFF;
 }
 
 .section.share ul,
@@ -1772,6 +1774,11 @@ table {
   .scoreboard-visualizations-listing td {
     display: block;
     clear: both;
+  }
+
+  .section.share {
+    border-left: 0;
+    border-top: 1px dotted #BBB;
   }
 }
 
