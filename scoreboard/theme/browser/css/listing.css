@@ -39,7 +39,8 @@
   border: 1px solid #DDD;
 }
 
-.linklist {
+.linklist,
+#indicators-toc ul {
   list-style-type: square;
   color: #777;
 }
@@ -120,6 +121,11 @@
 
 .need-top-margin {
   margin-top: 10px;
+}
+
+#scoreboard-visualizations-listing ul {
+  padding-left: 20px;
+  list-style-type: square;
 }
 
 .dataset-manage.col-md-12 {
