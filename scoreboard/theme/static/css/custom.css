@@ -1770,8 +1770,7 @@ table {
     margin-top: 5px;
   }
 
-  .dataset-description-area,
-  .scoreboard-visualizations-listing td {
+  .dataset-description-area {
     display: block;
     clear: both;
   }

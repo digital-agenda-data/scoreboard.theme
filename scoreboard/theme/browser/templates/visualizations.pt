@@ -49,7 +49,7 @@
                             canModify python:checkPermission('Modify portal content', vis);
                             canConfigure python:checkPermission('eea.app.visualization: Configure Visualization', vis);
                             canReview python:checkPermission('Review portal content', vis);">
-                <td>
+                <td class="thumbnail-area">
                   <a tal:attributes="href vis/absolute_url">
                     <img tal:condition="has_thumbnail" tal:define="scale vis/@@images"
                          tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
