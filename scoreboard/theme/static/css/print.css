@@ -1,6 +1,5 @@
 ﻿﻿/* Removes certain elements when printing, and apply basic font styles
    for the remaining content. */
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: Arial, sans-serif;
 	font-weight: bold;
@@ -13,8 +12,6 @@ h1, h2 {
 }
 a {
 	text-decoration: none;
-	border-bottom: 0.1em solid gray;
-	color: black;
 }
 #portal-column-content {
 	width: 95%;
@@ -58,15 +55,19 @@ div.pageBreak {
 
 /* Uncomment these if you want link addresses inserted along with the link text
    when you print.*/
-a:link:after,
-a:visited:after {
+a:link:after {
    content: " [" attr(href) "] ";
+}
+
+.nav-tabs a:link:after,
+#footer a:link:after,
+.dataset-box a:link:after {
+   content: none;
 }
 
 
 /* Hide all the elements that are irrelevant for printing */
 div.top,
-#portal-logo,
 #portal-siteactions,
 .hiddenStructure,
 #portal-searchbox,
@@ -105,7 +106,8 @@ input.standalone,
 .draggingHook,
 #foldercontents-order-column,
 input.context,
-.visualNoPrint {
+.visualNoPrint,
+.footer-wrapper {
 	display: none;
 }
 
@@ -157,7 +159,8 @@ body .select2-search-choice-close,
 }
 
 body {
-	font-size: 14pt !important;
+	font-size: 13pt !important;
+  background: white;
 }
 
 body * {
@@ -194,4 +197,24 @@ body .select2-container-multi .select2-choices .select2-search-choice {
 
 body .right_column .select2-container {
 	width: 500px;
+}
+
+
+/* other */
+body.template-datacube-view-html ul {
+  list-style-type: none;
+}
+
+.dataset-box {
+  box-shadow: none;
+  border: 1px solid #BBB;
+  min-width: 190px;
+}
+
+#footer {
+  border-top: 0;
+}
+
+#copyright {
+  background: white;
 }
