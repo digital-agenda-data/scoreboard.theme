@@ -62,7 +62,8 @@ a:link:after {
 .nav-tabs a:link:after,
 #footer a:link:after,
 .dataset-box a:link:after,
-.template-indicators a:link:after {
+.template-indicators a:link:after,
+.template-documentation a:link:after {
    content: none;
 }
 
