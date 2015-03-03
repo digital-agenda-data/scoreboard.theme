@@ -61,7 +61,8 @@ a:link:after {
 
 .nav-tabs a:link:after,
 #footer a:link:after,
-.dataset-box a:link:after {
+.dataset-box a:link:after,
+.template-indicators a:link:after {
    content: none;
 }
 
@@ -107,7 +108,8 @@ input.standalone,
 #foldercontents-order-column,
 input.context,
 .visualNoPrint,
-.footer-wrapper {
+.footer-wrapper,
+.navigation-widget {
 	display: none;
 }
 
@@ -159,7 +161,7 @@ body .select2-search-choice-close,
 }
 
 body {
-	font-size: 13pt !important;
+	font-size: 12pt !important;
   background: white;
 }
 
@@ -205,16 +207,15 @@ body.template-datacube-view-html ul {
   list-style-type: none;
 }
 
-.dataset-box {
-  box-shadow: none;
-  border: 1px solid #BBB;
-  min-width: 190px;
-}
-
 #footer {
   border-top: 0;
 }
 
-#copyright {
+#copyright,
+#dataset-metadata {
   background: white;
+}
+
+#dataset-metadata {
+  border: 1px solid #BBB;
 }
