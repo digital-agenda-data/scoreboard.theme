@@ -1,0 +1,197 @@
+﻿﻿/* Removes certain elements when printing, and apply basic font styles
+   for the remaining content. */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 125%;
+	page-break-inside: avoid;
+	page-break-after: avoid;
+}
+h1, h2 {
+	letter-spacing: -0.05em;
+}
+a {
+	text-decoration: none;
+	border-bottom: 0.1em solid gray;
+	color: black;
+}
+#portal-column-content {
+	width: 95%;
+}
+.documentDescription {
+	font-weight: bold;
+}
+pre {
+	border: 1pt dotted black;
+	white-space: pre;
+	font-size: 8pt;
+	overflow: auto;
+	padding: 1em;
+}
+table.listing,
+table.listing td {
+	border: 1pt solid black;
+	border-collapse: collapse;
+}
+table.listing td,
+table.listing th {
+    padding: 6px;
+}
+
+/* Page break class for use when printing */
+div.pageBreak {
+	page-break-before: always;
+}
+
+/* Basic styles for listing and document views */
+#content dt {
+	margin:1em 0 0.625em;
+}
+#content p, #content table {
+	margin-bottom:0.625em;
+	margin-top:0.625em;
+}
+#content .documentDescription, #content #description {
+    margin:0.5em 0 1.31em;
+}
+
+/* Uncomment these if you want link addresses inserted along with the link text
+   when you print.*/
+a:link:after,
+a:visited:after {
+   content: " [" attr(href) "] ";
+}
+
+
+/* Hide all the elements that are irrelevant for printing */
+div.top,
+#portal-logo,
+#portal-siteactions,
+.hiddenStructure,
+#portal-searchbox,
+#portal-globalnav,
+#portal-personaltools,
+#portal-breadcrumbs,
+#edit-bar,
+#portal-column-one,
+#portal-column-two,
+#portal-languageselector,
+.contentViews,
+.contentActions,
+.help,
+.portalMessage,
+.documentActions,
+.netscape4,
+#viewlet-below-content .reply,
+#viewlet-below-content .discussion,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+#portal-footer,
+#portal-colophon,
+.skipnav,
+#kss-spinner,
+#review-history,
+#content-history,
+.listingBar,
+.link-presentation,
+input.standalone,
+.overlay,
+.managePortletsFallback,
+.close,
+.link-parent,
+.draggingHook,
+#foldercontents-order-column,
+input.context,
+.visualNoPrint {
+	display: none;
+}
+
+/* Image alignment classes */
+.image-left {
+	float: left;
+	clear: both;
+	margin: 0.5em 1em 0.5em 0;
+	border: 0.4pt solid Black;
+}
+.image-inline {
+	float: none;
+}
+.image-right {
+	float: right;
+	clear: both;
+	margin: 0.5em;
+	border: 0.4pt solid Black;
+}
+dd.image-caption {
+	text-align:left;
+	padding: 0; margin:0;
+}
+dl.captioned {
+	padding: 0.8em;
+}
+.newsImageContainer {
+	float:right;
+	margin: 0 0 0.5em 1em;
+	width: 16em;
+}
+
+
+/*  print stylesheet for scenario pages */
+#header,
+#the-navigation,
+.layout-footer,
+.section.share,
+#ref-area-add-all,
+#ref-area-clear,
+body .select2-search-choice-close,
+#toolbar {
+	display: none;
+}
+
+@page {
+	orientation: portrait;
+	size: A4; /*  CSS3 */
+}
+
+body {
+	font-size: 14pt !important;
+}
+
+body * {
+	float: none !important;
+}
+
+.right_column {
+	vertical-align: top;
+}
+
+body .select2-choices li {
+	display: inline-block;
+}
+
+body .legend {
+	width: 90%;
+}
+
+body .legend h2 {
+	color: #000;
+}
+
+body .select2-container-multi .select2-choices .select2-search-choice {
+	background: #eee;
+	-webkit-box-shadow: 0px 0px 0px #fff inset, 0px 0px 0px rgba(0, 0, 0, 0);
+	-moz-box-shadow: 0px 0px 0px #fff inset, 0px 0px 0px rgba(0, 0, 0, 0);
+	box-shadow: 0px 0px 0px #fff inset, 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+#the-filters,
+#the-chart {
+	margin-bottom: 50px;
+}
+
+body .right_column .select2-container {
+	width: 500px;
+}

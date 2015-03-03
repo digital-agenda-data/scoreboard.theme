@@ -20,5 +20,10 @@
   id="ie9.css"
   conditionalcomment="IE 9"
   />
+<stylesheet
+  id="print.css"
+  remove="True"
+  />
+
 </object>
 
