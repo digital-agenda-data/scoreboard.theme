@@ -148,7 +148,7 @@ dl.captioned {
 #header,
 #the-navigation,
 .layout-footer,
-.section.share,
+body .section.share,
 #ref-area-add-all,
 #ref-area-clear,
 body .select2-search-choice-close,
@@ -213,10 +213,19 @@ body.template-datacube-view-html ul {
 }
 
 #copyright,
-#dataset-metadata {
+#dataset-metadata,
+#the-filters {
   background: white;
 }
 
 #dataset-metadata {
   border: 1px solid #BBB;
+}
+
+#the-filters,
+#the-chart,
+.legend-share,
+.boardConversation,
+.template-conversation_browserview fieldset {
+  box-shadow: none;
 }
