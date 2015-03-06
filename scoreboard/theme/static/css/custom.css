@@ -565,6 +565,15 @@ body .docsTable th {
   font-weight: normal;
 }
 
+#the-filters .chart-controls {
+  margin-bottom: 10px;
+}
+
+#the-filters .chart-controls label {
+  width: 235px;
+  vertical-align: middle;
+}
+
 body .select2-container,
 body #the-filters select,
 body .select2-container-multi .select2-choices .select2-search-field input,
