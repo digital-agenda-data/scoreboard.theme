@@ -590,10 +590,6 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   border: 3px solid #FFF;
 }
 
-.section.share  {
-  border-left: 1px dotted #BBB;
-}
-
 .legend,
 .section.share {
   padding: 20px;
@@ -1773,11 +1769,6 @@ table {
   .dataset-description-area {
     display: block;
     clear: both;
-  }
-
-  .section.share {
-    border-left: 0;
-    border-top: 1px dotted #BBB;
   }
 }
 
