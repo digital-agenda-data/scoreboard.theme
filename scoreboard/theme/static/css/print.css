@@ -236,3 +236,7 @@ body .select2-container-multi .select2-choices .select2-search-choice {
   margin-bottom: 5px;
   border-color: white;
 }
+
+.chart-filter .select2-container {
+  width: 100%;
+}
