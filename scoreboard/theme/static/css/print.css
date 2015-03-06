@@ -110,7 +110,8 @@ input.standalone,
 input.context,
 .visualNoPrint,
 .footer-wrapper,
-.navigation-widget {
+.navigation-widget,
+.nav-tabs li:not([class="active"]) {
 	display: none;
 }
 
