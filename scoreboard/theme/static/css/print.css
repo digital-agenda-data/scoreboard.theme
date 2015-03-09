@@ -63,7 +63,8 @@ a:link:after {
 #footer a:link:after,
 .dataset-box a:link:after,
 .template-indicators a:link:after,
-.template-documentation a:link:after {
+.template-documentation a:link:after,
+#the-filters a:link:after {
    content: none;
 }
 
@@ -239,4 +240,19 @@ body .select2-container-multi .select2-choices .select2-search-choice {
 
 .chart-filter .select2-container {
   width: 100%;
+}
+
+
+/* composite charts */
+.slider-label {
+  display: inline-block;
+}
+
+.ui-slider {
+  display: inline-block;
+}
+
+.normalized-value {
+  display: inline-block;
+  text-align: right;
 }
