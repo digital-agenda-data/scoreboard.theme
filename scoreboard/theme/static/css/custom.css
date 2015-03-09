@@ -1800,6 +1800,12 @@ table {
   }
 }
 
+@media (max-width: 640px) {
+  .normalized-value {
+    text-align: right;
+  }
+}
+
 @media (max-width: 600px) {
   .scoreboard-listing table td {
     padding-left: 8px;
@@ -1847,5 +1853,9 @@ table {
 
   body .nav-tabs > .active > a {
     border: 0;
+  }
+
+  .slider-label {
+    padding: 16px 0 10px;
   }
 }
