@@ -1794,6 +1794,12 @@ table {
   }
 }
 
+@media (max-width: 768px) {
+  #the-filters .right-label {
+    text-align: right;
+  }
+}
+
 @media (max-width: 600px) {
   .scoreboard-listing table td {
     padding-left: 8px;
