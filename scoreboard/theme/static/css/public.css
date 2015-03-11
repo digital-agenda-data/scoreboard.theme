@@ -314,7 +314,6 @@ a.managePortletsFallback {
 dl.portlet ul.navTree li a {
     border: none;
     display: block;
-    zoom: 1;
 }
 
 dl.portlet ul.navTree li a:hover {
@@ -1434,7 +1433,10 @@ fieldset,
     line-height: 125%;
     color: Black;
     letter-spacing: -0.05em;
-    margin: inherit -0.05em;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    margin-right: -0.05em;
+    margin-left: -0.05em;
     font-weight: bold;
 }
 
@@ -2026,7 +2028,6 @@ a.historyComparePrevious span {
 .icons-on #plone-contentmenu-factories .contenttype-image {
     line-height: 2em;
     display: inline-block;
-    *display: block;
     padding-left: 20px !important;
 }
 
