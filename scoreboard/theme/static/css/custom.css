@@ -1685,9 +1685,13 @@ table {
 
 
 /* mobile */
-@media (max-width: 1200px) {
-  .navigation-widget .container {
-    max-width: 940px;
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .container {
+    width: 1140px;
+  }
+
+  .container .container {
+    width: 100%;
   }
 }
 
