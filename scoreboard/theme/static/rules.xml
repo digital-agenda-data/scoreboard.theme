@@ -66,4 +66,10 @@
       <a href="{$portal_url}/documentation">Documentation</a>
     </replace>
 
+  <replace css:theme="#logo-header-link">
+    <a href="{$portal_url}" id="logo-header-link">
+      <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo_en.gif" alt="European Commision logo" />
+    </a>
+  </replace>
+
 </rules>
