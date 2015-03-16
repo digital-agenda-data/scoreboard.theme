@@ -433,6 +433,27 @@ body .docsTable th {
   padding: 5px 10px;
 }
 
+.no-float {
+  float: none;
+}
+
+button[name="add-title-part"] {
+  display: block;
+  clear: both;
+}
+
+.editor-current-step label.title-preview-label {
+  margin-top: 20px;
+  display: block;
+}
+
+.title-preview-box {
+  border: 1px dashed #CCC;
+  padding: 3px 10px;
+  margin: 5px 0 10px;
+  font-style: italic;
+}
+
 /* make editor-facets look like fieldsets */
 .editor-current-step .editor-facets {
   padding: 0 1em 1em;
@@ -1695,6 +1716,15 @@ table {
   #the-filters,
   .legend-share {
     max-width: 935px;
+  }
+
+  .editor-current-step {
+    width: 76%;
+    margin-left: 233px;
+  }
+
+  .editor-current-step select {
+    width: 240px;
   }
 }
 
