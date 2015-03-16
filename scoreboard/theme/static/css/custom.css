@@ -749,7 +749,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 /* LOADING effects */
 .loading-small {
   background: url(../images/loading-bar.gif) no-repeat;
-  background-position: 100px 1px;
+  background-position: center 0;
 }
 
 #the-filters .loading-small {
