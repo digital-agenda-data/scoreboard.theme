@@ -1808,6 +1808,16 @@ table {
     display: block;
     clear: both;
   }
+
+  .editor-current-step,
+  .daviz-view-form {
+    width: 100%;
+    margin-left: 7px;
+  }
+
+  .editor-steps {
+    margin-bottom: 5px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 800px) {
