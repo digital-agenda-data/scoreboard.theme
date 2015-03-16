@@ -325,7 +325,7 @@ body .docsTable th {
   overflow: hidden;
   background: #FFF;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
   width: 79%;
   min-height: 333px;
 }
@@ -505,10 +505,6 @@ body .docsTable th {
   border-color: #ADADAD;
 }
 
-.btn-view-viz {
-  margin-left: 10px;
-}
-
 .template-daviz-edit-html .collapse {
   position: initial; /* override from daviz-edit.css */
 }
@@ -640,29 +636,29 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   border-color: #0A710A;
 }
 
-.btn-export {
+.btn-export,
+.btn-view-viz {
   color: #FFF;
   background-color: #0065A2;
   border-color: #02578B;
   text-shadow: none;
 }
 
-.btn-export:hover {
+.btn-export:hover,
+.btn-view-viz:hover {
   color: #FFF;
   background-color: #065A8C;
   border-color: #064267;
 }
 
-.btn-comments,
-.btn-view-viz {
+.btn-comments {
   color: #333;
   background-color: #BEE0F0;
   border-color: #99C1D2;
   text-shadow: none;
 }
 
-.btn-comments:hover,
-.btn-view-viz:hover {
+.btn-comments:hover {
   color: #333;
   background-color: #94C5DB;
   border-color: #7CA8BB;
