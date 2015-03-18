@@ -30,30 +30,6 @@
 
     <drop css:content=".documentByLine" />
     <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
-    <!--before css:theme="#main" css:if-content="#edit-bar">
-        <div id="action-bar">
-            <ul class="nav nav-tabs">
-            <xsl:for-each css:select="#content-views > li">
-                <xi:include href="navigation-rules.xml"/>
-            </xsl:for-each>
-            <xsl:for-each css:select="#contentActionMenus > li">
-                <li class="dropdown pull-right" data-dropdown="dropdown">
-                    <a class="dropdown-toggle" href="#"><xsl:attribute name="href">
-                            <xsl:value-of select="dl/dt/a/@href"/>
-                        </xsl:attribute>
-                        <xsl:copy-of select="dl/dt/a/span"/>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu" style="min-width:150px;">
-                        <xsl:for-each css:select=".actionMenuContent > ul > li">
-                            <xsl:copy-of select="current()"/>
-                        </xsl:for-each>
-                    </ul>
-                </li>
-            </xsl:for-each>
-            </ul>
-         </div>
-    </before-->
 
     <replace css:content-children="#content" css:theme-children="#main" />
     <drop css:content=".download-visualization" />
