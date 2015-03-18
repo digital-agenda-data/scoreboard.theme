@@ -1131,6 +1131,10 @@ div.field span.required:after {
   .editor-current-step select {
     width: 240px;
   }
+
+  .navigation-widget .container {
+    width: 965px;
+  }
 }
 
 @media (min-width: 1024px) {

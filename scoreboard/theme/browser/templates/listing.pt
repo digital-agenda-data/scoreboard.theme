@@ -32,7 +32,7 @@
           <table class="scoreboard-datacubes-listing container">
             <tbody class="row">
               <tal:row repeat="cube cubes">
-              <tr class="scoreboard-datacubes-listing-item col-md-8 col-sm-12 col-xs-12" tal:attributes="
+              <tr class="scoreboard-datacubes-listing-item col-md-9 col-sm-12 col-xs-12" tal:attributes="
                 id cube/getId;
                 data-name cube/getId;
                 data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
