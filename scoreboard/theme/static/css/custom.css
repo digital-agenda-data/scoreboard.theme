@@ -1133,7 +1133,7 @@ div.field span.required:after {
   }
 
   .navigation-widget .container {
-    width: 965px;
+    width: 935px;
   }
 }
 
@@ -1252,11 +1252,31 @@ div.field span.required:after {
   #the-filters .right-label {
     text-align: right;
   }
+
+  #the-filters,
+  .legend-share {
+    width: 706px;
+  }
+}
+
+@media (max-width: 720px) {
+  #the-filters,
+  .legend-share {
+    width: 655px;
+  }
+
+  .navigation-widget .container {
+    max-width: 670px;
+  }
 }
 
 @media (max-width: 640px) {
   .normalized-value {
     text-align: right;
+  }
+
+  .navigation-widget .container {
+    max-width: 600px;
   }
 }
 
