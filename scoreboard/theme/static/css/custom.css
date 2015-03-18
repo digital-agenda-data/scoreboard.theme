@@ -713,12 +713,12 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   float: none;
 }
 
-.navigation-widget .selected,
-.navigation-widget div div div:hover {
+.selected.dataset-box,
+.dataset-box:hover {
   background: #C4E2F0;
 }
 
-.navigation-widget a {
+.dataset-box a {
   text-decoration: none;
   display: block;
   cursor: pointer;
@@ -735,7 +735,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   margin: 0 auto;
 }
 
-.navigation-widget label {
+.dataset-box label {
   color: #333;
   cursor: pointer;
   padding-top: 5px;
