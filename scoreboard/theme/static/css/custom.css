@@ -1227,6 +1227,11 @@ div.field span.required:after {
   .editor-steps {
     margin-bottom: 5px;
   }
+
+  #the-filters,
+  .legend-share {
+    width: 718px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 800px) {
