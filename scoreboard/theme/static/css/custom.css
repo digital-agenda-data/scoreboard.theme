@@ -1348,4 +1348,10 @@ div.field span.required:after {
   .legend-share {
     width: 420px;
   }
+
+  #footer ul li {
+    float: none;
+    display: block;
+    margin: 10px 0;
+  }
 }
