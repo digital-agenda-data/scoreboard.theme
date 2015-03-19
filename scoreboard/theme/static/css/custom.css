@@ -1372,3 +1372,24 @@ div.field span.required:after {
     width: 265px;
   }
 }
+
+@media (max-width: 320px) {
+  .portal-title {
+    width: 138px;
+  }
+
+  .navigation-widget .container {
+    width: 290px;
+  }
+
+  #the-filters,
+  .legend-share {
+    width: 255px;
+  }
+
+  .col-md-6 select,
+  .bottom-left select,
+  .bottom-right select {
+    width: 220px;
+  }
+}
