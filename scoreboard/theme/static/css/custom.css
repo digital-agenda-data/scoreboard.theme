@@ -1276,7 +1276,12 @@ div.field span.required:after {
   }
 
   .navigation-widget .container {
-    max-width: 600px;
+    max-width: 596px;
+  }
+
+  #the-filters,
+  .legend-share {
+    width: 580px;
   }
 }
 
