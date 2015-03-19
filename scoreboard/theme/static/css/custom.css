@@ -1355,3 +1355,20 @@ div.field span.required:after {
     margin: 10px 0;
   }
 }
+
+@media (max-width: 360px) {
+  .navigation-widget .container {
+    width: 310px;
+  }
+
+  #the-filters,
+  .legend-share {
+    width: 297px;
+  }
+
+  .col-md-6 select,
+  .bottom-left select,
+  .bottom-right select {
+    width: 265px;
+  }
+}
