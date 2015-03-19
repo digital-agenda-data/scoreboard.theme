@@ -1330,11 +1330,22 @@ div.field span.required:after {
     border-radius: 0;
   }
 
-  body .nav-tabs > .active > a {
+  body .nav-tabs > .active > a,
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover {
     border: 0;
   }
 
   .slider-label {
     padding: 16px 0 10px;
+  }
+
+  .navigation-widget .container {
+    width: 425px;
+  }
+
+  #the-filters,
+  .legend-share {
+    width: 420px;
   }
 }
