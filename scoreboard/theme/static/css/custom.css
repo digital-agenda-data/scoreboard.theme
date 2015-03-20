@@ -984,6 +984,25 @@ div.label {
   color: #333;
 }
 
+#content-core li.formTab a {
+  padding: 5px 15px;
+  font-weight: normal;
+}
+
+#content-core li.formTab a.selected {
+  color: #555;
+  cursor: default;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-radius: 4px 4px 0 0;
+}
+
+#content-core li.formTab a:hover {
+  color: #555;
+  border-radius: 4px 4px 0 0;
+}
+
 
 /* forum */
 .boardConversation,
@@ -1005,9 +1024,8 @@ div.label {
 ul.formTabs,
 ul.formTabs {
   display: block;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 1px;
+  border-width: 0;
+  border-bottom: 1px solid #DDD;
   margin-left: 0;
   border-top-right-radius: 0.5em;
   border-top-left-radius: 0.5em;
