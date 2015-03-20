@@ -41,6 +41,7 @@
         </div>
 
         <form name="edit_form"
+              class="board-edit-form"
               action=""
               method="post"
               enctype="multipart/form-data"
@@ -192,7 +193,7 @@
           </div>
 
             <div metal:define-macro="comment_body_buttons" tal:omit-tag="">
-              <div class="row">
+              <div class="board-comment-buttons">
                 <div class="field">
                   <input class="context"
                          type="submit"
