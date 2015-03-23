@@ -1001,6 +1001,18 @@ div.label {
   border-radius: 4px 4px 0 0;
 }
 
+#users_add {
+  margin-bottom: 10px;
+}
+
+#users_search .context {
+  margin-top: 10px;
+}
+
+body.template-usergroup-userprefs table.listing th {
+  border: 1px solid #FFF;
+}
+
 
 /* forum */
 .boardConversation,
