@@ -1001,8 +1001,19 @@ div.label {
   border-radius: 4px 4px 0 0;
 }
 
-#users_add {
+#users_add,
+.label-select-file-upload {
   margin-bottom: 10px;
+}
+
+.label-select-file-upload {
+  display: block;
+}
+
+.select-file-upload {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: 398px;
 }
 
 #users_search .context {
@@ -1011,6 +1022,11 @@ div.label {
 
 body.template-usergroup-userprefs table.listing th {
   border: 1px solid #FFF;
+}
+
+.btn-import-xls,
+.btn-export-xls {
+  margin-right: 10px;
 }
 
 
