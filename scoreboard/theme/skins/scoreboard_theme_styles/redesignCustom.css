@@ -481,19 +481,19 @@ body .maincontent img {
 .layout-footer {
 	border-top: 4px solid #CDCDCD;
 	background: #E5E5E5;
-	float: left;
-	width: 100%;
 	clear: both;
-	padding: 0;
+	padding: 0 0 1em;
 	margin-top: 5px;
 	text-align: center;
 	color: #396EA2;
 }
-
+.layout-footer:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 .layout-footer-wrapper {
-	float: left;
 	margin-bottom: 0;
-	padding: 0px;
 	width: 100%;
 }
 
@@ -508,8 +508,6 @@ body .maincontent img {
 }
 
 .region-footer .block-menu {
-	float: left;
-	width: 48%;
 	text-align: left;
 	margin-right: 12px;
 	padding-left: 20px;
@@ -547,13 +545,10 @@ body .maincontent img {
 }
 
 #copyright {
-	border-top: 4px solid #CDCDCD;
-	clear: both;
 	color: gray;
 	font-size: 11px;
 	margin: 0 20px;
-	padding: 5px;
-	text-align: left;
+    float: right;
 }
 
 .highcharts-tooltip span {
