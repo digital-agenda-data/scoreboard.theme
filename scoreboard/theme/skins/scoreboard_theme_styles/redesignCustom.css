@@ -557,6 +557,8 @@ body .maincontent img {
     min-width:300px;
     overflow:auto;
     white-space:normal !important;
+    background-color: #FFF;
+    z-index: 9999;
 }
 
 /* CHART TOOLTIPS
