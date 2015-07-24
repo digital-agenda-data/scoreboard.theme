@@ -111,11 +111,6 @@
     />
 
   <browser:resourceDirectory
-    name="scoreboard.theme.css"
-    directory="css/"
-    />
-
-  <browser:resourceDirectory
     name="scoreboard.theme.js"
     directory="js/"
     />
