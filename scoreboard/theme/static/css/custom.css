@@ -620,7 +620,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 }
 
 .chart-filter .select2-container {
-  width: 80%;
+  width: 100%;
 }
 
 /* Chart listing */
@@ -1408,6 +1408,12 @@ div.field span.required:after {
   .breadcrumbs li,
   .breadcrumbs li.first {
     padding-left: 15px;
+  }
+
+  .col-md-6 select,
+  .bottom-left select,
+  .bottom-right select {
+    width: 100%;
   }
 }
 
