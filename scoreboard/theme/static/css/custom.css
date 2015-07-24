@@ -1437,3 +1437,17 @@ div.field span.required:after {
     width: 220px;
   }
 }
+
+.btn-sm, .btn-group-sm > .btn {
+    line-height: 2;
+    font-size: 14px;
+}
+
+.highcharts-tooltip span {
+    height:auto;
+    max-width:450px;
+    min-width:300px;
+    overflow:auto;
+    white-space:normal !important;
+    z-index: 9999;
+}
