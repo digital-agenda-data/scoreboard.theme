@@ -1355,6 +1355,11 @@ div.field span.required:after {
   .editor-steps {
     margin-bottom: 5px;
   }
+  .col-md-6 select,
+  .bottom-left select,
+  .bottom-right select {
+    width: 70%;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 800px) {
