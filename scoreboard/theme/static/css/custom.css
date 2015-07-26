@@ -854,7 +854,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 
 
 /* Loading effects */
-.loading-small {
+#the-chart.loading-small {
   background: url(../images/loading-bar.gif) no-repeat;
   background-position: center 0;
 }
