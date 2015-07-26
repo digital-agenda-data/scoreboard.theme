@@ -1654,7 +1654,5 @@ table.listing {
 }
 #scenario-box #the-filters p:not(.default-hidden){
   visibility:visible;
-  height: 1em;
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  margin: 0;
 }
