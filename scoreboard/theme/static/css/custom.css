@@ -1646,3 +1646,15 @@ table.listing {
     padding-left: 20px;
   }
 }
+
+#the-filters p.default-hidden {
+  visibility:hidden;
+  margin: 0;
+  height: 0px;
+}
+#scenario-box #the-filters p:not(.default-hidden){
+  visibility:visible;
+  height: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
