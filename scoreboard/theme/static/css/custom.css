@@ -1519,8 +1519,15 @@ div.field span.required:after {
     min-width:300px;
     overflow:auto;
     white-space:normal !important;
-    z-index: 9999;
+    background-color: rgba(255,255,255,.9);
+    z-index: 25;
 }
+
+.highcharts-tooltip rect {
+    fill-opacity: 0!important;
+    stroke-opacity: 0!important;
+}
+
 
 .ui-tooltip-content {
     font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
