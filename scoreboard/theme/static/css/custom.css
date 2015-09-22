@@ -642,6 +642,14 @@ div.ms-drop li {
   font-size: 16px;
 }
 
+#the-filters div.ms-drop label {
+  vertical-align: bottom;
+}
+
+#the-filters div.ms-drop label input[type='checkbox'] {
+  margin-bottom: 5px;
+}
+
 div.ms-drop label < input[name='selectAllref-area'] {
   width: 100%;
 }
