@@ -632,6 +632,20 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
   width: 100%;
 }
 
+.chart-filter select.multiple_select {
+  width: 100%;
+}
+
+div.ms-drop li {
+  padding: 5px 0 5px 0;
+  font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
+  font-size: 16px;
+}
+
+div.ms-drop label < input[name='selectAllref-area'] {
+  width: 100%;
+}
+
 /* Chart listing */
 .white-area {
   overflow: auto;
