@@ -1715,3 +1715,6 @@ table.listing {
   margin: 0;
 }
 
+.hidden-select {
+	display: none;
+}
