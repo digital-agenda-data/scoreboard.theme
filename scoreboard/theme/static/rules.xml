@@ -41,6 +41,9 @@
     <replace css:theme="#documentation-link">
       <a href="{$portal_url}/documentation">Documentation</a>
     </replace>
+    <replace css:theme="#privacy-link">
+      <a href="{$portal_url}/privacy">Privacy</a>
+    </replace>
 
   <replace css:theme="#logo-header-link">
     <a href="{$portal_url}" id="logo-header-link">

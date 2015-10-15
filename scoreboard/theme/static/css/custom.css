@@ -1718,3 +1718,21 @@ table.listing {
 .hidden-select {
 	display: none;
 }
+
+.cookie-consent {
+  background-color: #EBF6FC;
+  border: thin solid #23527c;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  z-index:10;
+}
+
+.cookie-consent p {
+  margin: 0.5em 1em;
+}
+
+.cookie-consent button {
+  display: inline;
+  margin-left: 5px;
+}
