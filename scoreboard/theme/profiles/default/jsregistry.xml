@@ -15,8 +15,22 @@
     id="++resource++scoreboard.theme.js/views.js"
     />
   <javascript
+    id="++resource++scoreboard.theme.js/jquery-1.11.2.min.js"
+    />
+  <javascript
+    id="++resource++scoreboard.theme.bootstrap/js/bootstrap.min.js"
+    />
+  <javascript
+    id="++resource++scoreboard.theme.js/noConflict.js"
+    />
+  <javascript
     authenticated="True" expression=""
     id="++resource++scoreboard.theme.js/listing.js" />
   <javascript
+    authenticated="True" expression=""
     id="++resource++scoreboard.theme.js/cookies.js" />
+  <javascript
+    authenticated="True" expression=""
+    id="++resource++scoreboard.theme.js/piwik.js" />
+
 </object>

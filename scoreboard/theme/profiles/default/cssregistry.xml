@@ -7,13 +7,7 @@
   id="public.css"
   />
 <stylesheet
-  id="++resource++scoreboard.theme.css/listing.css"
-  />
-<stylesheet
-  id="++resource++scoreboard.theme.css/bootstrap.css"
-  />
-<stylesheet
-  id="++resource++scoreboard.theme.css/cookies.css"
+  id="++resource++scoreboard.theme.bootstrap/css/bootstrap.css"
   />
 <stylesheet
   id="ie8.css"
@@ -24,7 +18,8 @@
   conditionalcomment="IE 9"
   />
 <stylesheet
-  id="redesignCustom.css"
+  id="print.css"
+  remove="True"
   />
-</object>
 
+</object>
