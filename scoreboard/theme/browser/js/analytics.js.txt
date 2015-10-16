@@ -1,0 +1,7 @@
+// add this to portal_skins/custom/analytics.js/manage_main
+//
+// for test.digital-agenda-data.eu
+// var _piwikSiteId=1;
+//
+// for digital-agenda-data.eu
+// var _piwikSiteId=2;
