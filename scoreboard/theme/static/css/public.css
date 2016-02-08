@@ -1508,7 +1508,7 @@ dl.enableFormTabbing dd {
    width: auto;
 }
 .field input[type="text"][name$=".title"],
-input#title {
+input#title, textarea#text, input#anon_name {
     width: 100%;
 }
 .field.error input[type="text"][name$=".title"],
