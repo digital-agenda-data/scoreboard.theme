@@ -799,6 +799,39 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-color: #7CA8BB;
 }
 
+/* Search inline form */
+.search-form {
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
+.search-form h2, .search-form h1 {
+  display: inline-block;
+}
+
+.search-form input{
+  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
+  font-size: 14px;
+}
+
+.search-form button.btn-search {
+  background-image: linear-gradient(rgb(218, 232, 245) 0%, rgb(255, 255, 255) 100%);
+  color: rgb(51, 51, 51);
+  border: solid 1px #b9cdd7;
+  border-radius: 30px;
+  min-width: 75px;
+}
+@media (min-width: 767px) {
+  .search-form button.btn-search {
+    margin-left:-20px;
+  }
+}
+
+#navsearch {
+  top: 1em;
+  right: 0;
+  position: absolute;
+}
 
 /* Visualization scenario navigation */
 .navigation-widget {

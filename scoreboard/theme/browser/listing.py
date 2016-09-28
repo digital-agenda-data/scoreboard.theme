@@ -8,15 +8,18 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from persistent.list import PersistentList
 from plone.uuid.interfaces import IUUID
+from collections import OrderedDict, defaultdict
 
 from plone.registry.interfaces import IRegistry
 from edw.datacube.interfaces import IDataCubeSettings
 from edw.datacube.browser.query import jsonify
 from edw.datacube.interfaces import defaults
+from edw.datacube.data.cube import Cube
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
 import operator
+import string
 
 
 ORDER = 'scoreboard.visualization.order'
@@ -223,3 +226,65 @@ class VisualizationsListingView(ListingView):
                 'params': urlencode(params)
         }
         self.request.response.redirect(redirect_url)
+
+class SearchView(BrowserView):
+    """ Search results page
+    """
+    def getSearchQuery(self):
+        return ''.join([x for x in self.request.form.get('q', '')
+            if x in string.ascii_letters or x in string.whitespace or x in string.digits])
+
+    def getResults(self):
+        # default charts for each dataset
+        mock = {
+            'http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators': '/charts/analyse-one-indicator-and-compare-countries',
+            'http://semantic.digital-agenda-data.eu/dataset/DESI': '/Plone/charts/desi-components',
+            'http://semantic.digital-agenda-data.eu/dataset/CNECT_Dashboard': '/charts/compare-breakdown',
+            'http://semantic.digital-agenda-data.eu/dataset/Leadindicators': '/charts/copy5_of_analyse-one-indicator-and-compare-countries',
+            'http://semantic.digital-agenda-data.eu/dataset/eurobarometer': '/charts/analyse-one-indicator-and-compare-countries-eb',
+            'http://semantic.digital-agenda-data.eu/dataset/ICTsector': '/charts/copy4_of_analyse-one-indicator-and-compare-countries',
+        }
+        cubes = self._getCubes()
+        # next(iter(cubes.items()))
+        for cube in cubes.values():
+            default_cube = cube.get_cube()
+            break
+
+        query = self.getSearchQuery()
+
+        results = []
+
+        for row in default_cube.search_indicators(query.split()):
+            portal_cube = cubes.get(row['dataset'])
+            if not portal_cube:
+                # dataset not published on the visualisation website
+                continue
+            cube = portal_cube.get_cube()
+            indicator_meta = cube.metadata.lookup_metadata('indicator', row['uri'])
+            try:
+                group_notation = next(iter(indicator_meta.get('group_notation', [])))
+            except StopIteration:
+                group_notation = 'any'
+
+            row.update({
+                'dataset': portal_cube.absolute_url(),
+                'dataset_title': portal_cube.getExtended_title(),
+                'notation': indicator_meta['notation'],
+                'group_notation': group_notation,
+                'chart_uri': mock.get(row['dataset']),
+                })
+            results.append(row)
+        return results
+
+    def _getCubes(self):
+        query = {
+            'portal_type': 'DataCube',
+            'sort_on': 'getObjPositionInParent'
+        }
+
+        catalog = getToolByName(self.context, 'portal_catalog');
+        results = []
+        for brain in catalog(**query):
+            cube = brain.getObject()
+            results.append((cube.dataset(), cube))
+        return  OrderedDict(results)

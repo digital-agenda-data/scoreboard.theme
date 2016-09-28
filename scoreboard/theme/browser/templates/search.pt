@@ -1,0 +1,34 @@
+<html metal:use-macro="here/main_template/macros/master" i18n:domain="plone">
+  <div metal:fill-slot="main">
+        <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
+        <tal:block define="docs view/getResults">
+            <p tal:condition="not:docs">No indicators found.</p>
+            <table class="docsTable white-area" tal:condition="docs">
+                <thead>
+                    <th style="width:80%">
+                        Indicator
+                    </th>
+                    <th style="width:20%">
+                        Dataset
+                    </th>
+                </thead>
+                <tbody>
+                    <tal:row repeat="doc docs">
+                        <tr>
+                            <td>
+                                <strong><a tal:attributes='href string:${portal_url}${doc/chart_uri}#chart={"indicator-group":"${doc/group_notation}", "indicator":"${doc/notation}"}'><span tal:replace="doc/label"></span></a></strong><br>
+                                <span tal:replace="doc/definition"></span>
+                            </td>
+                            <td>
+                                <a tal:attributes="href string:${doc/dataset}/indicators">
+                                    <span tal:replace="doc/dataset_title"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tal:row>
+                </tbody>
+            </table>
+        </tal:block>
+  </div>
+</html>
+
