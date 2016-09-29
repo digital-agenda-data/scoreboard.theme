@@ -16,7 +16,7 @@
                     <tal:row repeat="doc docs">
                         <tr>
                             <td>
-                                <strong><a tal:attributes='href string:${portal_url}${doc/chart_uri}#chart={"indicator-group":"${doc/group_notation}", "indicator":"${doc/notation}"}'><span tal:replace="doc/label"></span></a></strong><br>
+                                <strong><a tal:attributes="href string:${doc/chart_uri}""><span tal:replace="doc/label"></span></a></strong><br>
                                 <span tal:replace="doc/definition"></span>
                             </td>
                             <td>

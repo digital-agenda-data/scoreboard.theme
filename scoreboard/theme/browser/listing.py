@@ -235,15 +235,6 @@ class SearchView(BrowserView):
             if x in string.ascii_letters or x in string.whitespace or x in string.digits])
 
     def getResults(self):
-        # default charts for each dataset
-        mock = {
-            'http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators': '/charts/analyse-one-indicator-and-compare-countries',
-            'http://semantic.digital-agenda-data.eu/dataset/DESI': '/Plone/charts/desi-components',
-            'http://semantic.digital-agenda-data.eu/dataset/CNECT_Dashboard': '/charts/compare-breakdown',
-            'http://semantic.digital-agenda-data.eu/dataset/Leadindicators': '/charts/copy5_of_analyse-one-indicator-and-compare-countries',
-            'http://semantic.digital-agenda-data.eu/dataset/eurobarometer': '/charts/analyse-one-indicator-and-compare-countries-eb',
-            'http://semantic.digital-agenda-data.eu/dataset/ICTsector': '/charts/copy4_of_analyse-one-indicator-and-compare-countries',
-        }
         cubes = self._getCubes()
         # next(iter(cubes.items()))
         for cube in cubes.values():
@@ -251,7 +242,6 @@ class SearchView(BrowserView):
             break
 
         query = self.getSearchQuery()
-
         results = []
 
         for row in default_cube.search_indicators(query.split()):
@@ -266,12 +256,19 @@ class SearchView(BrowserView):
             except StopIteration:
                 group_notation = 'any'
 
+            default_chart = portal_cube.getDefault_visualisation()
+            if default_chart:
+                chart_uri = '%s#chart={"indicator-group":"%s", "indicator":"%s"}' % (
+                    default_chart.absolute_url_path(), group_notation, indicator_meta['notation'])
+            else:
+                chart_uri = portal_cube.absolute_url_path() + '/visualizations'
+
             row.update({
                 'dataset': portal_cube.absolute_url(),
                 'dataset_title': portal_cube.getExtended_title(),
                 'notation': indicator_meta['notation'],
                 'group_notation': group_notation,
-                'chart_uri': mock.get(row['dataset']),
+                'chart_uri': chart_uri,
                 })
             results.append(row)
         return results
