@@ -1769,3 +1769,8 @@ table.listing {
   display: inline;
   margin-left: 5px;
 }
+
+/* ckeditor */
+div[contenteditable] {
+   border: 1px solid #ccc;
+}
