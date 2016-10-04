@@ -801,7 +801,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 /* Search inline form */
 .search-form {
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
   display: inline-block;
 }
 
@@ -814,23 +814,22 @@ div.ms-drop label < input[name='selectAllref-area'] {
   font-size: 14px;
 }
 
-.search-form button.btn-search {
-  background-image: linear-gradient(rgb(218, 232, 245) 0%, rgb(255, 255, 255) 100%);
-  color: rgb(51, 51, 51);
-  border: solid 1px #b9cdd7;
-  border-radius: 30px;
-  min-width: 75px;
-}
-@media (min-width: 767px) {
-  .search-form button.btn-search {
-    margin-left:-20px;
-  }
+.search-form button.btn-search {   background-image: linear-gradient(rgb(218,
+232, 245) 0%, rgb(255, 255, 255) 100%);   color: rgb(51, 51, 51);   border:
+solid 1px #b9cdd7;   border-radius: 30px;   min-width: 75px; } @media (min-
+width: 767px) {   .search-form button.btn-search {     margin-left:-20px;   } }
+
+#navsearch-container:after {
+  clear: none;
 }
 
 #navsearch {
-  top: 1em;
-  right: 0;
-  position: absolute;
+  float: right;
+  margin-top: 1em;
+}
+
+#navsearch .form-group {
+  margin-bottom: 0;
 }
 
 /* Visualization scenario navigation */
