@@ -8,21 +8,24 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from persistent.list import PersistentList
 from plone.uuid.interfaces import IUUID
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict
 
 from plone.registry.interfaces import IRegistry
 from edw.datacube.interfaces import IDataCubeSettings
 from edw.datacube.browser.query import jsonify
 from edw.datacube.interfaces import defaults
-from edw.datacube.data.cube import Cube
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
-import operator
 import string
-
+import os
+import urllib2
+import json
+import logging
 
 ORDER = 'scoreboard.visualization.order'
+
+logger = logging.getLogger('edw.datacube')
 
 
 class DocListingView(BrowserView):
@@ -222,10 +225,11 @@ class VisualizationsListingView(ListingView):
         params.update(self.request.form)
         params.update(kwargs)
         redirect_url = '%(url)s?%(params)s' % {
-                'url': url,
-                'params': urlencode(params)
+            'url': url,
+            'params': urlencode(params)
         }
         self.request.response.redirect(redirect_url)
+
 
 class SearchView(BrowserView):
     """ Search results page
@@ -236,15 +240,19 @@ class SearchView(BrowserView):
 
     def getResults(self):
         cubes = self._getCubes()
-        # next(iter(cubes.items()))
-        for cube in cubes.values():
-            default_cube = cube.get_cube()
-            break
-
         query = self.getSearchQuery()
+        logger.info('Search term: %s', query)
+        solr_url = os.environ.get('SOLR_URL')
+        if solr_url and not self.request.form.get('sparql'):
+            try:
+                query_results = self._search_solr(solr_url, query)
+            except:
+                query_results = self._search_virtuoso(cubes, query)
+        else:
+            query_results = self._search_virtuoso(cubes, query)
         results = []
 
-        for row in default_cube.search_indicators(query.split()):
+        for row in query_results:
             portal_cube = cubes.get(row['dataset'])
             if not portal_cube:
                 # dataset not published on the visualisation website
@@ -269,8 +277,34 @@ class SearchView(BrowserView):
                 'notation': indicator_meta['notation'],
                 'group_notation': group_notation,
                 'chart_uri': chart_uri,
-                })
+            })
             results.append(row)
+        logger.info('Search results: %d', len(results))
+        return results
+
+    def _search_virtuoso(self, cubes, query):
+        # next(iter(cubes.items()))
+        for cube in cubes.values():
+            default_cube = cube.get_cube()
+            break
+        return default_cube.search_indicators(query.split())
+
+    def _search_solr(self, solr_url, query):
+        params = urlencode({
+            'wt': 'json',
+            'q': query
+        })
+        data = json.loads(urllib2.urlopen(solr_url + '/select', data=params).read())
+        results = []
+        if 'response' in data:
+            docs = data['response']['docs']
+            for doc in docs:
+                results.append({
+                    'dataset': doc.get('dataset_s'),
+                    'uri': doc.get('id'),
+                    'label': doc.get('label_txt_en'),
+                    'definition': doc.get('definition_txt_en'),
+                })
         return results
 
     def _getCubes(self):
@@ -279,9 +313,9 @@ class SearchView(BrowserView):
             'sort_on': 'getObjPositionInParent'
         }
 
-        catalog = getToolByName(self.context, 'portal_catalog');
+        catalog = getToolByName(self.context, 'portal_catalog')
         results = []
         for brain in catalog(**query):
             cube = brain.getObject()
             results.append((cube.dataset(), cube))
-        return  OrderedDict(results)
+        return OrderedDict(results)
