@@ -799,6 +799,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-color: #7CA8BB;
 }
 
+.heading-wrapper {
+  width: auto!important;
+}
+
 /* Search inline form */
 .search-form {
   //margin-bottom: 1em;
@@ -840,7 +844,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 #navsearch {
   float: right;
-  margin-top: 1em;
+  margin-top: 1rem;
   z-index: 999;
   position: relative;
 }
@@ -1652,6 +1656,7 @@ div.qtip-default div.qtip-titlebar {
 .documentFirstHeading {
   font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
   font-size: 24px;
+  padding: 1rem 0;
 }
 
 .scoreboard-listing table,
