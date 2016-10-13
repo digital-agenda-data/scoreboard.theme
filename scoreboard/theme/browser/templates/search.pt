@@ -2,8 +2,8 @@
   <div metal:fill-slot="main">
         <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
         <tal:block define="docs view/getResults">
-            <p tal:condition="not:docs">No indicators found.</p>
-            <table class="docsTable white-area" tal:condition="docs">
+            <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
+            <table class="docsTable white-area" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
                 <thead>
                     <th style="width:80%">
                         Indicator
