@@ -1,7 +1,4 @@
 <html metal:use-macro="here/main_template/macros/master" i18n:domain="plone">
-  <tal:js metal:fill-slot="top_slot">
-    <script type="text/javascript" tal:define="docs view/getResults; searchCount python:len(docs)" tal:content="structure string:var _paq = _paq || [];_paq.push(['setCustomUrl', document.URL + '&search_count=${searchCount}']);"></script>
-  </tal:js>
   <div metal:fill-slot="main">
         <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
         <tal:block define="docs view/getResults">
