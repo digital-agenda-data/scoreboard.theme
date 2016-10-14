@@ -1801,3 +1801,9 @@ table.listing {
 div[contenteditable] {
    border: 1px solid #ccc;
 }
+
+.annotation_html_box {
+  border: 2px solid #0065a2;
+  box-shadow: none;
+  border-radius: 5px;
+}
