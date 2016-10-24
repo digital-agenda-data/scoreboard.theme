@@ -236,7 +236,7 @@ class SearchView(BrowserView):
     """
     def getSearchQuery(self):
         return ''.join([x for x in self.request.form.get('q', '')
-            if x in string.ascii_letters or x in string.whitespace or x in string.digits])
+            if x in string.ascii_letters or x in string.whitespace or x in string.digits or x in ['_', '-']])
 
     def getResults(self):
         cubes = self._getCubes()
