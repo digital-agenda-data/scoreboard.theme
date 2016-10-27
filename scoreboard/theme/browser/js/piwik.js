@@ -1,5 +1,4 @@
 pwk = function(event) {
-  var _piwikSiteId = _piwikSiteId || 1;
   (function() {
     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://test.digital-agenda-data.eu/analytics/piwik/";
     //_paq.push(['setTrackerUrl', u+'piwik.php']);
