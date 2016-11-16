@@ -17,6 +17,8 @@ from edw.datacube.interfaces import defaults
 
 from scoreboard.theme.interfaces import IDatasetsContainer
 from scoreboard.theme.interfaces import IVisualizationsContainer
+from scoreboard.visualization.interfaces import IScoreboardVisualization
+
 import string
 import os
 import urllib2
@@ -185,8 +187,11 @@ class VisualizationsListingView(ListingView):
         Return all visualization for this context sorted by position
         in parent
         """
-        relations = (relation for relation in self.context.getBRefs()
-                if checkPermission('zope2.View', relation))
+        relations = (
+            relation for relation in self.context.getBRefs() if
+            checkPermission('zope2.View', relation) and
+            IScoreboardVisualization.providedBy(relation)
+        )
         anno = IAnnotations(self.context)
         order = anno.get(ORDER, ())
         mapping = dict((IUUID(relation, ''), relation)
