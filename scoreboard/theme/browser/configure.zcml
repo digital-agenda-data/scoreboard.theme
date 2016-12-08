@@ -97,6 +97,14 @@
     />
 
   <browser:page
+    name="search-indicators"
+    for="*"
+    permission="zope2.View"
+    class=".listing.SearchView"
+    template="templates/search.pt"
+    />
+
+  <browser:page
     name="folder_listing"
     for="scoreboard.theme.interfaces.IDatasetsContainer"
     class=".redirect.DatasetContainerRedirectView"

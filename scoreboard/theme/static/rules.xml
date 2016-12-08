@@ -51,4 +51,8 @@
     </a>
   </replace>
 
+  <rules css:if-content="body.template-homepage-listing">
+    <drop css:theme="#navsearch-container" />
+  </rules>
+
 </rules>

@@ -37,7 +37,7 @@
       });
     </script>
 
-    <link href="./css/select2.css" rel="stylesheet" type="text/css" />
+    <!--link href="./css/select2.css" rel="stylesheet" type="text/css" /-->
     <script type="text/javascript" src="./js/select2.js"></script>
     <script type="text/javascript">
       $(document).ready(function() { $("#e9").select2(); });
@@ -157,6 +157,16 @@
           </div>
         </nav>
       </div>
+
+      <div id="navsearch-container" class="container"><div id="navsearch">
+          <form class="search-form form-inline" action="{$portal_url}/search-indicators" method="get" id="search-form" accept-charset="UTF-8">
+              <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" class="form-control" name="q" id="search-text" placeholder="Search">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+          </form>
+      </div></div>
 
       <div id="main" class="container">
         <div>
