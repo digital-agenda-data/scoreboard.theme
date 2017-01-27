@@ -264,6 +264,9 @@ class SearchView(BrowserView):
                 continue
             cube = portal_cube.get_cube()
             indicator_meta = cube.metadata.lookup_metadata('indicator', row['uri'])
+            if not indicator_meta:
+                logger.error('No indicator metadata for %s', row['uri'])
+                continue
             try:
                 group_notation = next(iter(indicator_meta.get('group_notation', [])))
             except StopIteration:
