@@ -1,6 +1,7 @@
 pwk = function(event) {
   (function() {
-    var u="https://test.digital-agenda-data.eu/analytics/piwik/";
+    var u=_piwik_url || "https://test.digital-agenda-data.eu/analytics/piwik/";
+    // see /portal_skins/custom/analytics.js/manage_main
     //_paq.push(['setTrackerUrl', u+'piwik.php']);
     //_paq.push(['setSiteId', _piwikSiteId]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
@@ -11,6 +12,7 @@ pwk = function(event) {
           // Check for cookie consent
           if (readCookie("_accept_cookies") === "false") {
             piwikTracker.disableCookies();
+            // should issue a request to /piwik/index.php?module=CoreAdminHome&action=optOut&language=en
           }
           var docsTable = document.querySelector(".docsTable");
           if (docsTable) {
