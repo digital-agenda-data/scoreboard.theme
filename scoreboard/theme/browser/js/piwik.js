@@ -10,7 +10,7 @@ pwk = function(event) {
           // siteId: 1=test.digital-agenda-data.eu, 2=digital-agenda-data.eu
           var piwikTracker = Piwik.getTracker(u + 'piwik.php', _piwikSiteId);
           // Check for cookie consent
-          if (readCookie("_accept_cookies") === "false") {
+          if (readCookie("_accept_cookies") !== "true") {
             piwikTracker.disableCookies();
             // should issue a request to /piwik/index.php?module=CoreAdminHome&action=optOut&language=en
           }
