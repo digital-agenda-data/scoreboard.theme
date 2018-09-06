@@ -20,7 +20,7 @@ pwk = function(event) {
           piwikTracker.enableLinkTracking();
       } catch( err ) {}
     };
-    g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.defer=true; g.src=_piwik_url+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 };
 if (document.addEventListener) {
