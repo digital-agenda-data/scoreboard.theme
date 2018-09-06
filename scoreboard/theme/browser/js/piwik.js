@@ -1,13 +1,12 @@
 pwk = function(event) {
   (function() {
-    var u="https://test.digital-agenda-data.eu/analytics/piwik/";
     //_paq.push(['setTrackerUrl', u+'piwik.php']);
     //_paq.push(['setSiteId', _piwikSiteId]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
     g.onload = function() {
       try {
           // siteId: 1=test.digital-agenda-data.eu, 2=digital-agenda-data.eu
-          var piwikTracker = Piwik.getTracker(u + 'piwik.php', _piwikSiteId);
+          var piwikTracker = Piwik.getTracker(_piwik_url + 'piwik.php', _piwikSiteId);
           // Check for cookie consent
           if (readCookie("_accept_cookies") !== "true") {
             piwikTracker.disableCookies();
