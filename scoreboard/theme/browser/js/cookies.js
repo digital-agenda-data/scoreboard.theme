@@ -19,9 +19,6 @@ function accept_cookie() {
 }
 
 function deny_cookie() {
-  _paq.push(['disableCookies']);
-  _paq.push(['trackPageView']);
-
   createCookie("_accept_cookies", false, 365);
   $(".cookie-consent").remove();
 }
