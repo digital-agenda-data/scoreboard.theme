@@ -4,3 +4,4 @@
 *.mo
 dist
 *.swp
+.idea/

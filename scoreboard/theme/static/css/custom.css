@@ -124,10 +124,15 @@ td.label {
 }
 
 .logo {
-  width: 194px;
+  width: 140px;
   border: 0px;
-  padding-left: 22px;
-  padding-top: 15px;
+  margin-top: 45px;
+}
+
+#logo-header-link:focus {
+  outline: 3px solid #ffd617;
+  outline-offset: 5px;
+  text-decoration: underline;
 }
 
 .portal-title {
