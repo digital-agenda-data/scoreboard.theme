@@ -1,13 +1,15 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main"
+
+  <metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading" tal:content="here/getExtended_title"></h1>
+  </metal:title>
+
+  <div metal:fill-slot="content-core"
     tal:define="cube nocall:here;
                 canAdd python:checkPermission('scoreboard.visualization: Add ScoreboardVisualization', cube);
                 isAnon context/@@plone_portal_state/anonymous;">
     <div id="scoreboard-visualizations-listing" class="scoreboard-listing bootstrap row">
-      <div class="heading-wrapper">
-        <h1 class="documentFirstHeading" tal:content="cube/getExtended_title"></h1>
-      </div>
 
       <div class="dataset-manage bootstrap col-md-12">
         <ul class="nav nav-tabs">

@@ -1,14 +1,15 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main"
+
+  <metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading">Digital Scoreboard - Data &amp; Indicators</h1>
+  </metal:title>
+
+  <div metal:fill-slot="content-core"
     tal:define="normalizeString nocall:context/plone_utils/normalizeString;
                 canAdd python:checkPermission('edw.datacube: Add DataCube', here);
                 isAnon context/@@plone_portal_state/anonymous;">
     <div id="homepage-listing" class="scoreboard-listing bootstrap row">
-      <div class="col-md-12">
-        <h1>Digital Scoreboard - Data &amp; Indicators</h1>
-      </div>
-
       <div class="col-md-12">
         <div class="listing-description">
           <p>This visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The indicators have been selected to support the <a href="https://ec.europa.eu/digital-single-market/en/digital-single-market">EU Digital Single Market policies</a> and to monitor the <a href="https://ec.europa.eu/digital-single-market/en/european-digital-progress-report">digital progress of European Economy and Society</a>, through annual reports, a <a href="https://ec.europa.eu/digital-single-market/en/desi">DESI</a> index and <a href="https://ec.europa.eu/digital-single-market/en/progress-country">country factsheets</a>.</p>
