@@ -18,13 +18,12 @@
         </div>
         <form class="search-form form-inline" tal:attributes="action string:${portal_url}/search-indicators" method="get" id="search-form" accept-charset="UTF-8">
           <h2>Select a dataset or search for indicators</h2>
-          <div class="form-group">
-            <label class="sr-only" for="search-text">Search</label>
-            <input type="text" class="form-control" id="search-text" name="q" placeholder="e.g. social media">
+          <div class="input-group input-group-search">
+            <input type="text" class="searchField" id="search-text" name="q" placeholder="e.g. social media">
+            <button type="submit" class="searchButton">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
           </div>
-          <button type="submit" class="btn btn-primary btn-search form-control">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
         </form>
       </div>
 
@@ -37,30 +36,30 @@
             <a class="btn btn-xs btn-primary" tal:attributes="href string:${here/absolute_url}/addDataCube?final_url=${here/absolute_url}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new</a>
           </div>
 
-          <table class="scoreboard-datacubes-listing container">
-            <tbody class="row">
-              <tal:row repeat="cube cubes">
-              <tr class="scoreboard-datacubes-listing-item col-md-9 col-sm-12 col-xs-12" tal:attributes="
-                id cube/getId;
-                data-name cube/getId;
-                data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
-                data-authenticator cube/@@authenticator/authenticator;
-                data-parent python:cube.getParentNode().absolute_url()"
-                tal:define="state python:view.getItemState(cube);
-                            canModify python:checkPermission('Modify portal content', cube);
-                            canReview python:checkPermission('Review portal content', cube);">
-                <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')" class="thumbnail-area">
+          <ul class="scoreboard-datacubes-listing row">
+            <tal:list-elem repeat="cube cubes">
+              <li class="cube-item"
+                  tal:attributes="id cube/getId;
+                              data-name cube/getId;
+                              data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
+                              data-authenticator cube/@@authenticator/authenticator;
+                              data-parent python:cube.getParentNode().absolute_url()"
+                  tal:define="state python:view.getItemState(cube);
+                              canModify python:checkPermission('Modify portal content', cube);
+                              canReview python:checkPermission('Review portal content', cube);">
+
+                <div class="cube-thumbnail column-second" tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
                   <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                    <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
+                    <img tal:condition="has_thumbnail" tal:define="scale cube/@@images" src=""
                          tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
-                    <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
+                    <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" src="" />
                   </a>
-                </td>
-                <td class="dataset-description-area">
-                  <a tal:attributes="href string:${cube/absolute_url}/visualizations">
+                </div>
+                <div class="dataset-description-area column-main">
+                  <a class="cube-visualisation" tal:attributes="href string:${cube/absolute_url}/visualizations">
                     <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
                   </a>
-                  <p tal:content="structure cube/getSummary"></p>
+                  <p tal:content="structure cube/getSummary">Cube summary</p>
                   <ul class="linklist">
                     <li tal:condition="not:isAnon">
                       <span>Status:</span>
@@ -87,11 +86,10 @@
                       <a href="#" title="Click and drag to reorder"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></a>
                     </tal:block>
                   </div>
-                </td>
-              </tr>
-              </tal:row>
-            </tbody>
-          </table>
+                </div>
+              </li>
+            </tal:list-elem>
+          </ul>
         </tal:block>
       </div>
     </div>

@@ -194,15 +194,26 @@ td.label {
   font-size: .889em;
 }
 
-#site-search .input-group.input-group-search {
+.input-group.input-group-search {
   border: 1px solid black;
+}
+
+#search-form input:focus {
+  outline-offset: 3px;
+}
+
+#search-form input {
+  margin-top: -9px;
+  margin-left: 6px;
+  margin-right: 6px;
+  height: 29px;
 }
 
 #portal-searchbox {
   float: none;
 }
 
-#site-search .searchButton {
+.searchButton {
   background-color: #e3e3e3;
   color: #004494;
   font-weight: bold;
@@ -211,16 +222,16 @@ td.label {
   padding: 0 1.1em 0 1.1em;
 }
 
-#site-search .searchButton:hover {
+.searchButton:hover {
   text-decoration: underline;
   color: #404040;
 }
 
-#site-search .searchButton:focus {
+.searchButton:focus {
   outline-offset: -3px;
 }
 
-#site-search .searchField {
+.searchField {
   width: 240px;
   border: 0;
   height: 2em;
@@ -229,7 +240,7 @@ td.label {
   margin-right: 3px;
 }
 
-#site-search .searchField:focus {
+.searchField:focus {
   outline-offset: 0;
   text-decoration: none
 }
@@ -907,12 +918,22 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 /* Search inline form */
 .search-form {
-  //margin-bottom: 1em;
+  margin-bottom: 1.7em;
+  margin-top: 1.7em;
   display: inline-block;
 }
 
-.search-form h2, .search-form h1 {
+.search-form h1 {
   display: inline-block;
+}
+
+.search-form h2 {
+  display: block;
+  margin-bottom: .556em;
+  padding: 0;
+  font-size: .889em;
+  color: #404040;
+  font-weight: 700;
 }
 
 .search-form input{
@@ -1781,6 +1802,26 @@ div.qtip-default div.qtip-titlebar {
 #indicators-toc ul {
   list-style-type: square;
   color: #777;
+}
+
+.scoreboard-datacubes-listing .cube-item{
+  border-top: 1px solid #ebebeb;
+  padding: 1.111em 0;
+}
+
+.scoreboard-datacubes-listing {
+  padding-left: 0;
+}
+
+.dataset-description-area.column-main {
+  width: 70%;
+}
+
+.cube-thumbnail.column-second {
+  float: right;
+  width: 25%;
+  margin: 0;
+  padding-left: 15px;
 }
 
 .scoreboard-listing .scoreboard-visualizations-listing tr,
