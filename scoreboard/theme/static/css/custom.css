@@ -334,8 +334,9 @@ td.label {
 }
 
 #copyright {
-  background: #E5E5E5;
-  color: #808080;
+  background-color: #004494;
+  padding: .9em 0;
+  color: #fff;
 }
 
 #footer ul {
@@ -351,7 +352,6 @@ td.label {
 #footer ul li a {
   color: #808080;
 }
-
 
 /* Login page */
 #login_form,
@@ -802,10 +802,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-top: solid #3082b3;
   border-bottom: 0;
 }
-/*.scoreboard-listing p {
-  margin-bottom: 0;
-  text-align: justify;
-}*/
+
 .scoreboard-listing p + p{
   margin-bottom: 1em;
 }
@@ -1810,7 +1807,7 @@ div.qtip-default div.qtip-titlebar {
 }
 
 .scoreboard-datacubes-listing {
-  padding-left: 0;
+  padding-left:15px;
 }
 
 .dataset-description-area.column-main {
