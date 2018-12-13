@@ -288,11 +288,6 @@ td.label {
   font-weight: bold;
 }
 
-.blue-header .container {
-  /*padding: 0;*/
-
-}
-
 .breadcrumbs li {
   list-style-type: none;
   background: url("../images/breadcrumb.gif") rgba(0, 0, 0, 0) left center no-repeat;
