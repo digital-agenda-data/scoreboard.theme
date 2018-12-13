@@ -25,8 +25,9 @@
 
    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
-    <replace css:content="#personaltools-login" css:theme=".header-top a:first-child" />
-    <before css:content="#personaltools-logout a" css:theme=".header-top a:first-child" />
+    <replace css:content="#personaltools-login" css:theme=".container-fluid a" />
+    <replace css:if-content="#personaltools-logout"
+             css:content="#personaltools-logout a" css:theme=".container-fluid a" />
 
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />
