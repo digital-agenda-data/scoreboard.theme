@@ -1,7 +1,7 @@
 /* General */
 body {
   margin: 0 auto;
-  font-size: 13px;
+  font-size: 18px;
   color: #333;
   min-width: 320px;
   font-family: Arial,sans-serif;
@@ -10,13 +10,6 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-@media (min-width: 480px) {
-  body {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -42,6 +35,7 @@ a:hover {
 }
 
 .searchButton:focus,
+.searchField:focus,
 a:focus {
   outline: 3px solid #ffd617;
   outline-offset: 2px;
@@ -115,10 +109,6 @@ td.label {
   }
 }
 
-.layout {
-  background: url("../images/bg_dashes.png");
-}
-
 #login_form,
 #mail_password,
 #the-filters,
@@ -157,7 +147,7 @@ td.label {
 }
 
 .portal-subtitle {
-  padding: 1.6em 1.6em .7em 1.6em;
+  padding: 1.6em 1.6em .4em 1.6em;
   background-color: #004494;
   border-left: none;
   color: #fff;
@@ -166,24 +156,25 @@ td.label {
 .portal-subtitle:after {
   content: " ";
   position: absolute;
-  top: 2.3em;
-  right: 62%;
+  top: 1.9em;
+  right: 59%;
   border: 10px solid rgba(0,68,148,0);
   border-top-color: #004494;
   pointer-events: none;
 }
 
-.header-top-contents {
-  max-width: 1170px;
+.container-fluid {
+  max-width: 65em;
   display: flex;
-  display: flexbox;
-  margin-right: auto;
-  margin-left: auto;
   font-weight: 600;
-  font-size: .889em;
   justify-content: space-between;
   height: inherit;
   align-items: center;
+}
+
+.container-fluid:before,
+.container-fluid:after {
+  content: none;
 }
 
 #header {
@@ -195,7 +186,7 @@ td.label {
   margin-right: auto;
   margin-left: auto;
   padding: 15px 0 15px 0;
-  max-width: 1170px;
+  max-width: calc(65em + 100px);
   color: #004494;
   min-height: 100px;
   display: flex;
@@ -239,7 +230,6 @@ td.label {
 }
 
 #site-search .searchField:focus {
-  outline: 3px solid #ffd617;
   outline-offset: 0;
   text-decoration: none
 }
@@ -265,40 +255,9 @@ td.label {
   text-decoration: underline;
 }
 
-/*.portal-title {
-  position: absolute;
-  top: 38px;
-  margin: 0;
-  margin-left: 225px;
-  border: 0;
-  font-size: 24px;
-  font-family: Verdana,Arial,Helvetica,"DejaVu Sans",sans-serif;
-  line-height: 1.2;
-  color: #0065A2;
-  text-transform: uppercase;
-}*/
-
-/*.portal-subtitle {
-  color: #FFF;
-  font-size: 17px;
-  font-family: Verdana,Arial,Helvetica,"DejaVu Sans",sans-serif;
-  margin: 0 auto;
-  padding: 0px 0px 0px 240px;
-}*/
-
 .navbar-header {
   float: none;
 }
-
-.navbar-header .container {
-  padding: 0;
-}
-
-/*.subtitle-backgr {
-  background-color: #0065A2;
-  min-height: 45px;
-  margin-top: -34px;
-}*/
 
 .path {
   background: #074A8B;
@@ -325,15 +284,13 @@ td.label {
   min-height: 22px;
   padding-left: 0;
   border-bottom: 1px solid #fff;
-  width: 1170px;
-}
-
-.blue-header .container .breadcrumbs {
+  width: 100%;
   font-weight: bold;
 }
 
 .blue-header .container {
-  padding: 0;
+  /*padding: 0;*/
+
 }
 
 .breadcrumbs li {
@@ -1556,11 +1513,13 @@ div.field span.required:after {
     width: 86px;
   }
 
-  .portal-title {
+/*  .portal-title {
     margin-left: 95px;
     line-height: 16px;
     font-size: 18px !important;
-    width: auto; /* 315px; */
+    width: auto;
+*//* 315px; *//*
+
     top: 12px;
     padding: 1em 0 0;
   }
@@ -1568,16 +1527,12 @@ div.field span.required:after {
   .portal-subtitle {
     padding-left: 110px;
     font-size: 13px;
-  }
+  }*/
+
 
   .thumbnail-area {
     display: none;
   }
-
-/*  .subtitle-backgr {
-    min-height: 28px;
-    margin-top: -16px;
-  }*/
 
   .navbar-toggle {
     margin-top: 5px;
@@ -1670,7 +1625,7 @@ div.field span.required:after {
     padding-right: 5px;
   }
 
-  .portal-title {
+/*  .portal-title {
     font-size: 16px;
     width: auto;
     margin-left: 100px;
@@ -1679,7 +1634,7 @@ div.field span.required:after {
   .portal-subtitle {
     padding-left: 107px;
     font-size: 13px;
-  }
+  }*/
 
   .nav-tabs > li {
     width: 100%;
@@ -1729,9 +1684,9 @@ div.field span.required:after {
 }
 
 @media (max-width: 320px) {
-  .portal-title {
+/*  .portal-title {
     width: 138px;
-  }
+  }*/
 
   .navigation-widget .container {
     width: 290px;
