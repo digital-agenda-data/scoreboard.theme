@@ -36,25 +36,28 @@
     <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
 
     <replace css:content=".documentFirstHeading" css:theme=".documentFirstHeading" />
+
     <replace css:content-children="#content-core" css:theme-children="#main" />
+
     <drop css:content=".download-visualization" />
 
-    <before css:content="#personaltools-plone_setup" css:theme="#footer .content .menu.clearfix li:first-child" />
+    <before css:content="#personaltools-plone_setup" css:theme="#sidebar-list li:first-child" />
 
     <replace css:theme="#documentation-link">
-      <a href="{$portal_url}/documentation">Documentation</a>
+        <a href="{$portal_url}/documentation">Documentation</a>
     </replace>
     <replace css:theme="#privacy-link">
-      <a href="{$portal_url}/privacy">Privacy</a>
+        <a href="{$portal_url}/privacy">Privacy</a>
     </replace>
 
-  <replace css:theme="#logo-header-link">
-    <a href="{$portal_url}" id="logo-header-link">
-      <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo.svg" alt="European Commision logo" />
+    <replace css:theme="#logo-header-link">
+      <a href="{$portal_url}" id="logo-header-link">
+        <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo.svg" alt="European Commision logo" />
     </a>
   </replace>
 
-  <rules css:if-content="body.template-homepage-listing">
-    <drop css:theme="#navsearch-container" />
+    <rules css:if-content="body.template-homepage-listing">
+      <drop css:theme="#navsearch-container" />
   </rules>
+
 </rules>

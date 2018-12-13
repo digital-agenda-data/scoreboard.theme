@@ -791,9 +791,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-top: solid #3082b3;
   border-bottom: 0;
 }
-.scoreboard-listing p {
+/*.scoreboard-listing p {
   margin-bottom: 0;
-}
+  text-align: justify;
+}*/
 .scoreboard-listing p + p{
   margin-bottom: 1em;
 }
@@ -1906,3 +1907,38 @@ div[contenteditable] {
   box-shadow: none;
   border-radius: 5px;
 }
+
+/*theme*/
+#main {
+  padding: 0;
+}
+
+#sidebar-yellow {
+  border-top: solid 7px #ffd316;
+  margin-top: 0;
+  padding-top: 1.667em;
+}
+
+body p:first-child {
+  margin-top: 1.667em;
+}
+
+body p {
+  text-align: justify;
+}
+
+.sidebar-content h3 {
+  /*margin-top: 1.667em;*/
+  padding-left: 40px;
+}
+
+#sidebar-list li {
+  border-left: 5px solid #004494;
+  padding: .611em 0 .611em 1.222em;
+  margin: .611em 0;
+}
+
+#sidebar-list li a {
+  font-weight: 600;
+}
+/*theme*/
