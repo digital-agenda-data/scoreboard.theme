@@ -53,11 +53,12 @@
     <replace css:theme="#logo-header-link">
       <a href="{$portal_url}" id="logo-header-link">
         <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo.svg" alt="European Commision logo" />
-    </a>
-  </replace>
+      </a>
+    </replace>
 
-    <rules css:if-content="body.template-homepage-listing">
-      <drop css:theme="#navsearch-container" />
-  </rules>
+    <rules css:if-content="body.template-documentation">
+      <replace css:content-children="#documentation-content .main-content" css:theme-children="#main" />
+      <replace css:theme=".documentFirstHeading" css:content="#documentation-content h1" />
+    </rules>
 
 </rules>

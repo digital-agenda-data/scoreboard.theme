@@ -70,15 +70,11 @@ table, td, th, tr {
   text-align: left;
 }
 
-table {
-  border-bottom: 1px solid #D5D5D5;
-}
-
 thead th,
 body .docsTable th {
   background: white;
   border: 0;
-  border-bottom: 2px solid #999;
+  border-bottom: 5px solid #ffd316 ;
   padding: 6px 8px;
   font-size: 14px;
   font-weight: normal;
@@ -770,7 +766,6 @@ div.ms-drop label < input[name='selectAllref-area'] {
 .white-area {
   overflow: auto;
   background: #FFF;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 .white-area:after {
   content: '';
@@ -1211,6 +1206,10 @@ body .docsTable td {
 
 .template-documentation h1 {
   text-align: left;
+}
+
+.template-documentation .first.leaf {
+  border-left-color: #ffd316 !important;
 }
 
 .docsTable {
