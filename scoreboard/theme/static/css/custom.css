@@ -39,6 +39,9 @@ a:hover {
 a:focus {
   outline: 3px solid #ffd617;
   outline-offset: 2px;
+}
+
+.searchField:focus {
   background-color: #fff !important;
 }
 
@@ -77,8 +80,10 @@ body .docsTable th {
   border: 0;
   border-bottom: 5px solid #ffd316 ;
   padding: 6px 8px;
-  font-size: 14px;
-  font-weight: normal;
+}
+
+.docsTable .align-middle {
+  vertical-align: middle;
 }
 
 td.label {
@@ -955,7 +960,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 #navsearch-wrapper {
-  padding: 0;
+  padding-left: 15px;
 }
 
 #navsearch {
@@ -1212,7 +1217,8 @@ body .docsTable td {
   text-align: left;
 }
 
-.template-documentation .first.leaf {
+.template-documentation .first.leaf,
+.section-privacy .last.leaf {
   border-left-color: #ffd316 !important;
 }
 
@@ -1950,10 +1956,6 @@ div[contenteditable] {
 }
 
 /*theme*/
-#main {
-  padding: 0;
-}
-
 #sidebar-yellow {
   border-top: solid 7px #ffd316;
   margin-top: 0;
@@ -1969,7 +1971,6 @@ body p {
 }
 
 .sidebar-content h3 {
-  /*margin-top: 1.667em;*/
   padding-left: 40px;
 }
 

@@ -10,28 +10,28 @@
             <tal:block define="docs view/get_docs">
                 <table class="docsTable white-area">
                     <thead>
-                        <th>
+                        <th class="text-center">
                             Title
                         </th>
-                        <th>
+                        <th class="text-center">
                             Description
                         </th>
-                        <th>
+                        <th class="text-center">
                             Last modified
                         </th>
                     </thead>
                     <tbody>
                         <tal:row repeat="doc docs">
                             <tr>
-                                <td class="odd">
+                                <td class="odd text-center align-middle">
                                     <a tal:attributes="href string:${doc/absolute_url_path}; class python:view.get_class(doc)">
                                         <span tal:replace="doc/Title"></span>
                                     </a>
                                 </td>
-                                <td class="even">
+                                <td class="even text-justify">
                                     <span tal:replace="doc/Description"></span>
                                 </td>
-                                <td class="odd">
+                                <td class="odd text-center align-middle">
                                     <span tal:replace="python:doc.modified().strftime('%Y-%m-%d')"></span>
                                 </td>
                             </tr>
