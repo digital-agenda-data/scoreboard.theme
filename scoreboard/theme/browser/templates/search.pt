@@ -1,9 +1,11 @@
-<html metal:use-macro="here/main_template/macros/master" i18n:domain="plone">
-  <div metal:fill-slot="main">
-        <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
+<html metal:use-macro="here/main_template/macros/master"
+  i18n:domain="plone">
+  <div metal:fill-slot="main" id="search-content">
+    <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
+    <div class="main-content">
         <tal:block define="docs view/getResults">
             <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
-            <table class="docsTable white-area" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
+            <table class="docsTable" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
                 <thead>
                     <th style="width:80%">
                         Indicator
@@ -15,11 +17,11 @@
                 <tbody>
                     <tal:row repeat="doc docs">
                         <tr>
-                            <td>
-                                <strong><a tal:attributes="href string:${doc/chart_uri}""><span tal:replace="doc/label"></span></a></strong><br>
+                            <td class="text-justify">
+                                <strong><a tal:attributes="href string:${doc/chart_uri}"><span tal:replace="doc/label"></span></a></strong><br>
                                 <span tal:replace="doc/definition"></span>
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <a tal:attributes="href string:${doc/dataset}/indicators">
                                     <span tal:replace="doc/dataset_title"></span>
                                 </a>
@@ -29,6 +31,7 @@
                 </tbody>
             </table>
         </tal:block>
+    </div>
   </div>
 </html>
 

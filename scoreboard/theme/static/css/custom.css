@@ -793,30 +793,6 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 /* Chart listing */
-.white-area {
-  overflow: auto;
-  background: #FFF;
-}
-.white-area:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.rounded-top {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-}
-.rounded-bottom {
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top: solid #3082B3;
-}
-@media (max-width: 767px) {
-  .rounded-top,
-  .rounded-bottom {
-    border-radius: 0;
-  }
-}
 .use-top-padding {
   padding-top: 15px;
 }
@@ -824,7 +800,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
   padding-bottom: 15px;
 }
 .no-top-bottom {
-  border-top: solid #3082b3;
+  border-top: solid #004494;
   border-bottom: 0;
 }
 
@@ -891,6 +867,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
 .addthis_toolbox a {
   margin-bottom: 3px;
   width: 36px;
+}
+
+.btn-primary {
+  background-color: #004494;
 }
 
 .btn-print {
@@ -1120,6 +1100,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 table .label {
   display: table-cell;
+}
+
+#annotations-table td {
+  text-align: center;
 }
 
 #dataset-dimensions,

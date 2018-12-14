@@ -8,7 +8,7 @@
         <div class="main-content">
             <p tal:content="structure here/Description"></p>
             <tal:block define="docs view/get_docs">
-                <table class="docsTable white-area">
+                <table class="docsTable">
                     <thead>
                         <th class="text-center">
                             Title
