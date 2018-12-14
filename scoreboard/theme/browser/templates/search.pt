@@ -7,10 +7,10 @@
             <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
             <table class="docsTable" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
                 <thead>
-                    <th style="width:80%">
+                    <th style="width:70%">
                         Indicator
                     </th>
-                    <th style="width:20%">
+                    <th style="width:30%">
                         Dataset
                     </th>
                 </thead>
