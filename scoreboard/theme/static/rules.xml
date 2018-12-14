@@ -56,6 +56,11 @@
       </a>
     </replace>
 
+    <rules css:if-content="body.template-indicators">
+      <replace css:content-children="#indicators-content .main-content" css:theme-children="#main" />
+      <!--<replace css:theme=".documentFirstHeading" css:content="" />-->
+    </rules>
+
     <rules css:if-content="body.template-homepage-listing">
       <drop css:theme="#navsearch-wrapper" />
     </rules>
@@ -63,6 +68,11 @@
     <rules css:if-content="body.template-documentation">
       <replace css:content-children="#documentation-content .main-content" css:theme-children="#main" />
       <replace css:theme=".documentFirstHeading" css:content="#documentation-content h1" />
+    </rules>
+
+    <rules css:if-content="body.template-search-indicators">
+      <replace css:content-children="#search-content .main-content" css:theme-children="#main" />
+      <replace css:theme=".documentFirstHeading" css:content="#search-content h1" />
     </rules>
 
 </rules>

@@ -673,14 +673,16 @@ button[name="add-title-part"] {
 }
 
 #scoreboard-visualizations-listing .nav-tabs,
-.template-datacube-view-html .nav-tabs
+.template-datacube-view-html .nav-tabs,
+.template-indicators .nav-tabs
 {
   padding-left: 0;
   border-bottom: 5px solid #ffd316;
 }
 
 #scoreboard-visualizations-listing li,
-.template-datacube-view-html .nav-tabs li
+.template-datacube-view-html .nav-tabs li,
+.template-indicators .nav-tabs li
 {
   margin-bottom: 0;
 }
@@ -1186,9 +1188,29 @@ table.container {
   width: auto;
 }
 
+.list_indicators {
+  font-size: 70%;
+}
+
+.list_indicators th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.list_indicators .odd {
+  text-align: justify;
+  vertical-align: middle;
+}
+
 .list_indicators .even {
-  background: #D7E9F8;
-  background: rgba(215, 233, 248, 0.5);
+  background-color: #ffd31650;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 600;
+}
+
+.list_indicators .even a {
+  font-weight: initial;
 }
 
 .template-datacube-view-html h2 {
@@ -1901,11 +1923,6 @@ div.qtip-default div.qtip-titlebar {
   border-bottom: 1px solid #ccc;
   border-radius: 0;
 }
-
-.dataset-manage .nav.nav-tabs {
-  /*border-bottom: 0;*/
-}
-
 
 .dataset-manage .nav-tabs > li > a:hover,
 .dataset-manage .nav-tabs > li > a:focus,
