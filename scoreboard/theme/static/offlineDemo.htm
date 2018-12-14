@@ -32,14 +32,16 @@
 
     <script type="text/javascript">
       $(function() {
-          $( "#breakdown" ).buttonset();
-      $( "#measure_unit" ).buttonset();
+        $( "#breakdown" ).buttonset();
+        $( "#measure_unit" ).buttonset();
       });
     </script>
 
     <script type="text/javascript" src="./js/select2.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() { $("#e9").select2(); });
+      $(document).ready(function() {
+        $("#e9").select2();
+      });
     </script>
 
     <script type="text/javascript">
@@ -191,7 +193,7 @@
 
       <div id="navsearch-wrapper" class="col-sm-12 col-md-9 col-md-pull-3">
       <div id="navsearch">
-        <form class="search-form form-inline" action="/search-indicators" method="get" id="search-form" accept-charset="UTF-8">
+        <form class="search-form form-inline" action="./@@search-indicators" method="get" id="search-form" accept-charset="UTF-8">
           <h2>Select a dataset or search for indicators</h2>
           <div class="input-group input-group-search">
             <input type="text" class="searchField" id="search-text" name="q" placeholder="e.g. social media">
