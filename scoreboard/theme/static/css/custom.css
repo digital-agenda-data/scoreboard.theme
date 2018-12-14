@@ -395,6 +395,14 @@ td.label {
   display: none;
 }
 
+#the-share .comment {
+  padding-left: 0;
+}
+
+#the-metadata ul {
+  list-style-type: disc;
+}
+
 .daviz-edit-tabs .panes {
   border: none;
   padding: 0.5em;
@@ -708,7 +716,7 @@ button[name="add-title-part"] {
   min-height: 50px;
   margin-bottom: 15px;
   padding-bottom: 10px;
-  background: #E6F5FD;
+  background: #ffd31640;
   border: 3px solid #FFF;
 }
 
@@ -852,7 +860,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 .legend-share {
   margin-top: 5px;
   max-width: 1140px;
-  background-color: #F4F7FB;
+  background-color: #ffd31640;
   border: 3px solid #FFF;
 }
 
