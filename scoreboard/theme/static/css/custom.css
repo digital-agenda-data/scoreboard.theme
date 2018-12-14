@@ -672,6 +672,20 @@ button[name="add-title-part"] {
   background: transparent;
 }
 
+#scoreboard-visualizations-listing .nav-tabs,
+.template-datacube-view-html .nav-tabs
+{
+  padding-left: 0;
+  border-bottom: 5px solid #ffd316;
+}
+
+#scoreboard-visualizations-listing li,
+.template-datacube-view-html .nav-tabs li
+{
+  margin-bottom: 0;
+}
+
+
 #the-chart {
   min-height: 50px;
   margin-bottom: 15px;
@@ -1076,16 +1090,18 @@ div.ms-drop label < input[name='selectAllref-area'] {
 /* Dataset page */
 #dataset-metadata {
   padding: 1.4em;
-  background-color: #E1F0F7;
+  background-color: #ffd31650;
   border-radius: 5px;
 }
 
 #dataset-metadata dd {
-  margin-left: 40px;
+  padding: 0 0 1em 0;
+  text-align: justify;
 }
 
 #dataset-metadata dt {
   text-transform: capitalize;
+  text-decoration: underline;
 }
 
 #dataset-metadata dt:after {
@@ -1102,14 +1118,23 @@ table .label {
   width: 100%;
 }
 
+.notation,
+.label {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.comment,
+.comment-header {
+  padding-left: 2em;
+}
+
 .template-datacube-view-html .label {
-  padding: 4px 8px;
   color: #333;
-  text-align: left;
   line-height: 1.4;
 }
 
-.template-datacube-view-html ul {
+.template-datacube-view-html .download-data {
   list-style-type: disc;
 }
 
@@ -1878,7 +1903,7 @@ div.qtip-default div.qtip-titlebar {
 }
 
 .dataset-manage .nav.nav-tabs {
-  border-bottom: 0;
+  /*border-bottom: 0;*/
 }
 
 
