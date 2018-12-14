@@ -1558,10 +1558,6 @@ div.field span.required:after {
     color: #0073A8;
   }
 
-  .breadcrumbs {
-    padding-left: 0;
-  }
-
   .breadcrumbs li,
   .breadcrumbs li.first {
     display: block;
@@ -1871,7 +1867,7 @@ div.qtip-default div.qtip-titlebar {
 }
 
 .scoreboard-datacubes-listing {
-  padding-left:15px;
+  padding-left:0;
 }
 
 .dataset-description-area.column-main {

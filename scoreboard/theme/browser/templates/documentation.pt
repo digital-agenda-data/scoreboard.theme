@@ -4,7 +4,7 @@
         <!-- what is returned by get_docs()
             <span tal:replace="view/get_docs"></span>
         -->
-        <h1> Documentation </h1>
+        <h1 class="documentFirstHeading"> Documentation </h1>
         <div class="main-content">
             <p tal:content="structure here/Description"></p>
             <tal:block define="docs view/get_docs">
