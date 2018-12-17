@@ -41,11 +41,11 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $("#e9").select2();
+
       });
     </script>
 
     <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-23678295-1']);
       _gaq.push(['_trackPageview']);
@@ -127,6 +127,12 @@
     <link rel="stylesheet" type="text/css" href="./css/print.css" media="print"  />
   </head>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#blue-header-contents').append($(".documentFirstHeading"));
+     });
+  </script>
+
   <body>
     <div id="header">
       <section class="header-top">
@@ -162,7 +168,7 @@
       </div>
       <div class="blue-header">
         <nav class="navbar-collapse collapse path" role="navigation">
-          <div class="container">
+          <div class="container" id="blue-header-contents">
             <ul class="breadcrumbs nav">
               <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
               <li><a href="https://ec.europa.eu/digital-agenda/en">Digital Single Market</a></li>
@@ -170,7 +176,6 @@
               <li><a href="/">Visualizations</a></li>
               <li>Scenario 1 [demo 1]</li>
             </ul>
-            <h1 class="documentFirstHeading"></h1>
           </div>
         </nav>
       </div>
