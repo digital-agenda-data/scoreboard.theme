@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css">
+
+    <replace css:content="#personaltools-login" css:theme=".container-fluid a" />
+    <replace css:if-content="#personaltools-logout"
+             css:content="#personaltools-logout a" css:theme=".container-fluid a" />
+
+    <drop css:content="#personaltools-dashboard" />
+    <drop css:content="#personaltools-preferences" />
+    <before css:content="#personaltools-plone_setup" css:theme="#sidebar-list li:first-child" />
+
+</rules>

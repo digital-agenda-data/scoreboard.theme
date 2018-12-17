@@ -9,6 +9,10 @@
     <!-- The default theme, used for standard Plone web pages -->
     <theme href="offlineDemo.htm" css:if-content="#visual-portal-wrapper" />
 
+    <xi:include href="rules/personaltools.xml" />
+    <xi:include href="rules/breadcrumbs.xml" />
+    <xi:include href="rules/nosearchbar.xml" />
+
     <drop theme="/html/head/meta" />
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
@@ -23,56 +27,26 @@
     <before theme-children="/html/head" content="/html/head/meta" />
     <before theme-children="/html/head" content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()" />
 
-   <copy attributes="class id dir" content="/html/body" theme="/html/body" />
-
-    <replace css:content="#personaltools-login" css:theme=".container-fluid a" />
-    <replace css:if-content="#personaltools-logout"
-             css:content="#personaltools-logout a" css:theme=".container-fluid a" />
-
-    <drop css:content="#personaltools-dashboard" />
-    <drop css:content="#personaltools-preferences" />
+    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
     <drop css:content=".documentByLine" />
-    <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
-
-    <replace css:content=".documentFirstHeading" css:theme=".documentFirstHeading" />
-
-    <replace css:content-children="#content-core" css:theme-children="#main" />
-
     <drop css:content=".download-visualization" />
 
-    <before css:content="#personaltools-plone_setup" css:theme="#sidebar-list li:first-child" />
+    <replace css:content-children="#content" css:theme-children="#main" />
 
-    <replace css:theme="#documentation-link">
-        <a href="{$portal_url}/documentation">Documentation</a>
-    </replace>
-    <replace css:theme="#privacy-link">
-        <a href="{$portal_url}/privacy">Privacy</a>
-    </replace>
-
+    <!--Logo-->
     <replace css:theme="#logo-header-link">
       <a href="{$portal_url}" id="logo-header-link">
         <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo.svg" alt="European Commision logo" />
       </a>
     </replace>
+    <!--Logo-->
 
-    <rules css:if-content="body.template-indicators">
-      <replace css:content-children="#indicators-content .main-content" css:theme-children="#main" />
-      <!--<replace css:theme=".documentFirstHeading" css:content="" />-->
+    <!--Site search results page-->
+    <rules css:if-content=".template-search">
+        <drop css:content="#search-field" />
     </rules>
+    <!--Site search results page-->
 
-    <rules css:if-content="body.template-homepage-listing">
-      <drop css:theme="#navsearch-wrapper" />
-    </rules>
-
-    <rules css:if-content="body.template-documentation">
-      <replace css:content-children="#documentation-content .main-content" css:theme-children="#main" />
-      <replace css:theme=".documentFirstHeading" css:content="#documentation-content h1" />
-    </rules>
-
-    <rules css:if-content="body.template-search-indicators">
-      <replace css:content-children="#search-content .main-content" css:theme-children="#main" />
-      <replace css:theme=".documentFirstHeading" css:content="#search-content h1" />
-    </rules>
 
 </rules>
