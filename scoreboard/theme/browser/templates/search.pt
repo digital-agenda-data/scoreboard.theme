@@ -1,7 +1,7 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
   <div metal:fill-slot="main" id="search-content">
-    <h1>Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
+    <h1 class="documentFirstHeading">Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
     <div class="main-content">
         <tal:block define="docs view/getResults">
             <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
