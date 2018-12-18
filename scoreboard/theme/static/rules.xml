@@ -48,5 +48,7 @@
     </rules>
     <!--Site search results page-->
 
+    <replace css:theme-children=".mobileHeader" css:content-children=".documentFirstHeading" />
+
 
 </rules>

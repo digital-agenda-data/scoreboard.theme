@@ -349,6 +349,10 @@ td.label {
   text-decoration: underline;
 }
 
+.mobileHeader {
+  display: none;
+}
+
 .navbar-header {
   float: none;
 }
@@ -1606,12 +1610,16 @@ div.field span.required:after {
 }
 
 @media (max-width: 800px) {
-  .navigation-widget .container {
-    max-width: 720px;
+  .mobileHeader {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  .path {
-    background: #FFF;
+  .navigation-widget .container {
+    max-width: 720px;
   }
 
   .breadcrumbs li a {
