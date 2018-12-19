@@ -2044,21 +2044,30 @@ table.listing {
 }
 
 .cookie-consent {
-  background-color: #EBF6FC;
-  border: thin solid #23527c;
-  width:100%;
-  position:fixed;
-  bottom:0;
-  z-index:10;
+  background-color: #4073af;
+  border: thin solid #004494;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  font-size: 16px;
 }
 
 .cookie-consent p {
-  margin: 0.5em 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cookie-consent a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .cookie-consent button {
   display: inline;
-  margin-left: 5px;
+  margin-left: 8px;
+  font-weight: bold;
 }
 
 /* ckeditor */
@@ -2077,10 +2086,6 @@ div[contenteditable] {
   border-top: solid 7px #ffd316;
   margin-top: 0;
   padding-top: 1.667em;
-}
-
-body p:first-child {
-  margin-top: 1.667em;
 }
 
 body p {

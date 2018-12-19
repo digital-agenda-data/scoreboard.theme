@@ -3,7 +3,7 @@ $(function add_popup() {
   if (_accept !== undefined && _accept != null)
     return;
 
-  div = $("<div class='cookie-consent'><p>This site uses cookies for anonymous web statistics. <a href='" +
+  div = $("<div class='cookie-consent'><p class='container'>This site uses cookies for anonymous web statistics. <a href='" +
      portal_url + "/privacy'>Find out more on how we use cookies and how you can opt-out</a>.</p></div>");
 
   button_accept = $("<button type='button' class='btn btn-xs btn-success'>I accept</button>").click(accept_cookie);
