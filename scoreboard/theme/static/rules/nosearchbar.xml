@@ -5,6 +5,6 @@
        .template-overview-controlpanel, .template-manage-annotations, .template-manage-whitelist,
        .template-homepage-listing, .template-search">
 
-    <drop css:theme="#navsearch-wrapper" />
+    <drop css:theme="#navsearch" />
 
 </rules>

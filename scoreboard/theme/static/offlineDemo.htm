@@ -159,17 +159,20 @@
               <span class="icon-bar"></span>
             </button>
             <a href="/" id="logo-header-link"><img class="logo" src="./images/logo.svg" alt="European Commision logo" /></a>
-            <div id="portal-searchbox">
-              <form name="searchform" id="site-search"  action="./@@search">
+              <div id="navsearch">
+                <form class="search-form form-inline" action="./@@search-indicators" method="get" id="search-form" accept-charset="UTF-8">
+                  <h2>Select a dataset or search for indicators</h2>
                   <div class="input-group input-group-search">
-                    <input name="SearchableText" type="search" size="60" maxlength="128" value=""
-                             title="Search Site" class="searchField form-control" />
-                    <div class="input-group-btn">
-                      <button class="btn searchButton" title="Search" type="submit" value="Search">Search</button>
-                    </div>
+                    <input type="text" class="searchField form-control" id="search-text" name="q" placeholder="e.g. social media">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn searchButton">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
                   </div>
-              </form>
-            </div>
+                </form>
+              </div>
+
           </div>
         </div>
       </div>
@@ -193,20 +196,6 @@
       <div class="row">
 
       <div class="col-sm-12 col-md-9">
-        <div id="navsearch-wrapper" class="row">
-          <div id="navsearch">
-            <form class="search-form form-inline" action="./@@search-indicators" method="get" id="search-form" accept-charset="UTF-8">
-              <h2>Select a dataset or search for indicators</h2>
-              <div class="input-group input-group-search">
-                <input type="text" class="searchField form-control" id="search-text" name="q" placeholder="e.g. social media">
-                <span class="input-group-btn">
-                  <button type="submit" class="btn searchButton">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </button>
-                </span>
-              </div>
-            </form>
-          </div></div>
         <div id="main" class="section">
 
 

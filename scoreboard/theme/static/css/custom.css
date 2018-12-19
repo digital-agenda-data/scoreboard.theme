@@ -268,17 +268,10 @@ td.label {
 }
 
 @media(max-width: 800px) {
-  #portal-searchbox {
-    float:none;
-    width: 100%
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-  .search-form__textfield-wrapper {
-    width: 100% !important;
-  }
-  #portal-searchbox .input-group-search {
-    max-width: none;
+  #navsearch {
+    float: none !important;
+    display: block !important;
+    margin-top: 20px ;
   }
 }
 
@@ -1064,24 +1057,34 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 @media (min-width: 768px) {
-   .search-form button.btn-search {
-        margin-left:-20px;
+  .search-form button.btn-search {
+    margin-left:-20px;
   }
 }
-
+/*
 #navsearch-wrapper {
   padding-left: 15px;
-}
+}*/
 
 #navsearch {
-  margin-top: 1rem;
-  z-index: 999;
+/*  margin-top: 1rem;
+  z-index: 999;*/
   position: relative;
+  display: inline;
+  float: right;
 }
 
-#navsearch input{
-  /*margin-top: -8px;*/
+#navsearch form {
+  margin: 0;
 }
+
+/*
+#navsearch input{
+  */
+/*margin-top: -8px;*//*
+
+}
+*/
 
 @media (max-width: 767px) {
   #navsearch {
