@@ -270,15 +270,22 @@ td.label {
 @media(max-width: 800px) {
   #portal-searchbox {
     float:none;
+    width: 100%
+    padding-left: 10%;
+    padding-right: 10%;
   }
   .search-form__textfield-wrapper {
     width: 100% !important;
+  }
+  #portal-searchbox .input-group-search {
+    max-width: none;
   }
 }
 
 .input-group.input-group-search {
   border: 1px solid black;
   width: 100%;
+  max-width: 305px;
 }
 
 .search-form__textfield-wrapper {
@@ -292,14 +299,6 @@ td.label {
   outline-offset: -3px;
 }
 
-#search-form input {
-/*  margin-top: -9px;
-  margin-left: 6px;
-  margin-right: 6px;
-  height: 29px;*/
-  width: 80%;
-}
-
 .searchButton {
   background-color: #e3e3e3;
   color: #004494;
@@ -308,6 +307,19 @@ td.label {
   height: 2.7em;
   padding: 0 1.1em 0 1.1em;
   margin-left: 2px;
+  border-radius: 0;
+}
+
+.input-group-btn > .searchButton:hover,
+.input-group-btn > .searchButton:focus,
+.input-group-btn > .searchButton:active {
+  z-index: auto;
+}
+
+@media (min-width: 768px) {
+  .form-inline .input-group-search .input-group-btn {
+    width: 1%;
+  }
 }
 
 .searchButton:hover {
@@ -320,15 +332,13 @@ td.label {
 }
 
 .searchField {
-  display: table-cell;
-  width: 100%;
   border: 0;
-  height: 2em;
+  height: 2.7em;
 }
 
 .searchField:focus {
-  outline-offset: 0;
-  text-decoration: none
+  text-decoration: none;
+  outline-offset: -3px;
 }
 
 .logo {
@@ -1751,17 +1761,6 @@ div.field span.required:after {
     padding-left: 5px;
     padding-right: 5px;
   }
-
-/*  .portal-title {
-    font-size: 16px;
-    width: auto;
-    margin-left: 100px;
-  }
-
-  .portal-subtitle {
-    padding-left: 107px;
-    font-size: 13px;
-  }*/
 
   .nav-tabs > li {
     width: 100%;
