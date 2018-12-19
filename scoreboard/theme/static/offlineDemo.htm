@@ -129,6 +129,19 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#blue-header-contents').append($(".documentFirstHeading"));
+
+      $('.collapse-desc').click(function(e){
+        e.preventDefault();
+        $('.listing-description').toggleClass("show");
+
+        let link_html = $(this).html();
+        if(link_html.indexOf("more") >= 0) {
+          $(this).html(link_html.replace("more", "less"));
+        }
+        else {
+          $(this).html(link_html.replace("less", "more"));
+        }
+      });
      });
   </script>
 

@@ -11,6 +11,7 @@
                 isAnon context/@@plone_portal_state/anonymous;">
     <div id="homepage-listing" class="scoreboard-listing bootstrap">
       <div class="col-md-12" style="padding-left: 0">
+        <a href="/" class="collapse-desc">Show more...</a>
         <div class="listing-description">
           <p>This visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The indicators have been selected to support the <a href="https://ec.europa.eu/digital-single-market/en/digital-single-market">EU Digital Single Market policies</a> and to monitor the <a href="https://ec.europa.eu/digital-single-market/en/european-digital-progress-report">digital progress of European Economy and Society</a>, through annual reports, a <a href="https://ec.europa.eu/digital-single-market/en/desi">DESI</a> index and <a href="https://ec.europa.eu/digital-single-market/en/progress-country">country factsheets</a>.</p>
           <p>The charts can be exported as images, printed, embedded or shared through hyperlinks. You can download the data behind a chart or the entire dataset, including the metadata providing labels, definitions, methodological notes, references and sources. Use the "download" and "export" buttons present on each chart, or refer to the page "Entire dataset metadata and download services".</p>

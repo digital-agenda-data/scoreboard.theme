@@ -2021,6 +2021,22 @@ div.qtip-default div.qtip-titlebar {
   display: inline;
 }
 
+.listing-description {
+  position:absolute;
+  opacity: 0;
+}
+
+.listing-description.show {
+  position: static;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.collapse-desc {
+  display: block;
+  width: 13%;
+}
+
 table.listing {
   background: #FFF;
 }
