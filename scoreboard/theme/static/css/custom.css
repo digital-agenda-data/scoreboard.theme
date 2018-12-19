@@ -1646,12 +1646,12 @@ div.field span.required:after {
     font-weight: 600;
   }
 
-  .navigation-widget .container {
-    max-width: 720px;
+  .documentFirstHeading {
+    display:none;
   }
 
-  .breadcrumbs li a {
-    color: #0073A8;
+  .navigation-widget .container {
+    max-width: 720px;
   }
 
   .breadcrumbs li,
@@ -1661,15 +1661,15 @@ div.field span.required:after {
     padding: 10px 10px 10px 28px;
     min-height: 30px;
     border-bottom: 1px solid #ACC4D1;
+    background: url("../images/breadcrumb.gif") rgba(0, 0, 0, 0) 34% no-repeat;
+  }
+
+  .breadcrumbs li.first {
+    border-top: 1px solid #fff;
   }
 
   .breadcrumbs li a:hover {
     text-decoration: underline;
-  }
-
-  .breadcrumbs li:last-of-type {
-    background: #D0E0F0;
-    color: #252525;
   }
 
   .navbar-collapse .container {
