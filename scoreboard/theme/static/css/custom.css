@@ -335,7 +335,7 @@ td.label {
 }
 
 .logo {
-  width: 140px;
+  width: 290px;
   border: 0px;
 }
 
@@ -1680,7 +1680,6 @@ div.field span.required:after {
 
   .logo {
     padding-left: 0;
-    width: 86px;
   }
 
   .thumbnail-area {
@@ -1688,7 +1687,7 @@ div.field span.required:after {
   }
 
   .navbar-toggle {
-    margin-top: 5px;
+    bottom: 0;
   }
 
   .dataset-description-area {
