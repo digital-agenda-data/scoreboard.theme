@@ -829,13 +829,26 @@ button[name="add-title-part"] {
   width: 320px;
 }
 
+#the-filters {
+  font-size: 12px;
+}
+
+#the-filters select {
+  width: 70%;
+}
+
 #the-filters label {
   display: inline-block;
-  width: 140px;
+  width: 110px;
   color: #555;
   margin-bottom: 2px;
   vertical-align: top;
   font-weight: normal;
+}
+
+#the-filters p {
+  font-weight: 600;
+  font-size: 14px;
 }
 
 #the-filters .chart-controls {
@@ -1224,7 +1237,6 @@ table .label {
 .template-datacube-view-html .download-data {
   list-style-type: disc;
 }
-
 
 /* composite chart/sliders */
 #the-filters .right-label {
