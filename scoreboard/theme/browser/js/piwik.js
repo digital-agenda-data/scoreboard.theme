@@ -10,6 +10,7 @@ pwk = function(event) {
           // Check for cookie consent
           if (readCookie("_accept_cookies") !== "true") {
             piwikTracker.disableCookies();
+            // should issue a request to /piwik/index.php?module=CoreAdminHome&action=optOut&language=en
           }
           var docsTable = document.querySelector(".docsTable");
           if (docsTable) {
