@@ -552,10 +552,10 @@ td.label {
 }
 
 .editor-current-step {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background: #FFF;
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   width: 79%;
   min-height: 333px;
 }
@@ -573,7 +573,7 @@ td.label {
   width: 192px;
   height: 192px;
   border: 1px solid #DDD;
-  margin: 13px;
+  margin: 0 13px 13px 13px;
   padding: 18px 5px 5px 14px;
   float: left;
 }
@@ -610,9 +610,61 @@ td.label {
   vertical-align: middle;
 }
 
+@media (max-width: 987px) {
+  .editor-steps {
+    width: 25%;
+  }
+  .editor-steps {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 595px) {
+  .editor-current-step{
+    margin-left: -8px !important;
+    padding-left: 0;
+  }
+  .editor-steps {
+    padding-right: 0;
+    float: none;
+    width: 100% !important;
+    margin-left: -15px;
+  }
+  .editor-structure-multiple-series,
+  .editor-structure-categories-by {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 522px) {
+  .editor-facet-field .select2-choices li {
+    height: 35px !important;
+  }
+}
+
+.editor-structure {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 756px) {
+  .editor-current-step label {
+    width: 30%;
+  }
+  .editor-steps {
+    width: 40%;
+  }
+}
+
 .editor-structure-multiple-series label,
 .editor-structure-categories-by label {
   min-width: 169px;
+}
+
+.editor-series.form-inline.editor-current-step {
+  display: flex;
+  flex-direction: column;
+  width: auto;
 }
 
 .daviz-views-edit ul {
@@ -637,6 +689,11 @@ td.label {
 .editor-facet-field textarea,
 .editor-facet-field div.select2-container {
   width: 100%;
+}
+
+.editor-facet-field .select2-choices li {
+  height: 20px;
+  margin: 5px !important;
 }
 
 .editor-current-step .checkbox input[type="checkbox"] {
@@ -1064,14 +1121,8 @@ div.ms-drop label < input[name='selectAllref-area'] {
     margin-left:-20px;
   }
 }
-/*
-#navsearch-wrapper {
-  padding-left: 15px;
-}*/
 
 #navsearch {
-/*  margin-top: 1rem;
-  z-index: 999;*/
   position: relative;
   display: inline;
   float: right;
@@ -1080,14 +1131,6 @@ div.ms-drop label < input[name='selectAllref-area'] {
 #navsearch form {
   margin: 0;
 }
-
-/*
-#navsearch input{
-  */
-/*margin-top: -8px;*//*
-
-}
-*/
 
 @media (max-width: 767px) {
   #navsearch {
@@ -1827,10 +1870,6 @@ div.field span.required:after {
 }
 
 @media (max-width: 320px) {
-/*  .portal-title {
-    width: 138px;
-  }*/
-
   .navigation-widget .container {
     width: 290px;
   }
@@ -2047,6 +2086,13 @@ table.listing {
 @media (max-width: 800px) {
   .linklist {
     padding-left: 20px;
+  }
+  .editor-structure-multiple-series {
+    margin-top: 2%;
+    margin-left: 27%;
+  }
+  .editor-structure-categories-by {
+    margin-left: 27%;
   }
 }
 
