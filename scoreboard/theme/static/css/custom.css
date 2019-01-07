@@ -2032,8 +2032,8 @@ div.qtip-default div.qtip-titlebar {
 }
 
 .collapse-desc {
+  width: max-content;
   display: block;
-  width: 13%;
 }
 
 table.listing {
