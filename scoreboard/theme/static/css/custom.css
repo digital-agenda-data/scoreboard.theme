@@ -223,14 +223,14 @@ td.label {
   display: block;
 }
 
-#personaltools-login {
+.login-link a {
   background-color: #f5f5f5;
   padding: .3em;
   display: block;
 }
 
 @media (min-width: 992px) {
-  #personaltools-login {
+  .login-link a {
     background: none;
     float: right;
   }
