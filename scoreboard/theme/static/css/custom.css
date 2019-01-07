@@ -901,6 +901,9 @@ div.ms-drop label < input[name='selectAllref-area'] {
 .no-top-bottom {
   border-top: solid #004494;
   border-bottom: 0;
+  padding: 0;
+  width: calc(100% - 30px);
+  margin-left: 15px;
 }
 
 .scoreboard-listing p + p{
@@ -2104,6 +2107,7 @@ div[contenteditable] {
   border-top: solid 7px #ffd316;
   margin-top: 0;
   padding-top: 1.667em;
+  margin-left: -15px;
 }
 
 body p {
