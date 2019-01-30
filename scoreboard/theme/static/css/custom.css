@@ -86,7 +86,7 @@ thead th,
 body .docsTable th {
   background: white;
   border: 0;
-  border-bottom: 5px solid #ffd316 ;
+  border-bottom: 1px solid #404040; ;
   padding: 6px 8px;
 }
 
@@ -1271,6 +1271,18 @@ table .label {
   text-align: center;
 }
 
+.template-datacube-view-html table {
+  font-size: 1rem;
+}
+
+.template-datacube-view-html table th:first-child {
+  width: 25%;
+}
+
+.template-datacube-view-html table th:nth-child(2) {
+  width: 30%;
+}
+
 #dataset-dimensions,
 #dataset-attributes,
 #dataset-measures {
@@ -1279,13 +1291,8 @@ table .label {
 
 .notation,
 .label {
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
-}
-
-.comment,
-.comment-header {
-  padding-left: 2em;
 }
 
 .template-datacube-view-html .label {
@@ -1350,18 +1357,17 @@ table.container {
 
 .list_indicators th {
   vertical-align: middle;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .list_indicators .odd {
-  text-align: justify;
   vertical-align: middle;
+  background-color: transparent;
 }
 
 .list_indicators .even {
-  background-color: #ffd31650;
+  background: #CFCFCF50;
   vertical-align: middle;
-  text-align: center;
   font-weight: 600;
 }
 
@@ -1372,7 +1378,6 @@ table.container {
 .template-datacube-view-html h2 {
   margin-top: 25px;
   margin-bottom: 0px;
-  color: #616161;
 }
 
 .template-datacube-view-html h2:first-of-type {
@@ -1382,8 +1387,7 @@ table.container {
 .template-datacube-view-html table tr:nth-of-type(2n),
 body .docsTable tr:nth-of-type(2n),
 .list_indicators tr:nth-of-type(2n) {
-  /*background: #EEE;*/
-  background: #ffd31640;
+  background: #F5F5F5;
 }
 
 body .list_indicators .groupName {
