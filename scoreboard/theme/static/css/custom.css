@@ -12,6 +12,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.disc {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
 .template-search #main {
   padding-left: 30px;
 }
@@ -28,7 +33,6 @@ body {
 
 ul {
   margin: 1em 0;
-  /*padding-left: 40px;*/
 }
 
 a {
@@ -54,7 +58,7 @@ a:focus {
 }
 
 p {
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 a:hover,
@@ -829,26 +833,6 @@ button[name="add-title-part"] {
   background: transparent;
 }
 
-#scoreboard-visualizations-listing .nav-tabs,
-.template-datacube-view-html .nav-tabs,
-.template-indicators .nav-tabs
-{
-  padding-left: 0;
-  border-bottom: 5px solid #ffd316;
-}
-
-.template-datacube-view-html ul {
-  list-style-type: disc;
-}
-
-#scoreboard-visualizations-listing li,
-.template-datacube-view-html .nav-tabs li,
-.template-indicators .nav-tabs li
-{
-  margin-bottom: 0;
-}
-
-
 #the-chart {
   min-height: 50px;
   margin-bottom: 15px;
@@ -959,18 +943,8 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 /* Chart listing */
-.use-top-padding {
-  padding-top: 15px;
-}
-.use-bottom-padding {
-  padding-bottom: 15px;
-}
-.no-top-bottom {
+.blue-top-border {
   border-top: solid #004494;
-  border-bottom: 0;
-  padding: 0;
-  width: calc(100% - 30px);
-  margin-left: 15px;
 }
 
 .scoreboard-listing p + p{
@@ -1843,21 +1817,6 @@ div.field span.required:after {
     padding-right: 5px;
   }
 
-  .nav-tabs > li {
-    width: 100%;
-    border-top: 1px solid #DDD;
-  }
-
-  .nav-tabs > li > a {
-    border-radius: 0;
-  }
-
-  body .nav-tabs > .active > a,
-  .nav-tabs > li.active > a,
-  .nav-tabs > li.active > a:hover {
-    border: 0;
-  }
-
   .slider-label {
     padding: 16px 0 10px;
   }
@@ -2040,14 +1999,14 @@ div.qtip-default div.qtip-titlebar {
   padding: 0.5em;
 }
 
-
 .need-top-margin {
   margin-top: 10px;
 }
 
-#scoreboard-visualizations-listing ul {
-  padding-left: 20px;
-  list-style-type: square;
+.sidebar-yellow.left-margin {
+  padding-top: 0;
+  margin-top: 1rem;
+  margin-left: 3rem;
 }
 
 .scoreboard-confirm-overlay {
@@ -2062,15 +2021,6 @@ div.qtip-default div.qtip-titlebar {
   border: none;
   border-bottom: 1px solid #ccc;
   border-radius: 0;
-}
-
-.dataset-manage .nav-tabs > li > a:hover,
-.dataset-manage .nav-tabs > li > a:focus,
-.dataset-manage .nav-tabs > li.active > a,
-.dataset-manage .nav-tabs > li.active > a:hover,
-.dataset-manage .nav-tabs > li.active > a:focus {
-  border-color: transparent;
-  box-shadow: 0 0 3px rgba(0,0,0,.2);
 }
 
 .add-button-area {
@@ -2170,7 +2120,7 @@ div[contenteditable] {
 }
 
 /*theme*/
-#sidebar-yellow {
+.sidebar-yellow {
   border-top: solid 7px #ffd316;
   margin-top: 0;
   padding-top: 1.667em;
@@ -2180,13 +2130,39 @@ body p {
   text-align: justify;
 }
 
-#sidebar-list li {
+.sidebar-list {
+  list-style-type: none;
+}
+
+.sidebar-list li {
   border-left: 5px solid #004494;
   padding: .611em 0 .611em 1.222em;
   margin: .611em 0;
 }
 
-#sidebar-list li a {
+.sidebar-list li.active {
+  border-left-color: #ffd316;
+}
+
+.sidebar-list li a {
   font-weight: 600;
 }
+
+.no-top-padding {
+  padding-top: 0;
+}
+
+.sm-padding-right {
+  padding-right: 2rem;
+}
 /*theme*/
+
+/*media queries*/
+@media (max-width: 766px) {
+  #content-core .sidebar-yellow {
+    margin: 0 auto;
+    width: 35%;
+  }
+}
+/*media queries*/
+

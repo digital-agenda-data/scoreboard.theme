@@ -59,7 +59,6 @@ a:link:after {
    content: " [" attr(href) "] ";
 }
 
-.nav-tabs a:link:after,
 #footer a:link:after,
 .dataset-box a:link:after,
 .template-indicators a:link:after,
@@ -111,8 +110,7 @@ input.standalone,
 input.context,
 .visualNoPrint,
 .footer-wrapper,
-.navigation-widget,
-.nav-tabs li:not([class="active"]) {
+.navigation-widget {
 	display: none;
 }
 
