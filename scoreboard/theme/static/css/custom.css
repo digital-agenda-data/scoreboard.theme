@@ -28,7 +28,7 @@ body {
 
 ul {
   margin: 1em 0;
-  padding-left: 40px;
+  /*padding-left: 40px;*/
 }
 
 a {
@@ -2167,16 +2167,16 @@ div[contenteditable] {
   border-top: solid 7px #ffd316;
   margin-top: 0;
   padding-top: 1.667em;
-  margin-left: -15px;
+  /*margin-left: -15px;*/
 }
 
 body p {
   text-align: justify;
 }
 
-.sidebar-content h3 {
+/*.sidebar-content h3 {
   padding-left: 40px;
-}
+}*/
 
 #sidebar-list li {
   border-left: 5px solid #004494;
