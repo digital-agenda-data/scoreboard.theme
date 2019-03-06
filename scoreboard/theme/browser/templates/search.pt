@@ -2,35 +2,31 @@
   i18n:domain="plone">
   <div metal:fill-slot="main" id="search-content">
     <h1 class="documentFirstHeading">Search results for "<span tal:replace="view/getSearchQuery"></span>"</h1>
-    <div class="main-content">
-        <tal:block define="docs view/getResults">
-            <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
-            <table class="docsTable" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
-                <thead>
-                    <th style="width:70%">
-                        Indicator
-                    </th>
-                    <th style="width:30%">
-                        Dataset
-                    </th>
-                </thead>
-                <tbody>
-                    <tal:row repeat="doc docs">
-                        <tr>
-                            <td class="text-justify">
-                                <strong><a tal:attributes="href string:${doc/chart_uri}"><span tal:replace="doc/label"></span></a></strong><br>
-                                <span tal:replace="doc/definition"></span>
-                            </td>
-                            <td class="align-middle">
-                                <a tal:attributes="href string:${doc/dataset}/indicators">
-                                    <span tal:replace="doc/dataset_title"></span>
-                                </a>
-                            </td>
-                        </tr>
-                    </tal:row>
-                </tbody>
-            </table>
-        </tal:block>
+    <div class="main-content" style="overflow-x:auto;">
+      <tal:block define="docs view/getResults">
+        <p class="docsTable" data-search-result-count="0" tal:condition="not:docs">No indicators found.</p>
+        <table class="docsTable table" tal:condition="docs" tal:attributes="data-search-result-count python:len(docs)">
+          <thead>
+            <th class="col-sm-8 col-xs-8">Indicator</th>
+            <th class="col-sm-4 col-xs-4">Dataset</th>
+          </thead>
+          <tbody>
+            <tal:row repeat="doc docs">
+              <tr>
+                <td class="text-justify">
+                  <strong><a tal:attributes="href string:${doc/chart_uri}"><span tal:replace="doc/label"></span></a></strong><br>
+                  <span tal:replace="doc/definition"></span>
+                </td>
+                <td class="align-middle">
+                  <a tal:attributes="href string:${doc/dataset}/indicators">
+                      <span tal:replace="doc/dataset_title"></span>
+                  </a>
+                </td>
+              </tr>
+            </tal:row>
+          </tbody>
+        </table>
+      </tal:block>
     </div>
   </div>
 </html>
