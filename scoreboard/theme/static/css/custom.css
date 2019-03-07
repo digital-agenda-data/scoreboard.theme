@@ -1,4 +1,17 @@
 /* General */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body > .container {
+  flex-grow:1;
+}
+
 body {
   margin: 0 auto;
   font-size: 18px;
@@ -2176,6 +2189,10 @@ body p {
 
 .sm-padding-right {
   padding-right: 2rem;
+}
+
+#ajax-spinner {
+  margin-left: 30%;
 }
 /*theme*/
 
