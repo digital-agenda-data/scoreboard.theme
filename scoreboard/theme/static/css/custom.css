@@ -1982,6 +1982,7 @@ div.qtip-default div.qtip-titlebar {
 #indicators-toc ul {
   list-style-type: square;
   color: #777;
+  padding-left: 40px;
 }
 
 .scoreboard-datacubes-listing .cube-item{
