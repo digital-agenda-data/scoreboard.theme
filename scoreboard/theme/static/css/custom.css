@@ -1233,8 +1233,8 @@ div.ms-drop label < input[name='selectAllref-area'] {
 /* Dataset page */
 #dataset-metadata {
   padding: 1.4em;
-  background-color: #ffd31650;
-  border-radius: 5px;
+  background-color: #ebebeb;
+  border-left: .556em solid #ffd316;
 }
 
 #dataset-metadata dd {
@@ -1249,6 +1249,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 #dataset-metadata dt:after {
   content: ":";
+}
+
+.actions {
+  margin-bottom: 1rem;
 }
 
 table .label {
