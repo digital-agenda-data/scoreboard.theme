@@ -300,6 +300,20 @@ td.label {
 #search-text {
   height: 38px;
   border-radius: 0;
+  font-weight: bold;
+}
+
+#search-text::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: normal;
+}
+#search-text::-moz-placeholder { /* Firefox 19+ */
+  font-weight: normal;
+}
+#search-text:-ms-input-placeholder { /* IE 10+ */
+  font-weight: normal;
+}
+#search-text:-moz-placeholder { /* Firefox 18- */
+  font-weight: normal;
 }
 
 .searchButton {
