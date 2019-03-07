@@ -1242,7 +1242,12 @@ table .label {
 }
 
 #annotations-table td {
-  text-align: center;
+  vertical-align: middle;
+}
+
+#annotations-table {
+  font-size: 100%;
+  margin-left: -15px;
 }
 
 .template-datacube-view-html table {
@@ -1331,7 +1336,7 @@ table.container {
 
 .list_indicators th {
   vertical-align: middle;
-  /*text-align: center;*/
+  padding: 6.3px 0;
 }
 
 .list_indicators .odd {
@@ -1340,7 +1345,6 @@ table.container {
 }
 
 .list_indicators .even {
-  background: #CFCFCF50;
   vertical-align: middle;
   font-weight: 600;
 }
