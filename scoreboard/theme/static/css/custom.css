@@ -1809,6 +1809,7 @@ body p {
 
 .sidebar-list li a {
   font-weight: 600;
+  padding: .1rem;
 }
 
 .no-top-padding {
