@@ -1099,14 +1099,17 @@ div.ms-drop label < input[name='selectAllref-area'] {
   padding: 10px 5px;
   text-align: center;
   text-decoration: none;
-  background-color: #fff;
-  border-radius: 5px;
   border: 3px solid #fff;
   box-shadow: 0 1px 3px;
   cursor: pointer;
 }
+
+.dataset-box a:focus {
+  outline-offset: 0;
+}
+
 .dataset-box.selected a {
-  border-color: #0065a2;
+  border-color: #ffd316;
   box-shadow: none;
 }
 .dataset-box a:hover,
