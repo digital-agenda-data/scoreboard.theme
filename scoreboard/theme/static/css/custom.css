@@ -155,9 +155,6 @@ td.label {
 
 #login_form,
 #mail_password,
-#the-filters,
-#the-chart,
-.legend-share,
 .boardConversation,
 .template-conversation_browserview fieldset {
   background: #FFF;
@@ -498,8 +495,23 @@ td.label {
   display: none;
 }
 
-#the-share .comment {
-  padding-left: 0;
+.share-actions li a {
+  border-radius: 0;
+  text-align: left;
+  color: #FFF;
+}
+
+.share-actions li {
+  width: 96%;
+  border-radius: 0;
+  text-align: left;
+  box-shadow: none;
+}
+
+.share-actions .glyphicon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  padding-right: 1rem;
 }
 
 #the-metadata ul {
@@ -803,15 +815,13 @@ button[name="add-title-part"] {
   min-height: 50px;
   margin-bottom: 15px;
   overflow-x: auto;
+  border: 1px solid #ebebeb;
 }
 
 /* Visualization filters */
 #the-filters {
   min-height: 50px;
   margin-bottom: 15px;
-  padding-bottom: 10px;
-  background: #ffd31640;
-  border: 3px solid #FFF;
 }
 
 .bottom-left {
@@ -932,13 +942,6 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 /* Visualization legend and share */
-.legend-share {
-  margin-top: 5px;
-  max-width: 1140px;
-  background-color: #ffd31640;
-  border: 3px solid #FFF;
-}
-
 .legend,
 .section.share {
   padding: 20px;
@@ -973,19 +976,32 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 .btn-print {
-  color: #FFF;
-  background-color: #449D44;
-  border-color: #398439;
+  background: linear-gradient(to right, #004494 0%, #004494 20%, #334b77 20%, #334b77 100%);
   text-shadow: none;
 }
 
 .btn-print:hover {
-  color: #FFF;
-  background-color: #2A862A;
-  border-color: #0A710A;
+  background: #334b77;
 }
 
-.btn-export,
+.btn-export {
+  background: linear-gradient(to right, #004494 0%,#004494 20%, #186c98 20%, #186c98 100%);
+  text-shadow: none;
+}
+
+.btn-export:hover {
+  background: #1578b5;
+}
+
+.btn-comments {
+  background: linear-gradient(to right, #004494 0%, #004494 20%, #1578b5 20%, #1578b5 100%);
+  text-shadow: none;
+}
+
+.btn-comments:hover {
+  background: #186c98;
+}
+
 .btn-view-viz {
   color: #FFF;
   background-color: #0065A2;
@@ -993,24 +1009,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
   text-shadow: none;
 }
 
-.btn-export:hover,
 .btn-view-viz:hover {
   color: #FFF;
   background-color: #065A8C;
   border-color: #064267;
-}
-
-.btn-comments {
-  color: #333;
-  background-color: #BEE0F0;
-  border-color: #99C1D2;
-  text-shadow: none;
-}
-
-.btn-comments:hover {
-  color: #333;
-  background-color: #94C5DB;
-  border-color: #7CA8BB;
 }
 
 .heading-wrapper {
@@ -1137,23 +1139,23 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 /* Dataset page */
-#dataset-metadata {
+.dataset-metadata {
   padding: 1.4em;
   background-color: #ebebeb;
   border-left: .556em solid #ffd316;
 }
 
-#dataset-metadata dd {
+.dataset-metadata dd {
   padding: 0 0 1em 0;
   text-align: justify;
 }
 
-#dataset-metadata dt {
+.dataset-metadata dt {
   text-transform: capitalize;
   text-decoration: underline;
 }
 
-#dataset-metadata dt:after {
+.dataset-metadata dt:after {
   content: ":";
 }
 
