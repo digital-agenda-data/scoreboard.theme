@@ -1148,6 +1148,10 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-left: .556em solid #ffd316;
 }
 
+.dataset-metadata select {
+  background-color: #fff;
+}
+
 .dataset-metadata dd {
   padding: 0 0 1em 0;
   text-align: justify;
