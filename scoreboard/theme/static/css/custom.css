@@ -993,6 +993,23 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 .btn-primary {
   background-color: #004494;
+  border-color: #004494;
+  min-height: 2.75em;
+  padding: .5em 1em;
+  /*  line-height: 1.5;
+    white-space: normal;*/
+  text-align: left;
+  font-weight: 600;
+  border-width: 2px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #004494;
+  text-decoration: underline;
+  text-shadow: none;
 }
 
 .btn-print {
