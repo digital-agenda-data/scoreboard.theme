@@ -518,7 +518,8 @@ td.label {
 }
 
 #the-metadata ul {
-  list-style-type: disc;
+  list-style-type: none;
+  padding-left: 20px;
 }
 
 .daviz-edit-tabs .panes {
@@ -817,7 +818,8 @@ button[name="add-title-part"] {
 #the-chart {
   min-height: 50px;
   margin-bottom: 15px;
-  overflow-x: auto;
+  overflow-x: auto !important;
+  max-width: 100%;
   border: 1px solid #ebebeb;
 }
 
@@ -825,6 +827,7 @@ button[name="add-title-part"] {
 #the-filters {
   min-height: 50px;
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .bottom-left {
@@ -837,35 +840,9 @@ button[name="add-title-part"] {
   display: inline-block;
 }
 
-.col-md-6 select,
 .bottom-left select,
 .bottom-right select {
   width: 320px;
-}
-
-#the-filters {
-  font-size: 12px;
-}
-
-#the-filters .upper-filters {
-  display: flex;
-}
-
-#the-filters .upper-left {
-  width: 40%;
-  margin-right: 10%;
-}
-
-#the-filters .upper-right {
-  width: 40%;
-}
-
-.ms-parent {
-  width: 100%;
-}
-
-.ms-choice {
-  width: inherit;
 }
 
 #the-filters label {
@@ -1185,6 +1162,16 @@ div.ms-drop label < input[name='selectAllref-area'] {
   padding: 6px 12px !important;
   font-size: 14px;
   line-height: 1.42857143;
+  width: inherit !important;
+  max-width: 100%;
+}
+
+.ms-choice:focus {
+  outline-offset: -1px;
+}
+
+.ms-parent {
+  width: 100%;
 }
 
 .ms-choice > span {
@@ -1273,6 +1260,8 @@ table .label {
 /* composite chart/sliders */
 #the-filters .right-label {
   float: right;
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 .chart-filter {
@@ -1283,23 +1272,20 @@ table .label {
   margin: 10px 0 0 0;
 }
 
-.composite-slider {
-  width: 60%;
-  float: left;
-}
-
 .normalized-value {
-  float: right;
-  width: 10%;
+  text-align: center;
 }
 
 .composite-slider-widget {
   height: 35px;
+  display: grid;
+  grid-template-columns: 3fr 12fr 2fr;
+  margin-bottom: 1em;
+  line-height: 1;
 }
 
 .slider-label {
-  float: left;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 #the-filters .slider-step {
@@ -2151,7 +2137,11 @@ body p {
 
 @media (max-width: 640px) {
   .normalized-value {
-    text-align: right;
+    margin-left: 1rem;
+  }
+
+  #the-filters .right-label {
+    margin-right: 0;
   }
 
   .navigation-widget .container {
