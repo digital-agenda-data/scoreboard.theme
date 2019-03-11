@@ -847,8 +847,25 @@ button[name="add-title-part"] {
   font-size: 12px;
 }
 
-#the-filters select {
-  width: 70%;
+#the-filters .upper-filters {
+  display: flex;
+}
+
+#the-filters .upper-left {
+  width: 40%;
+  margin-right: 10%;
+}
+
+#the-filters .upper-right {
+  width: 40%;
+}
+
+.ms-parent {
+  width: 100%;
+}
+
+.ms-choice {
+  width: inherit;
 }
 
 #the-filters label {
