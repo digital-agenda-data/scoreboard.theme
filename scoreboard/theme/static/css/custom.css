@@ -522,6 +522,10 @@ td.label {
   padding-left: 20px;
 }
 
+#the-metadata h2 {
+  padding: 0;
+}
+
 .daviz-edit-tabs .panes {
   border: none;
   padding: 0.5em;
@@ -1967,6 +1971,24 @@ body p {
   }
 }
 
+@media (min-width: 985px) and (max-width: 1120px) {
+  .social-media-icons {
+    width: 90% !important;
+  }
+}
+
+@media (min-width: 826px) and (max-width: 990px) {
+  .btn-print {
+    background: linear-gradient(to right, #004494 0%, #004494 15%, #334b77 15%, #334b77 100%);
+  }
+  .btn-export {
+    background: linear-gradient(to right, #004494 0%,#004494 15%, #186c98 15%, #186c98 100%);
+  }
+  .btn-comments {
+    background: linear-gradient(to right, #004494 0%, #004494 15%, #1578b5 15%, #1578b5 100%);
+  }
+}
+
 @media (max-width: 987px) {
   .editor-steps {
     width: 25%;
@@ -2135,6 +2157,12 @@ body p {
   }
 }
 
+@media (max-width: 705px) {
+  .social-media-icons {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 640px) {
   .normalized-value {
     margin-left: 1rem;
@@ -2170,6 +2198,14 @@ body p {
   .bottom-left select,
   .bottom-right select {
     width: 100%;
+  }
+  #sharerWrap {
+    width: 50% !important;
+  }
+  #indicators {
+    width: 100% !important;
+    text-align: justify;
+    margin-top: 3rem;
   }
 }
 
