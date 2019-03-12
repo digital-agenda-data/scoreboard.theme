@@ -25,6 +25,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn {
+  border-radius: 0;
+}
+
+.btn-xs.btn-primary {
+  min-height: initial;
+  padding: 1px 5px;
+  border: 1px solid transparent;
+  font-weight: normal;
+}
+
+.btn-xs.btn-primary:hover {
+  border-color: #004494;
+  text-decoration: none;
+}
+
 .disc {
   list-style-type: disc;
   padding-left: 40px;
@@ -987,12 +1003,9 @@ div.ms-drop label < input[name='selectAllref-area'] {
   border-color: #004494;
   min-height: 2.75em;
   padding: .5em 1em;
-  /*  line-height: 1.5;
-    white-space: normal;*/
   text-align: left;
   font-weight: 600;
   border-width: 2px;
-  border-radius: 0;
   box-shadow: none;
 }
 
@@ -1799,6 +1812,7 @@ div.qtip-default div.qtip-titlebar {
 
 .scoreboard-listing .label {
   display: inline;
+  border-radius: 0;
 }
 
 .listing-description {
@@ -1990,15 +2004,43 @@ body p {
   }
 }
 
-@media (min-width: 826px) and (max-width: 990px) {
+@media (min-width: 594px) and (max-width: 991px) {
   .btn-print {
-    background: linear-gradient(to right, #004494 0%, #004494 15%, #334b77 15%, #334b77 100%);
+    background: linear-gradient(to right, #004494 0%, #004494 17%, #334b77 17%, #334b77 100%);
   }
   .btn-export {
-    background: linear-gradient(to right, #004494 0%,#004494 15%, #186c98 15%, #186c98 100%);
+    background: linear-gradient(to right, #004494 0%,#004494 17%, #186c98 17%, #186c98 100%);
   }
   .btn-comments {
-    background: linear-gradient(to right, #004494 0%, #004494 15%, #1578b5 15%, #1578b5 100%);
+    background: linear-gradient(to right, #004494 0%, #004494 17%, #1578b5 17%, #1578b5 100%);
+  }
+}
+
+@media (max-width: 991px) {
+  #the-metadata {
+    text-align: justify;
+  }
+  #the-metadata h2 {
+    margin-bottom: 1rem;
+  }
+  .share-actions {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  #highcharts_zoom_in,
+  #highcharts_download_local {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  #highcharts_print,
+  #csv {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #print-page,
+  #excel {
+    grid-row-start: 3;
+    grid-row-end: 4;
   }
 }
 
@@ -2157,6 +2199,36 @@ body p {
   #the-filters .right-label {
     text-align: right;
   }
+  .share-actions {
+    grid-template-columns: auto auto;
+  }
+  #highcharts_zoom_in,
+  #highcharts_download_local  {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  #highcharts_print,
+  #csv {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #print-page,
+  #excel {
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #view_comments,
+  #embed {
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  #comment {
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
+  #embed {
+    grid-column-start: 2;
+  }
 }
 
 @media (max-width: 756px) {
@@ -2240,6 +2312,15 @@ body p {
   .editor-structure-multiple-series,
   .editor-structure-categories-by {
     margin-left: 0 !important;
+  }
+  .btn-print {
+    background: linear-gradient(to right, #004494 0%, #004494 30%, #334b77 30%, #334b77 100%);
+  }
+  .btn-export {
+    background: linear-gradient(to right, #004494 0%,#004494 30%, #186c98 30%, #186c98 100%);
+  }
+  .btn-comments {
+    background: linear-gradient(to right, #004494 0%, #004494 30%, #1578b5 30%, #1578b5 100%);
   }
 }
 
