@@ -539,6 +539,10 @@ td.label {
   padding-right: 1rem;
 }
 
+.share-actions li a:focus {
+  outline: 0;
+}
+
 #the-metadata ul {
   list-style-type: none;
   padding-left: 20px;
@@ -1012,12 +1016,12 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 .btn-print {
-  background: linear-gradient(to right, #004494 0%, #004494 45px, #334b77 45px, #334b77 100%);
+  background: linear-gradient(to right, #004494 0%, #004494 45px, #19305b 45px, #19305b 100%);
   text-shadow: none;
 }
 
 .btn-print:hover {
-  background: #334b77;
+  background: #19305b;
 }
 
 .btn-export {
@@ -1026,7 +1030,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 .btn-export:hover {
-  background: #1578b5;
+  background: #186c98;
 }
 
 .btn-comments {
@@ -1035,7 +1039,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 }
 
 .btn-comments:hover {
-  background: #186c98;
+  background: #1578b5;
 }
 
 .btn-view-viz {
