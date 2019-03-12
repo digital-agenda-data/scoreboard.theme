@@ -9,7 +9,9 @@ $(function add_popup() {
   button_accept = $("<button type='button' class='btn btn-xs btn-success'>I accept</button>").click(accept_cookie);
   button_deny = $("<button type='button' class='btn btn-xs btn-danger'>I refuse cookies</button>").click(deny_cookie);
 
-  div.find('p').append(button_accept).append(button_deny);
+  buttons = $('<div class="buttons"></div>').append(button_accept).append(button_deny);
+
+  div.find('p').append(buttons);
   $("body").prepend(div);
 });
 

@@ -1842,7 +1842,6 @@ table.listing {
   color: #000;
   background: #ffd316;
   font-size: 14px;
-  height: 3rem;
 }
 
 .cookie-consent p {
@@ -1859,6 +1858,10 @@ table.listing {
   display: inline;
   margin-left: 8px;
   font-weight: bold;
+}
+
+.cookie-consent .buttons {
+  display: inline;
 }
 
 /* ckeditor */
@@ -2005,6 +2008,10 @@ body p {
   }
   .editor-steps {
     padding-right: 10px;
+  }
+  .cookie-consent .buttons {
+    display: block;
+    margin-top: .5rem;
   }
 }
 
