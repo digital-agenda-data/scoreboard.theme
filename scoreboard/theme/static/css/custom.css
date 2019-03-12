@@ -143,6 +143,16 @@ td.label {
   cursor: pointer;
 }
 
+.form-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
 .form-select:hover,
 .ms-choice:hover {
   border-color: #004494;
