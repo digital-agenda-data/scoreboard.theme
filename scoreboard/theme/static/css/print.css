@@ -110,7 +110,8 @@ input.standalone,
 input.context,
 .visualNoPrint,
 .footer-wrapper,
-.navigation-widget {
+.navigation-widget,
+.sidebar-yellow {
 	display: none;
 }
 
@@ -154,6 +155,10 @@ dl.captioned {
 body .select2-search-choice-close,
 .chart-controls {
 	display: none !important;
+}
+
+.documentFirstHeading {
+  display: block !important;
 }
 
 @page {
@@ -205,13 +210,13 @@ body.template-datacube-view-html ul {
 }
 
 #copyright,
-#dataset-metadata,
+.dataset-metadata,
 #the-filters,
 body .select2-container-multi .select2-choices .select2-search-choice {
   background: white;
 }
 
-#dataset-metadata,
+.dataset-metadata,
 .legend-share {
   border: 1px solid #BBB;
 }
@@ -224,8 +229,31 @@ body .select2-container-multi .select2-choices .select2-search-choice {
   box-shadow: none;
 }
 
-#the-filters select {
-  min-width: 500px;
+#the-filters {
+  width: 89%;
+  font-size: 18px;
+}
+
+.ms-choice,
+.form-control {
+  font-size: 18px;
+}
+
+.dataset-metadata {
+  font-size: 22px;
+}
+
+#indicators-metadata {
+  width: 90%;
+}
+
+#the-chart {
+  overflow: hidden !important;
+  border-left: 0;
+}
+
+.label-select-file-upload {
+  font-weight: bold !important;
 }
 
 body .select2-container-multi .select2-choices .select2-search-choice {

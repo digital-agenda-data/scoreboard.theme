@@ -1194,6 +1194,7 @@ div.ms-drop label < input[name='selectAllref-area'] {
 
 .ms-choice > span {
   position: relative !important;
+  padding-left: 0!important;
 }
 
 .ms-choice div {

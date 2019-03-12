@@ -128,7 +128,9 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#blue-header-contents').append($(".documentFirstHeading"));
+      $(".documentFirstHeading").clone().appendTo('#blue-header-contents');
+
+      $(".documentFirstHeading:eq(1)").hide();
 
       $('.collapse-desc').click(function(e){
         e.preventDefault();
