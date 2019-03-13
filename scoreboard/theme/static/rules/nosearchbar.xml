@@ -4,7 +4,7 @@
        css:if-content=".template-login_form, .template-logged_out,
        .template-login_failed, .template-overview-controlpanel,
        .template-manage-annotations, .template-manage-whitelist,
-       .template-search, .template-datacube_editform ">
+       .template-search, .template-datacube_editform, .template-daviz-edit-html">
 
     <drop css:theme="#navsearch" />
     <drop css:theme=".sidebar-yellow" />
