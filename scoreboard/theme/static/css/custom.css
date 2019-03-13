@@ -1804,6 +1804,10 @@ div.qtip-default div.qtip-titlebar {
   position: fixed;
 }
 
+.ui-dialog-titlebar {
+  border-radius: 0;
+}
+
 .add-button-area {
   display: block;
   width: 100%;
@@ -1926,10 +1930,6 @@ body p {
 
 .sm-padding-right {
   padding-right: 2rem;
-}
-
-#ajax-spinner {
-  margin-left: 30%;
 }
 /*theme*/
 
