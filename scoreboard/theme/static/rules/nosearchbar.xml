@@ -3,7 +3,8 @@
        xmlns:css="http://namespaces.plone.org/diazo/css"
        css:if-content=".template-login_form, .template-logged_out,
        .template-login_failed, .template-overview-controlpanel,
-       .template-manage-annotations, .template-manage-whitelist, .template-search">
+       .template-manage-annotations, .template-manage-whitelist,
+       .template-search, .template-datacube_editform ">
 
     <drop css:theme="#navsearch" />
     <drop css:theme=".sidebar-yellow" />
