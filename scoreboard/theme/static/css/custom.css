@@ -1,15 +1,22 @@
 /* General */
 body {
   margin: 0 auto;
-  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
   font-size: 13px;
   color: #333;
-  background: #EBF6FC;
-  background: -moz-linear-gradient(top, #ebf6fc 0%, #b3e0f7 100%);
-  background: -webkit-linear-gradient(top, #EBF6FC 0%,#B3E0F7 100%);
-  background: -o-linear-gradient(top, #ebf6fc 0%,#b3e0f7 100%);
-  background: linear-gradient(to bottom, #EBF6FC 0%,#B3E0F7 100%);
-  background-repeat: repeat-x;
+  min-width: 320px;
+  font-family: Arial,sans-serif;
+  line-height: 1.667;
+  overflow-x: hidden;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@media (min-width: 480px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -24,8 +31,20 @@ ul {
 }
 
 a {
-  color: #0073A8;
+  color: #004494;
   text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #404040;
+}
+
+.searchButton:focus,
+a:focus {
+  outline: 3px solid #ffd617;
+  outline-offset: 2px;
 }
 
 p {
@@ -117,25 +136,136 @@ td.label {
   color: rgba(255, 255, 255, 0);
 }
 
-
 /* Header */
+.header-top {
+  background-color: #f5f5f5;
+  height: 2em;
+}
+
+.portal-titles {
+  margin: 0;
+  padding: 0;
+}
+
+.portal-titles li {
+  display: inline;
+}
+
+.portal-title {
+  padding-right: 1.6em;
+  color: #004494;
+}
+
+.portal-subtitle {
+  padding: 1.6em 1.6em .7em 1.6em;
+  background-color: #004494;
+  border-left: none;
+  color: #fff;
+}
+
+.portal-subtitle:after {
+  content: " ";
+  position: absolute;
+  top: 2.3em;
+  right: 62%;
+  border: 10px solid rgba(0,68,148,0);
+  border-top-color: #004494;
+  pointer-events: none;
+}
+
+.header-top-contents {
+  max-width: 1170px;
+  display: flex;
+  display: flexbox;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: .889em;
+  justify-content: space-between;
+  height: inherit;
+  align-items: center;
+}
+
 #header {
   background: #FFF;
+}
+
+.white-header {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 0 15px 0;
+  max-width: 1170px;
+  color: #004494;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  font-size: .889em;
+}
+
+#site-search .input-group.input-group-search {
+  border: 1px solid black;
+}
+
+#portal-searchbox {
+  float: none;
+}
+
+#site-search .searchButton {
+  background-color: #e3e3e3;
+  color: #004494;
+  font-weight: bold;
+  border: 0;
+  height: 2.3em;
+  padding: 0 1.1em 0 1.1em;
+}
+
+#site-search .searchButton:hover {
+  text-decoration: underline;
+  color: #404040;
+}
+
+#site-search .searchButton:focus {
+  outline-offset: -3px;
+}
+
+#site-search .searchField {
+  width: 240px;
+  border: 0;
+  height: 2em;
+  margin-top: -1px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#site-search .searchField:focus {
+  outline: 3px solid #ffd617;
+  outline-offset: 0;
+  text-decoration: none
 }
 
 .logo {
   width: 140px;
   border: 0px;
-  margin-top: 45px;
 }
 
 #logo-header-link:focus {
-  outline: 3px solid #ffd617;
   outline-offset: 5px;
   text-decoration: underline;
 }
 
-.portal-title {
+.blue-header {
+  background: #004494;
+  min-height: 50px;
+  color: #fff;
+}
+
+.blue-header a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*.portal-title {
   position: absolute;
   top: 38px;
   margin: 0;
@@ -146,25 +276,29 @@ td.label {
   line-height: 1.2;
   color: #0065A2;
   text-transform: uppercase;
-}
+}*/
 
-.portal-subtitle {
+/*.portal-subtitle {
   color: #FFF;
   font-size: 17px;
   font-family: Verdana,Arial,Helvetica,"DejaVu Sans",sans-serif;
   margin: 0 auto;
   padding: 0px 0px 0px 240px;
-}
+}*/
 
 .navbar-header {
   float: none;
 }
 
-.subtitle-backgr {
+.navbar-header .container {
+  padding: 0;
+}
+
+/*.subtitle-backgr {
   background-color: #0065A2;
   min-height: 45px;
   margin-top: -34px;
-}
+}*/
 
 .path {
   background: #074A8B;
@@ -189,7 +323,17 @@ td.label {
 .breadcrumbs {
   margin: 0;
   min-height: 22px;
-  padding-left: 22px;
+  padding-left: 0;
+  border-bottom: 1px solid #fff;
+  width: 1170px;
+}
+
+.blue-header .container .breadcrumbs {
+  font-weight: bold;
+}
+
+.blue-header .container {
+  padding: 0;
 }
 
 .breadcrumbs li {
@@ -1430,10 +1574,10 @@ div.field span.required:after {
     display: none;
   }
 
-  .subtitle-backgr {
+/*  .subtitle-backgr {
     min-height: 28px;
     margin-top: -16px;
-  }
+  }*/
 
   .navbar-toggle {
     margin-top: 5px;

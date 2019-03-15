@@ -25,18 +25,20 @@
 
    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
+    <replace css:content="#personaltools-login" css:theme=".header-top a:first-child" />
+    <before css:content="#personaltools-logout a" css:theme=".header-top a:first-child" />
+
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />
 
     <drop css:content=".documentByLine" />
     <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
 
-    <replace css:content-children="#content" css:theme-children="#main" />
+    <replace css:content=".documentFirstHeading" css:theme=".documentFirstHeading" />
+    <replace css:content-children="#content-core" css:theme-children="#main" />
     <drop css:content=".download-visualization" />
 
     <before css:content="#personaltools-plone_setup" css:theme="#footer .content .menu.clearfix li:first-child" />
-    <before css:content="#personaltools-logout" css:theme="#footer .content .menu.clearfix li:first-child" />
-    <replace css:content="#personaltools-login" css:theme="#footer .content .menu.clearfix li:first-child a" />
 
     <replace css:theme="#documentation-link">
       <a href="{$portal_url}/documentation">Documentation</a>
@@ -54,5 +56,4 @@
   <rules css:if-content="body.template-homepage-listing">
     <drop css:theme="#navsearch-container" />
   </rules>
-
 </rules>
