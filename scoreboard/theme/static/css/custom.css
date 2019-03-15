@@ -39,6 +39,7 @@ a:hover {
 a:focus {
   outline: 3px solid #ffd617;
   outline-offset: 2px;
+  background-color: #fff !important;
 }
 
 p {
@@ -953,15 +954,18 @@ div.ms-drop label < input[name='selectAllref-area'] {
   }
 }
 
-#navsearch-container:after {
-  clear: none;
+#navsearch-wrapper {
+  padding: 0;
 }
 
 #navsearch {
-  float: right;
   margin-top: 1rem;
   z-index: 999;
   position: relative;
+}
+
+#navsearch input{
+  margin-top: -8px;
 }
 
 @media (max-width: 767px) {
