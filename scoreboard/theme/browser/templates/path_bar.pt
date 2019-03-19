@@ -1,8 +1,6 @@
 <div id="portal-breadcrumbs" tal:define="breadcrumbs view/breadcrumbs;">
   <ul class="breadcrumbs">
-    <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
-    <li><a href="https://ec.europa.eu/digital-agenda/en">Digital Single Market</a></li>
-    <li><a href="https://ec.europa.eu/digital-agenda/en/digital-scoreboard">Digital Scoreboard</a></li>
+    <li class="first"><a href="https://ec.europa.eu/digital-single-market/en/digital-scoreboard">Digital Scoreboard</a></li>
     <li><a tal:attributes="href view/navigation_root_url">Visualizations</a></li>
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
