@@ -244,8 +244,11 @@ td.label {
 .portal-subtitle {
   background-color: #004494;
   border-left: none;
-  color: #fff;
   position: relative;
+}
+
+.portal-subtitle a {
+  color: #fff;
 }
 
 .portal-subtitle:after {
