@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo"
        xmlns:css="http://namespaces.plone.org/diazo/css">
-
-    <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
+    <replace css:content="#portal-breadcrumbs" css:theme=".breadcrumbs" />
 
     <replace css:theme="#documentation-link">
         <a href="{$portal_url}/documentation">Documentation</a>
