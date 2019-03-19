@@ -2,9 +2,9 @@
 <rules xmlns="http://namespaces.plone.org/diazo"
        xmlns:css="http://namespaces.plone.org/diazo/css">
 
-    <replace css:content="#personaltools-login" css:theme=".container-fluid a" />
+    <replace css:content="#personaltools-login" css:theme=".login-link a" />
     <replace css:if-content="#personaltools-logout"
-             css:content="#personaltools-logout a" css:theme=".container-fluid a" />
+             css:content="#personaltools-logout a" css:theme=".login-link a" />
 
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />
