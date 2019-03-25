@@ -523,27 +523,12 @@ td.label {
   display: none;
 }
 
-.share-actions li a {
-  border-radius: 0;
-  text-align: left;
-  color: #FFF;
+.share-actions li a:focus {
+  outline-offset: 8px;
 }
 
 .share-actions li {
-  width: 96%;
-  border-radius: 0;
-  text-align: left;
-  box-shadow: none;
-}
-
-.share-actions .glyphicon {
-  font-size: 1.5rem;
-  vertical-align: middle;
-  padding-right: 1rem;
-}
-
-.share-actions li a:focus {
-  outline: 0;
+  cursor: pointer;
 }
 
 #the-metadata ul {
@@ -618,7 +603,6 @@ td.label {
 }
 
 .editor-current-step {
-  /*overflow: hidden;*/
   background: #FFF;
   margin-bottom: 10px;
   padding: 0 20px 20px 20px;
@@ -1016,33 +1000,6 @@ div.ms-drop label < input[name='selectAllref-area'] {
   color: #004494;
   text-decoration: underline;
   text-shadow: none;
-}
-
-.btn-print {
-  background: linear-gradient(to right, #004494 0%, #004494 45px, #19305b 45px, #19305b 100%);
-  text-shadow: none;
-}
-
-.btn-print:hover {
-  background: #19305b;
-}
-
-.btn-export {
-  background: linear-gradient(to right, #004494 0%,#004494 45px, #186c98 45px, #186c98 100%);
-  text-shadow: none;
-}
-
-.btn-export:hover {
-  background: #186c98;
-}
-
-.btn-comments {
-  background: linear-gradient(to right, #004494 0%, #004494 45px, #1578b5 45px, #1578b5 100%);
-  text-shadow: none;
-}
-
-.btn-comments:hover {
-  background: #1578b5;
 }
 
 .btn-view-viz {
@@ -2006,21 +1963,6 @@ body p {
     display: grid;
     grid-template-columns: auto auto auto;
   }
-  #highcharts_zoom_in,
-  #highcharts_download_local {
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #highcharts_print,
-  #csv {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  #print-page,
-  #excel {
-    grid-row-start: 3;
-    grid-row-end: 4;
-  }
 }
 
 @media (max-width: 987px) {
@@ -2177,33 +2119,6 @@ body p {
   }
   .share-actions {
     grid-template-columns: auto auto;
-  }
-  #highcharts_zoom_in,
-  #highcharts_download_local  {
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #highcharts_print,
-  #csv {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-  #print-page,
-  #excel {
-    grid-row-start: 3;
-    grid-row-end: 4;
-  }
-  #view_comments,
-  #embed {
-    grid-row-start: 4;
-    grid-row-end: 5;
-  }
-  #comment {
-    grid-row-start: 5;
-    grid-row-end: 6;
-  }
-  #embed {
-    grid-column-start: 2;
   }
 }
 
