@@ -127,7 +127,18 @@
   </head>
 
   <script type="text/javascript">
+    function mobileShowHide() {
+      if($(window).width() <= 800) {
+        $('.listing-description').removeClass("show");
+        $('.collapse-desc').show();
+      }
+      else {
+        $('.listing-description').addClass("show");
+        $('.collapse-desc').hide();
+      }
+    }
     $(document).ready(function() {
+
       $(".documentFirstHeading").clone().appendTo('#blue-header-contents');
 
       $(".documentFirstHeading:eq(1)").hide();
@@ -143,6 +154,11 @@
         else {
           $(this).html(link_html.replace("less", "more"));
         }
+      });
+
+      mobileShowHide();
+      $( window ).resize(function() {
+        mobileShowHide();
       });
      });
   </script>
