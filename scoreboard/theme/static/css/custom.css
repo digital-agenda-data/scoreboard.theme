@@ -446,6 +446,10 @@ td.label {
   padding-left: 0;
 }
 
+.breadcrumbs li:only-child {
+  margin: 0.35rem 0;
+}
+
 .breadcrumbs li a {
   color: #FFF;
   text-decoration: none;
