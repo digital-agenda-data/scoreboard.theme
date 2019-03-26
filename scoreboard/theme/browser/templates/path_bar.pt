@@ -31,7 +31,7 @@
 
         <tal:ind_or_dataset condition="python:is_last and ind_or_dataset">
           <li tal:condition="indicators_page">Indicators</li>
-          <li tal:condition="dataset_page">Dataset</li>
+          <li tal:condition="dataset_page">Metadata and download</li>
         </tal:ind_or_dataset>
       </tal:item>
     </tal:block>
