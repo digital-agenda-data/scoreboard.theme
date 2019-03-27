@@ -1221,12 +1221,6 @@ table .label {
   width: 100%;
 }
 
-.notation,
-.label {
-  text-align: left;
-  vertical-align: middle;
-}
-
 .template-datacube-view-html .label {
   color: #333;
   line-height: 1.4;
@@ -1283,7 +1277,14 @@ table.container {
 }
 
 .list_indicators {
-  font-size: 70%;
+  font-size: 90%;
+}
+
+.list_indicators td,
+.template-datacube-view-html table td
+ {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .list_indicators th {
@@ -1294,6 +1295,11 @@ table.container {
 .list_indicators .odd {
   vertical-align: middle;
   background-color: transparent;
+}
+
+.sparql a {
+  display: block;
+  margin-left: 2%;
 }
 
 .list_indicators .even {
@@ -1320,16 +1326,24 @@ body .docsTable tr:nth-of-type(2n),
   background: #F5F5F5;
 }
 
+.notation,
+.label {
+  text-align: left;
+  vertical-align: middle;
+}
+
+
 body .list_indicators .groupName {
   border: 0px;
   text-align: center;
   background: #FFF;
+  color: #004494;
 }
 
 .list_indicators .groupName td {
   padding: 15px 0px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 #dataset-navigation h2 {
