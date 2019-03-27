@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo"
-       xmlns:css="http://namespaces.plone.org/diazo/css"
-       css:if-content=".template-login_form, .template-logged_out,
+       xmlns:css="http://namespaces.plone.org/diazo/css">
+
+  <rules css:if-content=".template-homepage-listing">
+    <drop css:theme="#navsearch" />
+  </rules>
+
+  <rules css:if-content=".template-login_form, .template-logged_out,
        .template-login_failed, .template-overview-controlpanel,
        .template-manage-annotations, .template-manage-whitelist,
-       .template-search, .template-datacube_editform, .template-daviz-edit-html">
-
+       .template-search, .template-datacube_editform,
+       .template-daviz-edit-html">
     <drop css:theme="#navsearch" />
     <drop css:theme=".sidebar-yellow" />
-
-     <rules css:if-content=".template-homepage-listing">
-        <drop css:theme="#navsearch" />
-     </rules>
+  </rules>
 
 </rules>
