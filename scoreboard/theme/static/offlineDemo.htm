@@ -139,9 +139,7 @@
     }
     $(document).ready(function() {
 
-      $(".documentFirstHeading").clone().appendTo('#blue-header-contents');
-
-      $(".documentFirstHeading:eq(1)").hide();
+      $(".documentFirstHeading").appendTo('#blue-header-contents');
 
       $('.collapse-desc').click(function(e){
         e.preventDefault();

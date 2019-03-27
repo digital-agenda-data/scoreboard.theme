@@ -146,7 +146,8 @@ dl.captioned {
 
 
 /*  print stylesheet for scenario pages */
-#header,
+#header .header-top,
+#header .parent-header,
 #the-navigation,
 .layout-footer,
 .section.share,
@@ -155,10 +156,6 @@ dl.captioned {
 body .select2-search-choice-close,
 .chart-controls {
 	display: none !important;
-}
-
-.documentFirstHeading {
-  display: block !important;
 }
 
 @page {
