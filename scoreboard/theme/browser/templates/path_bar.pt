@@ -5,9 +5,11 @@
                  indicators_page python: 'indicators' in req;
                  ind_or_dataset python: dataset_page or indicators_page ">
   <ul class="breadcrumbs">
-    <li class="first"><a tal:attributes="href view/navigation_root_url">
-      <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-    </a></li>
+    <li class="first">
+      <a tal:attributes="href view/navigation_root_url">
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+      </a>
+    </li>
 
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
@@ -15,21 +17,19 @@
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
         title crumb/Title">
-        <li tal:condition="is_vis">
-          <span tal:content="title"></span>
-        </li>
+
         <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
           tal:content="python:related_items[0].title_or_id()">Cube title</a>
         </li>
-        <li tal:condition="python:is_last"
+        <li tal:condition="python:is_last and not is_vis"
             tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
-          <a tal:condition="not: is_vis"
-             tal:attributes="href python:url + '/visualizations'"
-          tal:content="title">Crumb</a>
-
+          <a tal:attributes="href python:url + '/visualizations'"
+             tal:content="title">Crumb</a>
         </li>
-
+        <li tal:condition="python:is_vis and is_last">
+          <span tal:content="title"></span>
+        </li>
         <tal:ind_or_dataset condition="python:is_last and ind_or_dataset">
           <li tal:condition="indicators_page">
             <a tal:attributes="href string: ${context/absolute_url}/indicators">
@@ -42,7 +42,7 @@
             </a>
           </li>
         </tal:ind_or_dataset>
-
+        
       </tal:item>
     </tal:block>
 
