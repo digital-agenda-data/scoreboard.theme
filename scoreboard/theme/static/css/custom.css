@@ -1169,25 +1169,53 @@ a.btn-secondary {
   background-color: #fff2d1!important;
 }
 
+.dataset-box-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(8rem, 1fr));
+  grid-auto-rows: 1fr;
+  grid-column-gap: 5rem;
+  grid-row-gap: 2rem;
+}
+
+.dataset-box-wrapper > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+
+.dataset-box-wrapper::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
 .dataset-box {
-  margin-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+ width: 100%;
+ padding: 0;
 }
 
 .dataset-box a {
   display: block;
-  overflow: hidden;
-  padding: 10px 5px;
+  padding-top: 1rem;
   text-align: center;
   text-decoration: none;
-  border: 3px solid #fff;
+  border: 3px solid transparent;
   box-shadow: 0 1px 3px;
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dataset-box a:focus {
-  outline-offset: 0;
+  outline-offset: -3px;
+}
+
+.dataset-box.selected a:focus {
+  outline: none;
 }
 
 .dataset-box.selected a {
@@ -1205,16 +1233,16 @@ a.btn-secondary {
   margin-top: 5px;
   color: #333;
   font-weight: normal;
-  font-size: 12px;
+  font-size: x-large;
   line-height: 1.4;
 }
 .navigation_icon,
 .scenario_icon {
-  height: 85px;
   border: 1px solid #ccc;
-  border-radius: 3px;
   display: block;
   margin: 0 auto;
+  height: 12rem;
+  width: 87%;
 }
 
 /* Loading effects */
@@ -2086,6 +2114,12 @@ body p {
     border-top: 1px solid #404040;
     padding-top: 1em;
   }
+  .dataset-box img {
+    height: 8rem;
+  }
+  .dataset-box label {
+    font-size: initial;
+  }
 }
 
 @media (max-width: 987px) {
@@ -2225,17 +2259,6 @@ body p {
   .dataset-box {
     width: auto;
     float: none;
-  }
-  .dataset-box a {
-    text-align: left;
-  }
-  .dataset-box img {
-    float: left;
-    margin-right: 5px;
-  }
-  .dataset-box label {
-    font-size: inherit;
-    height: auto;
   }
   #the-filters .right-label {
     text-align: right;

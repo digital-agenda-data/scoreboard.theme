@@ -17,6 +17,7 @@ Scoreboard.Views = {
         this.has_selected_scenario = false;
         this.update();
         this.hashcfg = '';
+        this.tooltip = '';
       },
       update: function(){
         var view = this;
@@ -24,6 +25,7 @@ Scoreboard.Views = {
           'url': view.cube_url + '/@@relations',
           'success': function(data){
             view.scenarios = jQuery.map(data, function(scenario){
+              scenario.tooltip = scenario.description || scenario.title;
               if(scenario.url == view.scenario_url){
                 scenario.selected = true;
                 view.has_selected_scenario = true;
@@ -59,6 +61,7 @@ Scoreboard.Views = {
         this.cubes = [];
         this.has_selected = false;
         this.update();
+        this.tooltip = '';
       },
       update: function(){
         var view = this;
@@ -66,6 +69,7 @@ Scoreboard.Views = {
           'url': view.cube_url + '/@@datacubes',
           'success': function(data){
             view.cubes = jQuery.map(data, function(cube){
+              cube.tooltip = cube.description || cube.title;
               if(cube.url == view.selected_url){
                 cube.selected = true;
                 view.has_selected = true;

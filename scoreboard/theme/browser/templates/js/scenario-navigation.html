@@ -1,16 +1,18 @@
 {{#if has_selected_scenario}}
-  <h2>To swap scenarios, click one of the icons:</h2>
+  <h2>See more charts for the same data:</h2>
 {{else}}
   <h2>Scenarios for this dataset:</h2>
 {{/if}}
 
-<div class="row">
-  {{#each scenarios}}
-  <div class="{{#if selected }}selected {{/if}}col-md-2 col-sm-4 col-xs-11 dataset-box" id="{{ id }}">
-    <a href="{{ url }}#{{ hashcfg }}" title="{{ title }}">
-      <img src="{{ image }}" class="scenario_icon" alt="">
-      <label>{{ title }}</label>
-    </a>
+<div class="container">
+  <div class="row dataset-box-wrapper">
+    {{#each scenarios}}
+    <div class="{{#if selected }}selected {{/if}}col-md-2 col-sm-4 col-xs-11 dataset-box" id="{{ id }}">
+      <a href="{{ url }}#{{ hashcfg }}" title="{{ tooltip }}">
+        <img src="{{ image }}" class="scenario_icon" alt="">
+        <label>{{ title }}</label>
+      </a>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>

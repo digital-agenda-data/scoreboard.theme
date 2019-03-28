@@ -1,13 +1,13 @@
 {{#if has_selected}}
-  <h2>To change datasets, click one of the icons:</h2>
+  <h2>Browse other datasets:</h2>
 {{else}}
   <h2>Datasets:</h2>
 {{/if}}
 <div class="container">
-  <div class="row">
+  <div class="row dataset-box-wrapper">
     {{#each cubes}}
     <div class="{{#if selected }}selected {{/if}}col-md-2 col-sm-4 col-xs-11 dataset-box" id="{{ id }}">
-      <a href="{{ url }}{{ options.url_extension }}" title="{{ title }}">
+      <a href="{{ url }}{{ options.url_extension }}" title="{{ tooltip }}">
         <img src="{{ image }}" class="navigation_icon" alt="">
         <label>{{ title }}</label>
       </a>
