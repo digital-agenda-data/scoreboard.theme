@@ -1,4 +1,9 @@
 /* General */
+@font-face {
+  font-family: 'EuropaIcons';
+  src: url('europa-icons.woff') format('woff');
+}
+
 html, body {
   height: 100%;
 }
@@ -466,8 +471,65 @@ td.label {
 #copyright {
   background-color: #004494;
   padding: .9em 0;
-  color: #fff;
+  font-size: 80%;
 }
+
+#copyright .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#copyright a {
+  color: #fff;
+  text-decoration: underline;
+  margin-right: 15px;
+  margin-top: .5rem;
+}
+
+.icon:before {
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'EuropaIcons';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  margin-right: 4px;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fb,
+.icon-fb:before {
+  content: "\e809";
+}
+
+.icon-twitter,
+.icon-twitter:before {
+  content: "\e817";
+}
+
+.is-external:after {
+  display: inline-block;
+  font-family: EuropaIcons;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 4px;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
+  content: "\e825";
+  font-size: 75%;
+  margin-left: .4em;
+  margin-right: .2em;
+}
+
 
 #footer ul {
   padding-left: 0;

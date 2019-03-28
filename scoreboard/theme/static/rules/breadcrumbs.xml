@@ -11,4 +11,8 @@
         <a href="{$portal_url}/privacy">Privacy</a>
     </replace>
 
+    <replace css:theme="#sitemap-link">
+        <a href="{$portal_url}/sitemap">Sitemap</a>
+    </replace>
+
 </rules>
