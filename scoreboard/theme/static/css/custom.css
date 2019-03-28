@@ -440,6 +440,7 @@ td.label {
   vertical-align: middle;
   font-size: 11px;
   color: #FFF;
+  text-transform:capitalize;
 }
 
 .breadcrumbs li.first {
@@ -905,7 +906,7 @@ button[name="add-title-part"] {
 /* Visualization filters */
 #the-filters {
   min-height: 50px;
-  margin-bottom: 15px;
+  margin: 15px 0;
   font-size: 14px;
 }
 
@@ -1742,9 +1743,13 @@ div.qtip-default div.qtip-titlebar {
 }
 
 .documentFirstHeading {
-  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 600;
   padding: 1rem 0;
+}
+
+.documentDescription {
+  margin-top: 1rem;
 }
 
 .scoreboard-listing table,
@@ -1871,9 +1876,9 @@ div.qtip-default div.qtip-titlebar {
   display: block;
 }
 
-table.listing {
+/*table.listing {
   background: #FFF;
-}
+}*/
 
 #the-filters p.default-hidden {
   visibility:hidden;
@@ -1960,13 +1965,20 @@ body p {
   padding: .1rem;
 }
 
-.no-top-padding {
-  padding-top: 0;
-}
-
 .sm-padding-right {
   padding-right: 2rem;
 }
+
+/*Hiding Products.Ploneboard's broken search bar*/
+.template-ploneboard_view .discreet.visualNoMarker li:first-child {
+  display: none;
+}
+
+.template-ploneboard_view .discreet.visualNoMarker {
+  float: none !important;
+  margin: 1rem 0 -1rem 0!important;
+}
+
 /*theme*/
 
 /*media queries*/
