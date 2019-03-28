@@ -137,6 +137,7 @@
         $('.collapse-desc').hide();
       }
     }
+
     $(document).ready(function() {
 
       $(".documentFirstHeading").appendTo('#blue-header-contents');
@@ -158,6 +159,10 @@
       $( window ).resize(function() {
         mobileShowHide();
       });
+
+      if($(".template-ploneboard_view").length) {
+        $('.documentFirstHeading').append( "<span>Board</span>" );
+      }
      });
   </script>
 
