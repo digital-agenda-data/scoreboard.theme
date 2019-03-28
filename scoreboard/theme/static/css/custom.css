@@ -1065,6 +1065,34 @@ div.ms-drop label < input[name='selectAllref-area'] {
   text-shadow: none;
 }
 
+.btn-default {
+  background: none;
+  border: 2px solid transparent;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: .89rem 1rem;
+  border-color: #004494;
+  color: #004494;
+}
+
+.btn-default:hover {
+  background-color: #004494;
+  border-color: #004494;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.btn-default:focus,
+a.btn-secondary {
+  outline-offset: -2px;
+}
+
+.btn-secondary {
+  padding: .89em 1em;
+}
+
 .btn-view-viz {
   color: #FFF;
   background-color: #0065A2;
