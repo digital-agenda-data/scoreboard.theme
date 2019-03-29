@@ -1246,7 +1246,7 @@ a.btn-secondary {
 }
 
 /* Loading effects */
-#the-chart.loading-small {
+.loading-small {
   background: url(../images/loading-bar.gif) no-repeat;
   background-position: center 0;
 }

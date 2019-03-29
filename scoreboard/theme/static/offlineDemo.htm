@@ -163,6 +163,15 @@
       if($(".template-ploneboard_view").length) {
         $('.documentFirstHeading').append( "<span>Board</span>" );
       }
+
+      var standalone = $("input.standalone");
+      if(standalone.length) {
+        standalone.addClass("btn btn-primary");
+        if(standalone.val() != 'Start a new Conversation')  standalone.addClass("btn-xs");
+      }
+
+      $("input.context").addClass("btn btn-xs btn-warning");
+      $("input.destructive").addClass("btn btn-xs btn-danger")
      });
   </script>
 
