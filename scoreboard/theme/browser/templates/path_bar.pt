@@ -1,5 +1,6 @@
 <div id="portal-breadcrumbs"
-     tal:define="breadcrumbs view/breadcrumbs;
+     tal:define="portal_state context/@@plone_portal_state;
+                 breadcrumbs view/breadcrumbs;
                  req request/URL;
                  dataset_page python:'datacube-view.html' in req;
                  indicators_page python: req.endswith('/indicators');
@@ -16,11 +17,15 @@
         is_vis python:here.meta_type == 'ScoreboardVisualization';
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
-        title crumb/Title">
+        title crumb/Title;
+        is_board_link python:is_last and not is_vis and '/board/' in url">
 
         <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
           tal:content="python:related_items[0].title_or_id()">Cube title</a>
+        </li>
+        <li tal:condition="is_board_link">
+          <a tal:attributes="href string:${portal_state/portal_url}/board">Board</a>
         </li>
         <li tal:condition="python:is_last and not is_vis"
             tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
