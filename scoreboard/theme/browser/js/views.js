@@ -69,7 +69,7 @@ Scoreboard.Views = {
           'url': view.cube_url + '/@@datacubes',
           'success': function(data){
             view.cubes = jQuery.map(data, function(cube){
-              cube.tooltip = cube.description || cube.title;
+              cube.tooltip = cube.description.replace(/<(?:.|\n)*?>/gm, '') || cube.title;
               if(cube.url == view.selected_url){
                 cube.selected = true;
                 view.has_selected = true;
