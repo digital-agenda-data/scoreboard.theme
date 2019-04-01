@@ -48,6 +48,10 @@
     </rules>
     <!--Site search results page-->
 
+    <rules css:if-content=".template-homepage-listing">
+        <drop css:content=".breadcrumbs" />
+    </rules>
+
     <replace css:theme-children=".mobileHeader" css:content-children=".documentFirstHeading" />
 
 
