@@ -2352,6 +2352,12 @@ body p {
   }
 }
 
+@media (max-width: 505px) {
+  .gray-header {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .slider-label {
     padding: 16px 0 10px;
