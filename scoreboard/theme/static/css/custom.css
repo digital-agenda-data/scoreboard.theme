@@ -2262,6 +2262,9 @@ body p {
     margin: 0 auto;
     width: 70%;
   }
+  .login-link {
+    display: none;
+  }
 }
 
 @media (max-width: 756px) {
