@@ -1872,12 +1872,6 @@ div.qtip-default div.qtip-titlebar {
   margin-top: 10px;
 }
 
-.sidebar-yellow.left-margin {
-  padding-top: 0;
-  margin-top: 1rem;
-  margin-left: 3rem;
-}
-
 .scoreboard-confirm-overlay {
   border-radius:0;
   box-shadow: 0px 0px 30px #000;
@@ -2249,8 +2243,8 @@ body p {
   body {
     word-wrap: break-word;
   }
-  #content-core .sidebar-yellow {
-    margin: 0 auto;
+  .sidebar-yellow {
+    margin-left: 15px;
     width: 35%;
   }
   #navsearch {
