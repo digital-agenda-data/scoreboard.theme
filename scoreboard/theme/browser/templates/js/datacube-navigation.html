@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row dataset-box-wrapper">
     {{#each cubes}}
-    <div class="{{#if selected }}selected {{/if}}col-md-2 col-sm-4 col-xs-11 dataset-box" id="{{ id }}">
+    <div class="{{#if selected }}selected {{/if}}dataset-box" id="{{ id }}">
       <a href="{{ url }}{{ options.url_extension }}" title="{{ tooltip }}">
         <img src="{{ image }}" class="navigation_icon" alt="">
         <label>{{ title }}</label>
