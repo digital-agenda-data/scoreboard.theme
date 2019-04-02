@@ -18,16 +18,18 @@
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
         title crumb/Title;
-        is_board_link python:is_last and not is_vis and '/board/' in url">
+        is_board_link python:'/board' in url">
 
         <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
           tal:content="python:related_items[0].title_or_id()">Cube title</a>
         </li>
-        <li tal:condition="is_board_link">
-          <a tal:attributes="href string:${portal_state/portal_url}/board">Board</a>
+        <li tal:condition="python:not is_vis and is_board_link"
+            tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
+          <a tal:attributes="href url"
+             tal:content="title">Crumb</a>
         </li>
-        <li tal:condition="python:is_last and not is_vis"
+        <li tal:condition="python:is_last and not is_vis and not is_board_link"
             tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
           <a tal:attributes="href python:url + '/visualizations'"
              tal:content="title">Crumb</a>
