@@ -171,7 +171,11 @@
       }
 
       $("input.context").addClass("btn btn-xs btn-warning");
-      $("input.destructive").addClass("btn btn-xs btn-danger")
+      $("input.destructive").addClass("btn btn-xs btn-danger");
+
+      if($(".documentFirstHeading").length > 1) {
+        $("#parent-fieldname-title").hide();
+      }
      });
   </script>
 
