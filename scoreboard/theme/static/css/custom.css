@@ -1547,6 +1547,11 @@ body .docsTable td {
 
 
 /* Administration pages */
+.section-board .link-parent,
+.section-board .discreet.visualNoMarker {
+  display: none;
+}
+
 .board-edit-form >.field,
 .board-comment-buttons {
   padding: 10px;
@@ -2059,16 +2064,6 @@ a.ui-slider-handle:focus {
 
 .ui-slider-range {
   background: #004494 !important;
-}
-
-/*Hiding Products.Ploneboard's broken search bar*/
-.template-ploneboard_view .discreet.visualNoMarker li:first-child {
-  display: none;
-}
-
-.template-ploneboard_view .discreet.visualNoMarker {
-  float: none !important;
-  margin: 1rem 0 -1rem 0!important;
 }
 /*theme*/
 
