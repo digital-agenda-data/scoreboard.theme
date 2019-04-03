@@ -1408,6 +1408,10 @@ table.container {
   font-size: 90%;
 }
 
+.list_indicators .spacer {
+  height: 2rem;
+}
+
 .list_indicators td,
 .template-datacube-view-html table td
  {
@@ -1469,9 +1473,12 @@ body .list_indicators .groupName {
 }
 
 .list_indicators .groupName td {
-  padding: 15px 0px;
   font-weight: bold;
-  font-size: 100%;
+  padding: 0.611em 0 .611em 1.222em;
+  font-size: x-large;
+  border-left: 5px solid #ffd316;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 #dataset-navigation h2 {
