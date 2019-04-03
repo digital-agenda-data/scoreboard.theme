@@ -1,10 +1,11 @@
 <div id="portal-breadcrumbs"
      tal:define="portal_state context/@@plone_portal_state;
+                 portal_url portal_state/portal_url;
                  breadcrumbs view/breadcrumbs;
                  req request/URL;
                  dataset_page python:'datacube-view.html' in req;
                  indicators_page python: req.endswith('/indicators');
-                 ind_or_dataset python: dataset_page or indicators_page ">
+                 ind_or_dataset python: dataset_page or indicators_page;">
   <ul class="breadcrumbs">
     <li class="first">
       <a tal:attributes="href view/navigation_root_url">
@@ -18,7 +19,7 @@
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
         title crumb/Title;
-        is_board_link python:'/board' in url">
+        is_board_link python:'Ploneboard' in here.meta_type;">
 
         <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
