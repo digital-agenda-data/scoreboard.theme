@@ -2248,7 +2248,8 @@ a.ui-slider-handle:focus {
     width: 70%;
   }
   .login-link,
-  #portal-breadcrumbs {
+  #portal-breadcrumbs,
+  .vis-desc {
     display: none;
   }
   .dataset-box-wrapper {

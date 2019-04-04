@@ -23,7 +23,7 @@
       </div>
 
       <div class="col-sm-8 col-sm-pull-3 sm-padding-right">
-        <div class="listing-description show">
+        <div class="vis-desc">
           <tal:block tal:replace="structure cube/getSummary"></tal:block>
         </div>
         <h2>Please select one of the available charts:</h2>
