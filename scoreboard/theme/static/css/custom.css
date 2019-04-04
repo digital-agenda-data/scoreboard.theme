@@ -1849,11 +1849,6 @@ div.qtip-default div.qtip-titlebar {
   padding: 0;
 }
 
-.cube-item:last-child {
-  border-bottom: 1px solid #ebebeb;
-  margin-bottom: 1.111em;
-}
-
 .cube-thumbnail.column-second {
   float: right;
   width: 25%;
@@ -2351,9 +2346,3 @@ a.ui-slider-handle:focus {
   }
 }
 /*media queries*/
-
-
-
-
-
-
