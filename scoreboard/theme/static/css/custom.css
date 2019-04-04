@@ -2185,11 +2185,6 @@ a.ui-slider-handle:focus {
   .editor-structure-categories-by {
     margin-left: 27%;
   }
-  #navsearch {
-    float: none !important;
-    display: block !important;
-    margin-top: 20px ;
-  }
   #portal-breadcrumbs,
   .documentFirstHeading {
     padding-left: 2.5rem;
