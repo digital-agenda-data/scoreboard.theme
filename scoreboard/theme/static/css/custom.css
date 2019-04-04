@@ -403,24 +403,9 @@ td.label {
   text-decoration: underline;
 }
 
-.mobileHeader {
-  display: none;
-}
-
-.navbar-toggle {
-  background: #FFF;
-  border: 1px solid #0065A2;
-  margin-right: 0;
-  margin-top: 25px;
-}
-
 .navbar-collapse {
   padding: 0;
   border-top: 0;
-}
-
-.navbar-toggle .icon-bar {
-  background: #0065A2;
 }
 
 .breadcrumbs {
@@ -2194,20 +2179,6 @@ a.ui-slider-handle:focus {
   }
 }
 
-@media (min-width: 600px) and (max-width: 800px) {
-  .navbar-toggle {
-    display: inline-block;
-  }
-
-  .navbar-collapse.collapse {
-    display: none !important;
-  }
-
-  .navbar-collapse.in {
-    display: block !important;
-  }
-}
-
 @media (max-width: 800px) {
   .linklist {
     padding-left: 20px;
@@ -2224,54 +2195,22 @@ a.ui-slider-handle:focus {
     display: block !important;
     margin-top: 20px ;
   }
-  .mobileHeader {
-    display: inline-block;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
+  #portal-breadcrumbs,
   .documentFirstHeading {
-    display:none;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
-
-  .breadcrumbs li,
-  .breadcrumbs li.first {
-    display: block;
-    background-image: none;
-    padding: 10px 10px 10px 28px;
-    min-height: 30px;
-    border-bottom: 1px solid #ACC4D1;
-    background: url("../images/breadcrumb.gif") rgba(0, 0, 0, 0) 34% no-repeat;
-  }
-
-  .breadcrumbs li.first {
-    border-top: 1px solid #fff;
-  }
-
-  .breadcrumbs li a:hover {
-    text-decoration: underline;
-  }
-
   .navbar-collapse .container {
     padding: 0;
     margin: 0;
     width: 100%;
   }
-
   .logo {
     padding-left: 0;
   }
-
   .thumbnail-area {
     display: none;
   }
-
-  .navbar-toggle {
-    bottom: 0;
-  }
-
   .dataset-description-area {
     display: block;
   }
@@ -2281,7 +2220,6 @@ a.ui-slider-handle:focus {
     width: 100%;
     margin-left: 7px;
   }
-
   .editor-steps {
     margin-bottom: 5px;
   }
@@ -2319,11 +2257,17 @@ a.ui-slider-handle:focus {
     margin: 0 auto;
     width: 70%;
   }
-  .login-link {
+  .login-link,
+  #portal-breadcrumbs {
     display: none;
   }
   .dataset-box-wrapper {
     grid-column-gap: 2rem;
+  }
+  .documentFirstHeading {
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -2354,19 +2298,12 @@ a.ui-slider-handle:focus {
   .scoreboard-listing table td {
     padding-left: 8px;
   }
-
   .list_indicators,
   .list_indicators th,
   .list_indicators tr,
   .list_indicators td {
     padding: 4px;
   }
-
-  .breadcrumbs li,
-  .breadcrumbs li.first {
-    padding-left: 15px;
-  }
-
   .col-md-6 select,
   .bottom-left select,
   .bottom-right select {
