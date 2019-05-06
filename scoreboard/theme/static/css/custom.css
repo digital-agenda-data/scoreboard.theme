@@ -2043,9 +2043,10 @@ a.ui-slider-handle:focus {
 /*theme*/
 
 /*media queries*/
-@media (min-width: 500px) {
+@media (min-width: 338px) and (max-width: 340px) {
   .portal-titles .portal-title {
-    padding-left: 0;
+    padding-bottom: 0;
+    line-height: 1rem;
   }
 }
 
@@ -2218,9 +2219,6 @@ a.ui-slider-handle:focus {
     margin-left: 15px;
     width: 35%;
   }
-  #navsearch {
-     margin-top: 1.66em;
-  }
   .dataset-box {
     width: auto;
     float: none;
@@ -2294,6 +2292,9 @@ a.ui-slider-handle:focus {
 }
 
 @media (max-width: 595px) {
+  .logo {
+    width: 250px;
+  }
   .editor-current-step{
     margin-left: -8px !important;
     padding-left: 0;
@@ -2308,11 +2309,31 @@ a.ui-slider-handle:focus {
   .editor-structure-categories-by {
     margin-left: 0 !important;
   }
+  .portal-title {
+    padding: 0.5em 0 !important;
+  }
+}
+
+@media (max-width: 540px) {
+  #navsearch h2 {
+    float: right;
+    display: inline-block;
+  }
+  #navsearch .input-group-search {
+    width: 80%;
+    float:right;
+  }
+  #navsearch {
+    width: 48%;
+  }
 }
 
 @media (max-width: 522px) {
   .editor-facet-field .select2-choices li {
     height: 35px !important;
+  }
+  #navsearch {
+    width: 46%;
   }
 }
 
@@ -2320,11 +2341,47 @@ a.ui-slider-handle:focus {
   .gray-header {
     display: none;
   }
+  .logo {
+    width: 200px;
+  }
+  #navsearch .input-group-search {
+    width: 65%;
+  }
+  #navsearch form,
+  #navsearch .searchButton {
+    font-size: .7rem;
+  }
+  #navsearch #search-text {
+    height: auto;
+    font-size: .6rem;
+  }
+  #navsearch h2 {
+    font-size: .9rem;
+  }
 }
 
 @media (max-width: 480px) {
   .slider-label {
     padding: 16px 0 10px;
+  }
+  .logo {
+    width: 170px;
+  }
+  #navsearch .searchButton {
+    font-size: .5rem;
+    height: 1.5rem;
+  }
+  #navsearch {
+    width: 45%;
+  }
+  .sidebar-yellow {
+    width: 50%;
+  }
+}
+
+@media (max-width: 340px) {
+  .logo {
+    width: 150px;
   }
 }
 /*media queries*/
