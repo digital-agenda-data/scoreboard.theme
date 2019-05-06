@@ -1414,11 +1414,6 @@ table.container {
   background-color: transparent;
 }
 
-.sparql a {
-  display: block;
-  margin-left: 2%;
-}
-
 .list_indicators .even {
   vertical-align: middle;
   font-weight: 600;
