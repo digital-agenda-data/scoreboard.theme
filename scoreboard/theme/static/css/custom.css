@@ -2122,6 +2122,9 @@ a.ui-slider-handle:focus {
   .light-blue .footer__column ul li {
     margin-right: 15px;
   }
+  .middle-blue .social-media ul li {
+    display: inline-block;
+  }
 }
 
 @media (min-width: 985px) and (max-width: 1120px) {
