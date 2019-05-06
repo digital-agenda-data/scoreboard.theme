@@ -2097,18 +2097,6 @@ a.ui-slider-handle:focus {
   #the-chart {
     margin-right: -15px;
   }
-  .footer__column.social-media a span {
-    display: none;
-  }
-  .light-blue .social-media a {
-    width: 34px;
-    height: 34px;
-    border: solid 2px #003776;
-    text-align: center;
-    font-size: 18px;
-    padding: 6px 0 3px 5px;
-    text-decoration: none;
-  }
   .footer__column {
     float: none;
     width: 100%;
