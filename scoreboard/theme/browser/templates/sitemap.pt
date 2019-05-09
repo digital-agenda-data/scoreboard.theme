@@ -1,0 +1,27 @@
+<html metal:use-macro="here/main_template/macros/master"
+  i18n:domain="plone">
+  <div metal:fill-slot="main">
+    <h1 class="documentFirstHeading">Site map</h1>
+    <div class="documentDescription">
+      An overview of the available content on this site. Keep the pointer still over an item for a few seconds to get its description.
+    </div>
+    <tal:datasets>
+      <h1 tal:condition="view/datasets"><a href="portal_url">Datasets</a></h1>
+      <tal:dataset repeat="dataset view/datasets">
+        <h2 tal:content="dataset/title">Dataset</h2>
+        <a class="dataset-item" tal:attributes="href dataset/metadata">Metadata and Download</a>
+        <a class="dataset-item" tal:attributes="href dataset/indicators">Indicators</a>
+        <a class="dataset-item" tal:attributes="href dataset/comments">Comments</a>
+
+        <a class="dataset-item" tal:attributes="href dataset/charts/url">Charts</a>
+        <tal:charts repeat="chart dataset/charts/contents">
+          <a tal:attributes="href chart/url"
+             tal:content="chart/title"
+             class="dataset-item chart-item">
+            Chart
+          </a>
+        </tal:charts>
+      </tal:dataset>
+    </tal:datasets>
+  </div>
+</html>

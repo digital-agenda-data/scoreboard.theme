@@ -2042,6 +2042,16 @@ a.ui-slider-handle:focus {
 }
 /*theme*/
 
+/*sitemap*/
+  .dataset-item {
+    display: block;
+  }
+  .chart-item {
+    margin-left: 2rem;
+    font-size: 90%;
+  }
+/*sitemap*/
+
 /*media queries*/
 @media (min-width: 338px) and (max-width: 340px) {
   .portal-titles .portal-title {

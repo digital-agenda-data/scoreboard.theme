@@ -118,6 +118,14 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="sitemap"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".sitemap.CustomSiteMap"
+    template="templates/sitemap.pt"
+    permission="zope2.View"
+  />
+
   <browser:resourceDirectory
     name="scoreboard.theme.js"
     directory="js/"
@@ -132,5 +140,4 @@
     name="scoreboard.theme.bootstrap"
     directory="bootstrap/"
     />
-
 </configure>
