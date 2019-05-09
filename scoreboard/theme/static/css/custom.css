@@ -2052,12 +2052,12 @@ a.ui-slider-handle:focus {
   .children {
     margin-left: 2rem;
   }
-  .template-sitemap h3,
   .template-sitemap h4 {
     padding-top: 1rem;
     font-weight: bold;
   }
-  .template-sitemap h3 {
+  .template-sitemap h3,
+  .documentDescription {
     padding-bottom: 1rem;
   }
 /*sitemap*/
