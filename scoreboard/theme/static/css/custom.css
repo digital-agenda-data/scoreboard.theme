@@ -2048,7 +2048,17 @@ a.ui-slider-handle:focus {
   }
   .chart-item {
     margin-left: 2rem;
-    font-size: 90%;
+  }
+  .children {
+    margin-left: 2rem;
+  }
+  .template-sitemap h3,
+  .template-sitemap h4 {
+    padding-top: 1rem;
+    font-weight: bold;
+  }
+  .template-sitemap h3 {
+    padding-bottom: 1rem;
   }
 /*sitemap*/
 

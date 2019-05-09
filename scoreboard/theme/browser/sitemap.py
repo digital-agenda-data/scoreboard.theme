@@ -5,6 +5,21 @@ from plone import api
 
 
 class CustomSiteMap(BrowserView):
+    def get_documentation(self):
+        portal_path = api.portal.get().virtual_url_path()
+        try:
+            doc = self.context.restrictedTraverse(portal_path+'/documentation')
+            return map(lambda d: d[1], doc.contentItems())
+        except:
+            return False
+
+    def get_privacy(self):
+        portal_path = api.portal.get().virtual_url_path()
+        try:
+            priv = self.context.restrictedTraverse(portal_path+'/privacy')
+            return priv.absolute_url()
+        except:
+            return False
 
 
     def get_charts(self, brain, portal):
