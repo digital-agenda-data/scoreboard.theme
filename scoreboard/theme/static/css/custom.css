@@ -2264,6 +2264,23 @@ a.ui-slider-handle:focus {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .sidebar-yellow {
+    border-top: 0;
+    width: 100%;
+  }
+  .sidebar-list {
+    display: flex;
+    margin-left: 0;
+  }
+  .sidebar-list li {
+    border-left: 0;
+    padding: 0 1rem .5rem;
+    text-align: center;
+    margin: auto;
+  }
+  .sidebar-list li.active {
+    border-bottom: 5px solid #ffd316;
+  }
 }
 
 @media (max-width: 756px) {
@@ -2396,6 +2413,9 @@ a.ui-slider-handle:focus {
   }
   .sidebar-yellow {
     width: 50%;
+  }
+  .sidebar-list li {
+    font-size: 80%;
   }
 }
 
