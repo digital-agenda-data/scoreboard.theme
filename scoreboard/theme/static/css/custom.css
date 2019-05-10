@@ -973,6 +973,36 @@ div.ms-drop li {
   padding: 5px 0 5px 0;
   font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
   font-size: 16px;
+  width: 100% !important;
+}
+
+.ms-drop {
+  border-radius: 0;
+  width: 100%;
+}
+
+.ms-drop ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ms-drop ul li:first-child {
+  grid-column: 1 / span 2;
+}
+
+.ms-drop ul::-webkit-scrollbar {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.ms-drop ul::-webkit-scrollbar:vertical {
+  width: 12px;
+}
+
+.ms-drop ul::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
 }
 
 #the-filters div.ms-drop label {
