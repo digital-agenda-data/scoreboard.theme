@@ -1272,7 +1272,15 @@ a.btn-secondary {
 /* Loading effects */
 .loading-small {
   background: url(../images/loading-bar.gif) no-repeat;
-  background-position: center 0;
+}
+
+#the-chart.loading-small {
+  background-position: center;
+}
+
+.chart-filter.loading-small {
+  background-position: right 5rem bottom -.5rem;
+  background-size: 20rem;
 }
 
 .ms-choice {
@@ -2159,6 +2167,10 @@ a.ui-slider-handle:focus {
   .middle-blue .social-media ul li {
     display: inline-block;
   }
+  .chart-filter.loading-small {
+    background-position: right 4rem bottom 0;
+    background-size: 15rem;
+  }
 }
 
 @media (min-width: 985px) and (max-width: 1120px) {
@@ -2188,6 +2200,10 @@ a.ui-slider-handle:focus {
   }
   .dataset-box label {
     font-size: initial;
+  }
+  .chart-filter.loading-small {
+    background-position: right 4rem bottom .4rem;
+    background-size: 8rem;
   }
 }
 
@@ -2311,6 +2327,10 @@ a.ui-slider-handle:focus {
   .sidebar-list li.active {
     border-bottom: 5px solid #ffd316;
   }
+  .chart-filter.loading-small {
+    background-position: center;
+    background-size: 22rem;
+  }
 }
 
 @media (max-width: 756px) {
@@ -2326,13 +2346,14 @@ a.ui-slider-handle:focus {
   .share-actions {
     width:100%;
   }
-
   .normalized-value {
     margin-left: 1rem;
   }
-
   #the-filters .right-label {
     margin-right: 0;
+  }
+  .chart-filter.loading-small {
+    background-position: right 4rem center;
   }
 }
 
@@ -2379,6 +2400,9 @@ a.ui-slider-handle:focus {
   .portal-title {
     padding: 0.5em 0 !important;
   }
+  .chart-filter.loading-small {
+    background-size: 18rem;
+  }
 }
 
 @media (max-width: 540px) {
@@ -2392,6 +2416,9 @@ a.ui-slider-handle:focus {
   }
   #navsearch {
     width: 48%;
+  }
+  .chart-filter.loading-small {
+    background-size: 16rem;
   }
 }
 
@@ -2425,6 +2452,9 @@ a.ui-slider-handle:focus {
   #navsearch h2 {
     font-size: .9rem;
   }
+  .chart-filter.loading-small {
+    background-size: 14rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2446,6 +2476,9 @@ a.ui-slider-handle:focus {
   }
   .sidebar-list li {
     font-size: 80%;
+  }
+  .chart-filter.loading-small {
+    background-size: 10rem;
   }
 }
 
