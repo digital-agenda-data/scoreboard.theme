@@ -59,5 +59,6 @@
   <li tal:condition="python: 'logged_out' in req">Logout</li>
   <li tal:condition="python: 'manage-annotations' in req">Manage annotations</li>
   <li tal:condition="python: 'manage-whitelist' in req">Manage whitelist</li>
+  <li tal:condition="python: 'sitemap' in req">Sitemap</li>
   </ul>
 </div>
