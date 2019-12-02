@@ -12,7 +12,6 @@
         Home
       </a>
     </li>
-
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
         is_vis python:here.meta_type == 'ScoreboardVisualization';
@@ -21,7 +20,6 @@
         title crumb/Title;
         is_board_link python:'Ploneboard' in here.meta_type;
         is_simple_page python: here.meta_type in ['ATFolder', 'ATDocument']">
-
         <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
           tal:content="python:related_items[0].title_or_id()">Cube title</a>
@@ -62,5 +60,6 @@
   <li tal:condition="python: 'manage-annotations' in req">Manage annotations</li>
   <li tal:condition="python: 'manage-whitelist' in req">Manage whitelist</li>
   <li tal:condition="python: 'sitemap' in req">Sitemap</li>
+  <li tal:condition="python: 'about' in req">About</li>
   </ul>
 </div>
