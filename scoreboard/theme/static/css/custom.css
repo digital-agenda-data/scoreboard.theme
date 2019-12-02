@@ -189,17 +189,11 @@ td.label {
 .boardConversation,
 .template-conversation_browserview fieldset {
   background: #FFF;
-  border-radius: 5px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #login-forgotten-password ~ ul {
   list-style-type: disc;
-}
-
-#login-forgotten-password + p,
-#login-forgotten-password + p + p {
-  margin-left: 10px;
 }
 
 .fieldRequired {
@@ -482,7 +476,6 @@ td.label {
 #login_form,
 #mail_password {
   margin-top: 20px;
-  margin-left: 10px;
   padding: 10px;
   width: 300px;
 }
@@ -506,7 +499,6 @@ td.label {
 
 #login-forgotten-password {
   margin-bottom: 20px;
-  margin-left: 10px;
   margin-top: 10px;
 }
 
@@ -1801,9 +1793,13 @@ div.qtip-default div.qtip-titlebar {
   padding-left: 40px;
 }
 
-.scoreboard-datacubes-listing .cube-item{
+.scoreboard-datacubes-listing .cube-item {
   border-top: 1px solid #ebebeb;
   padding: 1.111em 0;
+}
+
+.scoreboard-datacubes-listing .cube-item:first-child {
+  border-top: 0;
 }
 
 .dataset-description-area.column-main {
