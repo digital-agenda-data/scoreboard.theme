@@ -1868,30 +1868,14 @@ div.qtip-default div.qtip-titlebar {
   margin-bottom: 10px;
 }
 
+#homepage-listing {
+  margin-top: 1rem;
+}
+
 .scoreboard-listing .label {
   display: inline;
   border-radius: 0;
 }
-
-.listing-description {
-  position:absolute;
-  opacity: 0;
-}
-
-.listing-description.show {
-  position: static;
-  opacity: 1;
-  transition: opacity 1s linear;
-}
-
-.collapse-desc {
-  width: max-content;
-  display: block;
-}
-
-/*table.listing {
-  background: #FFF;
-}*/
 
 #the-filters p.default-hidden {
   visibility:hidden;

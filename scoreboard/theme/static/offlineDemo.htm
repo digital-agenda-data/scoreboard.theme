@@ -127,38 +127,9 @@
   </head>
 
   <script type="text/javascript">
-    function mobileShowHide() {
-      if($(window).width() <= 767) {
-        $('.listing-description').removeClass("show");
-        $('.collapse-desc').show();
-      }
-      else {
-        $('.listing-description').addClass("show");
-        $('.collapse-desc').hide();
-      }
-    }
-
     $(document).ready(function() {
 
       $(".documentFirstHeading").appendTo('#blue-header-contents');
-
-      $('.collapse-desc').click(function(e){
-        e.preventDefault();
-        $('.listing-description').toggleClass("show");
-
-        let link_html = $(this).html();
-        if(link_html.indexOf("more") >= 0) {
-          $(this).html(link_html.replace("more", "less"));
-        }
-        else {
-          $(this).html(link_html.replace("less", "more"));
-        }
-      });
-
-      mobileShowHide();
-      $( window ).resize(function() {
-        mobileShowHide();
-      });
 
       if($(".template-ploneboard_view").length) {
         $('.documentFirstHeading').append( "<span>Board</span>" );
@@ -598,6 +569,7 @@
             <a id="documentation-link" href="">Documentation</a>
             <a id="privacy-link" href="">Privacy</a>
             <a id="sitemap-link" href="">Sitemap</a>
+            <a id="about-link" href="">About this website</a>
             <div class="login-link">
               <a href="/digital-agenda/en/ecas" title="" class="login">Log in</a>
               <a href="./@@overview-controlpanel" class="setup">Site Setup</a>
