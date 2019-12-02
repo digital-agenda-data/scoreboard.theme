@@ -209,14 +209,12 @@ td.label {
 
 /* Header */
 .login-link {
-  text-align: right;
-  display: block;
+  display: inline-block;
+  float: right;
 }
 
 .login-link a {
   background-color: #f5f5f5;
-  padding: .3em;
-  display: block;
 }
 
 .container-fluid:before,
@@ -421,6 +419,10 @@ td.label {
 
 .footer__column.social-media a {
   margin-right: 15px;
+}
+
+.login-link a:last-child {
+  margin-right: 0;
 }
 
 .footer__column a {
@@ -2037,7 +2039,6 @@ a.ui-slider-handle:focus {
 @media (min-width: 992px) {
   .login-link a {
     background: none;
-    float: right;
   }
 
   .search-form__textfield-wrapper {
