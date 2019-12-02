@@ -347,9 +347,9 @@ td.label {
   background: url("../images/breadcrumb.gif") rgba(0, 0, 0, 0) left center no-repeat;
   padding: 0px 5px 0px 15px;
   display: inline-block;
-  font-family: Verdana,Arial,Helvetica,"DejaVu Sans",sans-serif;
+  font-family: Arial, sans-serif;
   vertical-align: middle;
-  font-size: 11px;
+  font-size: 15px;
   color: #FFF;
   text-transform:capitalize;
 }
