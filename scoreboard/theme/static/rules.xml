@@ -53,10 +53,10 @@
     </rules>
 
     <!--Login button-->
-    <rules css:if-content=".template-logged_out">
+    <rules css:if-content=".template-login_form, .template-logged_out">
         <drop css:content="input[name=submit]" />
         <replace css:content="#login-form .formControls">
-            <button class="btn btn-primary btn-sm context" type="submit" name="submit">Log in </button>
+            <button class="btn btn-primary btn-sm context" type="submit" name="submit">Log in</button>
         </replace>
     </rules>
     <!--Login button-->
