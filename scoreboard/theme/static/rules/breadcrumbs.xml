@@ -8,7 +8,7 @@
     </replace>
 
     <replace css:theme="#privacy-link">
-        <a href="{$portal_url}/privacy">Privacy</a>
+        <a href="{$portal_url}/privacy">Privacy policy</a>
     </replace>
 
     <replace css:theme="#sitemap-link">
@@ -16,6 +16,6 @@
     </replace>
 
     <replace css:theme="#about-link">
-        <a href="{$portal_url}/about">About this website</a>
+        <a href="{$portal_url}/about">About Data Visualisation Tool</a>
     </replace>
 </rules>

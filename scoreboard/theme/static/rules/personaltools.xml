@@ -2,11 +2,11 @@
 <rules xmlns="http://namespaces.plone.org/diazo"
        xmlns:css="http://namespaces.plone.org/diazo/css">
 
-    <replace css:content="#personaltools-plone_setup a" css:theme=".login-link a.setup" />
+    <replace css:content="#personaltools-plone_setup a" css:theme="a.setup" />
 
-    <replace css:content="#personaltools-login" css:theme=".login-link a.login" />
+    <replace css:content="#personaltools-login" css:theme="a.login" />
     <replace css:if-content="#personaltools-logout"
-             css:content="#personaltools-logout a" css:theme=".login-link a.login" />
+             css:content="#personaltools-logout a" css:theme="a.login" />
 
     <drop css:content="#personaltools-dashboard" />
     <drop css:content="#personaltools-preferences" />
