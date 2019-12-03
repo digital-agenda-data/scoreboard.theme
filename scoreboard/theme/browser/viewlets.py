@@ -12,18 +12,19 @@ class BreadcrumbsViewlet(PathBarViewlet):
         breadcrumbs = self.breadcrumbs
 
         for idx, crumb in enumerate(breadcrumbs):
-            try:
-                url = crumb['absolute_url']
-                path = url[url.rfind(portal_url)+len(portal_url)+1:]
+            url = crumb['absolute_url']
+            path = url[url.rfind(portal_url)+len(portal_url)+1:]
 
-                if portal.unrestrictedTraverse(path).meta_type == 'PloneboardForum':
-                    vis = {
-                        'absolute_url': "{}/datasets/{}/visualizations".format(portal_url, path[path.rfind("/")+1:]),
-                        'Title': crumb['Title']
-                    }
-                    crumb['Title'] = 'Comments'
-                    breadcrumbs = breadcrumbs[:idx] + (vis,) + breadcrumbs[idx:]
-            except:
-                continue
+            if 'datacube.' in path or 'scoreboardvisualization.' in path:
+                path = path[0:path.rfind('/')]
+                crumb['absolute_url'] = url[0:url.rfind('/')]
+
+            if portal.unrestrictedTraverse(path).meta_type == 'PloneboardForum':
+                vis = {
+                    'absolute_url': "{}/datasets/{}/visualizations".format(portal_url, path[path.rfind("/")+1:]),
+                    'Title': crumb['Title']
+                }
+                crumb['Title'] = 'Comments'
+                breadcrumbs = breadcrumbs[:idx] + (vis,) + breadcrumbs[idx:]
 
         self.breadcrumbs = breadcrumbs

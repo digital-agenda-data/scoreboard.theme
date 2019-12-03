@@ -14,7 +14,7 @@
     </li>
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
-        is_vis python:here.meta_type == 'ScoreboardVisualization';
+        is_vis python:here.meta_type in ['ScoreboardVisualization','DataCube'];
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
         title crumb/Title;
