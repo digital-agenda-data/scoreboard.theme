@@ -12,15 +12,18 @@ class BreadcrumbsViewlet(PathBarViewlet):
         breadcrumbs = self.breadcrumbs
 
         for idx, crumb in enumerate(breadcrumbs):
-            url = crumb['absolute_url']
-            path = url[url.rfind(portal_url)+len(portal_url)+1:]
+            try:
+                url = crumb['absolute_url']
+                path = url[url.rfind(portal_url)+len(portal_url)+1:]
 
-            if portal.unrestrictedTraverse(path).meta_type == 'PloneboardForum':
-                vis = {
-                    'absolute_url': "{}/datasets/{}/visualizations".format(portal_url, path[path.rfind("/")+1:]),
-                    'Title': crumb['Title']
-                }
-                crumb['Title'] = 'Comments'
-                breadcrumbs = breadcrumbs[:idx] + (vis,) + breadcrumbs[idx:]
+                if portal.unrestrictedTraverse(path).meta_type == 'PloneboardForum':
+                    vis = {
+                        'absolute_url': "{}/datasets/{}/visualizations".format(portal_url, path[path.rfind("/")+1:]),
+                        'Title': crumb['Title']
+                    }
+                    crumb['Title'] = 'Comments'
+                    breadcrumbs = breadcrumbs[:idx] + (vis,) + breadcrumbs[idx:]
+            except:
+                continue
 
         self.breadcrumbs = breadcrumbs
