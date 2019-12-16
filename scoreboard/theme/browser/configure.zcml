@@ -126,14 +126,6 @@
     permission="zope2.View"
   />
 
-  <browser:page
-    name="about"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".listing.HomepageListingView"
-    template="templates/about.pt"
-    permission="zope2.View"
-  />
-
   <browser:resourceDirectory
     name="scoreboard.theme.js"
     directory="js/"
