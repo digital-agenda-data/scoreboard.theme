@@ -19,7 +19,10 @@ class BreadcrumbsViewlet(PathBarViewlet):
                 path = path[0:path.rfind('/')]
                 crumb['absolute_url'] = url[0:url.rfind('/')]
 
-            if portal.unrestrictedTraverse(path).meta_type == 'PloneboardForum':
+            p_trav = portal.unrestrictedTraverse(path)
+
+            if hasattr(p_trav, 'meta_type') and \
+                    p_trav.meta_type == 'PloneboardForum':
                 vis = {
                     'absolute_url': "{}/datasets/{}/visualizations".format(portal_url, path[path.rfind("/")+1:]),
                     'Title': crumb['Title']
