@@ -844,7 +844,7 @@ body .select2-container,
 body #the-filters select,
 body .select2-container-multi .select2-choices .select2-search-field input,
 body .select2-drop.select2-drop-multi.select2-drop-active {
-  font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
+  font-family: 'Segoe UI', Arial, sans-serif !important;
 }
 
 #ref-area-add-all,
@@ -862,7 +862,7 @@ body .select2-drop.select2-drop-multi.select2-drop-active {
 
 div.ms-drop li {
   padding: 5px 0 5px 0;
-  font-family: 'Segoe UI', Verdana, Arial, sans-serif !important;
+  font-family: 'Segoe UI', Arial, sans-serif !important;
   font-size: 16px;
   width: 100% !important;
 }
@@ -1053,7 +1053,7 @@ a.btn-secondary {
 }
 
 .search-form input{
-  font-family: Verdana, Arial, Helvetica, 'DejaVu Sans', sans-serif;
+  font-family: Arial, Helvetica, 'DejaVu Sans', sans-serif;
   font-size: 14px;
 }
 
