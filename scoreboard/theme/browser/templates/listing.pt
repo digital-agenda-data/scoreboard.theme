@@ -2,7 +2,7 @@
   i18n:domain="plone">
 
   <metal:title fill-slot="content-title">
-    <h1 class="documentFirstHeading">Digital Scoreboard - Data &amp; Indicators</h1>
+    <h1 class="documentFirstHeading">Data Visualisation Tool - Data &amp; Indicators</h1>
   </metal:title>
   <metal:title fill-slot="content-description">
     <div class="documentDescription" tal:replace="nothing"></div>
