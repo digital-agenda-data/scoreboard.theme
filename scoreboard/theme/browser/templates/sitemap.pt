@@ -49,6 +49,13 @@
       <h3 class="parent-item">
         <a tal:attributes="href string:${portal_url}/privacy">Privacy notice</a>
       </h3>
+      <hr />
     </tal:privacy>
+
+    <tal:about>
+      <h3 class="parent-item">
+        <a tal:attributes="href string:${portal_url}/about">About this website</a>
+      </h3>
+    </tal:about>
   </div>
 </html>
