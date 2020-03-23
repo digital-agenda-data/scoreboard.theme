@@ -412,9 +412,9 @@ td.label {
   color: #fff;
 }
 
-#footer > .container {
+/*#footer > .container {
   padding: 0;
-}
+}*/
 
 .footer__divider {
   margin-bottom: 2rem;
@@ -1454,6 +1454,38 @@ body .docsTable td {
   padding-left: 23px;
 }
 
+/* Privacy page */
+ol {
+  list-style-position: inside;
+}
+
+.privacy-notice p + h2 {
+  padding-top: 0;
+}
+
+.privacy-notice h2 + p {
+  margin-top: 0;
+}
+
+.privacy-notice ul {
+  list-style-type: initial;
+  list-style-position: inside;
+}
+
+.privacy-notice iframe {
+  margin-left: -0.6rem;
+}
+
+.privacy-notice h2 {
+  color: #004494;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+#contact + dl dd {
+  margin-left: 1rem;
+  margin-bottom: .7rem;
+}
 
 /* Administration pages */
 .section-board .link-parent,
