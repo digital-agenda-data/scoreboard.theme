@@ -37,7 +37,6 @@ class CustomSiteMap(BrowserView):
     def datasets(self):
         portal = api.portal.get()
         portal_url = portal.absolute_url()
-        portal_path = portal.virtual_url_path()
 
         ctool = getToolByName(self.context, 'portal_catalog')
         brains = ctool({'portal_type': 'DataCube'})
@@ -52,7 +51,7 @@ class CustomSiteMap(BrowserView):
                     'url': '{}/datasets/{}/visualizations'.format(
                         portal_url, b.id
                     ),
-                    'contents': self.get_charts(b, portal_path)
+                    'contents': self.get_charts(b, portal.id)
                 }
             },
             brains
