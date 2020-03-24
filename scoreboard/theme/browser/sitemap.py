@@ -43,7 +43,8 @@ class CustomSiteMap(BrowserView):
 
         return list(map(
             lambda b: {
-                'title': b.Title,
+                'title': b.getObject().getExtended_title()
+                         or b.getObject().title_or_id(),
                 'metadata': b.getURL(),
                 'indicators': b.getURL()+'/indicators',
                 'comments': '{}/board/{}'.format(portal_url, b.id),

@@ -410,10 +410,6 @@ td.label {
   color: #fff;
 }
 
-/*#footer > .container {
-  padding: 0;
-}*/
-
 .footer__divider {
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -2000,7 +1996,7 @@ a.ui-slider-handle:focus {
     margin-left: 2rem;
   }
   .template-sitemap h4 {
-    padding-top: 1rem;
+    padding: 1rem 0;
     font-weight: bold;
   }
   .template-sitemap h3,
