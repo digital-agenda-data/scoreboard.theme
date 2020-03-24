@@ -52,7 +52,7 @@
       <hr />
     </tal:privacy>
 
-    <tal:about>
+    <tal:about condition="view/get_about_page">
       <h3 class="parent-item">
         <a tal:attributes="href string:${portal_url}/about">About this website</a>
       </h3>
