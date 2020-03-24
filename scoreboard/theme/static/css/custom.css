@@ -353,6 +353,15 @@ td.label {
   margin: 0;
 }
 
+.cc-logo {
+  vertical-align: text-top;
+  width: 1rem;
+}
+
+.cc-logo-wrapper {
+  font-size: 0.8rem;
+}
+
 .icon:before {
   text-decoration: none;
   display: inline-block;
