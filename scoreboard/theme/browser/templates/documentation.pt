@@ -1,43 +1,45 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main">
+  <div metal:fill-slot="main" id="documentation-content">
         <!-- what is returned by get_docs()
             <span tal:replace="view/get_docs"></span>
         -->
-        <h1> Documentation </h1>
-        <p tal:content="structure here/Description"></p>
-        <tal:block define="docs view/get_docs">
-            <table class="docsTable white-area">
-                <thead>
-                    <th>
-                        Title
-                    </th>
-                    <th>
-                        Description
-                    </th>
-                    <th>
-                        Last modified
-                    </th>
-                </thead>
-                <tbody>
-                    <tal:row repeat="doc docs">
-                        <tr>
-                            <td class="odd">
-                                <a tal:attributes="href string:${doc/absolute_url_path}; class python:view.get_class(doc)">
-                                    <span tal:replace="doc/Title"></span>
-                                </a>
-                            </td>
-                            <td class="even">
-                                <span tal:replace="doc/Description"></span>
-                            </td>
-                            <td class="odd">
-                                <span tal:replace="python:doc.modified().strftime('%Y-%m-%d')"></span> 
-                            </td>
-                        </tr>
-                    </tal:row>
-                </tbody>
-            </table>
-        </tal:block>
+        <h1 class="documentFirstHeading"> Documentation </h1>
+        <div class="main-content">
+            <p tal:content="structure here/Description"></p>
+            <tal:block define="docs view/get_docs">
+                <table class="docsTable">
+                    <thead>
+                        <th class="text-center">
+                            Title
+                        </th>
+                        <th class="text-center">
+                            Description
+                        </th>
+                        <th class="text-center">
+                            Last modified
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tal:row repeat="doc docs">
+                            <tr>
+                                <td class="odd text-center align-middle">
+                                    <a tal:attributes="href string:${doc/absolute_url_path}; class python:view.get_class(doc)">
+                                        <span tal:replace="doc/Title"></span>
+                                    </a>
+                                </td>
+                                <td class="even text-justify">
+                                    <span tal:replace="doc/Description"></span>
+                                </td>
+                                <td class="odd text-center align-middle">
+                                    <span tal:replace="python:doc.modified().strftime('%Y-%m-%d')"></span>
+                                </td>
+                            </tr>
+                        </tal:row>
+                    </tbody>
+                </table>
+            </tal:block>
+        </div>
   </div>
 </html>
 

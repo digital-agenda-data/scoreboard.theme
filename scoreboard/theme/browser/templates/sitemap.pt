@@ -1,0 +1,61 @@
+<html metal:use-macro="here/main_template/macros/master"
+  i18n:domain="plone">
+  <div metal:fill-slot="main">
+    <h1 class="documentFirstHeading">Site map</h1>
+    <div class="documentDescription">
+      An overview of the available content on this site.
+    </div>
+
+    <tal:datasets condition="view/datasets">
+      <h3 class="parent-item" style="padding-bottom: 0;">
+        <a tal:attributes="href portal_url">Datasets</a>
+      </h3>
+      <div class="children">
+        <tal:dataset repeat="dataset view/datasets">
+          <h4 tal:content="dataset/title">Dataset</h4>
+          <div class="children">
+            <a class="dataset-item" tal:attributes="href dataset/metadata">Metadata and Download</a>
+            <a class="dataset-item" tal:attributes="href dataset/indicators">Indicators</a>
+            <a class="dataset-item" tal:attributes="href dataset/comments">Comments</a>
+            <a class="dataset-item" tal:attributes="href dataset/charts/url">Charts</a>
+            <tal:charts repeat="chart dataset/charts/contents">
+              <a tal:attributes="href chart/url"
+                 tal:content="chart/title"
+                 class="dataset-item chart-item">
+                Chart
+              </a>
+            </tal:charts>
+          </div>
+        </tal:dataset>
+      </div>
+      <hr/>
+    </tal:datasets>
+
+    <tal:documentation condition="view/get_documentation">
+      <h3 class="parent-item">
+        <a tal:attributes="href string:${portal_url}/documentation">Documentation</a>
+      </h3>
+      <tal:document repeat="doc view/get_documentation">
+        <a tal:attributes="href doc/absolute_url"
+           tal:content="doc/Title"
+           class="dataset-item chart-item">
+          Document
+        </a>
+      </tal:document>
+      <hr/>
+    </tal:documentation>
+
+    <tal:privacy condition="view/get_privacy">
+      <h3 class="parent-item">
+        <a tal:attributes="href string:${portal_url}/privacy">Privacy notice</a>
+      </h3>
+      <hr />
+    </tal:privacy>
+
+    <tal:about condition="view/get_about_page">
+      <h3 class="parent-item">
+        <a tal:attributes="href string:${portal_url}/about">About this website</a>
+      </h3>
+    </tal:about>
+  </div>
+</html>

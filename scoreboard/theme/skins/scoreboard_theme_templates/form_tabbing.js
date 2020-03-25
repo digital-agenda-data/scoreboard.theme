@@ -65,7 +65,7 @@ ploneFormTabbing._buildTabs = function(container, legends) {
     panel_ids = tab_ids.replace(/#fieldsetlegend-/g, "#fieldset-");
 
     if (threshold) {
-        tabs = $('<select class="formTabs">'+tabs+'</select>');
+        tabs = $('<select class="form-control form-select formTabs">'+tabs+'</select>');
         tabs.change(function(){
             var selected = $(this).attr('value');
             $(this).parent().find('option#'+selected).click();

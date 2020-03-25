@@ -1,33 +1,28 @@
 <html metal:use-macro="here/main_template/macros/master"
   i18n:domain="plone">
-  <div metal:fill-slot="main"
+
+  <metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading">Data Visualisation Tool - Data &amp; Indicators</h1>
+  </metal:title>
+  <metal:title fill-slot="content-description">
+    <div class="documentDescription" tal:replace="nothing"></div>
+  </metal:title>
+
+  <div metal:fill-slot="content-core"
     tal:define="normalizeString nocall:context/plone_utils/normalizeString;
                 canAdd python:checkPermission('edw.datacube: Add DataCube', here);
                 isAnon context/@@plone_portal_state/anonymous;">
-    <div id="homepage-listing" class="scoreboard-listing bootstrap row">
-      <div class="col-md-12">
-        <h1>Digital Scoreboard - Data &amp; Indicators</h1>
-      </div>
+    <div id="homepage-listing" class="scoreboard-listing bootstrap">
+<!--      <div class="col-md-12" style="padding-left: 0">-->
+<!--        <a href="/" class="collapse-desc">Show more...</a>-->
+<!--        <div class="listing-description">-->
+<!--          <p>This visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The indicators have been selected to support the <a href="https://ec.europa.eu/digital-single-market/en/digital-single-market">EU Digital Single Market policies</a> and to monitor the <a href="https://ec.europa.eu/digital-single-market/en/european-digital-progress-report">digital progress of European Economy and Society</a>, through annual reports, a <a href="https://ec.europa.eu/digital-single-market/en/desi">DESI</a> index and <a href="https://ec.europa.eu/digital-single-market/en/progress-country">country factsheets</a>.</p>-->
+<!--          <p>The charts can be exported as images, printed, embedded or shared through hyperlinks. You can download the data behind a chart or the entire dataset, including the metadata providing labels, definitions, methodological notes, references and sources. Use the "download" and "export" buttons present on each chart, or refer to the page "Entire dataset metadata and download services".</p>-->
+<!--          <p>Each dataset is stored in a semantic data repository to facilitate their reuse and the linking to other data published on the web. For browsing or querying of the semantic repository please follow the <a tal:attributes="href view/defaultCRUrl">link</a>. You will find functionalities for human and machine reading of data and metadata. The <a href="./documentation">documentation page</a> presents some reports and notes about the technical characteristics of the project developing the present visualisation tool and semantic repository.</p>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="col-md-12">
-        <div class="listing-description">
-          <p>This visualisation tool allows you to explore some open datasets through the interactive creation of charts and tables. The indicators have been selected to support the <a href="https://ec.europa.eu/digital-single-market/en/digital-single-market">EU Digital Single Market policies</a> and to monitor the <a href="https://ec.europa.eu/digital-single-market/en/european-digital-progress-report">digital progress of European Economy and Society</a>, through annual reports, a <a href="https://ec.europa.eu/digital-single-market/en/desi">DESI</a> index and <a href="https://ec.europa.eu/digital-single-market/en/progress-country">country factsheets</a>.</p>
-          <p>The charts can be exported as images, printed, embedded or shared through hyperlinks. You can download the data behind a chart or the entire dataset, including the metadata providing labels, definitions, methodological notes, references and sources. Use the "download" and "export" buttons present on each chart, or refer to the page "Entire dataset metadata and download services".</p>
-          <p>Each dataset is stored in a semantic data repository to facilitate their reuse and the linking to other data published on the web. For browsing or querying of the semantic repository please follow the <a tal:attributes="href view/defaultCRUrl">link</a>. You will find functionalities for human and machine reading of data and metadata. The <a href="./documentation">documentation page</a> presents some reports and notes about the technical characteristics of the project developing the present visualisation tool and semantic repository.</p>
-        </div>
-        <form class="search-form form-inline" tal:attributes="action string:${portal_url}/search-indicators" method="get" id="search-form" accept-charset="UTF-8">
-          <h2>Select a dataset or search for indicators</h2>
-          <div class="form-group">
-            <label class="sr-only" for="search-text">Search</label>
-            <input type="text" class="form-control" id="search-text" name="q" placeholder="e.g. social media">
-          </div>
-          <button type="submit" class="btn btn-primary btn-search form-control">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </form>
-      </div>
-
-      <div class="col-md-12">
+      <div class="col-md-12" style="padding-left: 0">
         <tal:block define="cubes view/getDataCubes">
           <p tal:condition="not:cubes">
             No Data Cubes.
@@ -38,28 +33,29 @@
 
           <table class="scoreboard-datacubes-listing container">
             <tbody class="row">
-              <tal:row repeat="cube cubes">
-              <tr class="scoreboard-datacubes-listing-item col-md-9 col-sm-12 col-xs-12" tal:attributes="
-                id cube/getId;
-                data-name cube/getId;
-                data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
-                data-authenticator cube/@@authenticator/authenticator;
-                data-parent python:cube.getParentNode().absolute_url()"
-                tal:define="state python:view.getItemState(cube);
-                            canModify python:checkPermission('Modify portal content', cube);
-                            canReview python:checkPermission('Review portal content', cube);">
-                <td tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')" class="thumbnail-area">
+            <tal:list-elem repeat="cube cubes">
+              <tr class="scoreboard-datacubes-listing-item cube-item"
+                  tal:attributes="id cube/getId;
+                              data-name cube/getId;
+                              data-title python:cube.getField('extended_title').getAccessor(cube)() or cube.title_or_id();
+                              data-authenticator cube/@@authenticator/authenticator;
+                              data-parent python:cube.getParentNode().absolute_url()"
+                  tal:define="state python:view.getItemState(cube);
+                              canModify python:checkPermission('Modify portal content', cube);
+                              canReview python:checkPermission('Review portal content', cube);">
+
+                <td class="cube-thumbnail column-second" tal:define="has_thumbnail python:hasattr(cube, 'thumbnail')">
                   <a tal:attributes="href string:${cube/absolute_url}/visualizations">
-                    <img tal:condition="has_thumbnail" tal:define="scale cube/@@images"
+                    <img tal:condition="has_thumbnail" tal:define="scale cube/@@images" src=""
                          tal:replace="structure python: scale.scale('thumbnail', width=221, height=171, direction='down').tag()" />
-                    <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" />
+                    <img tal:condition="not:has_thumbnail" tal:attributes="src python:view.cubeSettings.datacube_thumbnail" src="" />
                   </a>
                 </td>
-                <td class="dataset-description-area">
-                  <a tal:attributes="href string:${cube/absolute_url}/visualizations">
+                <td class="dataset-description-area column-main">
+                  <a class="cube-visualisation" tal:attributes="href string:${cube/absolute_url}/visualizations">
                     <h3><span tal:replace="repeat/cube/number"/>. <span tal:replace="python:cube.getExtended_title() or cube.title_or_id()"/></h3>
                   </a>
-                  <p tal:content="structure cube/getSummary"></p>
+                  <p tal:content="structure cube/getSummary">Cube summary</p>
                   <ul class="linklist">
                     <li tal:condition="not:isAnon">
                       <span>Status:</span>
@@ -88,7 +84,7 @@
                   </div>
                 </td>
               </tr>
-              </tal:row>
+            </tal:list-elem>
             </tbody>
           </table>
         </tal:block>

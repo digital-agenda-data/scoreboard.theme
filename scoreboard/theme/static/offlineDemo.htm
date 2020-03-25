@@ -32,19 +32,19 @@
 
     <script type="text/javascript">
       $(function() {
-          $( "#breakdown" ).buttonset();
-      $( "#measure_unit" ).buttonset();
+        $( "#breakdown" ).buttonset();
+        $( "#measure_unit" ).buttonset();
       });
     </script>
 
-    <!--link href="./css/select2.css" rel="stylesheet" type="text/css" /-->
     <script type="text/javascript" src="./js/select2.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() { $("#e9").select2(); });
+      $(document).ready(function() {
+        $("#e9").select2();
+      });
     </script>
 
     <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-23678295-1']);
       _gaq.push(['_trackPageview']);
@@ -126,160 +126,182 @@
     <link rel="stylesheet" type="text/css" href="./css/print.css" media="print"  />
   </head>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".documentFirstHeading").appendTo('#blue-header-contents');
+
+      if($(".template-ploneboard_view").length) {
+        $('.documentFirstHeading').append( "<span>Board</span>" );
+      }
+
+      var standalone = $("input.standalone");
+      if(standalone.length) {
+        standalone.addClass("btn btn-primary");
+        if(standalone.val() != 'Start a new Conversation')  standalone.addClass("btn-xs");
+      }
+
+      $("input.context").addClass("btn btn-xs btn-warning");
+      $("input.destructive").addClass("btn btn-xs btn-danger");
+
+      if($(".documentFirstHeading").length > 1) {
+        $("#parent-fieldname-title").hide();
+      }
+     });
+  </script>
+
   <body>
-    <div class="layout">
-      <div id="header">
-        <div class="navbar-header">
-          <div class="container">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a href="/" id="logo-header-link"><img class="logo" src="./images/logo_en.gif" alt="European Commision logo" /></a>
-            <h1 class="portal-title">DIGITAL SINGLE MARKET</h1>
+    <div id="header">
+      <div class="parent-header">
+        <div class="container">
+          <div class="white-header">
+              <div id="navsearch">
+                <form class="search-form form-inline" action="./@@search-indicators" method="get" id="search-form" accept-charset="UTF-8">
+                  <h2>Search for indicators</h2>
+                  <div class="input-group input-group-search">
+                    <input type="text" class="searchField form-control" id="search-text" name="q" placeholder="e.g. social media">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn searchButton">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+
           </div>
         </div>
-
-        <div class="subtitle-backgr">
-          <p class="portal-subtitle container">Digital Economy & Society</p>
-        </div>
-        <nav class="navbar-collapse collapse path" role="navigation">
-          <div class="container">
+      </div>
+      <div class="blue-header">
+        <nav class="navbar-collapse" role="navigation">
+          <div class="container" id="blue-header-contents">
             <ul class="breadcrumbs nav">
-              <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
-              <li><a href="https://ec.europa.eu/digital-agenda/en">Digital Single Market</a></li>
-              <li><a href="https://ec.europa.eu/digital-agenda/en/digital-scoreboard">Digital Scoreboard</a></li>
+              <li><a href="https://ec.europa.eu/digital-single-market/en/digital-scoreboard">Digital Scoreboard</a></li>
               <li><a href="/">Visualizations</a></li>
               <li>Scenario 1 [demo 1]</li>
             </ul>
           </div>
         </nav>
       </div>
+    </div>
 
-      <div id="navsearch-container" class="container"><div id="navsearch">
-          <form class="search-form form-inline" action="/search-indicators" method="get" id="search-form" accept-charset="UTF-8">
-              <div class="form-group has-feedback">
-                <label for="search" class="sr-only">Search</label>
-                <input type="text" class="form-control" name="q" id="search-text" placeholder="Search">
-                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-              </div>
-          </form>
-      </div></div>
+    <div class="container">
+      <div class="row">
 
-      <div id="main" class="container">
-        <div>
-          <h2 class="page-title">1. Analyse one indicator and compare countries</h2>
-          <div style="clear:both"></div>
+      <div class="col-sm-12">
+        <div id="main" class="section">
 
-          <div class="section">
-            <div class="section-content"  id="chart">
-              <form action="">
-                <div class="filters">
-                  <div class="upper-left">
-                    <label class="aligntoleft">Indicator category</label>
-                    <select onchange="">
-                      <option value="any">any</option>
-                      <option value="T">Telecom sector</option>
-                      <option value="B">Broadband</option>
-                      <option value="M">Mobile</option>
-                      <option value="I">Internet usage</option>
-                      <option value="Ta1">Take up of internet services (% of population)</option>
-                      <option value="Ta2">Take up of internet services (% of internet users)</option>
-                      <option value="eg">eGovernment</option>
-                      <option value="ec">eCommerce</option>
-                      <option value="eb">eBusiness</option>
-                      <option value="ict" selected="selected">ICT Skills</option>
-                      <option value="rd">Research and Development</option>
-                    </select><br />
+          <div class="content">
+            <h2 class="page-title">1. Analyse one indicator and compare countries</h2>
+            <div style="clear:both"></div>
 
-                    <label class="aligntoleft">Indicator</label>
-                    <select onchange="">
-                      <option value="i_cprg IND_TOTAL %_ind">Have written a computer program (% pop)</option>
-                      <option value="i_cweb IND_TOTAL %_ind">Have created a Web page (% pop)</option>
-                      <option value="i_csk_ge_me IND_TOTAL %_ind" selected="selected">Individuals with medium or high computer skills</option>
-                      <option value="i_isk_ge_me IND_TOTAL %_ind">Individuals with medium or high internet skills</option>
-                      <option value="i_skedu y25_54 %_ind">CT skills obtained through formal educational institution (age 25-54)</option>
-                      <option value="i_skedu y16_24 %_ind">ICT skills obtained through formal educational institution (age 16-24)</option>
-                      <option value="i_cisk_sfjobx sal_self_fam %_ind">ICT skills perceived as insufficient for the labour market</option>
-                    </select><br />
+            <div class="section">
+              <div class="section-content" id="chart">
+                <form action="">
+                  <div class="filters">
+                    <div class="upper-left">
+                      <label class="aligntoleft">Indicator category</label>
+                      <select class="form-control form-select" onchange="">
+                        <option value="any">any</option>
+                        <option value="T">Telecom sector</option>
+                        <option value="B">Broadband</option>
+                        <option value="M">Mobile</option>
+                        <option value="I">Internet usage</option>
+                        <option value="Ta1">Take up of internet services (% of population)</option>
+                        <option value="Ta2">Take up of internet services (% of internet users)</option>
+                        <option value="eg">eGovernment</option>
+                        <option value="ec">eCommerce</option>
+                        <option value="eb">eBusiness</option>
+                        <option value="ict" selected="selected">ICT Skills</option>
+                        <option value="rd">Research and Development</option>
+                      </select><br />
 
-                    <label class="aligntoleft">Year</label>
-                    <select>
-                      <option value="2011">2011</option>
-                    </select><br />
+                      <label class="aligntoleft">Indicator</label>
+                      <select class="form-control form-select" onchange="">
+                        <option value="i_cprg IND_TOTAL %_ind">Have written a computer program (% pop)</option>
+                        <option value="i_cweb IND_TOTAL %_ind">Have created a Web page (% pop)</option>
+                        <option value="i_csk_ge_me IND_TOTAL %_ind" selected="selected">Individuals with medium or high computer skills</option>
+                        <option value="i_isk_ge_me IND_TOTAL %_ind">Individuals with medium or high internet skills</option>
+                        <option value="i_skedu y25_54 %_ind">CT skills obtained through formal educational institution (age 25-54)</option>
+                        <option value="i_skedu y16_24 %_ind">ICT skills obtained through formal educational institution (age 16-24)</option>
+                        <option value="i_cisk_sfjobx sal_self_fam %_ind">ICT skills perceived as insufficient for the labour market</option>
+                      </select><br />
 
-                    <label class="aligntoleft">Breakdown</label>
-                    <div id="breakdown">
-                      <input type="radio" id="radio0" name="breakdown" /><label for="radio0" onclick="window.open('demo2.htm')">by Total</label>
-                      <input type="radio" id="radio1" name="breakdown" /><label for="radio1">by Age 6 Classes</label>
-                      <input type="radio" id="radio2" name="breakdown" checked="checked" /><label for="radio2">by Age 4 Classes</label>
-                    </div><br />
+                      <label class="aligntoleft">Year</label>
+                      <select class="form-control form-select">
+                        <option value="2011">2011</option>
+                      </select><br />
 
-                    <label class="aligntoleft">Unit of Measure</label>
-                    <div id="measure_unit">
-                      <input type="radio" id="radio4" name="measure" checked="checked" /><label for="radio4">% of individuals</label>
-                      <input type="radio" id="radio5" name="measure" /><label for="radio5">other unit</label>
-                      <input type="radio" id="radio6" name="measure" /><label for="radio6">other unit</label>
-                    </div><br />
-                  </div>
+                      <label class="aligntoleft">Breakdown</label>
+                      <div id="breakdown">
+                        <input type="radio" id="radio0" name="breakdown" /><label for="radio0" onclick="window.open('demo2.htm')">by Total</label>
+                        <input type="radio" id="radio1" name="breakdown" /><label for="radio1">by Age 6 Classes</label>
+                        <input type="radio" id="radio2" name="breakdown" checked="checked" /><label for="radio2">by Age 4 Classes</label>
+                      </div><br />
 
-                  <div class="upper-right">
-                    <label>Country / countries</label>
-                    <div class="select2-container select2-container-multi populate" id="s2id_e9" style="width: 300px; display:none;">
-                      <ul class="select2-choices">
-                        <li class="select2-search-field">
-                          <input type="text" class="select2-input" tabindex="0" style="width: 10px;" />
-                        </li>
-                      </ul>
+                      <label class="aligntoleft">Unit of Measure</label>
+                      <div id="measure_unit">
+                        <input type="radio" id="radio4" name="measure" checked="checked" /><label for="radio4">% of individuals</label>
+                        <input type="radio" id="radio5" name="measure" /><label for="radio5">other unit</label>
+                        <input type="radio" id="radio6" name="measure" /><label for="radio6">other unit</label>
+                      </div><br />
                     </div>
-                    <select multiple="multiple" name="e9" id="e9" style="width: 300px; display: none;" class="populate">
-                      <!--option value="all" selected="selected">all EU countries</option-->
-                      <option value="EU27" selected="selected">EU27</option>
-                      <option value="AT" selected="selected">Austria</option>
-                      <option value="BE" selected="selected">Belgium</option>
-                      <option value="BG" selected="selected">Bulgaria</option>
-                      <option value="HR" selected="selected">Croatia</option>
-                      <option value="CY" selected="selected">Cyprus</option>
-                      <option value="CZ" selected="selected">Czech Republic</option>
-                      <option value="DK" selected="selected">Denmark</option>
-                      <option value="EE" selected="selected">Estonia</option>
-                      <option value="FI" selected="selected">Finland</option>
-                      <option value="FR" selected="selected">France</option>
-                      <option value="DE" selected="selected">Germany</option>
-                      <option value="EL" selected="selected">Greece</option>
-                      <option value="HU" selected="selected">Hungary</option>
-                      <option value="IS" selected="selected">Iceland</option>
-                      <option value="IE" selected="selected">Ireland</option>
-                      <option value="IT" selected="selected">Italy</option>
-                      <option value="LV" selected="selected">Latvia</option>
-                      <option value="LT" selected="selected">Lithuania</option>
-                      <option value="LU" selected="selected">Luxembourg</option>
-                      <option value="MT" selected="selected">Malta</option>
-                      <option value="NL" selected="selected">Netherlands</option>
-                      <option value="NO" selected="selected">Norway</option>
-                      <option value="PL" selected="selected">Poland</option>
-                      <option value="PT" selected="selected">Portugal</option>
-                      <option value="RO" selected="selected">Romania</option>
-                      <option value="SK" selected="selected">Slovak Republic</option>
-                      <option value="SI" selected="selected">Slovenia</option>
-                      <option value="ES" selected="selected">Spain</option>
-                      <option value="SE" selected="selected">Sweden</option>
-                      <option value="TR" selected="selected">Turkey</option>
-                      <option value="UK" selected="selected">United Kingdom</option>
-                    </select><br />
-                    <input type="button" value="Add all" title="Add all countries" class="seldel" />
-                    <input type="button" value="Remove all" title="Remove all selected countries" class="seldel" />
-                  </div>
-                </div>
-              </form>
-            </div>
 
-            <div id="colX">
-              <div id="col1_content" class="clearfix">
-                <div id="swstack" class="section">
-                  <script type="text/javascript">
+                    <div class="upper-right">
+                      <label>Country / countries</label>
+                      <div class="select2-container select2-container-multi populate" id="s2id_e9" style="width: 300px; display:none;">
+                        <ul class="select2-choices">
+                          <li class="select2-search-field">
+                            <input type="text" class="select2-input" tabindex="0" style="width: 10px;" />
+                          </li>
+                        </ul>
+                      </div>
+                      <select class="form-control form-select" multiple="multiple" name="e9" id="e9" style="width: 300px; display: none;" class="populate">
+                        <!--option value="all" selected="selected">all EU countries</option-->
+                        <option value="EU27" selected="selected">EU27</option>
+                        <option value="AT" selected="selected">Austria</option>
+                        <option value="BE" selected="selected">Belgium</option>
+                        <option value="BG" selected="selected">Bulgaria</option>
+                        <option value="HR" selected="selected">Croatia</option>
+                        <option value="CY" selected="selected">Cyprus</option>
+                        <option value="CZ" selected="selected">Czech Republic</option>
+                        <option value="DK" selected="selected">Denmark</option>
+                        <option value="EE" selected="selected">Estonia</option>
+                        <option value="FI" selected="selected">Finland</option>
+                        <option value="FR" selected="selected">France</option>
+                        <option value="DE" selected="selected">Germany</option>
+                        <option value="EL" selected="selected">Greece</option>
+                        <option value="HU" selected="selected">Hungary</option>
+                        <option value="IS" selected="selected">Iceland</option>
+                        <option value="IE" selected="selected">Ireland</option>
+                        <option value="IT" selected="selected">Italy</option>
+                        <option value="LV" selected="selected">Latvia</option>
+                        <option value="LT" selected="selected">Lithuania</option>
+                        <option value="LU" selected="selected">Luxembourg</option>
+                        <option value="MT" selected="selected">Malta</option>
+                        <option value="NL" selected="selected">Netherlands</option>
+                        <option value="NO" selected="selected">Norway</option>
+                        <option value="PL" selected="selected">Poland</option>
+                        <option value="PT" selected="selected">Portugal</option>
+                        <option value="RO" selected="selected">Romania</option>
+                        <option value="SK" selected="selected">Slovak Republic</option>
+                        <option value="SI" selected="selected">Slovenia</option>
+                        <option value="ES" selected="selected">Spain</option>
+                        <option value="SE" selected="selected">Sweden</option>
+                        <option value="TR" selected="selected">Turkey</option>
+                        <option value="UK" selected="selected">United Kingdom</option>
+                      </select><br />
+                      <input type="button" value="Add all" title="Add all countries" class="seldel" />
+                      <input type="button" value="Remove all" title="Remove all selected countries" class="seldel" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div id="colX">
+                <div id="col1_content" class="clearfix">
+                  <div id="swstack" class="section">
+                    <script type="text/javascript">
                     var chart;
                     var printchart;
                     var printOptions;
@@ -364,119 +386,171 @@
                     });
                   </script>
 
-                  <div id="container" style="width: 100%; height: 650px">
-                    <div class="highcharts-container row" id="highcharts-0" style="position: relative; overflow: hidden; width: 1036px; height: 650px; text-align: left; line-height: normal; z-index: 0; font-family: &#39;Lucida Grande&#39;, &#39;Lucida Sans Unicode&#39;, Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
-                    </div><!-- end div#highcharts-0 -->
-                  </div><!-- end div#container -->
-                </div><!-- end div#swstack-->
-                <div style="clear:both"></div>
+                    <div id="container" style="width: 100%; height: 650px">
+                      <div class="highcharts-container row" id="highcharts-0" style="position: relative; overflow: hidden; width: 1036px; height: 650px; text-align: left; line-height: normal; z-index: 0; font-family: &#39;Lucida Grande&#39;, &#39;Lucida Sans Unicode&#39;, Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
+                      </div><!-- end div#highcharts-0 -->
+                    </div><!-- end div#container -->
+                  </div><!-- end div#swstack-->
+                  <div style="clear:both"></div>
 
-                <div class="legend" id="indicators">
-                  <h2>Annotations:</h2>
-                  <p>This bar-chart allows you to select one indicator, one year, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years.
-                  Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>
-                  <p><b>% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes</b></p>
-                  <ul>
-                    <li><b>Definitions and scope: </b>Lorem ipsum</li>
-                    <li><b>Source: </b>Eurostat - Community survey on ICT usage in Households and by Individuals [<a href="#">More Information</a>]</li>
-                  </ul>
-                   <p><a href="#">Consult the list of available indicators, their definition and sources.</a></p>
-                </div><!-- end div.legend -->
+                  <div class="legend" id="indicators">
+                    <h2>Annotations:</h2>
+                    <p>This bar-chart allows you to select one indicator, one year, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years.
+                      Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>
+                    <p><b>% of individuals with medium or high computer skills (3 or more of 6 computer activities) - By Age 4 classes</b></p>
+                    <ul>
+                      <li><b>Definitions and scope: </b>Lorem ipsum</li>
+                      <li><b>Source: </b>Eurostat - Community survey on ICT usage in Households and by Individuals [<a href="#">More Information</a>]</li>
+                    </ul>
+                    <p><a href="#">Consult the list of available indicators, their definition and sources.</a></p>
+                  </div><!-- end div.legend -->
 
-                <div class="section share">
-                  <ul>
-                    <li class="export"><a href="#">Export CSV</a></li>
-                    <li class="export"><a href="#">Export RDF</a></li>
-                    <li><span>Share:</span></li>
-                    <li>
-                      <ul class="share_list">
-                        <li><a class="facebook" title="Facebook" href="#"></a></li>
-                        <li><a class="twitter" title="Twitter" href="#"></a></li>
-                        <li><a class="more_share" title="moreShare" href="#"></a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div><!-- end div.share-->
+                  <div class="section share">
+                    <ul>
+                      <li class="export"><a href="#">Export CSV</a></li>
+                      <li class="export"><a href="#">Export RDF</a></li>
+                      <li><span>Share:</span></li>
+                      <li>
+                        <ul class="share_list">
+                          <li><a class="facebook" title="Facebook" href="#"></a></li>
+                          <li><a class="twitter" title="Twitter" href="#"></a></li>
+                          <li><a class="more_share" title="moreShare" href="#"></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- end div.share-->
 
-              </div><!-- end div#col1_content -->
-            </div><!-- end div#colX -->
-          </div><!-- end div.section -->
+                </div><!-- end div#col1_content -->
+              </div><!-- end div#colX -->
+            </div><!-- end div.section -->
 
-          <div id="scenarios">
-            <h2>To swap scenarios, click one of the icons:</h2>
-            <div class="container">
-              <div class="row">
-                <div class="selected col-md-2 col-sm-4 col-xs-6">
-                  <a href="#" title="Bar Chart Scenario">
-                    <img src="./images/barchart_icon.png" class="scenario_icon" alt="" />
-                    <label>1. Bar chart</label>
-                  </a>
-                </div>
+            <div id="scenarios">
+              <h2>See more charts for the same data</h2>
+              <div class="container">
+                <div class="row">
+                  <div class="selected col-md-2 col-sm-4 col-xs-6">
+                    <a href="#" title="Bar Chart Scenario">
+                      <img src="./images/barchart_icon.png" class="scenario_icon" alt="" />
+                      <label>1. Bar chart</label>
+                    </a>
+                  </div>
 
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                  <a href="#" title="Timeline Chart Scenario">
-                    <img src="./images/timeline_chart_icon.png" class="scenario_icon" alt="" />
-                    <label>2. Timeline chart</label>
-                  </a>
-                </div>
+                  <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a href="#" title="Timeline Chart Scenario">
+                      <img src="./images/timeline_chart_icon.png" class="scenario_icon" alt="" />
+                      <label>2. Timeline chart</label>
+                    </a>
+                  </div>
 
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                  <a href="#" title="Scatter plot Scenario">
-                    <img src="./images/scatter_plot_icon.png" class="scenario_icon" alt="" />
-                    <label>3. Scatter plot chart</label>
-                  </a>
-                </div>
+                  <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a href="#" title="Scatter plot Scenario">
+                      <img src="./images/scatter_plot_icon.png" class="scenario_icon" alt="" />
+                      <label>3. Scatter plot chart</label>
+                    </a>
+                  </div>
 
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                  <a href="#" title="Country profile">
-                    <img src="./images/country_profile_icon.png" class="scenario_icon" alt="" />
-                    <label>4. Country profile chart</label>
-                  </a>
-                </div>
+                  <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a href="#" title="Country profile">
+                      <img src="./images/country_profile_icon.png" class="scenario_icon" alt="" />
+                      <label>4. Country profile chart</label>
+                    </a>
+                  </div>
 
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                  <a href="#" title="Country map">
-                    <img src="./images/map_chart_icon.png" class="scenario_icon" alt="" />
-                    <label>5. Map chart</label>
-                  </a>
+                  <div class="col-md-2 col-sm-4 col-xs-6">
+                    <a href="#" title="Country map">
+                      <img src="./images/map_chart_icon.png" class="scenario_icon" alt="" />
+                      <label>5. Map chart</label>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div style="clear:both"></div>
-          <div id="printcontainer" style="width: 1000px; height: 600px; display:none"></div>
+            <div style="clear:both"></div>
+            <div id="printcontainer" style="width: 1000px; height: 600px; display:none"></div>
+          </div>
         </div>
       </div>
-
-      <div id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="footer-wrapper col-md-12">
-              <div id="block-menu-menu-get-involved" class="block block-menu">
-                <div class="content">
-                  <ul class="menu clearfix">
-                    <li class="first leaf"><a href="/digital-agenda/en/ecas" title="" class="">Login</a></li>
-                    <li class="leaf"><a id="documentation-link" href="">Documentation</a></li>
-                    <li class="leaf"><a href="https://ec.europa.eu/digital-agenda/en/newsroom" title="" class="">Newsroom</a></li>
-                    <li class="leaf"><a href="https://ec.europa.eu/digital-agenda/en/blog_home" title="" class="">Blog</a></li>
-                    <li class="leaf"><a href="https://ec.europa.eu/digital-agenda/en/join-digital-agenda-europe/" title="">Discussions and events</a></li>
-                    <li class="last leaf"><a id="privacy-link" href="">Privacy</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <p id="copyright"> &copy; Copyright 2015 European Commission</p>
-            </div>
-          </div>
-
-        </div>
-        </div>
+      </div>
     </div>
 
+    <div id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="row">
+          <div class="site-details col-md-4">
+            <h4>Data Visualisation Tool</h4>
+            <p>This site is managed by the Directorate-General for Communications Networks, Content and Technology</p>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+               title="Creative Commons Attribution License" class="cc-logo-wrapper">
+              <img src="images/cc.svg" alt="" class="cc-logo" />
+              <span>Creative commons license</span>
+            </a>
+          </div>
+          <div class="site-links col-md-8">
+            <div class="col-md-6">
+              <ul class="links">
+                <li><a id="about-link" href="">About Data Visualisation Tool</a></li>
+                <li><a id="documentation-link" href="">Documentation</a></li>
+                <li>
+                  <a href="https://github.com/digital-agenda-data/" target="_blank" class="is-external">Source code</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="links">
+                <li><a id="sitemap-link" href="">Sitemap</a></li>
+                <li>
+                  <a href="/digital-agenda/en/ecas" title="" class="login">Log in</a>
+                </li>
+                <li>
+                  <a href="./@@overview-controlpanel" class="setup">Site Setup</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-4">
+            <div class="footer__divider"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-4">
+            <div class="col-md-6">
+              <ul class="links">
+                <li>
+                  <a href="https://ec.europa.eu/digital-single-market/en/content/digital-economy-and-skills-unit-f4" target="_blank" class="is-external">Contact us</a>
+                </li>
+                <li>
+                  Follow us:
+                  <a target="_blank" href="https://www.facebook.com/DigitalSingleMarket" class="icon icon-fb is-external">
+                    <span>DSM Facebook</span>
+                  </a>
+                  <a target="_blank" href="http://twitter.com/DSMeu" class="icon icon-twitter is-external">
+                    <span>DSM Twitter</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="links">
+                <li><a href="" id="privacy-link">Privacy policy</a></li>
+                <li><a href="https://ec.europa.eu/digital-single-market/en/desi" class="is-external">
+                  About Digital Economy and Society Index
+                </a></li>
+                <li>
+                  Provided by
+                  <br>
+                  <img class="logo" src="./images/logo-neg.png" alt="European Commision logo" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
 	</body>
 </html>

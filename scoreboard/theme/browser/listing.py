@@ -40,6 +40,7 @@ class DocListingView(BrowserView):
         portal_types = ['File', 'Link']
         results = [b.getObject() for b in catalog(path=path, portal_type=portal_types)]
         results.sort(key = lambda x: x.modified(), reverse=True)
+
         return results;
         #.title
         #.creation_date

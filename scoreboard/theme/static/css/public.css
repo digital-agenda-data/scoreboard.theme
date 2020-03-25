@@ -176,7 +176,6 @@ input.searchField {
 /* @group Path indicator (breadcrumbs) */
 
 #portal-breadcrumbs {
-    margin-bottom: 1em;
     margin-left: 0.25em;
 }
 #portal-breadcrumbs a {
@@ -587,22 +586,22 @@ table.listing th.listingCheckbox {
 }
 
 
-table.listing {
+/*table.listing {
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-}
+}*/
 table.listing .top {
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
-table.listing th {
+/*table.listing th {
     text-align: left;
     color: #666;
     border: 0.1em solid #e7e7e7;
     border-style: solid solid none;
     background: #ddd;
-}
+}*/
 table.listing tr.odd th {
     border: 0.1em solid #fff;
     border-style: solid solid none none;
@@ -614,17 +613,23 @@ table.listing tbody tr {
     text-align:left;
 }
 table.listing tbody tr.odd {
-    background: #eee;
+    /*background: #eee;*/
+    background-color: transparent;
+}
+table.listing tbody tr.even {
+  background: #F5F5F5;
 }
 table.listing tbody tr td {
-    background: transparent;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
 }
-table.listing tbody tr.odd td {
+/*table.listing tbody tr.odd td {
     background: #eee;
-}
-table.listing td {
+}*/
+/*table.listing td {
     border-right: 1px solid #ddd;
-}
+}*/
 .icons-on table.listing td {
     line-height: 2em;
 }
@@ -640,9 +645,15 @@ table.listing td.draggable {
     border-bottom: 1px solid white;
     padding: 0.4em 0.4em 0 0.5em;
 }
-/* Vertical table data listings */
-table.vertical {
+
+.listing .discreet {
+  font-size: small;
 }
+
+.poweredBy {
+  margin-top: 1rem;
+}
+/* Vertical table data listings */
 table.vertical th {
     text-align: right;
 }
@@ -688,6 +699,10 @@ div.listingBar a:hover {
     color: White;
     background-color: #329fd7;
     border-color: #329fd7;
+}
+
+.listingForum {
+  background-position: 5px 20px !important;
 }
 
 /* @end */
