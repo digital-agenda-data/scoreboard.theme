@@ -9,6 +9,10 @@
     <!-- The default theme, used for standard Plone web pages -->
     <theme href="offlineDemo.htm" css:if-content="#visual-portal-wrapper" />
 
+    <xi:include href="rules/personaltools.xml" />
+    <xi:include href="rules/breadcrumbs.xml" />
+    <xi:include href="rules/nosearchbar.xml" />
+
     <drop theme="/html/head/meta" />
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
@@ -23,36 +27,37 @@
     <before theme-children="/html/head" content="/html/head/meta" />
     <before theme-children="/html/head" content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()" />
 
-   <copy attributes="class id dir" content="/html/body" theme="/html/body" />
-
-    <drop css:content="#personaltools-dashboard" />
-    <drop css:content="#personaltools-preferences" />
+    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
 
     <drop css:content=".documentByLine" />
-    <replace css:content="ul.breadcrumbs" css:theme="ul.breadcrumbs" />
-
-    <replace css:content-children="#content" css:theme-children="#main" />
     <drop css:content=".download-visualization" />
 
-    <before css:content="#personaltools-plone_setup" css:theme="#footer .content .menu.clearfix li:first-child" />
-    <before css:content="#personaltools-logout" css:theme="#footer .content .menu.clearfix li:first-child" />
-    <replace css:content="#personaltools-login" css:theme="#footer .content .menu.clearfix li:first-child a" />
+    <replace css:content-children="#content" css:theme-children="#main" />
 
-    <replace css:theme="#documentation-link">
-      <a href="{$portal_url}/documentation">Documentation</a>
+    <!--Logo-->
+    <replace css:theme="#logo-header-link">
+      <a href="{$portal_url}" id="logo-header-link">
+        <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo.svg" alt="European Commision logo" />
+      </a>
     </replace>
-    <replace css:theme="#privacy-link">
-      <a href="{$portal_url}/privacy">Privacy</a>
-    </replace>
+    <!--Logo-->
 
-  <replace css:theme="#logo-header-link">
-    <a href="{$portal_url}" id="logo-header-link">
-      <img class="logo" src="{$portal_url}/++theme++scoreboard.theme/images/logo_en.gif" alt="European Commision logo" />
-    </a>
-  </replace>
+    <!--Site search results page-->
+    <rules css:if-content=".template-search">
+        <drop css:content="#search-field" />
+    </rules>
+    <!--Site search results page-->
 
-  <rules css:if-content="body.template-homepage-listing">
-    <drop css:theme="#navsearch-container" />
-  </rules>
+    <rules css:if-content=".template-homepage-listing">
+        <drop css:content=".breadcrumbs" />
+    </rules>
 
+    <!--Login button-->
+    <rules css:if-content=".template-login_form, .template-logged_out">
+        <drop css:content="input[name=submit]" />
+        <replace css:content="#login-form .formControls">
+            <button class="btn btn-primary btn-sm context" type="submit" name="submit">Log in</button>
+        </replace>
+    </rules>
+    <!--Login button-->
 </rules>

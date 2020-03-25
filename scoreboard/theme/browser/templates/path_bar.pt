@@ -1,24 +1,61 @@
-<div id="portal-breadcrumbs" tal:define="breadcrumbs view/breadcrumbs;">
+<div id="portal-breadcrumbs"
+     tal:define="portal_state context/@@plone_portal_state;
+                 portal_url portal_state/portal_url;
+                 breadcrumbs view/breadcrumbs;
+                 req request/URL;
+                 dataset_page python:'datacube-view.html' in req;
+                 indicators_page python: req.endswith('/indicators');
+                 vis_page python: req.endswith('/visualizations');">
+
   <ul class="breadcrumbs">
-    <li class="first"><a href="http://ec.europa.eu/index_en.htm">European Commission</a></li>
-    <li><a href="https://ec.europa.eu/digital-agenda/en">Digital Single Market</a></li>
-    <li><a href="https://ec.europa.eu/digital-agenda/en/digital-scoreboard">Digital Scoreboard</a></li>
-    <li><a tal:attributes="href view/navigation_root_url">Visualizations</a></li>
+    <li class="first">
+      <a tal:attributes="href view/navigation_root_url">
+        Home
+      </a>
+    </li>
     <tal:block tal:repeat="crumb breadcrumbs">
       <tal:item tal:define="is_last repeat/crumb/end;
-        is_vis python:here.meta_type == 'ScoreboardVisualization';
+        is_vis python:here.meta_type in ['ScoreboardVisualization','DataCube'];
         related_items python:getattr(here, 'getRelatedItems', lambda: None)();
         url crumb/absolute_url;
-        title crumb/Title">
-        <li tal:condition="python:is_last and not is_vis"
-            tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
-          <span tal:replace="title">crumb</span>
-        </li>
-        <li tal:condition="python:is_last and is_vis and related_items">
+        title crumb/Title;
+        is_board_link python:'Ploneboard' in here.meta_type;
+        is_simple_page python: here.meta_type in ['ATFolder', 'ATDocument']">
+
+        <li tal:condition="python:is_last and related_items">
           <a tal:attributes="href python:related_items[0].absolute_url() + '/visualizations'"
-            tal:content="python:related_items[0].title_or_id()">Cube title</a>
+             tal:content="python:related_items[0].title_or_id()">Cube title</a>
         </li>
+        <li tal:condition="python: is_vis">
+          <a tal:attributes="href url"
+             tal:content="title">Crumb</a>
+        </li>
+        <li tal:condition="python: is_last and vis_page">
+          <a tal:attributes="href python:url + '/visualizations'">Charts</a>
+        </li>
+        <li tal:condition="python: is_last and indicators_page">
+          <a tal:attributes="href python:url + '/indicators'">Indicators</a>
+        </li>
+        <li tal:condition="python: is_last and dataset_page or is_simple_page">
+            <a tal:attributes="href context/absolute_url"
+               tal:content="python: 'Metadata and download' if dataset_page else title">
+              Crumb
+            </a>
+        </li>
+
+        <li tal:condition="python:not is_vis and is_board_link"
+            tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
+          <a tal:attributes="href url"
+             tal:content="title">Crumb</a>
+        </li>
+
       </tal:item>
     </tal:block>
+    <li tal:condition="python: 'search' in req">Search</li>
+    <li tal:condition="python: 'login' in req">Login</li>
+    <li tal:condition="python: 'logged_out' in req">Logout</li>
+    <li tal:condition="python: 'manage-annotations' in req">Manage annotations</li>
+    <li tal:condition="python: 'manage-whitelist' in req">Manage whitelist</li>
+    <li tal:condition="python: 'sitemap' in req">Sitemap</li>
   </ul>
 </div>
