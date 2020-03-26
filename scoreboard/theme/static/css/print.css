@@ -1,5 +1,9 @@
 ﻿/* Removes certain elements when printing, and apply basic font styles
    for the remaining content. */
+#footer, .no-print {
+    display: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: Arial, sans-serif;
 	font-weight: bold;
