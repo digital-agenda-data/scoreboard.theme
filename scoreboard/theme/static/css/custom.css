@@ -798,6 +798,14 @@ button[name="add-title-part"] {
   border: 1px solid #ebebeb;
 }
 
+#toolbar .ui-button .ui-icon {
+    background-image: url('++resource++jquery-ui-themes/sunburst/images/ui-icons_ffffff_256x240.png') !important;
+}
+
+#toolbar .ui-button {
+    background: #004494 !important;
+}
+
 /* Visualization filters */
 #the-filters {
   min-height: 50px;
