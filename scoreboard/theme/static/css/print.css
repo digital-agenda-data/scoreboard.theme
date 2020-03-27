@@ -162,13 +162,13 @@ body .select2-search-choice-close,
 	display: none !important;
 }
 
-@page {
-	size: A4;
+body {
+  font-size: 12pt !important;
+  background: white !important;
 }
 
-body {
-	font-size: 12pt !important;
-  background: white;
+* {
+    font-size: 12pt !important;
 }
 
 body * {
@@ -280,4 +280,9 @@ body .select2-container-multi .select2-choices .select2-search-choice {
 .normalized-value {
   display: inline-block;
   text-align: right;
+}
+
+@page {
+    size: A4 landscape;
+    size: 287mm 210mm;
 }

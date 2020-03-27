@@ -147,7 +147,21 @@
       if($(".documentFirstHeading").length > 1) {
         $("#parent-fieldname-title").hide();
       }
-     });
+    });
+  </script>
+
+  <script>
+    // Shrink chart when printing page
+    var resetParams;
+
+    window.onbeforeprint = function() {
+        resetParams = [App.chart.options.chart.width, undefined, false];
+        var printing_chart_size = App.chart.options.exporting.printMaxWidth;
+        App.chart.setSize(922, undefined, false);
+    }
+    window.onafterprint = function() {
+        App.chart.setSize.apply(App.chart, resetParams);
+    }
   </script>
 
   <body>
