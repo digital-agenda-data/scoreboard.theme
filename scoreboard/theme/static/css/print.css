@@ -209,9 +209,12 @@ body.template-datacube-view-html ul {
   border-top: 1px solid;
   margin-top: 10mm;
   padding-top: 20px;
-  background-color: #878787 !important;
-  color: #fff;
-  -webkit-print-color-adjust: exact !important;
+  /*background-color: #878787 !important;*/
+  /*-webkit-print-color-adjust: exact !important;*/
+}
+
+.logo-print {
+  display: inline-block !important;
 }
 
 .logo-wrapper {
