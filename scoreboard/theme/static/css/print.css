@@ -1,17 +1,17 @@
 ﻿/* Removes certain elements when printing, and apply basic font styles
    for the remaining content. */
 h1, h2, h3, h4, h5, h6 {
-	font-family: Arial, sans-serif;
-	font-weight: bold;
-	line-height: 125%;
-	page-break-inside: avoid;
-	page-break-after: avoid;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: 125%;
+  page-break-inside: avoid;
+  page-break-after: avoid;
 }
 h1, h2 {
-	letter-spacing: -0.05em;
+  letter-spacing: -0.05em;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 #portal-column-content {
 	width: 95%;
@@ -20,25 +20,20 @@ a {
 	font-weight: bold;
 }
 pre {
-	border: 1pt dotted black;
-	white-space: pre;
-	font-size: 8pt;
-	overflow: visible;
-	padding: 1em;
+  border: 1pt dotted black;
+  white-space: pre;
+  font-size: 8pt;
+  overflow: visible;
+  padding: 1em;
 }
 table.listing,
 table.listing td {
-	border: 1pt solid black;
-	border-collapse: collapse;
+  border: 1pt solid black;
+  border-collapse: collapse;
 }
 table.listing td,
 table.listing th {
     padding: 6px;
-}
-
-/* Page break class for use when printing */
-div.pageBreak {
-	page-break-before: always;
 }
 
 /* Basic styles for listing and document views */
@@ -169,7 +164,7 @@ body {
 }
 
 * {
-    font-size: 12pt !important;
+    font-size: 10pt !important;
 }
 
 body * {
@@ -220,17 +215,6 @@ body.template-datacube-view-html ul {
   padding-top: 20px;
 }
 
-/*
-.logo-print {
-  display: inline-block !important;
-}
-
-.logo-wrapper {
-  display: block;
-  page-break-inside: avoid;
-*/
-}
-
 #copyright,
 .dataset-metadata,
 #the-filters,
@@ -274,6 +258,18 @@ body .select2-container-multi .select2-choices .select2-search-choice {
   border-left: 0;
 }
 
+@media print and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    #the-chart {
+      page-break-after: always;
+    }
+}
+
+@-moz-document url-prefix() {
+  #the-chart {
+    page-break-after: avoid;
+  }
+}
+
 .label-select-file-upload {
   font-weight: bold !important;
 }
@@ -304,6 +300,6 @@ body .select2-container-multi .select2-choices .select2-search-choice {
 }
 
 @page {
-    size: A4 landscape;
-    size: 287mm 210mm;
+  size: A4 landscape;
+  size: 287mm 210mm;
 }
