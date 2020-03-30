@@ -353,6 +353,10 @@ td.label {
   margin: 0;
 }
 
+#print-footer {
+  display: none;
+}
+
 .cc-logo {
   vertical-align: text-top;
   width: 1rem;
@@ -796,6 +800,14 @@ button[name="add-title-part"] {
   overflow-x: auto !important;
   max-width: 100%;
   border: 1px solid #ebebeb;
+}
+
+#toolbar .ui-button .ui-icon {
+    background-image: url('++resource++jquery-ui-themes/sunburst/images/ui-icons_ffffff_256x240.png') !important;
+}
+
+#toolbar .ui-button {
+    background: #004494 !important;
 }
 
 /* Visualization filters */

@@ -147,7 +147,39 @@
       if($(".documentFirstHeading").length > 1) {
         $("#parent-fieldname-title").hide();
       }
-     });
+    });
+  </script>
+
+  <script>
+    // Shrink chart when printing page
+    var resetParams;
+
+    window.onbeforeprint = function() {
+        resetParams = [App.chart.options.chart.width, undefined, false];
+        var printing_chart_size = App.chart.options.exporting.printMaxWidth;
+        App.chart.setSize(922, undefined, false);
+
+        var sliders = $('.composite-slider-widget');
+        if(sliders.length) {
+          for(var i=0; i<sliders.length;i++) {
+            var name = '<strong>' + $(sliders[i]).children('.slider-label').text().trim() + '</strong>';
+            var cs = $(sliders[i]).children('.composite-slider');
+            var last_step = cs.children('.slider-step:last-child').html();
+            var current_step = cs.children('.slider-step:visible').html();
+            var normalized_val = $(sliders[i]).children('.normalized-value').html();
+
+            var span = '<p>' + name + ' ' + current_step + ' / ' + last_step +  ' (' + normalized_val + ')</p>';
+            $('#the-print-filters').append(span);
+          }
+        }
+        else {
+          $('#the-print-filters').hide();
+        }
+    }
+    window.onafterprint = function() {
+        App.chart.setSize.apply(App.chart, resetParams);
+        $('#the-print-filters').html('');
+    }
   </script>
 
   <body>
@@ -475,82 +507,91 @@
     </div>
 
     <div id="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="row">
-          <div class="site-details col-md-4">
-            <h4>Data Visualisation Tool</h4>
-            <p>This site is managed by the Directorate-General for Communications Networks, Content and Technology</p>
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
-               title="Creative Commons Attribution License" class="cc-logo-wrapper">
-              <img src="images/cc.svg" alt="" class="cc-logo" />
-              <span>Creative commons license</span>
-            </a>
-          </div>
-          <div class="site-links col-md-8">
-            <div class="col-md-6">
-              <ul class="links">
-                <li><a id="about-link" href="">About Data Visualisation Tool</a></li>
-                <li><a id="documentation-link" href="">Documentation</a></li>
-                <li>
-                  <a href="https://github.com/digital-agenda-data/" target="_blank" class="is-external">Source code</a>
-                </li>
-              </ul>
+      <div class="container">
+        <div class="footer__top">
+          <div class="row">
+            <div class="site-details col-md-4">
+              <h4>Data Visualisation Tool</h4>
+              <p>This site is managed by the Directorate-General for Communications Networks, Content and Technology</p>
+              <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                 title="Creative Commons Attribution License" class="cc-logo-wrapper">
+                <img src="images/cc.svg" alt="" class="cc-logo" />
+                <span>Creative commons license</span>
+              </a>
             </div>
-            <div class="col-md-6">
-              <ul class="links">
-                <li><a id="sitemap-link" href="">Sitemap</a></li>
-                <li>
-                  <a href="/digital-agenda/en/ecas" title="" class="login">Log in</a>
-                </li>
-                <li>
-                  <a href="./@@overview-controlpanel" class="setup">Site Setup</a>
-                </li>
-              </ul>
+            <div class="site-links col-md-8">
+              <div class="col-md-6">
+                <ul class="links">
+                  <li><a id="about-link" href="">About Data Visualisation Tool</a></li>
+                  <li><a id="documentation-link" href="">Documentation</a></li>
+                  <li>
+                    <a href="https://github.com/digital-agenda-data/" target="_blank" class="is-external">Source code</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="links">
+                  <li><a id="sitemap-link" href="">Sitemap</a></li>
+                  <li>
+                    <a href="/digital-agenda/en/ecas" title="" class="login">Log in</a>
+                  </li>
+                  <li>
+                    <a href="./@@overview-controlpanel" class="setup">Site Setup</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-4">
-            <div class="footer__divider"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-4">
-            <div class="col-md-6">
-              <ul class="links">
-                <li>
-                  <a href="https://ec.europa.eu/digital-single-market/en/content/digital-economy-and-skills-unit-f4" target="_blank" class="is-external">Contact us</a>
-                </li>
-                <li>
-                  Follow us:
-                  <a target="_blank" href="https://www.facebook.com/DigitalSingleMarket" class="icon icon-fb is-external">
-                    <span>DSM Facebook</span>
-                  </a>
-                  <a target="_blank" href="http://twitter.com/DSMeu" class="icon icon-twitter is-external">
-                    <span>DSM Twitter</span>
-                  </a>
-                </li>
-              </ul>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-4">
+              <div class="footer__divider"></div>
             </div>
-            <div class="col-md-6">
-              <ul class="links">
-                <li><a href="" id="privacy-link">Privacy policy</a></li>
-                <li><a href="https://ec.europa.eu/digital-single-market/en/desi" class="is-external">
-                  About Digital Economy and Society Index
-                </a></li>
-                <li>
-                  Provided by
-                  <br>
-                  <img class="logo" src="./images/logo-neg.png" alt="European Commision logo" />
-                </li>
-              </ul>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-4">
+              <div class="col-md-6">
+                <ul class="links">
+                  <li>
+                    <a href="https://ec.europa.eu/digital-single-market/en/content/digital-economy-and-skills-unit-f4" target="_blank" class="is-external">Contact us</a>
+                  </li>
+                  <li>
+                    Follow us:
+                    <a target="_blank" href="https://www.facebook.com/DigitalSingleMarket" class="icon icon-fb is-external">
+                      <span>DSM Facebook</span>
+                    </a>
+                    <a target="_blank" href="http://twitter.com/DSMeu" class="icon icon-twitter is-external">
+                      <span>DSM Twitter</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="links">
+                  <li><a href="" id="privacy-link">Privacy policy</a></li>
+                  <li><a href="https://ec.europa.eu/digital-single-market/en/desi" class="is-external">
+                    About Digital Economy and Society Index
+                  </a></li>
+                  <li class="logo-wrapper">
+                    Provided by
+                    <br>
+                    <img class="logo" src="./images/logo-neg.png" alt="European Commision logo" />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <div id="print-footer">
+      <h4>Data Visualisation Tool</h4>
+      <p>This site is managed by the Directorate-General for Communications Networks, Content and Technology</p>
+      <p class="logo-wrapper">
+        Provided by
+        <br>
+        <img class="logo" src="./images/logo-pantone.png" />
+      </p>
     </div>
 	</body>
 </html>
