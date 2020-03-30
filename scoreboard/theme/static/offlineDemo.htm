@@ -172,6 +172,9 @@
             $('#the-print-filters').append(span);
           }
         }
+        else {
+          $('#the-print-filters').hide();
+        }
     }
     window.onafterprint = function() {
         App.chart.setSize.apply(App.chart, resetParams);
