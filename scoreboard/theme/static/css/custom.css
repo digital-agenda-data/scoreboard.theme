@@ -353,6 +353,10 @@ td.label {
   margin: 0;
 }
 
+#print-footer {
+  display: none;
+}
+
 .cc-logo {
   vertical-align: text-top;
   width: 1rem;
