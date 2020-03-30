@@ -297,12 +297,6 @@ td.label {
   padding: .5rem 0;
 }
 
-.logo-print {
-  display: none;
-  width: 200px;
-  padding: .5rem 0;
-}
-
 .blue-header {
   background: #004494;
   min-height: 50px;
@@ -357,6 +351,10 @@ td.label {
 /* Footer */
 #footer ul {
   margin: 0;
+}
+
+#print-footer {
+  display: none;
 }
 
 .cc-logo {
