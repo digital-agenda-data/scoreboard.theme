@@ -158,9 +158,24 @@
         resetParams = [App.chart.options.chart.width, undefined, false];
         var printing_chart_size = App.chart.options.exporting.printMaxWidth;
         App.chart.setSize(922, undefined, false);
+
+        var sliders = $('.composite-slider-widget');
+        if(sliders.length) {
+          for(var i=0; i<sliders.length;i++) {
+            var name = '<strong>' + $(sliders[i]).children('.slider-label').text().trim() + '</strong>';
+            var cs = $(sliders[i]).children('.composite-slider');
+            var last_step = cs.children('.slider-step:last-child').html();
+            var current_step = cs.children('.slider-step:visible').html();
+            var normalized_val = $(sliders[i]).children('.normalized-value').html();
+
+            var span = '<p>' + name + ' ' + current_step + ' / ' + last_step +  ' (' + normalized_val + ')</p>';
+            $('#the-print-filters').append(span);
+          }
+        }
     }
     window.onafterprint = function() {
         App.chart.setSize.apply(App.chart, resetParams);
+        $('#the-print-filters').html('');
     }
   </script>
 
